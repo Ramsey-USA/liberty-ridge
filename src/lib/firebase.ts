@@ -4,15 +4,15 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
-// Your Firebase config object (you'll need to replace these with your actual Firebase project config)
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyD_MCkY8PxvwN9T2hqN6x9eknVCM8G4tT0",
+  authDomain: "liberty-ridge-c9d53.firebaseapp.com",
+  projectId: "liberty-ridge-c9d53",
+  storageBucket: "liberty-ridge-c9d53.firebasestorage.app",
+  messagingSenderId: "649829572366",
+  appId: "1:649829572366:web:65d5b0a916ee9bd56b815f",
+  measurementId: "G-QKQY97V7FB"
 };
 
 // Initialize Firebase
