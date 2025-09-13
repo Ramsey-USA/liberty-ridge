@@ -25,28 +25,31 @@ export default function JoinPage() {
         title={joinHero.title}
         subtitle={joinHero.subtitle}
         description={joinHero.description}
-        backgroundGradient={joinHero.backgroundGradient}
       />
 
       {/* Enhanced Open Positions Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-patriot-blue/5 via-transparent to-patriot-red/5"></div>
+      <section className="py-24 bg-tactical relative overflow-hidden">
+        {/* Epic Background Effects */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_30%,_rgba(255,255,255,0.1)_30.5%,_rgba(255,255,255,0.1)_35%,_transparent_35.5%)]"></div>
+        </div>
+        <div className="absolute top-10 right-10 w-96 h-96 bg-gradient-to-bl from-patriot-red/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-tr from-patriot-blue/20 to-transparent rounded-full blur-3xl"></div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-patriot-red to-red-600 px-8 py-3 rounded-full text-sm font-bold mb-8 text-white shadow-lg">
-              <span>🎖️</span>
-              <span>{pageContent.openPositions.badge}</span>
-              <span>🎖️</span>
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-patriot-red/30 to-patriot-blue/30 backdrop-blur-sm px-8 py-4 rounded-full border tactical-border-gold mb-8 shadow-2xl">
+              <span className="text-3xl animate-pulse">🎖️</span>
+              <span className="text-yellow-400 font-bold text-lg tracking-wider">{pageContent.openPositions.badge}</span>
+              <span className="text-3xl animate-pulse">🎖️</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-tactical-dark">{pageContent.openPositions.title}</h2>
-            <p className="text-xl text-tactical-gray max-w-4xl mx-auto leading-relaxed">
+            
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              <span className="text-gradient">{pageContent.openPositions.title}</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               {pageContent.openPositions.description}
             </p>
-            <div className="flex items-center justify-center space-x-4 mt-8">
-              <div className="w-20 h-1 bg-patriot-red rounded-full"></div>
-              <div className="text-3xl">⭐</div>
-              <div className="w-20 h-1 bg-patriot-blue rounded-full"></div>
-            </div>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
@@ -58,7 +61,7 @@ export default function JoinPage() {
           </div>
 
           {/* Additional Info Banner */}
-          <div className="bg-gradient-to-r from-tactical-dark via-gray-800 to-tactical-dark text-white rounded-2xl p-8 text-center">
+          <div className="bg-white/10 backdrop-blur-sm text-white rounded-2xl p-8 text-center border border-white/20 hover:border-yellow-400/50 transition-all duration-300">
             <div className="flex items-center justify-center space-x-6 text-lg">
               <div className="flex items-center space-x-2">
                 <span>🛡️</span>
@@ -78,17 +81,26 @@ export default function JoinPage() {
       </section>
 
       {/* Enhanced Why Join Liberty Ridge */}
-      <section className="py-20 bg-gradient-to-br from-tactical-light via-white to-tactical-light relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(220,38,38,0.3)_0%,transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(30,64,175,0.3)_0%,transparent_50%)]"></div>
+      <section className="py-24 bg-gradient-to-br from-black via-tactical-dark to-patriot-blue relative overflow-hidden">
+        {/* Epic Background Effects */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_30%,_rgba(255,255,255,0.1)_30.5%,_rgba(255,255,255,0.1)_35%,_transparent_35.5%)]"></div>
         </div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-yellow-500/30 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-patriot-red/20 to-transparent rounded-full blur-3xl"></div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-tactical-dark">
-              {pageContent.whyJoin.title}
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-patriot-red/30 to-patriot-blue/30 backdrop-blur-sm px-8 py-4 rounded-full border tactical-border-gold mb-8 shadow-2xl">
+              <span className="text-3xl animate-pulse">💪</span>
+              <span className="text-yellow-400 font-bold text-lg tracking-wider">TACTICAL ADVANTAGE</span>
+              <span className="text-3xl animate-pulse">💪</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              <span className="text-gradient">{pageContent.whyJoin.title}</span>
             </h2>
-            <p className="text-xl text-tactical-gray max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               {pageContent.whyJoin.description}
             </p>
           </div>
@@ -97,22 +109,21 @@ export default function JoinPage() {
             {/* Enhanced Benefits Section */}
             <div className="space-y-8">
               <div className="text-center lg:text-left">
-                <h3 className="text-3xl md:text-4xl font-bold mb-8 text-tactical-dark">
-                  {pageContent.whyJoin.benefitsTitle}
+                <h3 className="text-3xl md:text-4xl font-bold mb-8 text-white">
+                  <span className="text-gradient">{pageContent.whyJoin.benefitsTitle}</span>
                 </h3>
               </div>
               
               <div className="space-y-6">
                 {teamBenefits.map((benefit, index) => (
-                  <div key={index} className="group relative bg-white border-2 border-gray-200 hover:border-patriot-red rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl">
-                    <div className="absolute inset-0 bg-gradient-to-br from-patriot-red/5 to-patriot-blue/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div key={index} className="group relative bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 hover:border-yellow-400/50 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1">
                     <div className="relative z-10 flex items-start space-x-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-patriot-red to-red-700 rounded-xl flex items-center justify-center text-white text-2xl font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <div className="w-16 h-16 bg-patriot-red rounded-xl flex items-center justify-center text-white text-2xl font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg">
                         {benefit.icon}
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-xl font-bold text-tactical-dark mb-3 group-hover:text-patriot-red transition-colors duration-300">{benefit.title}</h4>
-                        <p className="text-tactical-gray leading-relaxed">
+                        <h4 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300">{benefit.title}</h4>
+                        <p className="text-gray-300 leading-relaxed">
                           {benefit.description}
                         </p>
                       </div>
@@ -125,8 +136,8 @@ export default function JoinPage() {
             {/* Enhanced Right Column */}
             <div className="space-y-8">
               {/* Enhanced Company Vision */}
-              <div className="relative bg-white rounded-2xl overflow-hidden shadow-xl border-2 border-gray-200 hover:border-yellow-400 transition-all duration-300">
-                <div className="h-80 bg-gradient-to-br from-tactical-dark via-gray-800 to-patriot-blue relative overflow-hidden">
+              <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-white/20 hover:border-yellow-400/50 transition-all duration-300">
+                <div className="h-80 bg-tactical relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-yellow-500/20"></div>
                   <div className="absolute top-6 left-6 right-6 bottom-6 border-2 border-yellow-400/40 rounded-xl"></div>
                   
@@ -136,10 +147,10 @@ export default function JoinPage() {
                   
                   <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white p-8">
                     <div className="text-8xl mb-6 animate-pulse">🏛️</div>
-                    <h3 className="text-3xl font-bold mb-3 text-yellow-400 drop-shadow-lg">{pageContent.companyVision.title}</h3>
+                    <h3 className="text-3xl font-bold mb-3 text-yellow-400 text-shadow">{pageContent.companyVision.title}</h3>
                     <p className="text-xl text-yellow-200 font-semibold">{pageContent.companyVision.subtitle}</p>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 opacity-80"></div>
+                  <div className="h-2" style={{ background: 'var(--gradient-text)' }}></div>
                 </div>
                 
                 <div className="p-8">

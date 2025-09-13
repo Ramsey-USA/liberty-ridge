@@ -9,12 +9,12 @@ interface ProductCardProps {
 
 export default function ProductCard({ product, className = '' }: ProductCardProps) {
   return (
-    <div className={`enhanced-course-card group ${className}`}>
+    <div className={`group relative overflow-hidden bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/30 hover:bg-white/15 hover:border-yellow-400/50 transition-all duration-500 hover:-translate-y-1 ${className}`}>
       <div className="relative">
         {/* Product Image */}
         <div className="h-64 bg-gradient-to-br from-tactical-dark to-patriot-blue rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
           <div className="text-6xl text-white opacity-90">{product.image}</div>
-          <div className="absolute top-4 right-4 bg-white text-tactical-dark px-3 py-1 rounded-full text-sm font-bold">
+          <div className="absolute top-4 right-4 bg-white text-dark px-3 py-1 rounded-full text-sm font-bold">
             {product.brand}
           </div>
           <div className="absolute bottom-4 left-4 bg-patriot-red text-white px-3 py-1 rounded-full text-sm font-bold">
@@ -25,10 +25,10 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
         {/* Product Details */}
         <div className="space-y-4">
           <div>
-            <h3 className="text-2xl font-bold text-tactical-dark group-hover:text-patriot-blue transition-colors duration-300 mb-2">
+            <h3 className="text-2xl font-bold text-white group-hover:text-yellow-400 transition-colors duration-300 mb-2">
               {product.name}
             </h3>
-            <p className="text-tactical-gray leading-relaxed mb-4">
+            <p className="text-gray-300 leading-relaxed mb-4">
               {product.description}
             </p>
           </div>
@@ -40,21 +40,21 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
               <span className={`text-2xl font-bold ${getRatingColor(product.ratings.overall)}`}>
                 {product.ratings.overall.toFixed(1)}
               </span>
-              <span className="text-tactical-gray ml-2">/ 10 Overall</span>
+              <span className="text-gray-300 ml-2">/ 10 Overall</span>
             </div>
-            <div className="course-price text-2xl font-bold">
+            <div className="text-2xl font-bold text-gradient">
               {product.price}
             </div>
           </div>
 
           {/* Detailed Ratings */}
           <div className="space-y-3 mb-6">
-            <h4 className="font-bold text-tactical-dark">Expert Ratings:</h4>
+            <h4 className="font-bold text-yellow-400">Expert Ratings:</h4>
             {ratingCategories.map((category) => (
               <div key={category.key} className="flex items-center justify-between">
                 <div className="flex items-center">
                   <span className="mr-2">{category.icon}</span>
-                  <span className="text-sm font-medium text-tactical-gray">{category.label}</span>
+                  <span className="text-sm font-medium text-gray-300">{category.label}</span>
                 </div>
                 <div className="flex items-center">
                   <div className="flex mr-2">
@@ -63,8 +63,8 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
                         key={i}
                         className={`w-2 h-2 mx-0.5 rounded-full ${
                           i < getRatingBars(product.ratings[category.key])
-                            ? 'bg-patriot-red'
-                            : 'bg-gray-300'
+                            ? 'bg-yellow-400'
+                            : 'bg-gray-600'
                         }`}
                       />
                     ))}
@@ -79,12 +79,12 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
 
           {/* Features */}
           <div className="mb-6">
-            <h4 className="font-bold text-tactical-dark mb-3">Key Features:</h4>
+            <h4 className="font-bold text-yellow-400 mb-3">Key Features:</h4>
             <div className="grid grid-cols-2 gap-2">
               {product.features.map((feature, index) => (
                 <div key={index} className="flex items-center">
-                  <span className="text-green-500 mr-2 text-sm">✓</span>
-                  <span className="text-tactical-gray text-sm">{feature}</span>
+                  <span className="text-green-400 mr-2 text-sm">✓</span>
+                  <span className="text-gray-300 text-sm">{feature}</span>
                 </div>
               ))}
             </div>
@@ -95,7 +95,7 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
             <button className="btn-primary flex-1 text-center opacity-50 cursor-not-allowed">
               🛒 Coming Soon
             </button>
-            <Link href="/contact" className="btn-outline flex-1 text-center">
+            <Link href="/contact" className="btn-outline flex-1 text-center tactical-border-gold">
               📧 Get Notified
             </Link>
           </div>

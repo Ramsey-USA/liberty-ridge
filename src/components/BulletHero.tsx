@@ -236,7 +236,7 @@ const BulletHero: React.FC<BulletHeroProps> = ({
 
       {/* Content */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 pr-32 py-12 sm:py-16 lg:py-20">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-2xl text-shadow">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
           <span className="text-gradient">
             {title}
           </span>

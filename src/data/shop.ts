@@ -145,8 +145,7 @@ export const shopFeatures: ShopFeature[] = [
 export const shopHero = {
   title: "TACTICAL GEAR SHOP",
   subtitle: "Premium Equipment for Elite Performance",
-  description: "High-quality tactical gear from trusted brands like Vortex and Sig Sauer, rated by our expert team across 5 key performance areas.",
-  backgroundGradient: "from-gray-100 via-slate-50 to-white"
+  description: "High-quality tactical gear from trusted brands like Vortex and Sig Sauer, rated by our expert team across 5 key performance areas."
 };
 
 // Expert rating system info

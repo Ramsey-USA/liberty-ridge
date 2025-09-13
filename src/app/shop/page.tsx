@@ -24,31 +24,47 @@ export default function ShopPage() {
         title={shopHero.title}
         subtitle={shopHero.subtitle}
         description={shopHero.description}
-        backgroundGradient={shopHero.backgroundGradient}
       />
 
       {/* Expert Rating System Info */}
-      <section className="py-16 bg-tactical-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-tactical-dark">
-              {expertRatingInfo.title}
+      <section className="py-24 bg-tactical relative overflow-hidden">
+        {/* Epic Background Effects */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_30%,_rgba(255,255,255,0.1)_30.5%,_rgba(255,255,255,0.1)_35%,_transparent_35.5%)]"></div>
+        </div>
+        <div className="absolute top-10 right-10 w-96 h-96 bg-gradient-to-bl from-patriot-red/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-tr from-patriot-blue/20 to-transparent rounded-full blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-patriot-red/30 to-patriot-blue/30 backdrop-blur-sm px-8 py-4 rounded-full border border-yellow-400/50 mb-8 shadow-2xl">
+              <span className="text-3xl animate-pulse">📊</span>
+              <span className="text-yellow-400 font-bold text-lg tracking-wider">EXPERT RATINGS</span>
+              <span className="text-3xl animate-pulse">📊</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              <span className="text-gradient">
+                {expertRatingInfo.title}
+              </span>
             </h2>
-            <p className="text-xl text-tactical-gray max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               {expertRatingInfo.description}
             </p>
           </div>
           
-          <div className="home-grid-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {ratingCategories.map((category) => (
-              <div key={category.key} className="mission-value-card text-center group">
-                <div className="mission-value-icon">
-                  <span className="text-xl sm:text-2xl text-white">{category.icon}</span>
+              <div key={category.key} className="group relative overflow-hidden bg-white/10 backdrop-blur-sm rounded-3xl p-6 border border-white/30 hover:bg-white/15 hover:border-yellow-400/50 transition-all duration-500 hover:-translate-y-1 text-center">
+                <div className="relative inline-block mb-4">
+                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-patriot-red to-red-800 tactical-star flex items-center justify-center text-2xl shadow-2xl border-4 border-yellow-300 group-hover:scale-110 transition-transform duration-500">
+                    <span className="filter drop-shadow-lg text-white">{category.icon}</span>
+                  </div>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-patriot-red group-hover:text-patriot-blue transition-colors duration-300">
+                <h3 className="text-lg font-bold mb-3 text-yellow-400 group-hover:text-white transition-colors duration-300">
                   {category.label}
                 </h3>
-                <p className="text-tactical-gray text-xs sm:text-sm leading-relaxed">
+                <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                   {category.description}
                 </p>
               </div>
@@ -58,18 +74,33 @@ export default function ShopPage() {
       </section>
       
       {/* Featured Products Preview */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-tactical-dark">
-              Featured Products Preview
+      <section className="py-24 bg-gradient-to-br from-black via-tactical-dark to-patriot-blue relative overflow-hidden">
+        {/* Epic Background Effects */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_30%,_rgba(255,255,255,0.1)_30.5%,_rgba(255,255,255,0.1)_35%,_transparent_35.5%)]"></div>
+        </div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-yellow-500/30 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-patriot-red/20 to-transparent rounded-full blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-yellow-500/30 to-orange-600/30 backdrop-blur-sm px-8 py-4 rounded-full border border-yellow-400/50 mb-8 shadow-2xl">
+              <span className="text-3xl animate-pulse">🏪</span>
+              <span className="text-yellow-400 font-bold text-lg tracking-wider">PREMIUM GEAR</span>
+              <span className="text-3xl animate-pulse">🏪</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              <span className="text-gradient">
+                Featured Products Preview
+              </span>
             </h2>
-            <p className="text-xl text-tactical-gray max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Get a preview of the premium tactical gear coming in Phase Two, complete with our comprehensive rating system.
             </p>
           </div>
           
-          <div className="home-grid-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -78,18 +109,33 @@ export default function ShopPage() {
       </section>
 
       {/* Phase Two Information */}
-      <section className="py-20 bg-tactical-dark text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              {phaseTwoInfo.title}
+      <section className="py-24 bg-tactical relative overflow-hidden">
+        {/* Epic Background Effects */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_30%,_rgba(255,255,255,0.1)_30.5%,_rgba(255,255,255,0.1)_35%,_transparent_35.5%)]"></div>
+        </div>
+        <div className="absolute top-10 right-10 w-96 h-96 bg-gradient-to-bl from-patriot-red/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-tr from-patriot-blue/20 to-transparent rounded-full blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-patriot-red/30 to-patriot-blue/30 backdrop-blur-sm px-8 py-4 rounded-full border border-yellow-400/50 mb-8 shadow-2xl">
+              <span className="text-3xl animate-pulse">🚀</span>
+              <span className="text-yellow-400 font-bold text-lg tracking-wider">PHASE TWO</span>
+              <span className="text-3xl animate-pulse">🚀</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              <span className="text-gradient">
+                {phaseTwoInfo.title}
+              </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               {phaseTwoInfo.description}
             </p>
           </div>
           
-          <div className="home-grid-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {shopFeatures.map((feature, index) => (
               <FeatureCard
                 key={index}
@@ -99,6 +145,7 @@ export default function ShopPage() {
                   description: feature.description
                 }}
                 variant="default"
+                className="group relative overflow-hidden bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/30 hover:bg-white/15 hover:border-yellow-400/50 transition-all duration-500 hover:-translate-y-1 text-center"
               />
             ))}
           </div>
@@ -106,7 +153,7 @@ export default function ShopPage() {
       </section>
 
       {/* Enhanced Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-patriot-blue via-patriot-red to-patriot-blue text-white relative overflow-hidden">
+      <section className="py-20 bg-primary text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-black/10 to-transparent"></div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
