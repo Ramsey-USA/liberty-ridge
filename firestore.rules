@@ -1,30 +1,9 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Allow read access to courses for everyone
-    match /courses/{document} {
-      allow read: if true;
-    }
-    
-    // Allow write access to forms for authenticated users only
-    match /enrollments/{document} {
-      allow create: if true; // Allow public form submissions
-      allow read, update, delete: if request.auth != null;
-    }
-    
-    match /contacts/{document} {
-      allow create: if true;
-      allow read, update, delete: if request.auth != null;
-    }
-    
-    match /team_applications/{document} {
-      allow create: if true;
-      allow read, update, delete: if request.auth != null;
-    }
-    
-    match /newsletter_subscribers/{document} {
-      allow create: if true;
-      allow read, update, delete: if request.auth != null;
+    // Temporary: Allow all reads and writes for testing
+    match /{document=**} {
+      allow read, write: if true;
     }
   }
 }

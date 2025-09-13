@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BulletHero from '@/components/BulletHero';
 import { useState } from 'react';
-// import { enrollStudent } from '@/lib/firestore'; // Uncomment when Firebase is configured
+import { enrollStudent } from '@/lib/firestore';
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
@@ -30,17 +30,11 @@ export default function SignupPage() {
     setIsSubmitting(true);
     
     try {
-      // Option 1: Firebase integration (uncomment when Firebase is configured)
-      // const enrollmentId = await enrollStudent(formData);
-      // console.log('Enrollment submitted with ID:', enrollmentId);
+      // Firebase integration - Save to Firestore
+      const enrollmentId = await enrollStudent(formData);
+      console.log('Enrollment submitted with ID:', enrollmentId);
       
-      // Option 2: High Level CRM integration (implement when API keys are available)
-      // await submitToHighLevel(formData);
-      
-      // For now, just log the data
-      console.log('Form submitted:', formData);
-      
-      alert('Thank you for your interest! We will contact you within 24 hours to confirm your enrollment.');
+      alert('Thank you for your enrollment! Your registration has been saved. We will contact you within 24 hours to confirm your tactical training program.');
       
       // Reset form
       setFormData({
@@ -52,9 +46,8 @@ export default function SignupPage() {
         experience: '',
         message: ''
       });
-      
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Enrollment submission error:', error);
       alert('There was an error submitting your enrollment. Please try again or contact us directly.');
     } finally {
       setIsSubmitting(false);
