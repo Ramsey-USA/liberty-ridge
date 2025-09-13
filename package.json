@@ -7,7 +7,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export",
+    "deploy": "npm run export && firebase deploy",
+    "firebase:init": "firebase init",
+    "firebase:deploy": "firebase deploy",
+    "firebase:serve": "firebase serve"
   },
   "keywords": [
     "tactical",
@@ -31,5 +36,8 @@
     "react-dom": "^19.1.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "firebase-tools": "^14.16.0"
   }
 }

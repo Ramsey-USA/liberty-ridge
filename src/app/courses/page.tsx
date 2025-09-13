@@ -1,60 +1,11 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BulletHero from '@/components/BulletHero';
+import { CourseCard, StatsCard } from '@/components/cards';
+import { courses } from '@/data/courses';
 import Link from 'next/link';
 
 export default function CoursesPage() {
-  const courses = [
-    {
-      id: 1,
-      title: 'Firearm Safety Fundamentals',
-      duration: '4 hours',
-      price: '$199',
-      level: 'Beginner',
-      description: 'Comprehensive classroom training covering the essential principles of firearm safety, handling, storage, and basic maintenance. Perfect for first-time gun owners.',
-      includes: [
-        'Safe handling procedures',
-        'Firearm storage and security',
-        'Basic maintenance and cleaning',
-        'Legal responsibilities',
-        'Emergency protocols',
-        'Certificate of completion'
-      ]
-    },
-    {
-      id: 2,
-      title: 'Personal Firearm Training',
-      duration: '6 hours',
-      price: '$299',
-      level: 'Intermediate',
-      description: 'Personalized training focused on your specific firearm and individual skill development needs. Includes one-on-one instruction and customized curriculum.',
-      includes: [
-        'Weapon-specific training',
-        'Personalized skill assessment',
-        'Customized training plan',
-        'Advanced safety protocols',
-        'Tactical fundamentals',
-        'Follow-up consultation'
-      ]
-    },
-    {
-      id: 3,
-      title: 'Advanced Safety Protocols',
-      duration: '8 hours',
-      price: '$399',
-      level: 'Advanced',
-      description: 'Advanced classroom instruction on tactical safety protocols, emergency response procedures, and crisis management techniques.',
-      includes: [
-        'Crisis situation management',
-        'Advanced tactical protocols',
-        'Emergency response planning',
-        'Threat assessment',
-        'De-escalation techniques',
-        'Scenario-based training'
-      ]
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       <Header />
@@ -121,7 +72,7 @@ export default function CoursesPage() {
                               <span className="font-semibold">{course.duration}</span>
                             </div>
                             <div className="flex items-center">
-                              <span className="mr-2">�</span>
+                              <span className="mr-2">👥</span>
                               <span className="font-semibold">Small Class Size</span>
                             </div>
                           </div>
@@ -203,7 +154,7 @@ export default function CoursesPage() {
               <div className="w-full bg-gray-700 rounded-full h-2 mb-4">
                 <div className="bg-patriot-red h-2 rounded-full transition-all duration-1000" style={{width: '100%'}}></div>
               </div>
-              <div className="text-sm text-gray-400">Active Phase • Fully Operational</div>
+              <div className="text-sm text-gray-400">Active Phase ★ Fully Operational</div>
             </div>
             
             <div className="future-phase-card group">
@@ -221,7 +172,7 @@ export default function CoursesPage() {
               <div className="w-full bg-gray-700 rounded-full h-2 mb-4">
                 <div className="bg-patriot-blue h-2 rounded-full transition-all duration-1000" style={{width: '25%'}}></div>
               </div>
-              <div className="text-sm text-gray-400">Planning Phase • 25% Complete</div>
+              <div className="text-sm text-gray-400">Planning Phase ★ 25% Complete</div>
             </div>
             
             <div className="future-phase-card group">
@@ -239,7 +190,7 @@ export default function CoursesPage() {
               <div className="w-full bg-gray-700 rounded-full h-2 mb-4">
                 <div className="bg-white h-2 rounded-full transition-all duration-1000" style={{width: '10%'}}></div>
               </div>
-              <div className="text-sm text-gray-400">Research Phase • 10% Complete</div>
+              <div className="text-sm text-gray-400">Research Phase ★ 10% Complete</div>
             </div>
           </div>
         </div>
@@ -259,53 +210,50 @@ export default function CoursesPage() {
           </div>
           
           <div className="home-grid-2">
-            <div className="mission-value-card text-center group bg-tactical-gray border-gray-600">
-              <div className="mission-value-icon">
-                <span className="text-xl sm:text-2xl text-white">🎖️</span>
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-patriot-red group-hover:text-white transition-colors duration-300">
-                U.S. Army Veteran
-              </h3>
-              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                Military discipline and proven tactical expertise
-              </p>
-            </div>
+            <StatsCard 
+              stat={{
+                title: 'U.S. Army Veteran',
+                value: 'Military',
+                description: 'Military discipline and proven tactical expertise',
+                icon: '🎖️'
+              }}
+              variant="compact"
+              className="mission-value-card text-center group bg-tactical-gray border-gray-600"
+            />
             
-            <div className="mission-value-card text-center group bg-tactical-gray border-gray-600">
-              <div className="mission-value-icon">
-                <span className="text-xl sm:text-2xl text-white">🏆</span>
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-patriot-red group-hover:text-white transition-colors duration-300">
-                #12 Regional Champion
-              </h3>
-              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                First-year competitor achieving elite status
-              </p>
-            </div>
+            <StatsCard 
+              stat={{
+                title: '#12 Regional Champion',
+                value: 'Elite',
+                description: 'First-year competitor achieving elite status',
+                icon: '🏆',
+                highlight: true
+              }}
+              variant="compact"
+              className="mission-value-card text-center group bg-tactical-gray border-gray-600"
+            />
             
-            <div className="mission-value-card text-center group bg-tactical-gray border-gray-600">
-              <div className="mission-value-icon">
-                <span className="text-xl sm:text-2xl text-white">👥</span>
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-patriot-red group-hover:text-white transition-colors duration-300">
-                100+ Students Trained
-              </h3>
-              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                Proven track record of successful instruction
-              </p>
-            </div>
+            <StatsCard 
+              stat={{
+                title: '100+ Students Trained',
+                value: 'Proven',
+                description: 'Proven track record of successful instruction',
+                icon: '👥'
+              }}
+              variant="compact"
+              className="mission-value-card text-center group bg-tactical-gray border-gray-600"
+            />
             
-            <div className="mission-value-card text-center group bg-tactical-gray border-gray-600">
-              <div className="mission-value-icon">
-                <span className="text-xl sm:text-2xl text-white">🛡️</span>
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-patriot-red group-hover:text-white transition-colors duration-300">
-                100% Safety Record
-              </h3>
-              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                Uncompromising commitment to student safety
-              </p>
-            </div>
+            <StatsCard 
+              stat={{
+                title: '100% Safety Record',
+                value: 'Perfect',
+                description: 'Uncompromising commitment to student safety',
+                icon: '🛡️'
+              }}
+              variant="compact"
+              className="mission-value-card text-center group bg-tactical-gray border-gray-600"
+            />
           </div>
         </div>
       </section>
@@ -330,7 +278,7 @@ export default function CoursesPage() {
             </Link>
           </div>
           <div className="text-sm opacity-75">
-            ⭐ Small Class Sizes • 🎖️ Veteran Instruction • 🛡️ 100% Safety Record
+            ⭐ Small Class Sizes ★ 🎖️ Veteran Instruction ★ 🛡️ 100% Safety Record
           </div>
         </div>
       </section>

@@ -72,9 +72,9 @@ export default function AboutPage() {
                     <div className="text-right sm:text-left">
                       <div className="text-lg font-semibold mb-2">🎯 Expertise Areas</div>
                       <div className="text-sm space-y-1">
-                        <div>• Tactical Training</div>
-                        <div>• Firearm Safety</div>
-                        <div>• Long-Range Precision</div>
+                        <div className="tactical-bullet">Tactical Training</div>
+                        <div className="tactical-bullet">Firearm Safety</div>
+                        <div className="tactical-bullet">Long-Range Precision</div>
                       </div>
                     </div>
                   </div>
@@ -387,7 +387,7 @@ export default function AboutPage() {
               <div className="w-full bg-gray-700 rounded-full h-2 mb-4">
                 <div className="bg-patriot-red h-2 rounded-full transition-all duration-1000" style={{width: '25%'}}></div>
               </div>
-              <div className="text-xs sm:text-sm text-gray-400">Planning Phase • 25% Complete</div>
+              <div className="text-xs sm:text-sm text-gray-400">Planning Phase ★ 25% Complete</div>
             </div>
             
             <div className="future-phase-card group">
@@ -405,7 +405,7 @@ export default function AboutPage() {
               <div className="w-full bg-gray-700 rounded-full h-2 mb-4">
                 <div className="bg-patriot-blue h-2 rounded-full transition-all duration-1000" style={{width: '10%'}}></div>
               </div>
-              <div className="text-xs sm:text-sm text-gray-400">Research Phase • 10% Complete</div>
+              <div className="text-xs sm:text-sm text-gray-400">Research Phase ★ 10% Complete</div>
             </div>
             
             <div className="future-phase-card group">
@@ -423,7 +423,7 @@ export default function AboutPage() {
               <div className="w-full bg-gray-700 rounded-full h-2 mb-4">
                 <div className="bg-white h-2 rounded-full transition-all duration-1000" style={{width: '5%'}}></div>
               </div>
-              <div className="text-xs sm:text-sm text-gray-400">Vision Phase • 5% Complete</div>
+              <div className="text-xs sm:text-sm text-gray-400">Vision Phase ★ 5% Complete</div>
             </div>
           </div>
           
@@ -455,7 +455,7 @@ export default function AboutPage() {
             </Link>
           </div>
           <div className="text-sm opacity-75">
-            🎖️ Veteran-Owned • ⚔️ Military Standards • 🏆 Proven Excellence
+            🎖️ Veteran-Owned ★ ⚔️ Military Standards ★ 🏆 Proven Excellence
           </div>
         </div>
       </section>

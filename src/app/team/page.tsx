@@ -1,21 +1,13 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BulletHero from '@/components/BulletHero';
+import { StatsCard } from '@/components/cards';
+import { teamMembers, getActiveTeamMembers, teamRoles, organizationStats } from '@/data/team';
 import Link from 'next/link';
 
 export default function TeamPage() {
-  const teamMembers = [
-    {
-      id: 1,
-      name: 'Zach Gaudette',
-      rank: 'Founder & Lead Instructor',
-      branch: 'U.S. Army Veteran',
-      specialties: ['Tactical Training', 'Long-Range Precision', 'Firearm Safety'],
-      achievement: '#12 Regional Ranking',
-      status: 'active',
-      bio: 'Army veteran with extensive tactical training experience. Dedicated to providing exceptional training with military-grade standards. Married to Anne Marie, father to 18-month-old Myles.',
-      certifications: ['Combat Veteran', 'Precision Rifle Instructor', 'Safety Protocols Specialist']
-    },
+  // Create recruiting positions based on current team structure
+  const recruitingPositions = [
     {
       id: 2,
       name: 'Marcus "Doc" Rodriguez',
@@ -51,6 +43,8 @@ export default function TeamPage() {
     }
   ];
 
+  const allTeamDisplay = [...getActiveTeamMembers(), ...recruitingPositions];
+
   return (
     <div className="min-h-screen relative">
       {/* Desert Camo Theme Background */}
@@ -77,20 +71,35 @@ export default function TeamPage() {
         <section className="py-12 bg-[#f5e7c6]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center space-x-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#8b4513]">1</div>
-                <div className="text-sm text-[#654321]">Active Operator</div>
-              </div>
+              <StatsCard 
+                stat={{
+                  title: 'Active Operator',
+                  value: getActiveTeamMembers().length,
+                  icon: '👨‍💼'
+                }}
+                variant="compact"
+                className="text-center"
+              />
               <div className="w-1 h-12 bg-[#8b4513]/30"></div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#d2691e]">3</div>
-                <div className="text-sm text-[#654321]">Positions Open</div>
-              </div>
+              <StatsCard 
+                stat={{
+                  title: 'Positions Open',
+                  value: 3,
+                  icon: '🔍'
+                }}
+                variant="compact"
+                className="text-center"
+              />
               <div className="w-1 h-12 bg-[#8b4513]/30"></div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#8b4513]">∞</div>
-                <div className="text-sm text-[#654321]">Potential Impact</div>
-              </div>
+              <StatsCard 
+                stat={{
+                  title: 'Potential Impact',
+                  value: '∞',
+                  icon: '🎯'
+                }}
+                variant="compact"
+                className="text-center"
+              />
             </div>
           </div>
         </section>
@@ -104,7 +113,7 @@ export default function TeamPage() {
           
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {teamMembers.map((member) => (
+              {allTeamDisplay.map((member) => (
                 <div key={member.id} className={`relative group ${
                   member.status === 'active' 
                     ? 'bg-gradient-to-br from-[#d2b48c] to-[#8b7355]' 
@@ -165,7 +174,7 @@ export default function TeamPage() {
                   <div className="mb-6">
                     <h4 className="text-lg font-semibold mb-3 text-[#daa520]">📜 Certifications:</h4>
                     <div className="space-y-2">
-                      {member.certifications.map((cert, index) => (
+                      {member.certifications?.map((cert: string, index: number) => (
                         <div key={index} className="flex items-center">
                           <span className="text-[#daa520] mr-2">✓</span>
                           <span className="text-sm">{cert}</span>

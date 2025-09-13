@@ -12,7 +12,7 @@ module.exports = {
         'patriot-blue': '#1e40af',   // Patriotic blue
         'patriot-navy': '#1e3a8a',   // Dark navy
         'tactical-dark': '#1f2937',   // Dark tactical color
-        'tactical-gray': '#374151',   // Medium tactical gray
+        'tactical-gray': '#111827',   // Darker gray for better readability (was #374151)
         'tactical-light': '#f9fafb',  // Light background
         patriot: {
           red: '#dc2626',    // Patriotic red
@@ -21,12 +21,13 @@ module.exports = {
         },
         tactical: {
           dark: '#1f2937',   // Dark tactical color
-          gray: '#374151',   // Medium tactical gray
+          gray: '#111827',   // Darker gray for better readability (was #374151)
           light: '#f9fafb',  // Light background
         }
       },
       fontFamily: {
-        tactical: ['Inter', 'system-ui', 'sans-serif'],
+        tactical: ['Saira', 'system-ui', 'sans-serif'],
+        sans: ['Saira', 'system-ui', 'sans-serif'],
       },
     },
   },
