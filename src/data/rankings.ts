@@ -98,7 +98,7 @@ export const rankingsHero = {
   title: "ELITE TEAM RANKINGS",
   subtitle: "Meet Our Champion Competitors",
   description: "Our elite team of regional champions demonstrates the expertise and competitive excellence you'll develop at Liberty Ridge Training Grounds.",
-  backgroundGradient: "from-patriot-red via-tactical-dark to-patriot-blue"
+  backgroundGradient: "from-gray-50 via-white to-slate-100"
 };
 
 // Page content

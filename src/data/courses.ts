@@ -22,10 +22,10 @@ export const courses: Course[] = [
     id: 1,
     title: 'Firearm Safety Fundamentals',
     subtitle: 'Essential Foundation Course',
-    duration: '4 hours',
-    price: '$199',
+    duration: '2 days (14 hours)',
+    price: '$2,499.99',
     level: 'Beginner',
-    description: 'Comprehensive classroom training covering the essential principles of firearm safety, handling, storage, and basic maintenance. Perfect for first-time gun owners and those seeking to refresh their knowledge.',
+    description: 'Comprehensive 2-day training covering the essential principles of firearm safety, handling, storage, and basic maintenance. Perfect for first-time gun owners and those seeking to refresh their knowledge.',
     includes: [
       'Safe handling procedures',
       'Firearm storage and security',
@@ -35,7 +35,7 @@ export const courses: Course[] = [
       'Certificate of completion'
     ],
     highlights: [
-      '4-Hour Comprehensive Session',
+      '14-Hour Comprehensive Training',
       'Safety Protocols & Best Practices',
       'Certificate of Completion'
     ],
@@ -48,10 +48,10 @@ export const courses: Course[] = [
     id: 2,
     title: 'Personal Firearm Training',
     subtitle: 'Customized Individual Instruction',
-    duration: '6 hours',
-    price: '$299',
+    duration: '5 days (35 hours)',
+    price: '$5,999.99',
     level: 'Intermediate',
-    description: 'Personalized training focused on your specific firearm and individual skill development needs. Includes one-on-one instruction with customized curriculum tailored to your goals.',
+    description: 'Intensive 5-day personalized training focused on your specific firearm and individual skill development needs. Includes one-on-one instruction with customized curriculum tailored to your goals.',
     includes: [
       'Weapon-specific training',
       'Personalized skill assessment',
@@ -61,9 +61,9 @@ export const courses: Course[] = [
       'Follow-up consultation'
     ],
     highlights: [
+      'Intensive 35-Hour Program',
       'Personalized 1-on-1 Instruction',
-      'Your Specific Firearm Focus',
-      'Customized Training Plan'
+      'Your Specific Firearm Focus'
     ],
     icon: '🎯',
     category: 'tactical',
@@ -74,10 +74,10 @@ export const courses: Course[] = [
     id: 3,
     title: 'Advanced Safety Protocols',
     subtitle: 'Professional-Level Training',
-    duration: '8 hours',
-    price: '$399',
+    duration: 'Weekend course (18 hours)',
+    price: '$3,999.99',
     level: 'Advanced',
-    description: 'Advanced classroom instruction on tactical safety protocols, emergency response procedures, and crisis management techniques for serious practitioners.',
+    description: 'Intensive weekend training featuring Friday evening (4 hours) plus full Saturday and Sunday sessions (14 hours). Advanced classroom instruction on tactical safety protocols, emergency response procedures, and crisis management techniques for serious practitioners.',
     includes: [
       'Crisis situation management',
       'Advanced tactical protocols',
@@ -87,8 +87,8 @@ export const courses: Course[] = [
       'Professional certification'
     ],
     highlights: [
+      'Weekend Intensive Program',
       'Advanced Tactical Protocols',
-      'Emergency Response Training',
       'Military-Grade Instruction'
     ],
     icon: '⚔️',

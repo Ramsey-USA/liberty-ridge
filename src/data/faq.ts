@@ -173,7 +173,7 @@ export const faqHero = {
   title: "FREQUENTLY ASKED QUESTIONS",
   subtitle: "Everything You Need to Know",
   description: "Find comprehensive answers to common questions about our training courses, policies, and procedures.",
-  backgroundGradient: "from-tactical-dark via-patriot-blue to-tactical-dark"
+  backgroundGradient: "from-slate-50 via-white to-gray-50"
 };
 
 // Quick navigation section

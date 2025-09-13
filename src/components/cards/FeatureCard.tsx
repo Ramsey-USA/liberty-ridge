@@ -44,7 +44,7 @@ export default function FeatureCard({ feature, variant = 'default', className = 
           variant === 'hero' ? 'text-3xl' : 
           variant === 'compact' ? 'text-xl' : 
           'text-2xl'
-        } font-bold text-tactical-dark mb-4 text-center group-hover:text-patriot-blue transition-colors duration-300`}>
+        } font-bold text-dark mb-4 text-center group-hover:text-patriot-blue transition-colors duration-300`}>
           {feature.title}
         </h3>
         

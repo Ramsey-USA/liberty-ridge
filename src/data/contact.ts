@@ -33,7 +33,7 @@ export const contactHero = {
   title: "CONTACT US",
   subtitle: "Ready to Start Your Training Journey?",
   description: "Get in touch today. We're here to answer questions and help you choose the right course.",
-  backgroundGradient: "from-patriot-blue to-patriot-red"
+  backgroundGradient: "from-white via-slate-50 to-gray-100"
 };
 
 export const contactCards = [

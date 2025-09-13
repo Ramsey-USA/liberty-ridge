@@ -13,7 +13,7 @@ export default function LiveTrainingPage() {
         title="LIVE FIRE TRAINING"
         subtitle="Phase Three: Hands-On Training Sessions"
         description="Coming soon to Liberty Ridge Training Grounds - Real-world tactical application."
-        backgroundGradient="from-patriot-blue to-patriot-red"
+        backgroundGradient="from-gray-50 via-white to-slate-50"
       />
 
       {/* What's Coming Section */}

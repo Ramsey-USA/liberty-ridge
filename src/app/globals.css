@@ -4,6 +4,45 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700;800;900&display=swap');
 
+/* === ROOT VARIABLES === */
+:root {
+  /* Patriotic Colors */
+  --patriot-red: #dc2626;
+  --patriot-blue: #1e40af;
+  --patriot-navy: #1e3a8a;
+  
+  /* Tactical Colors */
+  --tactical-dark: #1f2937;
+  --tactical-gray: #111827;
+  --tactical-light: #f9fafb;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #facc15;
+  --text-description: #d1d5db;
+  --text-dark: #1f2937;
+  
+  /* Background Colors */
+  --bg-dark: #000000;
+  --bg-tactical: #1f2937;
+  --bg-light: #ffffff;
+  
+  /* Accent Colors */
+  --accent-gold: #facc15;
+  --accent-orange: #f97316;
+  --accent-yellow: #fbbf24;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--patriot-red) 0%, var(--patriot-blue) 100%);
+  --gradient-tactical: linear-gradient(135deg, var(--tactical-dark) 0%, var(--bg-dark) 50%, var(--patriot-blue) 100%);
+  --gradient-text: linear-gradient(45deg, var(--accent-gold), var(--patriot-red), var(--accent-orange));
+  
+  /* Shadows */
+  --shadow-text: 2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 15px rgba(255, 193, 7, 0.9), 0 0 30px rgba(255, 193, 7, 0.5);
+  --shadow-card: 0 25px 50px -12px rgba(220, 38, 38, 0.25);
+}
+
 /* === RESET & BASE STYLES === */
 * {
   box-sizing: border-box;
@@ -16,27 +55,27 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   font-family: 'Saira', system-ui, sans-serif;
-  background-color: white;
-  color: #1f2937;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
 }
 
 /* === TYPOGRAPHY === */
 h1 {
   font-size: 2.25rem;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--text-dark);
 }
 
 h2 {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--text-dark);
 }
 
 h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-dark);
 }
 
 p {
@@ -64,7 +103,7 @@ p {
 
 @keyframes glow {
   0%, 100% { box-shadow: 0 0 5px rgba(220, 38, 38, 0.5); }
-  50% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.8), 0 0 30px rgba(220, 38, 38, 0.6); }
+  50% { box-shadow: var(--shadow-glow); }
 }
 
 @keyframes floatAnimation {
@@ -89,8 +128,8 @@ p {
 
 /* === BUTTONS === */
 .btn-primary {
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-  color: white;
+  background: var(--gradient-primary);
+  color: var(--text-primary);
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
@@ -121,14 +160,14 @@ p {
 
 .btn-primary:hover {
   background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
-  box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.3), 0 10px 10px -5px rgba(220, 38, 38, 0.2);
+  box-shadow: var(--shadow-card);
   transform: translateY(-2px);
   animation: glow 2s ease-in-out infinite;
 }
 
 .btn-secondary {
-  background-color: #1e40af;
-  color: white;
+  background-color: var(--patriot-blue);
+  color: var(--text-primary);
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
@@ -146,8 +185,8 @@ p {
 }
 
 .btn-outline {
-  border: 2px solid #dc2626;
-  color: #dc2626;
+  border: 2px solid var(--patriot-red);
+  color: var(--patriot-red);
   background-color: transparent;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
@@ -159,8 +198,8 @@ p {
 }
 
 .btn-outline:hover {
-  background-color: #dc2626;
-  color: white;
+  background-color: var(--patriot-red);
+  color: var(--text-primary);
 }
 
 /* === CARD COMPONENTS === */
@@ -447,7 +486,7 @@ p {
 
 /* === UTILITIES === */
 .course-price {
-  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -456,7 +495,7 @@ p {
 }
 
 .patriotic-text {
-  background: linear-gradient(45deg, #dc2626, #ffffff, #1e40af);
+  background: var(--gradient-text);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -513,50 +552,54 @@ p {
 /* Tactical Bullets */
 .tactical-bullet::before {
   content: "▪";
-  color: #dc2626;
+  color: var(--patriot-red);
   font-weight: bold;
   margin-right: 0.5rem;
 }
 
 .tactical-bullet-blue::before {
   content: "▪";
-  color: #1d4ed8;
+  color: var(--patriot-blue);
   font-weight: bold;
   margin-right: 0.5rem;
 }
 
 .tactical-bullet-white::before {
   content: "▪";
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: bold;
   margin-right: 0.5rem;
 }
 
-/* Tactical Stars */
+/* Simple Tactical Icons - using rounded rectangles instead of stars */
+.tactical-star {
+  border-radius: 0.5rem;
+}
+
 .tactical-star::before {
-  content: "★";
-  color: #dc2626;
+  content: "●";
+  color: var(--patriot-red);
   font-weight: bold;
   margin-right: 0.5rem;
 }
 
 .tactical-star-blue::before {
-  content: "★";
-  color: #1d4ed8;
+  content: "●";
+  color: var(--patriot-blue);
   font-weight: bold;
   margin-right: 0.5rem;
 }
 
 .tactical-star-white::before {
-  content: "★";
-  color: #ffffff;
+  content: "●";
+  color: var(--text-primary);
   font-weight: bold;
   margin-right: 0.5rem;
 }
 
 .tactical-star-gold::before {
-  content: "★";
-  color: #fbbf24;
+  content: "●";
+  color: var(--accent-gold);
   font-weight: bold;
   margin-right: 0.5rem;
 }
@@ -574,23 +617,67 @@ p {
 }
 
 .tactical-list li::before {
-  content: "▪";
-  color: #dc2626;
+  content: "●";
+  color: var(--patriot-red);
   font-weight: bold;
   position: absolute;
   left: 0;
 }
 
 .tactical-list-stars li::before {
-  content: "★";
-  color: #fbbf24;
+  content: "●";
+  color: var(--accent-gold);
 }
 
-/* Star Background Effects */
+/* Simple Background Effects */
 .star-bg-top-right {
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  border-radius: 0.5rem;
 }
 
 .star-bg-bottom-left {
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  border-radius: 0.5rem;
+}
+
+/* === OPTIMIZED UTILITY CLASSES === */
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-shadow {
+  text-shadow: var(--shadow-text);
+}
+
+.bg-tactical {
+  background: var(--gradient-tactical);
+}
+
+.glow-effect {
+  box-shadow: var(--shadow-glow);
+}
+
+.card-shadow {
+  box-shadow: var(--shadow-card);
+}
+
+.tactical-border {
+  border: 2px solid var(--patriot-red);
+}
+
+.tactical-border-blue {
+  border: 2px solid var(--patriot-blue);
+}
+
+.tactical-border-gold {
+  border: 2px solid var(--accent-gold);
+}
+
+.header-border {
+  border-bottom: 1px solid rgba(250, 204, 21, 0.3);
+}
+
+.text-dark {
+  color: var(--text-dark);
 }

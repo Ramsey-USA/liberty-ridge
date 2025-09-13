@@ -33,7 +33,7 @@ export default function CourseCard({ course, featured = false, className = '' }:
             </div>
           )}
           {course.level === 'Advanced' && (
-            <div className="absolute top-4 left-4 bg-yellow-400 text-tactical-dark px-3 py-1 rounded-full text-sm font-bold">
+            <div className="absolute top-4 left-4 bg-yellow-400 text-dark px-3 py-1 rounded-full text-sm font-bold">
               {course.level}
             </div>
           )}
@@ -45,7 +45,7 @@ export default function CourseCard({ course, featured = false, className = '' }:
         <div className="space-y-4">
           {/* Title and Subtitle */}
           <div>
-            <h3 className="text-2xl font-bold text-tactical-dark group-hover:text-patriot-blue transition-colors duration-300">
+            <h3 className="text-2xl font-bold text-dark group-hover:text-patriot-blue transition-colors duration-300">
               {course.title}
             </h3>
             {course.subtitle && (

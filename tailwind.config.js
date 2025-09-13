@@ -8,22 +8,51 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'patriot-red': '#dc2626',    // Patriotic red
-        'patriot-blue': '#1e40af',   // Patriotic blue
-        'patriot-navy': '#1e3a8a',   // Dark navy
-        'tactical-dark': '#1f2937',   // Dark tactical color
-        'tactical-gray': '#111827',   // Darker gray for better readability (was #374151)
-        'tactical-light': '#f9fafb',  // Light background
+        // Primary brand colors using CSS variables
+        'patriot-red': 'var(--patriot-red)',
+        'patriot-blue': 'var(--patriot-blue)', 
+        'patriot-navy': 'var(--patriot-navy)',
+        'tactical-dark': 'var(--tactical-dark)',
+        'tactical-gray': 'var(--tactical-gray)',
+        'tactical-light': 'var(--tactical-light)',
+        
+        // Text colors
+        'text-primary': 'var(--text-primary)',
+        'text-secondary': 'var(--text-secondary)',
+        'text-description': 'var(--text-description)',
+        'text-dark': 'var(--text-dark)',
+        
+        // Background colors
+        'bg-dark': 'var(--bg-dark)',
+        'bg-tactical': 'var(--bg-tactical)',
+        'bg-light': 'var(--bg-light)',
+        
+        // Accent colors
+        'accent-gold': 'var(--accent-gold)',
+        'accent-orange': 'var(--accent-orange)',
+        'accent-yellow': 'var(--accent-yellow)',
+        
+        // Nested object for better organization
         patriot: {
-          red: '#dc2626',    // Patriotic red
-          blue: '#1e40af',   // Patriotic blue
-          navy: '#1e3a8a',   // Dark navy
+          red: 'var(--patriot-red)',
+          blue: 'var(--patriot-blue)',
+          navy: 'var(--patriot-navy)',
         },
         tactical: {
-          dark: '#1f2937',   // Dark tactical color
-          gray: '#111827',   // Darker gray for better readability (was #374151)
-          light: '#f9fafb',  // Light background
+          dark: 'var(--tactical-dark)',
+          gray: 'var(--tactical-gray)',
+          light: 'var(--tactical-light)',
         }
+      },
+      backgroundImage: {
+        'tactical': 'var(--gradient-tactical)',
+        'primary': 'var(--gradient-primary)',
+        'text-gradient': 'var(--gradient-text)',
+      },
+      boxShadow: {
+        'text': 'var(--shadow-text)',
+        'glow': 'var(--shadow-glow)',
+        'card': 'var(--shadow-card)',
       },
       fontFamily: {
         tactical: ['Saira', 'system-ui', 'sans-serif'],

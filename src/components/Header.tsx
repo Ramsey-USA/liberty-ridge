@@ -32,38 +32,33 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-xl border-b border-gray-200' 
-          : 'bg-gradient-to-r from-patriot-blue via-white to-patriot-red shadow-lg'
+          ? 'bg-tactical-dark/95 backdrop-blur-md shadow-2xl header-border' 
+          : 'bg-tactical shadow-2xl'
       }`}
     >
-      {/* Patriotic accent bar */}
-      <div className="h-1 bg-gradient-to-r from-patriot-blue via-white to-patriot-red"></div>
+      {/* Elite tactical accent bar */}
+      <div className="h-1" style={{ background: 'var(--gradient-text)' }}></div>
       
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="flex justify-between items-center h-20 sm:h-22 lg:h-24">
           {/* Enhanced Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center group">
-              {/* Tactical Shield Logo */}
-              <div className="relative h-12 w-12 mr-4">
-                <div className="absolute inset-0 bg-gradient-to-br from-patriot-red to-red-700 rounded-lg transform group-hover:scale-105 transition-transform duration-200 shadow-lg">
-                  <div className="absolute inset-1 bg-gradient-to-br from-patriot-blue to-blue-800 rounded-md">
-                    <div className="absolute inset-2 bg-white rounded-sm flex items-center justify-center">
-                      <div className="text-patriot-red font-black text-lg tracking-tighter">LR</div>
-                    </div>
+              {/* Simple Shield Logo */}
+              <div className="relative h-14 w-14 mr-4">
+                <div className="absolute inset-0 bg-gradient-to-br from-patriot-red to-red-700 rounded-lg transform group-hover:scale-105 transition-transform duration-200 shadow-2xl border-2 border-yellow-400">
+                  <div className="absolute inset-2 bg-gradient-to-br from-tactical-dark to-black rounded flex items-center justify-center">
+                    <div className="text-yellow-400 font-black text-xl tracking-tighter filter drop-shadow-lg">LR</div>
                   </div>
                 </div>
-                {/* Stars decoration */}
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full opacity-80"></div>
-                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-yellow-400 rounded-full opacity-60"></div>
               </div>
               
               <div className="flex flex-col">
-                <span className="text-xl font-black text-tactical-dark group-hover:text-patriot-red transition-colors duration-200 tracking-tight">
+                <span className="text-xl font-black text-white group-hover:text-yellow-400 transition-colors duration-200 tracking-tight filter drop-shadow-lg">
                   LIBERTY RIDGE
                 </span>
-                <span className="text-xs font-semibold text-patriot-blue uppercase tracking-widest -mt-1">
-                  Training Grounds
+                <span className="text-xs font-semibold text-yellow-400 uppercase tracking-widest -mt-1 filter drop-shadow-sm">
+                  Training Grounds LLC
                 </span>
               </div>
             </Link>
@@ -76,15 +71,15 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative group px-4 py-2 rounded-lg text-sm font-semibold text-tactical-dark hover:text-patriot-red transition-all duration-200 hover:bg-gray-50"
+                  className="relative group px-4 py-3 rounded-xl text-sm font-semibold text-white hover:text-yellow-400 transition-all duration-300 hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-yellow-400/30"
                 >
                   {item.name}
-                  {/* Tactical underline effect */}
-                  <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-patriot-blue to-patriot-red group-hover:w-full group-hover:left-0 transition-all duration-300"></div>
+                  {/* Elite tactical underline effect */}
+                  <div className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-orange-500 group-hover:w-3/4 group-hover:left-1/8 transition-all duration-300 shadow-lg"></div>
                   
-                  {/* Subtle star accent for key pages */}
-                  {(item.name === 'Courses' || item.name === 'Join Team') && (
-                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-80 transition-opacity duration-200"></div>
+                  {/* Simple dot indicators for key pages */}
+                  {(item.name === 'Courses' || item.name === 'Join Team' || item.name === 'Rankings') && (
+                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-90 transition-all duration-300"></div>
                   )}
                 </Link>
               ))}
@@ -92,18 +87,15 @@ const Header = () => {
           </div>
 
           {/* Enhanced Action Buttons */}
-          <div className="hidden lg:flex items-center space-x-3">
-            {/* Book Now Button with enhanced styling */}
+          <div className="hidden lg:flex items-center space-x-4">
+            {/* Elite Book Now Button */}
             <Link
               href="/signup"
-              className="relative group bg-gradient-to-r from-patriot-red to-red-700 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
+              className="btn-primary relative group px-8 py-4 rounded-2xl shadow-2xl hover:shadow-yellow-400/20 transition-all duration-300 transform hover:scale-105 overflow-hidden tactical-border-gold"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative flex items-center">
-                <span>BOOK NOW</span>
-                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
+              <div className="relative flex items-center space-x-2">
+                <span className="text-lg tracking-wide">BOOK NOW</span>
+                <span className="text-white text-xl">→</span>
               </div>
             </Link>
           </div>
@@ -112,7 +104,7 @@ const Header = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative group bg-tactical-dark text-white p-3 rounded-lg hover:bg-patriot-red transition-all duration-200 shadow-lg"
+              className="relative group bg-white/10 backdrop-blur-sm text-white p-3 rounded-xl hover:bg-yellow-400/20 transition-all duration-300 shadow-xl border border-white/20 hover:border-yellow-400/50"
             >
               <span className="sr-only">Open main menu</span>
               <div className="relative w-6 h-6">
@@ -126,30 +118,37 @@ const Header = () => {
 
         {/* Enhanced Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute left-0 right-0 top-full bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-2xl">
-            <div className="px-4 py-6 space-y-2 max-w-7xl mx-auto">
+          <div className="lg:hidden absolute left-0 right-0 top-full bg-tactical-dark/95 backdrop-blur-md border-t border-yellow-400/30 shadow-2xl">
+            <div className="px-4 py-6 space-y-3 max-w-7xl mx-auto">
               {navigation.map((item, index) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="group flex items-center justify-between bg-gray-50 hover:bg-gradient-to-r hover:from-patriot-blue/10 hover:to-patriot-red/10 px-4 py-3 rounded-lg text-tactical-dark hover:text-patriot-red font-semibold transition-all duration-200 border border-transparent hover:border-patriot-red/20"
+                  className="group flex items-center justify-between bg-white/10 hover:bg-yellow-400/20 backdrop-blur-sm px-6 py-4 rounded-2xl text-white hover:text-yellow-400 font-semibold transition-all duration-300 border border-white/20 hover:border-yellow-400/50 shadow-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <span>{item.name}</span>
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200 text-patriot-red opacity-0 group-hover:opacity-100" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                  </svg>
+                  <span className="flex items-center space-x-3">
+                    {/* Simple dot indicators for special pages */}
+                    {(item.name === 'Courses' || item.name === 'Join Team' || item.name === 'Rankings') && (
+                      <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    )}
+                    <span>{item.name}</span>
+                  </span>
+                  <span className="text-white text-lg">→</span>
                 </Link>
               ))}
               
-              {/* Mobile action buttons */}
-              <div className="pt-4 space-y-3">
+              {/* Elite mobile action buttons */}
+              <div className="pt-6 space-y-4">
                 <Link
                   href="/signup"
-                  className="block bg-gradient-to-r from-patriot-red to-red-700 text-white font-bold px-6 py-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300"
+                  className="btn-primary block px-8 py-5 rounded-2xl shadow-2xl text-center hover:shadow-yellow-400/20 transition-all duration-300 tactical-border-gold"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  BOOK TRAINING NOW
+                  <span className="flex items-center justify-center space-x-3">
+                    <span className="text-lg">BOOK TRAINING</span>
+                    <span className="text-white text-xl">→</span>
+                  </span>
                 </Link>
               </div>
             </div>

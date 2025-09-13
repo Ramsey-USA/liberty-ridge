@@ -354,7 +354,7 @@ export const joinHero = {
   title: 'JOIN THE ELITE',
   subtitle: 'Veterans Building Something Greater',
   description: 'Be part of an elite team dedicated to providing world-class tactical training while serving the veteran community and beyond.',
-  backgroundGradient: 'from-patriot-red via-tactical-dark to-patriot-blue'
+  backgroundGradient: 'from-slate-100 via-gray-50 to-white'
 };
 
 // Page content

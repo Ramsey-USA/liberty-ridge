@@ -6,7 +6,6 @@ interface BulletHeroProps {
   title: string;
   subtitle: string;
   description?: string;
-  backgroundGradient?: string;
 }
 
 interface Bullet {
@@ -18,8 +17,7 @@ interface Bullet {
 const BulletHero: React.FC<BulletHeroProps> = ({ 
   title, 
   subtitle, 
-  description,
-  backgroundGradient = "from-tactical-dark via-patriot-navy to-tactical-dark"
+  description
 }) => {
   const [bullet, setBullet] = useState<Bullet>({ x: -50, isVisible: false, hasImpacted: false });
   const [targetHit, setTargetHit] = useState(false);
@@ -119,28 +117,31 @@ const BulletHero: React.FC<BulletHeroProps> = ({
   return (
     <section 
       ref={containerRef}
-      className={`relative h-96 flex items-center justify-center bg-gradient-to-r ${backgroundGradient} overflow-hidden pt-20 sm:pt-22 lg:pt-24`}
+      className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center bg-tactical overflow-hidden pt-28 sm:pt-32 lg:pt-36"
     >
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:50px_50px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_30%,_rgba(255,255,255,0.1)_30.5%,_rgba(255,255,255,0.1)_35%,_transparent_35.5%)]"></div>
       </div>
+
+      {/* Epic Background Effects */}
+      <div className="absolute top-10 right-10 w-96 h-96 bg-gradient-to-bl from-patriot-red/20 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-tr from-patriot-blue/20 to-transparent rounded-full blur-3xl"></div>
 
       {/* Muzzle Flash */}
       {showMuzzleFlash && (
         <div className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20">
           <div 
-            className="w-16 h-8 bg-gradient-radial rounded-full opacity-90"
+            className="w-16 h-8 rounded-full opacity-90 glow-effect"
             style={{
-              boxShadow: '0 0 40px rgba(255, 193, 7, 0.9), 0 0 80px rgba(255, 193, 7, 0.5)',
-              background: 'radial-gradient(ellipse, #fbbf24 0%, #f97316 50%, #dc2626 100%)',
+              background: 'radial-gradient(ellipse, var(--accent-yellow) 0%, var(--accent-orange) 50%, var(--patriot-red) 100%)',
               filter: 'blur(1px)',
             }}
           />
           <div 
-            className="absolute inset-0 w-16 h-8 bg-gradient-radial rounded-full opacity-60"
+            className="absolute inset-0 w-16 h-8 rounded-full opacity-60"
             style={{
-              background: 'radial-gradient(ellipse, #ffffff 0%, #fbbf24 40%, transparent 70%)',
+              background: 'radial-gradient(ellipse, #ffffff 0%, var(--accent-yellow) 40%, transparent 70%)',
             }}
           />
         </div>
@@ -158,10 +159,9 @@ const BulletHero: React.FC<BulletHeroProps> = ({
         >
           {/* Bullet */}
           <div 
-            className="w-4 h-2 rounded-full shadow-lg"
+            className="w-4 h-2 rounded-full shadow-lg glow-effect"
             style={{
-              background: 'linear-gradient(to right, #facc15, #f97316)',
-              boxShadow: '0 0 15px rgba(255, 193, 7, 0.9), 0 0 30px rgba(255, 193, 7, 0.5)',
+              background: 'linear-gradient(to right, var(--accent-gold), var(--accent-orange))',
             }}
           />
           
@@ -233,20 +233,19 @@ const BulletHero: React.FC<BulletHeroProps> = ({
         </div>
       </div>
 
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-black opacity-40"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-patriot-blue/20 via-transparent to-patriot-red/20"></div>
-      
+
       {/* Content */}
-      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 pr-32">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-          {title}
+      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 pr-32 py-12 sm:py-16 lg:py-20">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-2xl text-shadow">
+          <span className="text-gradient">
+            {title}
+          </span>
         </h1>
-        <h2 className="text-xl md:text-3xl font-semibold mb-6 text-gray-200">
+        <h2 className="text-xl md:text-3xl font-semibold mb-8 text-yellow-400 drop-shadow-lg text-shadow">
           {subtitle}
         </h2>
         {description && (
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto drop-shadow-md font-medium leading-relaxed text-shadow">
             {description}
           </p>
         )}
