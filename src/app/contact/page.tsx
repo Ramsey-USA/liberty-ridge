@@ -22,14 +22,11 @@ export default function ContactPage() {
       <Header />
       
       {/* Bullet Hero Section */}
-      <BulletHero 
+      <BulletHero
         title={contactHero.title}
         subtitle={contactHero.subtitle}
         description={contactHero.description}
-        backgroundGradient={contactHero.backgroundGradient}
-      />
-
-      {/* Enhanced Contact Information */}
+      />      {/* Enhanced Contact Information */}
       <section className="py-20 bg-gradient-to-br from-tactical-dark via-gray-900 to-tactical-dark relative overflow-hidden">
         {/* Elite Tactical Background Effects */}
         <div className="absolute inset-0 opacity-20">

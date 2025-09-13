@@ -13,11 +13,10 @@ export default function Home() {
       <Header />
       
       {/* Enhanced Bullet Hero Section */}
-      <BulletHero 
+            <BulletHero
         title="LIBERTY RIDGE TRAINING GROUNDS"
-        subtitle="Elite Tactical Training by Army Veteran Zach Gaudette"
-        description="Master tactical skills with military-grade training, professional instruction, and proven safety protocols for civilian protection."
-        backgroundGradient="from-slate-100 via-white to-gray-100"
+        subtitle="Elite Tactical Training • Veteran Excellence • Combat-Ready Skills"
+        description="Master tactical fundamentals through proven military methodologies and elite-level firearm training programs designed for serious practitioners."
       />
 
       {/* Enhanced Call-to-Action Banner */}

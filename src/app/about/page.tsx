@@ -13,7 +13,6 @@ export default function AboutPage() {
         title="ABOUT LIBERTY RIDGE"
         subtitle="Founded on Military Values & Veteran Expertise"
         description="Dedicated to providing exceptional tactical and firearm safety education rooted in honor, integrity, and service."
-        backgroundGradient="from-gray-100 via-slate-50 to-white"
       />
 
       {/* Enhanced Founder Section */}

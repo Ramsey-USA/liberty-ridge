@@ -11,11 +11,10 @@ export default function CoursesPage() {
       <Header />
       
       {/* Bullet Hero Section */}
-      <BulletHero 
-        title="TRAINING COURSES"
-        subtitle="Professional Firearm Safety & Tactical Training"
-        description="Comprehensive courses designed for all skill levels, from beginners to advanced practitioners."
-        backgroundGradient="from-white via-gray-50 to-slate-100"
+            <BulletHero
+        title="TACTICAL TRAINING COURSES"
+        subtitle="Elite-Level Firearm & Tactical Education Programs"
+        description="Professional-grade courses designed for serious practitioners seeking advanced tactical skills and firearms proficiency."
       />
 
       {/* Enhanced Course Listing */}

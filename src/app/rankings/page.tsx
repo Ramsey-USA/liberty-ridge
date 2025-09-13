@@ -21,14 +21,11 @@ export default function RankingsPage() {
       <Header />
       
       {/* Bullet Hero Section */}
-      <BulletHero 
+      <BulletHero
         title={rankingsHero.title}
         subtitle={rankingsHero.subtitle}
         description={rankingsHero.description}
-        backgroundGradient={rankingsHero.backgroundGradient}
-      />
-
-      {/* Elite Team Rankings & Warrior Showcase */}
+      />      {/* Elite Team Rankings & Warrior Showcase */}
       <section className="py-24 bg-gradient-to-br from-tactical-dark via-black to-patriot-blue relative overflow-hidden">
         {/* Epic Background Effects */}
         <div className="absolute inset-0 opacity-10">

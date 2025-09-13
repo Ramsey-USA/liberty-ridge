@@ -77,7 +77,6 @@ export default function SignupPage() {
         title="COURSE REGISTRATION"
         subtitle="Begin Your Tactical Excellence Journey"
         description="Take the first step toward professional training and tactical mastery."
-        backgroundGradient="from-white via-gray-50 to-slate-100"
       />
 
       {/* Registration Form */}

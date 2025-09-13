@@ -50,11 +50,10 @@ export default function TeamPage() {
       <Header />
       
       {/* Elite Team Hero Section */}
-      <BulletHero
-        title="OUR ELITE OPERATORS"
-        subtitle="Veterans Leading Veterans"
-        description="Meet the elite team of military veterans bringing decades of combat experience and tactical expertise to civilian training operations."
-        backgroundGradient="from-slate-200 via-gray-100 to-white"
+            <BulletHero
+        title="OUR ELITE TEAM"
+        subtitle="Veteran Leadership & Tactical Excellence"
+        description="Meet our dedicated team of military veterans and tactical experts committed to providing world-class training and education."
       />
 
       {/* Stats Section */}

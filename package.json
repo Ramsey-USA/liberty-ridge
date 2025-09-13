@@ -9,10 +9,12 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next build && next export",
-    "deploy": "npm run export && firebase deploy",
-    "firebase:init": "firebase init",
-    "firebase:deploy": "firebase deploy",
-    "firebase:serve": "firebase serve"
+    "deploy": "npm run build && npx firebase deploy",
+    "deploy:script": "./deploy.sh",
+    "firebase:init": "npx firebase init",
+    "firebase:deploy": "npx firebase deploy",
+    "firebase:serve": "npx firebase serve",
+    "firebase:login": "npx firebase login"
   },
   "keywords": [
     "tactical",

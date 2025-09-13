@@ -18,14 +18,11 @@ export default function FAQPage() {
       <Header />
       
       {/* Bullet Hero Section */}
-      <BulletHero 
+      <BulletHero
         title={faqHero.title}
         subtitle={faqHero.subtitle}
         description={faqHero.description}
-        backgroundGradient={faqHero.backgroundGradient}
-      />
-
-      {/* Quick Navigation */}
+      />      {/* Quick Navigation */}
       <section className="py-24 bg-gradient-to-br from-tactical-dark via-black to-patriot-blue relative overflow-hidden">
         {/* Epic Background Effects */}
         <div className="absolute inset-0 opacity-10">
