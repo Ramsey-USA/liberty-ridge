@@ -1,21 +1,19 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BulletHero from '@/components/BulletHero';
 
 export default function RankingsPage() {
   return (
     <div className="min-h-screen">
       <Header />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-tactical-dark to-patriot-navy text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">National Rankings</h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            Zach Gaudette&apos;s competitive achievements in national long-range shooting competitions 
-            demonstrate the level of expertise you&apos;ll receive in training.
-          </p>
-        </div>
-      </section>
+      {/* Bullet Hero Section */}
+      <BulletHero 
+        title="NATIONAL RANKINGS"
+        subtitle="Competitive Excellence in Long-Range Shooting"
+        description="Zach Gaudette's achievements demonstrate the expertise you'll receive in training."
+        backgroundGradient="from-patriot-red via-tactical-dark to-patriot-blue"
+      />
 
       {/* Current Ranking */}
       <section className="py-20 bg-white">

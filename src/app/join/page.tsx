@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BulletHero from '@/components/BulletHero';
 import Link from 'next/link';
 
 export default function JoinPage() {
@@ -7,16 +8,13 @@ export default function JoinPage() {
     <div className="min-h-screen">
       <Header />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-tactical-dark to-patriot-navy text-white py-20">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold mb-6">Join Our Elite Team</h1>
-          <p className="text-xl mb-8">
-            Calling all military veterans who share our commitment to excellence, 
-            tactical precision, and serving others through professional training.
-          </p>
-        </div>
-      </section>
+      {/* Bullet Hero Section */}
+      <BulletHero 
+        title="JOIN OUR ELITE TEAM"
+        subtitle="Calling All Military Veterans"
+        description="Share our commitment to excellence, tactical precision, and serving others through professional training."
+        backgroundGradient="from-tactical-dark to-patriot-navy"
+      />
 
       {/* Requirements Section */}
       <section className="py-20 bg-white">

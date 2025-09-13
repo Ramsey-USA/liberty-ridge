@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BulletHero from '@/components/BulletHero';
 import Link from 'next/link';
 
 export default function LiveTrainingPage() {
@@ -7,23 +8,21 @@ export default function LiveTrainingPage() {
     <div className="min-h-screen">
       <Header />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-patriot-blue to-patriot-red text-white py-20">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold mb-6">Live Fire Training</h1>
-          <p className="text-xl mb-8">
-            Phase Three: Hands-on live fire training sessions coming soon to Liberty Ridge Training Grounds.
-          </p>
-          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 inline-block">
-            <span className="text-2xl font-bold">Coming Phase 3</span>
-          </div>
-        </div>
-      </section>
+      {/* Bullet Hero Section */}
+      <BulletHero 
+        title="LIVE FIRE TRAINING"
+        subtitle="Phase Three: Hands-On Training Sessions"
+        description="Coming soon to Liberty Ridge Training Grounds - Real-world tactical application."
+        backgroundGradient="from-patriot-blue to-patriot-red"
+      />
 
       {/* What's Coming Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
+            <div className="bg-patriot-red text-white p-4 rounded-lg inline-block mb-6">
+              <span className="text-lg font-bold">COMING PHASE 3</span>
+            </div>
             <h2 className="text-4xl font-bold mb-6 text-tactical-dark">Future Training Capabilities</h2>
             <p className="text-xl text-tactical-gray max-w-3xl mx-auto">
               Once land is acquired, we'll expand to offer comprehensive live fire training sessions.

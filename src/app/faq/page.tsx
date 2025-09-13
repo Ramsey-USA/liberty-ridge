@@ -1,15 +1,22 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BulletHero from '@/components/BulletHero';
 
 export default function FAQPage() {
   return (
     <div className="min-h-screen">
       <Header />
       
+      {/* Bullet Hero Section */}
+      <BulletHero 
+        title="FAQ"
+        subtitle="Frequently Asked Questions"
+        description="Find answers to common questions about our training courses and safety protocols."
+        backgroundGradient="from-tactical-dark via-patriot-blue to-tactical-dark"
+      />
+      
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-center mb-12 text-tactical-dark">Frequently Asked Questions</h1>
-          
           {/* FAQ Items */}
           <div className="space-y-8">
             <div className="tactical-card">

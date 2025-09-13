@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BulletHero from '@/components/BulletHero';
 import Link from 'next/link';
 
 export default function ContactPage() {
@@ -7,16 +8,13 @@ export default function ContactPage() {
     <div className="min-h-screen">
       <Header />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-patriot-blue to-patriot-red text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            Ready to start your tactical training journey? Get in touch with us today. 
-            We&apos;re here to answer your questions and help you choose the right course.
-          </p>
-        </div>
-      </section>
+      {/* Bullet Hero Section */}
+      <BulletHero 
+        title="CONTACT US"
+        subtitle="Ready to Start Your Training Journey?"
+        description="Get in touch today. We're here to answer questions and help you choose the right course."
+        backgroundGradient="from-patriot-blue to-patriot-red"
+      />
 
       {/* Contact Information */}
       <section className="py-20 bg-white">

@@ -2,6 +2,7 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BulletHero from '@/components/BulletHero';
 import { useState } from 'react';
 // import { enrollStudent } from '@/lib/firestore'; // Uncomment when Firebase is configured
 
@@ -71,16 +72,13 @@ export default function SignupPage() {
     <div className="min-h-screen">
       <Header />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-patriot-blue to-patriot-red text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Course Registration</h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            Take the first step toward tactical excellence. Register for one of our 
-            professional training courses and begin your journey today.
-          </p>
-        </div>
-      </section>
+      {/* Bullet Hero Section */}
+      <BulletHero 
+        title="COURSE REGISTRATION"
+        subtitle="Begin Your Tactical Excellence Journey"
+        description="Take the first step toward professional training and tactical mastery."
+        backgroundGradient="from-patriot-blue to-patriot-red"
+      />
 
       {/* Registration Form */}
       <section className="py-20 bg-white">

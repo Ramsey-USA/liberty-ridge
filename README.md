@@ -74,13 +74,13 @@ An overview of the Phase One courses.
 
 Visually distinct cards for each course with a brief description.
 
-Zach's National Ranking Section:
+Zach's Regional Ranking Section:
 
-A featured section highlighting his current national ranking.
+A featured section highlighting his current 12th place regional ranking in long-range shooting competitions.
 
-A brief statement on his long-range shooting background.
+A brief statement on his long-range shooting background and that he is in his first year of competitive shooting.
 
-A link to the dedicated "National Rankings" page for more details.
+A link to the dedicated "Rankings" page for more details.
 
 Testimonials/Trust Section:
 
@@ -109,7 +109,7 @@ Join the Team (/join): A page dedicated to military veterans who are interested 
 
 Team (/team): A page to introduce Zach's team members and their specialized skills in medical and evacuation planning.
 
-National Rankings (/rankings): A page to track Zach's progress and achievements in national long-range shooting competitions.
+National Rankings (/rankings): A page to track Zach's progress and achievements in regional and national long-range shooting competitions, including his 12th place regional ranking achieved in his first year of competition.
 
 About Us (/about): A more in-depth look at Zach's background, the company's philosophy, and a team bio.
 
