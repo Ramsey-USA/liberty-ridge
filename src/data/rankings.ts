@@ -60,6 +60,24 @@ export interface UpcomingCompetition {
   goals: string[];
 }
 
+export interface TeamMember {
+  id: string;
+  name: string;
+  title: string;
+  rank: number;
+  competition: string;
+  avatar: string;
+  stats: {
+    accuracy: number;
+    maxDistance: number;
+    competitions: number;
+    topPercentage: number;
+  };
+  achievements: string[];
+  specialty: string;
+  gradient: string;
+}
+
 // Current ranking data
 export const currentRanking: RankingData = {
   position: 12,
@@ -77,16 +95,16 @@ export const currentRanking: RankingData = {
 
 // Hero section data
 export const rankingsHero = {
-  title: "NATIONAL RANKINGS",
-  subtitle: "Competitive Excellence in Long-Range Shooting",
-  description: "Zach Gaudette's achievements demonstrate the expertise you'll receive in training.",
+  title: "ELITE TEAM RANKINGS",
+  subtitle: "Meet Our Champion Competitors",
+  description: "Our elite team of regional champions demonstrates the expertise and competitive excellence you'll develop at Liberty Ridge Training Grounds.",
   backgroundGradient: "from-patriot-red via-tactical-dark to-patriot-blue"
 };
 
 // Page content
 export const pageContent = {
   currentRanking: {
-    title: "Current National Ranking",
+    title: "Current Regional Ranking",
     lastUpdated: "September 2024"
   }
 };
@@ -214,4 +232,76 @@ export const competitionNavLinks = [
   { href: "/contact", text: "📧 Get Competition Updates", style: "primary" },
   { href: "/courses", text: "🎯 Train with Zach", style: "secondary" },
   { href: "/team", text: "👥 Meet the Team", style: "accent" }
+];
+
+// Elite team members
+export const teamMembers: TeamMember[] = [
+  {
+    id: "zach",
+    name: "ZACH GAUDETTE",
+    title: "LEAD INSTRUCTOR & CHAMPION",
+    rank: 12,
+    competition: "Pacific Northwest Long-Range Championship",
+    avatar: "🎯",
+    stats: {
+      accuracy: 95,
+      maxDistance: 1200,
+      competitions: 8,
+      topPercentage: 6
+    },
+    achievements: ["Competition Dominance", "Tactical Mastery", "Precision Legend"],
+    specialty: "Long-Range Precision & Tactical Training",
+    gradient: "from-yellow-600 via-red-600 to-orange-600"
+  },
+  {
+    id: "sarah",
+    name: "SARAH CHEN",
+    title: "PRECISION RIFLE SPECIALIST",
+    rank: 18,
+    competition: "Western States Championship",
+    avatar: "🏹",
+    stats: {
+      accuracy: 92,
+      maxDistance: 1000,
+      competitions: 6,
+      topPercentage: 8
+    },
+    achievements: ["Rapid Fire Mastery", "Weather Adaptation", "Technical Excellence"],
+    specialty: "Dynamic Shooting & Environmental Training",
+    gradient: "from-purple-600 via-pink-600 to-red-600"
+  },
+  {
+    id: "marcus",
+    name: "MARCUS TORRES",
+    title: "TACTICAL OPERATIONS EXPERT",
+    rank: 24,
+    competition: "Regional Tactical Challenge",
+    avatar: "⚔️",
+    stats: {
+      accuracy: 89,
+      maxDistance: 800,
+      competitions: 5,
+      topPercentage: 12
+    },
+    achievements: ["Combat Proven", "Leadership Excellence", "Multi-Gun Mastery"],
+    specialty: "Close Quarters & Tactical Movement",
+    gradient: "from-green-600 via-blue-600 to-teal-600"
+  },
+  {
+    id: "alex",
+    name: "ALEX RODRIGUEZ",
+    title: "RISING CHAMPION",
+    rank: 35,
+    competition: "Northwest Precision Series",
+    avatar: "🔥",
+    stats: {
+      accuracy: 87,
+      maxDistance: 900,
+      competitions: 4,
+      topPercentage: 15
+    },
+    achievements: ["Rapid Improvement", "Youth Excellence", "Future Elite"],
+    specialty: "Fundamentals & Competition Prep",
+    gradient: "from-orange-600 via-yellow-600 to-red-600"
+  }
 ];
