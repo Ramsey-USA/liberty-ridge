@@ -44,11 +44,23 @@ const Header = () => {
           {/* Enhanced Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center group">
-              {/* Simple Shield Logo */}
+              {/* Tactical Reticle Logo */}
               <div className="relative h-14 w-14 mr-4">
-                <div className="absolute inset-0 bg-gradient-to-br from-patriot-red to-red-700 rounded-lg transform group-hover:scale-105 transition-transform duration-200 shadow-2xl border-2 border-yellow-400">
-                  <div className="absolute inset-2 bg-gradient-to-br from-tactical-dark to-black rounded flex items-center justify-center">
-                    <div className="text-yellow-400 font-black text-xl tracking-tighter filter drop-shadow-lg">LR</div>
+                {/* Outer reticle ring */}
+                <div className="absolute inset-0 bg-gradient-to-br from-patriot-red to-red-700 rounded-full transform group-hover:scale-105 transition-transform duration-200 shadow-2xl border-2 border-yellow-400">
+                  {/* Inner scope background */}
+                  <div className="absolute inset-1 bg-gradient-to-br from-tactical-dark to-black rounded-full flex items-center justify-center">
+                    {/* Crosshairs */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      {/* Horizontal crosshair */}
+                      <div className="absolute w-full h-0.5 bg-yellow-400/60"></div>
+                      {/* Vertical crosshair */}
+                      <div className="absolute h-full w-0.5 bg-yellow-400/60"></div>
+                      {/* Center dot */}
+                      <div className="absolute w-1 h-1 bg-yellow-400 rounded-full"></div>
+                    </div>
+                    {/* Letters */}
+                    <div className="text-yellow-400 font-black text-xl tracking-tighter filter drop-shadow-lg relative z-10">LR</div>
                   </div>
                 </div>
               </div>
