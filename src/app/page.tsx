@@ -11,68 +11,86 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       
-      {/* Hero Section with Image Background */}
+      {/* Optimized Hero Section with Enhanced Color Scheme */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Image Background */}
+        {/* Enhanced Image Background */}
         <div className="absolute inset-0">
           <img 
             src="/we-want-you.jpg" 
-            alt="Liberty Ridge Training Grounds"
+            alt="Liberty Ridge Training Grounds - Elite Tactical Training"
             className="w-full h-full object-cover"
           />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          {/* Optimized overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70"></div>
         </div>
         
-        {/* Optional: Geometric Color Accents (can be removed if not needed) */}
-        <div className="absolute top-0 left-0 w-1/3 h-full bg-red-600/20"></div>
-        <div className="absolute top-0 right-0 w-1/4 h-2/3 bg-blue-600/20"></div>
-        <div className="absolute bottom-0 right-0 w-1/2 h-1/3 bg-white/10"></div>
+        {/* Enhanced Patriotic Color Accents using CSS Variables */}
+        <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-b from-patriot-red/30 via-patriot-red/20 to-transparent"></div>
+        <div className="absolute top-0 right-0 w-1/4 h-2/3 bg-gradient-to-b from-patriot-blue/30 via-patriot-blue/20 to-transparent"></div>
+        <div className="absolute bottom-0 right-0 w-1/2 h-1/3 bg-gradient-to-t from-white/20 via-white/10 to-transparent"></div>
         
-        {/* Content */}
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20">
-          <h1 className="text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-none tracking-tight">
-            <span className="text-white drop-shadow-2xl">
-              LIBERTY RIDGE TRAINING GROUNDS
+        {/* Enhanced Content with Better Typography */}
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-none tracking-tight">
+            <span className="text-white drop-shadow-2xl filter">
+              LIBERTY RIDGE
+            </span>
+            <br />
+            <span className="text-gradient bg-gradient-to-r from-accent-gold via-patriot-red to-patriot-blue bg-clip-text text-transparent">
+              TRAINING GROUNDS
             </span>
           </h1>
-          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-8 text-red-500 drop-shadow-lg leading-tight tracking-wide">
-            Practical Tactical Training • Veteran Excellence • Combat-Ready Skills
+          <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-8 leading-tight tracking-wide">
+            <span className="text-accent-gold drop-shadow-lg">Practical Tactical Training</span>
+            <span className="text-white mx-2">•</span>
+            <span className="text-patriot-blue drop-shadow-lg">Veteran Excellence</span>
+            <span className="text-white mx-2">•</span>
+            <span className="text-patriot-red drop-shadow-lg">Combat-Ready Skills</span>
           </h2>
-          <p className="text-lg lg:text-xl xl:text-2xl text-white max-w-3xl mx-auto drop-shadow-md font-medium leading-relaxed">
+          <p className="text-lg sm:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto drop-shadow-md font-medium leading-relaxed mb-12">
             Master tactical fundamentals through proven military methodologies and elite-level firearm training programs designed for serious practitioners.
           </p>
+          
+          {/* Enhanced Call-to-Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/signup" className="btn-primary bg-patriot-red hover:bg-primary-hover text-white font-bold py-4 px-8 text-lg shadow-tactical transform hover:scale-105 transition-all duration-300">
+              Start Training Today
+            </Link>
+            <Link href="/courses" className="btn-secondary border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-surface-tactical font-bold py-4 px-8 text-lg shadow-md transition-all duration-300">
+              View Courses
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Enhanced Call-to-Action Banner with Optimized Variables */}
-      <section className="section-padding-enhanced bg-surface-tactical text-text-inverse relative overflow-hidden">
-        {/* Professional Background Pattern */}
-        <div className="absolute inset-0 bg-gradient-to-r from-surface-tactical via-gray-800 to-surface-tactical"></div>
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_48%,_rgba(255,255,255,0.05)_49%,_rgba(255,255,255,0.05)_51%,_transparent_52%)] bg-[length:20px_20px]"></div>
+      {/* Enhanced Call-to-Action Banner with Optimized Color Scheme */}
+      <section className="section-padding-enhanced relative overflow-hidden" style={{ backgroundColor: 'rgb(var(--surface-tactical))' }}>
+        {/* Enhanced Professional Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-r from-surface-tactical via-patriot-navy to-surface-tactical"></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_48%,_rgba(var(--accent-gold),0.1)_49%,_rgba(var(--accent-gold),0.1)_51%,_transparent_52%)] bg-[length:20px_20px]"></div>
         </div>
         
         <div className="container-enhanced relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="section-badge-enhanced bg-surface-elevated/10 backdrop-blur-sm border-border/20 mb-8">
+            <div className="section-badge-enhanced bg-surface-elevated/20 backdrop-blur-sm border-accent-gold/30 mb-8">
               <div className="icon icon-sm text-accent-gold icon-star"></div>
-              <span className="text-text-inverse font-semibold text-sm tracking-wide uppercase">Elite Training Available</span>
+              <span className="font-semibold text-sm tracking-wide uppercase" style={{ color: 'rgb(var(--accent-gold))' }}>Elite Training Available</span>
               <div className="icon icon-sm text-accent-gold icon-star"></div>
             </div>
           
-            <h3 className="heading-primary text-text-inverse mb-6">
+            <h3 className="heading-primary mb-6" style={{ color: 'rgb(var(--text-inverse))' }}>
               Ready to Master Tactical Excellence?
             </h3>
-            <p className="text-enhanced text-text-inverse/90 mb-10 max-w-3xl mx-auto">
-              Join 100+ trained students in professional firearm safety and tactical training.
+            <p className="text-enhanced mb-10 max-w-3xl mx-auto" style={{ color: 'rgba(var(--text-inverse), 0.9)' }}>
+              Join 100+ trained students in professional firearm safety and tactical training programs that deliver real results.
             </p>
           
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link href="/signup" className="btn-primary shadow-tactical text-lg px-8 py-4">
+              <Link href="/signup" className="btn-primary bg-patriot-red hover:bg-primary-hover shadow-tactical text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
                 Start Training Today
               </Link>
-              <Link href="/courses" className="btn-secondary bg-transparent text-text-inverse border-text-inverse hover:bg-text-inverse hover:text-surface-tactical text-lg px-8 py-4">
+              <Link href="/courses" className="btn-secondary bg-transparent border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-surface-tactical text-lg px-8 py-4 transition-all duration-300">
                 View All Courses
               </Link>
             </div>
@@ -80,31 +98,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enhanced About Section with Optimized Variables */}
-      <section className="section-padding-enhanced bg-background">
+      {/* Enhanced About Section with Optimized Color Scheme */}
+      <section className="section-padding-enhanced" style={{ backgroundColor: 'rgb(var(--background))' }}>
         <div className="container-enhanced">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="section-badge-enhanced mb-8 bg-surface-elevated border-border">
-                <div className="icon icon-xs text-primary icon-shield"></div>
-                <span className="text-text-secondary font-semibold text-sm tracking-wide uppercase">Veteran Leadership</span>
+              <div className="section-badge-enhanced mb-8 bg-white border-2 border-gray-200 px-4 py-2 rounded-lg inline-flex items-center space-x-2">
+                <div className="icon icon-xs text-patriot-red icon-shield"></div>
+                <span className="text-gray-700 font-semibold text-sm tracking-wide uppercase">Veteran Leadership</span>
               </div>
               
-              <h2 className="heading-primary mb-6">
+              <h2 className="text-4xl lg:text-5xl font-black mb-6 text-gray-900 leading-tight">
                 Meet Your Liberty Ridge Instructor
               </h2>
-              <h3 className="heading-tertiary mb-6">
+              <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-patriot-red">
                 Zach Gaudette - U.S. Army Veteran
               </h3>
               
-              <p className="text-enhanced mb-6">
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                 Led by founder and owner Zach Gaudette, a dedicated U.S. Army veteran 
                 with extensive experience in tactical training and firearm safety. 
                 Zach brings military discipline and expertise to civilian training, 
                 ensuring the highest standards of safety and professionalism.
               </p>
               
-              <p className="text-body mb-8">
+              <p className="text-gray-600 mb-8 leading-relaxed">
                 Proudly married and father to a wonderful son, 
                 Zach understands the importance of personal protection and family safety. 
                 His passion for training extends beyond the classroom to real-world application.
@@ -336,19 +354,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enhanced Courses Section with Optimized Variables */}
-      <section className="section-padding-enhanced bg-surface-elevated">
+      {/* Enhanced Courses Section with Optimized Color Scheme */}
+      <section className="section-padding-enhanced bg-gray-100">
         <div className="container-enhanced">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="section-badge-enhanced mx-auto mb-6 bg-background border-border">
-              <div className="icon icon-xs text-primary icon-target"></div>
-              <span className="text-text-secondary font-semibold text-sm tracking-wide uppercase">Training Programs</span>
+            <div className="section-badge-enhanced mx-auto mb-6 bg-white border-2 border-gray-200 px-4 py-2 rounded-lg inline-flex items-center space-x-2">
+              <div className="icon icon-xs text-patriot-red icon-target"></div>
+              <span className="text-gray-700 font-semibold text-sm tracking-wide uppercase">Training Programs</span>
             </div>
             
-            <h2 className="heading-primary mb-4">
+            <h2 className="text-4xl lg:text-5xl font-black mb-4 text-gray-900 leading-tight">
               Master Every Shooting Discipline
             </h2>
-            <p className="text-enhanced">
+            <p className="text-lg text-gray-700 leading-relaxed">
               From precision long-range shooting to tactical pistol training, our comprehensive 
               courses are designed to elevate your skills under expert veteran instruction.
             </p>
@@ -517,19 +535,19 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>      {/* Enhanced Core Values Section with Optimized Variables */}
-      <section className="section-padding-enhanced bg-background">
+      </section>      {/* Enhanced Core Values Section with Optimized Color Scheme */}
+      <section className="section-padding-enhanced" style={{ backgroundColor: 'rgb(var(--background))' }}>
         <div className="container-enhanced">
           <div className="text-center mb-12">
-            <div className="section-badge-enhanced mx-auto mb-6 bg-surface-elevated border-border">
-              <div className="icon icon-xs text-primary icon-shield"></div>
-              <span className="text-text-secondary font-semibold text-sm tracking-wide uppercase">Our Values</span>
+            <div className="section-badge-enhanced mx-auto mb-6 bg-white border-2 border-gray-200 px-4 py-2 rounded-lg inline-flex items-center space-x-2">
+              <div className="icon icon-xs text-patriot-red icon-shield"></div>
+              <span className="text-gray-700 font-semibold text-sm tracking-wide uppercase">Our Values</span>
             </div>
             
-            <h2 className="heading-primary mb-4">
+            <h2 className="text-4xl lg:text-5xl font-black mb-4 text-gray-900 leading-tight">
               Built on Military Principles
             </h2>
-            <p className="text-enhanced max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Every aspect of our training is grounded in proven military values 
               and time-tested principles that build character and competence.
             </p>
@@ -537,9 +555,9 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center group">
-              <div className="bg-surface-elevated border border-border p-6 rounded-lg h-full transition-all duration-300 group-hover:border-primary group-hover:shadow-md">
-                <div className="icon icon-3xl text-primary mb-4 mx-auto icon-shield group-hover:scale-110 transition-transform duration-300"></div>
-                <h3 className="heading-card mb-3 text-text-primary">Safety First</h3>
+              <div className="bg-white border-2 border-gray-200 p-6 rounded-lg h-full transition-all duration-300 group-hover:border-patriot-red group-hover:shadow-lg hover:scale-105">
+                <div className="icon icon-3xl text-patriot-red mb-4 mx-auto icon-shield group-hover:scale-110 transition-transform duration-300"></div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Safety First</h3>
                 <p className="text-body text-sm">
                   Unwavering commitment to safety protocols and responsible firearm handling in every training session.
                 </p>
@@ -897,58 +915,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enhanced Final Call to Action with Optimized Variables */}
-      <section className="section-padding-enhanced bg-surface-tactical text-text-inverse relative overflow-hidden">
-        {/* Enhanced gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-surface-tactical via-surface-tactical/95 to-surface-tactical/90"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+      {/* Enhanced Final Call to Action with Optimized Color Scheme */}
+      <section className="section-padding-enhanced relative overflow-hidden" style={{ backgroundColor: 'rgb(var(--surface-tactical))' }}>
+        {/* Enhanced patriotic gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-patriot-navy via-surface-tactical to-patriot-red/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+        
+        {/* Tactical accent effects */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-gold/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-patriot-red/10 rounded-full blur-3xl"></div>
         
         <div className="container-enhanced text-center relative z-10">
-          <div className="section-badge-enhanced mx-auto mb-8 bg-surface-elevated border-border-tactical">
+          <div className="section-badge-enhanced mx-auto mb-8 bg-surface-elevated/20 backdrop-blur-sm border-accent-gold/30">
             <div className="icon icon-xs text-accent-gold icon-star"></div>
-            <span className="text-text-secondary font-semibold text-sm tracking-wide uppercase">Start Training</span>
+            <span className="font-semibold text-sm tracking-wide uppercase" style={{ color: 'rgb(var(--accent-gold))' }}>Start Training</span>
           </div>
           
-          <h2 className="heading-primary text-text-inverse mb-6">
+          <h2 className="heading-primary mb-6" style={{ color: 'rgb(var(--text-inverse))' }}>
             Ready to Begin Your Elite Training?
           </h2>
-          <p className="text-enhanced text-text-inverse/90 mb-8 max-w-4xl mx-auto">
+          <p className="text-enhanced mb-8 max-w-4xl mx-auto" style={{ color: 'rgba(var(--text-inverse), 0.9)' }}>
             Join the Liberty Ridge community and start your journey toward 
             tactical excellence, personal protection mastery, and unshakeable confidence.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link href="/signup" className="btn-inverse text-lg px-8 py-4 shadow-tactical">
+            <Link href="/signup" className="bg-patriot-red hover:bg-primary-hover text-white font-bold py-4 px-8 text-lg rounded-lg shadow-tactical transform hover:scale-105 transition-all duration-300">
               Book Your Training
             </Link>
-            <Link href="/contact" className="btn-outline-inverse text-lg px-8 py-4">
+            <Link href="/contact" className="border-2 border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-surface-tactical font-bold py-4 px-8 text-lg rounded-lg transition-all duration-300">
               Contact Us
             </Link>
           </div>
           
-          {/* Enhanced trust indicators */}
+          {/* Enhanced trust indicators with color coordination */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div className="text-center">
-              <div className="icon icon-2xl text-accent-gold mb-2 mx-auto icon-users"></div>
-              <div className="text-2xl font-bold text-text-inverse mb-1">100+</div>
-              <div className="text-sm text-text-inverse/70 uppercase tracking-wide">Trained Students</div>
+              <div className="icon icon-2xl mb-2 mx-auto icon-users" style={{ color: 'rgb(var(--accent-gold))' }}></div>
+              <div className="text-2xl font-bold mb-1" style={{ color: 'rgb(var(--text-inverse))' }}>100+</div>
+              <div className="text-sm uppercase tracking-wide" style={{ color: 'rgba(var(--text-inverse), 0.7)' }}>Trained Students</div>
             </div>
             <div className="text-center">
-              <div className="icon icon-2xl text-accent-gold mb-2 mx-auto icon-shield"></div>
-              <div className="text-2xl font-bold text-text-inverse mb-1">100%</div>
-              <div className="text-sm text-text-inverse/70 uppercase tracking-wide">Safety Record</div>
+              <div className="icon icon-2xl mb-2 mx-auto icon-shield" style={{ color: 'rgb(var(--military-green))' }}></div>
+              <div className="text-2xl font-bold mb-1" style={{ color: 'rgb(var(--text-inverse))' }}>100%</div>
+              <div className="text-sm uppercase tracking-wide" style={{ color: 'rgba(var(--text-inverse), 0.7)' }}>Safety Record</div>
             </div>
             <div className="text-center">
-              <div className="icon icon-2xl text-accent-gold mb-2 mx-auto icon-award"></div>
-              <div className="text-2xl font-bold text-text-inverse mb-1">#12</div>
-              <div className="text-sm text-text-inverse/70 uppercase tracking-wide">Regional Ranking</div>
+              <div className="icon icon-2xl mb-2 mx-auto icon-award" style={{ color: 'rgb(var(--patriot-red))' }}></div>
+              <div className="text-2xl font-bold mb-1" style={{ color: 'rgb(var(--text-inverse))' }}>#12</div>
+              <div className="text-sm uppercase tracking-wide" style={{ color: 'rgba(var(--text-inverse), 0.7)' }}>Regional Ranking</div>
             </div>
           </div>
           
           {/* Enhanced contact info */}
-          <div className="text-sm text-text-inverse/75 text-center">
-            <p className="mb-2">Questions? Call us at (509) 555-0123 or email info@libertyridgetraining.com</p>
-            <p className="text-xs text-text-inverse/60">Professional tactical training • Veteran-owned • Pacific Northwest</p>
+          <div className="text-sm text-center" style={{ color: 'rgba(var(--text-inverse), 0.75)' }}>
+            <p className="mb-2">Questions? Call us at <span style={{ color: 'rgb(var(--accent-gold))' }}>(509) 555-0123</span> or email <span style={{ color: 'rgb(var(--accent-gold))' }}>info@libertyridgetraining.com</span></p>
+            <p className="text-xs" style={{ color: 'rgba(var(--text-inverse), 0.6)' }}>Professional tactical training • Veteran-owned • Pacific Northwest</p>
           </div>
         </div>
       </section>
