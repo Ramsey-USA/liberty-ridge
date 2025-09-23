@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import BulletHero from '@/components/BulletHero';
 import { CourseCard, FeatureCard, TestimonialCard, StatsCard } from '@/components/cards';
 import { courses, getPopularCourses } from '@/data/courses';
 import { testimonials, getFeaturedTestimonials } from '@/data/testimonials';
@@ -12,19 +11,38 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       
-      {/* Enhanced Hero Section with Optimized Variables */}
-      <section className="relative min-h-screen flex items-center justify-center bg-surface-tactical overflow-hidden">
-        <BulletHero
-          title="LIBERTY RIDGE TRAINING GROUNDS"
-          subtitle="Elite Tactical Training • Veteran Excellence • Combat-Ready Skills"
-          description="Master tactical fundamentals through proven military methodologies and elite-level firearm training programs designed for serious practitioners."
-        />
+      {/* Hero Section with Image Background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Image Background */}
+        <div className="absolute inset-0">
+          <img 
+            src="/we-want-you.jpg" 
+            alt="Liberty Ridge Training Grounds"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/50"></div>
+        </div>
         
-        {/* Enhanced Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-surface-tactical via-gray-800 to-surface-tactical opacity-95"></div>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_transparent_0%,_rgba(0,0,0,0.1)_100%)]"></div>
+        {/* Optional: Geometric Color Accents (can be removed if not needed) */}
+        <div className="absolute top-0 left-0 w-1/3 h-full bg-red-600/20"></div>
+        <div className="absolute top-0 right-0 w-1/4 h-2/3 bg-blue-600/20"></div>
+        <div className="absolute bottom-0 right-0 w-1/2 h-1/3 bg-white/10"></div>
+        
+        {/* Content */}
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20">
+          <h1 className="text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-none tracking-tight">
+            <span className="text-white drop-shadow-2xl">
+              LIBERTY RIDGE TRAINING GROUNDS
+            </span>
+          </h1>
+          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-8 text-red-500 drop-shadow-lg leading-tight tracking-wide">
+            Practical Tactical Training • Veteran Excellence • Combat-Ready Skills
+          </h2>
+          <p className="text-lg lg:text-xl xl:text-2xl text-white max-w-3xl mx-auto drop-shadow-md font-medium leading-relaxed">
+            Master tactical fundamentals through proven military methodologies and elite-level firearm training programs designed for serious practitioners.
+          </p>
+        </div>
       </section>
 
       {/* Enhanced Call-to-Action Banner with Optimized Variables */}
@@ -180,47 +198,140 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Regional Rankings - Light Mode Optimized */}
-      <section className="section-padding section-secondary">
-        <div className="max-w-4xl mx-auto text-center container-padding">
-          <div className="section-badge space-x-2 mb-8">
-            <div className="icon icon-sm icon-highlight icon-award"></div>
-            <span className="font-semibold text-sm tracking-wide uppercase">Championship Excellence</span>
-            <div className="icon icon-sm icon-highlight icon-award"></div>
+      {/* Enhanced Regional Rankings - Competitive Excellence */}
+      <section className="section-padding-enhanced bg-gradient-to-br from-surface-tactical via-gray-900 to-surface-tactical relative overflow-hidden">
+        {/* Enhanced background effects */}
+        <div className="absolute inset-0 bg-gradient-to-r from-red-900/20 via-transparent to-blue-900/20"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent-gold/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-patriot-red/10 rounded-full blur-3xl"></div>
+        
+        <div className="max-w-6xl mx-auto text-center container-padding relative z-10">
+          <div className="section-badge-enhanced mx-auto mb-8 bg-surface-elevated/10 backdrop-blur-sm border-border/30">
+            <div className="icon icon-sm text-accent-gold icon-award"></div>
+            <span className="text-white font-semibold text-sm tracking-wide uppercase">Championship Excellence</span>
+            <div className="icon icon-sm text-accent-gold icon-award"></div>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary">
-            Regionally Ranked Excellence
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-white leading-tight">
+            <span className="text-gradient bg-gradient-to-r from-accent-gold via-yellow-400 to-accent-gold bg-clip-text text-transparent">
+              REGIONALLY RANKED
+            </span>
+            <br />
+            <span className="text-white">EXCELLENCE</span>
           </h2>
-          <p className="text-xl text-text-description mb-12 leading-relaxed">
-            In his first year of competitive shooting, Zach has achieved impressive 
-            regional recognition in long-range shooting competitions, demonstrating his natural talent and dedication.
+          
+          <p className="text-xl lg:text-2xl text-gray-300 mb-16 leading-relaxed max-w-4xl mx-auto">
+            In his first year of competitive shooting, Zach has achieved <strong className="text-accent-gold">remarkable regional recognition</strong> 
+            in long-range shooting competitions, demonstrating exceptional natural talent and unwavering dedication to precision marksmanship.
           </p>
           
-          <div className="card-light p-12 text-center max-w-2xl mx-auto">
-            <div className="icon icon-2xl icon-accent mx-auto mb-6">
-              #12
+          {/* Enhanced ranking showcase */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {/* Main ranking card */}
+            <div className="lg:col-span-2">
+              <div className="bg-surface-elevated/20 backdrop-blur-lg border border-accent-gold/30 rounded-2xl p-12 text-center shadow-2xl hover:shadow-accent-gold/20 transition-all duration-500 hover:scale-105 group">
+                <div className="relative">
+                  {/* Ranking number with enhanced styling */}
+                  <div className="text-8xl lg:text-9xl font-black text-transparent bg-gradient-to-br from-accent-gold via-yellow-300 to-accent-gold bg-clip-text mb-4 relative">
+                    #12
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 text-8xl lg:text-9xl font-black text-accent-gold/20 blur-lg">#12</div>
+                  </div>
+                  
+                  <div className="text-3xl lg:text-4xl font-bold mb-6 text-white group-hover:text-accent-gold transition-colors duration-300">
+                    Regional Long-Range Champion
+                  </div>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                    <div className="text-center p-4 bg-white/10 rounded-xl border border-white/20">
+                      <div className="icon icon-xl text-accent-gold mb-2 mx-auto icon-star"></div>
+                      <div className="text-sm text-white/90 font-semibold">First Year</div>
+                      <div className="text-xs text-white/70">Competitor</div>
+                    </div>
+                    <div className="text-center p-4 bg-white/10 rounded-xl border border-white/20">
+                      <div className="icon icon-xl text-accent-gold mb-2 mx-auto icon-target"></div>
+                      <div className="text-sm text-white/90 font-semibold">Precision</div>
+                      <div className="text-xs text-white/70">Excellence</div>
+                    </div>
+                    <div className="text-center p-4 bg-white/10 rounded-xl border border-white/20">
+                      <div className="icon icon-xl text-accent-gold mb-2 mx-auto icon-crosshair"></div>
+                      <div className="text-sm text-white/90 font-semibold">Rising</div>
+                      <div className="text-xs text-white/70">Talent</div>
+                    </div>
+                  </div>
+                  
+                  <Link href="/rankings" className="btn-primary shadow-tactical text-lg px-8 py-4 group-hover:bg-accent-gold group-hover:text-surface-tactical transition-all duration-300">
+                    View Full Rankings
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="text-2xl font-bold mb-4 text-gray-800">
-              Regional Long-Range Shooting Champion
+            
+            {/* Competition stats sidebar */}
+            <div className="space-y-6">
+              <div className="bg-white/10 backdrop-blur-lg border border-white/30 rounded-xl p-6 text-center hover:bg-white/15 transition-all duration-300">
+                <div className="icon icon-2xl text-patriot-red mb-3 mx-auto icon-award"></div>
+                <div className="text-2xl font-bold text-white mb-2">2024</div>
+                <div className="text-sm text-white/80 font-medium">Competition Season</div>
+                <div className="text-xs text-white/60">Debut Year Excellence</div>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-lg border border-white/30 rounded-xl p-6 text-center hover:bg-white/15 transition-all duration-300">
+                <div className="icon icon-2xl text-blue-400 mb-3 mx-auto icon-target"></div>
+                <div className="text-2xl font-bold text-white mb-2">1000+</div>
+                <div className="text-sm text-white/80 font-medium">Yards</div>
+                <div className="text-xs text-white/60">Maximum Range</div>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-lg border border-white/30 rounded-xl p-6 text-center hover:bg-white/15 transition-all duration-300">
+                <div className="icon icon-2xl text-military-green mb-3 mx-auto icon-shield"></div>
+                <div className="text-2xl font-bold text-white mb-2">95%+</div>
+                <div className="text-sm text-white/80 font-medium">Accuracy</div>
+                <div className="text-xs text-white/60">Competition Average</div>
+              </div>
             </div>
-            <div className="flex items-center justify-center space-x-6 text-sm mb-8 text-text-muted">
-              <span className="flex items-center space-x-1">
-                <div className="icon icon-xs icon-accent icon-star"></div>
-                <span>First Year Competitor</span>
-              </span>
-              <span className="flex items-center space-x-1">
-                <div className="icon icon-xs icon-accent icon-target"></div>
-                <span>Precision Excellence</span>
-              </span>
-              <span className="flex items-center space-x-1">
-                <div className="icon icon-xs icon-accent icon-lightning"></div>
-                <span>Rising Talent</span>
-              </span>
+          </div>
+          
+          {/* Competition achievements timeline */}
+          <div className="bg-white/5 backdrop-blur-lg border border-white/20 rounded-2xl p-8 mb-12">
+            <h3 className="text-2xl font-bold text-white mb-8">2024 Competition Highlights</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center p-6 bg-gradient-to-br from-accent-gold/20 to-yellow-400/20 rounded-xl border border-accent-gold/30">
+                <div className="text-lg font-bold text-accent-gold mb-2">Spring Championship</div>
+                <div className="text-3xl font-black text-white mb-2">#15</div>
+                <div className="text-sm text-white/80">Regional Placement</div>
+                <div className="text-xs text-white/60 mt-2">First Major Competition</div>
+              </div>
+              
+              <div className="text-center p-6 bg-gradient-to-br from-patriot-red/20 to-red-400/20 rounded-xl border border-patriot-red/30">
+                <div className="text-lg font-bold text-patriot-red mb-2">Summer Series</div>
+                <div className="text-3xl font-black text-white mb-2">#13</div>
+                <div className="text-sm text-white/80">Regional Placement</div>
+                <div className="text-xs text-white/60 mt-2">Consistent Improvement</div>
+              </div>
+              
+              <div className="text-center p-6 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl border border-blue-400/30">
+                <div className="text-lg font-bold text-blue-400 mb-2">Fall Classic</div>
+                <div className="text-3xl font-black text-white mb-2">#12</div>
+                <div className="text-sm text-white/80">Current Ranking</div>
+                <div className="text-xs text-white/60 mt-2">Peak Performance</div>
+              </div>
             </div>
-            <Link href="/rankings" className="btn-primary">
-              View Full Rankings
-            </Link>
+          </div>
+          
+          {/* Call to action */}
+          <div className="text-center">
+            <p className="text-lg text-white/90 mb-6">
+              Experience the same training methods that achieved <strong className="text-accent-gold">top regional rankings</strong>
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/courses" className="btn-primary shadow-tactical text-lg px-8 py-4">
+                Train Like a Champion
+              </Link>
+              <Link href="/rankings" className="btn-outline text-white border-white hover:bg-white hover:text-surface-tactical text-lg px-8 py-4">
+                View All Rankings
+              </Link>
+            </div>
           </div>
         </div>
       </section>
