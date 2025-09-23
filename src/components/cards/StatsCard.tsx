@@ -54,10 +54,10 @@ export default function StatsCard({ stat, variant = 'default', className = '' }:
         {/* Icon */}
         {stat.icon && (
           <div className={`${
-            variant === 'large' ? 'text-5xl mb-4' : 
-            variant === 'compact' ? 'text-3xl mb-2' : 
-            'text-4xl mb-3'
-          } group-hover:scale-110 transition-transform duration-300`}>
+            variant === 'large' ? 'icon icon-xl icon-accent mb-4' : 
+            variant === 'compact' ? 'icon icon-md icon-primary mb-2' : 
+            'icon icon-lg icon-secondary mb-3'
+          } mx-auto icon-animated`}>
             {stat.icon}
           </div>
         )}
@@ -96,9 +96,9 @@ export default function StatsCard({ stat, variant = 'default', className = '' }:
           <div className={`mt-3 flex items-center justify-center space-x-1 ${
             variant === 'compact' ? 'text-xs' : 'text-sm'
           }`}>
-            <span className={getChangeColor(stat.change.type)}>
+            <div className="icon icon-xs icon-secondary">
               {getChangeIcon(stat.change.type)}
-            </span>
+            </div>
             <span className={getChangeColor(stat.change.type)}>
               {stat.change.value}
             </span>
@@ -108,7 +108,7 @@ export default function StatsCard({ stat, variant = 'default', className = '' }:
         {/* Highlight Badge */}
         {stat.highlight && (
           <div className="absolute -top-2 -right-2">
-            <div className="w-4 h-4 bg-patriot-red rounded-full animate-pulse"></div>
+            <div className="icon icon-xs icon-button-red animate-pulse">!</div>
           </div>
         )}
       </div>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -99,11 +100,16 @@ const Header = () => {
           </div>
 
           {/* Enhanced Action Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-6">
+            {/* Theme Toggle */}
+            <div className="flex items-center">
+              <ThemeToggle />
+            </div>
+            
             {/* Elite Book Now Button */}
             <Link
               href="/signup"
-              className="btn-primary relative group px-8 py-4 rounded-2xl shadow-2xl hover:shadow-yellow-400/20 transition-all duration-300 transform hover:scale-105 overflow-hidden tactical-border-gold"
+              className="btn-primary relative group px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <div className="relative flex items-center space-x-2">
                 <span className="text-lg tracking-wide">BOOK NOW</span>
@@ -113,10 +119,15 @@ const Header = () => {
           </div>
 
           {/* Enhanced Mobile menu button */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex items-center space-x-4">
+            {/* Mobile Theme Toggle */}
+            <div className="flex items-center">
+              <ThemeToggle />
+            </div>
+            
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative group bg-white/10 backdrop-blur-sm text-white p-3 rounded-xl hover:bg-yellow-400/20 transition-all duration-300 shadow-xl border border-white/20 hover:border-yellow-400/50"
+              className="relative group bg-white/10 backdrop-blur-sm text-white p-3 border border-white/30 hover:bg-patriot-red/20 transition-all duration-300 shadow-lg hover:border-patriot-red/50"
             >
               <span className="sr-only">Open main menu</span>
               <div className="relative w-6 h-6">
@@ -152,9 +163,15 @@ const Header = () => {
               
               {/* Elite mobile action buttons */}
               <div className="pt-6 space-y-4">
+                {/* Mobile Theme Toggle Section */}
+                <div className="flex items-center justify-between bg-white/10 backdrop-blur-sm px-6 py-4 border border-white/20 shadow-lg">
+                  <span className="text-white font-semibold">Theme Mode</span>
+                  <ThemeToggle />
+                </div>
+                
                 <Link
                   href="/signup"
-                  className="btn-primary block px-8 py-5 rounded-2xl shadow-2xl text-center hover:shadow-yellow-400/20 transition-all duration-300 tactical-border-gold"
+                  className="btn-primary block px-8 py-5 text-center hover:shadow-lg transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <span className="flex items-center justify-center space-x-3">

@@ -24,6 +24,71 @@ export default function FeatureCard({ feature, variant = 'default', className = 
     compact: "p-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1"
   };
 
+  // Check if this should be a flip card
+  const isFlipCard = className.includes('feature-flip-card');
+
+  if (isFlipCard) {
+    return (
+      <div className="feature-flip-card">
+        <div className="flip-card-inner">
+          {/* Front of card */}
+          <div className="flip-card-front">
+            <div className={`${
+              variant === 'hero' ? 'icon icon-2xl icon-accent mb-6' : 
+              variant === 'compact' ? 'icon icon-lg icon-primary mb-4' : 
+              'icon icon-xl icon-secondary mb-6'
+            } mx-auto`}>
+              {feature.icon}
+            </div>
+            
+            <h3 className={`${
+              variant === 'hero' ? 'text-2xl' : 
+              variant === 'compact' ? 'text-lg' : 
+              'text-xl'
+            } font-bold text-dark mb-4 text-center`}>
+              {feature.title}
+            </h3>
+            
+            <p className="text-sm text-tactical-gray text-center">
+              Hover to learn more
+            </p>
+          </div>
+          
+          {/* Back of card */}
+          <div className="flip-card-back">
+            <h3 className={`${
+              variant === 'hero' ? 'text-xl' : 
+              variant === 'compact' ? 'text-lg' : 
+              'text-lg'
+            } font-bold text-dark mb-4 text-center`}>
+              {feature.title}
+            </h3>
+            
+            <p className={`${
+              variant === 'hero' ? 'text-base' : 
+              variant === 'compact' ? 'text-xs' : 
+              'text-sm'
+            } text-tactical-gray leading-relaxed text-center mb-4`}>
+              {feature.description}
+            </p>
+            
+            {/* Additional Details */}
+            {feature.details && feature.details.length > 0 && (
+              <div className="space-y-1">
+                {feature.details.slice(0, 3).map((detail: string, index: number) => (
+                  <div key={index} className="flex items-start text-xs">
+                    <span className="text-green-500 mr-1 mt-0.5">✓</span>
+                    <span className="text-tactical-gray">{detail}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`${baseClasses} ${variantClasses[variant]} ${className}`}>
       {/* Background Gradient */}
@@ -32,10 +97,10 @@ export default function FeatureCard({ feature, variant = 'default', className = 
       <div className="relative z-10">
         {/* Icon */}
         <div className={`${
-          variant === 'hero' ? 'text-6xl mb-6' : 
-          variant === 'compact' ? 'text-4xl mb-4' : 
-          'text-5xl mb-6'
-        } text-patriot-blue group-hover:scale-110 transition-transform duration-300 flex justify-center`}>
+          variant === 'hero' ? 'icon icon-2xl icon-accent mb-6' : 
+          variant === 'compact' ? 'icon icon-lg icon-primary mb-4' : 
+          'icon icon-xl icon-secondary mb-6'
+        } mx-auto icon-animated`}>
           {feature.icon}
         </div>
         

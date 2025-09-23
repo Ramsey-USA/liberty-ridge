@@ -16,6 +16,106 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
     compact: "p-4 rounded-lg shadow-md hover:shadow-lg bg-white/95"
   };
 
+  // Check if this should be a flip card
+  const isFlipCard = className.includes('flip-card');
+
+  if (isFlipCard) {
+    return (
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          {/* Front of card */}
+          <div className="flip-card-front">
+            {/* Quote Icon */}
+            <div className="absolute top-4 left-4 text-patriot-blue/20 text-4xl leading-none">
+              "
+            </div>
+            
+            <div className="relative z-10 pt-8">
+              {/* Rating Stars */}
+              {testimonial.rating && (
+                <div className="flex items-center justify-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span 
+                      key={i} 
+                      className={`text-lg ${
+                        i < testimonial.rating! ? 'text-yellow-400' : 'text-gray-300'
+                      }`}
+                    >
+                      ⭐
+                    </span>
+                  ))}
+                </div>
+              )}
+              
+              {/* Testimonial Text - Truncated */}
+              <blockquote className="text-sm text-tactical-dark leading-relaxed mb-6 italic text-center">
+                {testimonial.testimonial.length > 100 
+                  ? `${testimonial.testimonial.substring(0, 100)}...` 
+                  : testimonial.testimonial}
+              </blockquote>
+              
+              {/* Author Name */}
+              <div className="text-center">
+                <div className="font-semibold text-tactical-dark">
+                  {testimonial.name}
+                </div>
+                <div className="text-xs text-tactical-gray mt-1">
+                  Hover for details
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Back of card */}
+          <div className="flip-card-back">
+            <div className="h-full flex flex-col justify-center">
+              {/* Full testimonial */}
+              <blockquote className="text-sm text-tactical-dark leading-relaxed mb-4 italic text-center">
+                {testimonial.testimonial}
+              </blockquote>
+              
+              {/* Course/Context */}
+              {testimonial.courseCompleted && (
+                <div className="mb-4 text-center">
+                  <span className="inline-block px-2 py-1 text-xs bg-patriot-blue/10 text-patriot-blue rounded-full">
+                    {testimonial.courseCompleted}
+                  </span>
+                </div>
+              )}
+              
+              {/* Author Information */}
+              <div className="text-center">
+                <div className="font-semibold text-tactical-dark mb-1">
+                  {testimonial.name}
+                </div>
+                {testimonial.location && (
+                  <div className="text-xs text-tactical-gray mb-1">
+                    {testimonial.location}
+                  </div>
+                )}
+                {testimonial.role && (
+                  <div className="text-xs text-tactical-gray mb-2">
+                    {testimonial.role}
+                  </div>
+                )}
+                
+                {/* Verification Badge */}
+                {testimonial.verified && (
+                  <div>
+                    <span className="inline-flex items-center px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">
+                      <span className="mr-1">✓</span>
+                      Verified
+                    </span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`${baseClasses} ${variantClasses[variant]} ${className}`}>
       {/* Quote Icon */}

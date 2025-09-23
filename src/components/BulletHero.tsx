@@ -236,16 +236,16 @@ const BulletHero: React.FC<BulletHeroProps> = ({
 
       {/* Content */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 pr-32 py-12 sm:py-16 lg:py-20">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-          <span className="text-gradient">
+        <h1 className="text-6xl lg:text-7xl xl:text-8xl font-black mb-6 text-white leading-none tracking-tight">
+          <span className="text-gradient drop-shadow-text">
             {title}
           </span>
         </h1>
-        <h2 className="text-xl md:text-3xl font-semibold mb-8 text-yellow-400 drop-shadow-lg text-shadow">
+        <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-8 text-yellow-400 drop-shadow-lg text-shadow leading-tight tracking-wide">
           {subtitle}
         </h2>
         {description && (
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto drop-shadow-md font-medium leading-relaxed text-shadow">
+          <p className="text-lg lg:text-xl xl:text-2xl text-gray-300 max-w-3xl mx-auto drop-shadow-md font-medium leading-relaxed text-shadow tracking-normal">
             {description}
           </p>
         )}
