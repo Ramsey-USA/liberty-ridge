@@ -8,16 +8,20 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      /* ===== OPTIMIZED COLOR SYSTEM ===== */
+      /* ===== BLACK & WHITE COLOR SYSTEM ===== */
       colors: {
-        /* Core Brand Colors - Using CSS Variables */
+        /* Core Brand Colors - Red & Blue Highlights Only */
         'patriot-red': 'rgb(var(--patriot-red) / <alpha-value>)',
         'patriot-blue': 'rgb(var(--patriot-blue) / <alpha-value>)', 
         'patriot-navy': 'rgb(var(--patriot-navy) / <alpha-value>)',
-        'military-green': 'rgb(var(--military-green) / <alpha-value>)',
-        'accent-gold': 'rgb(var(--accent-gold) / <alpha-value>)',
         
-        /* Semantic Color Tokens */
+        /* Pure Black & White Foundation */
+        'pure-black': 'rgb(var(--pure-black) / <alpha-value>)',
+        'pure-white': 'rgb(var(--pure-white) / <alpha-value>)',
+        'off-black': 'rgb(var(--off-black) / <alpha-value>)',
+        'off-white': 'rgb(var(--off-white) / <alpha-value>)',
+        
+        /* Semantic Color Tokens - Black & White */
         background: 'rgb(var(--background) / <alpha-value>)',
         foreground: 'rgb(var(--text-primary) / <alpha-value>)',
         card: 'rgb(var(--surface) / <alpha-value>)',
@@ -32,8 +36,8 @@ module.exports = {
         
         muted: 'rgb(var(--surface-elevated) / <alpha-value>)',
         'muted-foreground': 'rgb(var(--text-muted) / <alpha-value>)',
-        accent: 'rgb(var(--surface-elevated) / <alpha-value>)',
-        'accent-foreground': 'rgb(var(--text-primary) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        'accent-foreground': 'rgb(var(--text-inverse) / <alpha-value>)',
         
         destructive: 'rgb(var(--primary) / <alpha-value>)',
         'destructive-foreground': 'rgb(var(--text-inverse) / <alpha-value>)',
@@ -48,16 +52,22 @@ module.exports = {
         'text-muted': 'rgb(var(--text-muted) / <alpha-value>)',
         'text-inverse': 'rgb(var(--text-inverse) / <alpha-value>)',
         
-        /* Tactical Colors for Legacy Support */
-        'tactical-dark': 'rgb(var(--surface-tactical) / <alpha-value>)',
-        'tactical-gray': 'rgb(var(--gray-800) / <alpha-value>)',
-        'tactical-light': 'rgb(var(--gray-50) / <alpha-value>)',
-        'tactical-border': 'rgb(var(--border-tactical) / <alpha-value>)',
-        
         /* Surface Colors */
         'surface': 'rgb(var(--surface) / <alpha-value>)',
         'surface-elevated': 'rgb(var(--surface-elevated) / <alpha-value>)',
-        'surface-tactical': 'rgb(var(--surface-tactical) / <alpha-value>)',
+        'surface-dark': 'rgb(var(--surface-dark) / <alpha-value>)',
+        'surface-contrast': 'rgb(var(--surface-contrast) / <alpha-value>)',
+      },
+      
+      /* ===== SHARP BORDER RADIUS SYSTEM ===== */
+      borderRadius: {
+        'none': '0px',      // Pure sharp corners
+        'xs': '2px',        // Minimal radius
+        'sm': '4px',        // Buttons and inputs
+        'md': '6px',        // Standard cards
+        'lg': '8px',        // Sharp but not harsh
+        'xl': '12px',       // Larger elements
+        '2xl': '16px',      // Hero sections
       },
       
       /* ===== ENHANCED TYPOGRAPHY ===== */
@@ -102,27 +112,44 @@ module.exports = {
         'loose': '2',
       },
       
-      /* ===== SPACING & LAYOUT ===== */
-      borderRadius: {
-        'sm': 'var(--radius-sm)',
-        'md': 'var(--radius-md)',
-        'lg': 'var(--radius-lg)',
-        'xl': 'var(--radius-xl)',
+      /* ===== COMPACT SPACING SYSTEM ===== */
+      spacing: {
+        '0.5': '0.125rem',   // 2px
+        '1': '0.25rem',      // 4px
+        '1.5': '0.375rem',   // 6px
+        '2': '0.5rem',       // 8px
+        '2.5': '0.625rem',   // 10px
+        '3': '0.75rem',      // 12px
+        '3.5': '0.875rem',   // 14px
+        '4': '1rem',         // 16px
+        '5': '1.25rem',      // 20px
+        '6': '1.5rem',       // 24px
+        '8': '2rem',         // 32px
+        '10': '2.5rem',      // 40px
+        '12': '3rem',        // 48px
+        '16': '4rem',        // 64px
+        '20': '5rem',        // 80px
+        '24': '6rem',        // 96px
+        '32': '8rem',        // 128px
       },
       
+      /* ===== SLEEK SHADOWS ===== */
       boxShadow: {
-        'sm': 'var(--shadow-sm)',
-        'md': 'var(--shadow-md)',
-        'lg': 'var(--shadow-lg)',
-        'tactical': 'var(--shadow-tactical)',
+        'sm': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+        'md': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+        'lg': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+        'xl': '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+        '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+        'sharp': '0 2px 8px 0 rgb(0 0 0 / 0.15)',
+        'sharp-lg': '0 4px 16px 0 rgb(0 0 0 / 0.2)',
       },
       
       /* ===== ANIMATIONS ===== */
       animation: {
         'fadeIn': 'fadeIn 0.5s ease-out',
         'slideIn': 'slideIn 0.3s ease-out',
-        'bullet-travel': 'bullet-travel 2s ease-out infinite',
-        'patriotic-flow': 'patrioticFlow 3s ease-in-out infinite',
+        'sharp-hover': 'sharpHover 0.2s ease-out',
+        'two-tone-pulse': 'twoTonePulse 2s ease-in-out infinite',
       },
       
       keyframes: {
@@ -134,15 +161,14 @@ module.exports = {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(0)' },
         },
-        'bullet-travel': {
-          '0%': { transform: 'translateX(-6.25rem) translateY(0)', opacity: '0' },
-          '10%': { opacity: '1' },
-          '90%': { opacity: '1' },
-          '100%': { transform: 'translateX(calc(100vw + 6.25rem)) translateY(-0.3125rem)', opacity: '0' },
+        sharpHover: {
+          '0%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+          '100%': { transform: 'scale(1.02)' },
         },
-        patrioticFlow: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
+        twoTonePulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.8' },
         },
       },
     },
