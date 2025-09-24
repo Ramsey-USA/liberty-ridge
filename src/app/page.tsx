@@ -10,18 +10,18 @@ export default function Home() {
       
       {/* Enhanced Hero Section with LR Theme - Always Visible on Large Screens */}
       <section className="block relative min-h-screen lg:min-h-screen 2xl:min-h-screen xl:min-h-screen overflow-hidden hero-gradient-bg section-padding-enhanced">
-        {/* Tactical accent elements */}
-        <div className="lg:block xl:block top-10 left-10 absolute animate-two-tone-pulse icon icon-md icon-primary icon-crosshair"></div>
-        <div className="lg:block xl:block top-20 right-20 absolute animate-two-tone-pulse animation-delay-1000 icon icon-sm icon-secondary icon-target"></div>
-        <div className="lg:block xl:block bottom-20 left-20 absolute animate-two-tone-pulse animation-delay-2000 icon icon-xs icon-accent icon-bullet"></div>
+        {/* Tactical accent elements - Enhanced with larger icons */}
+        <div className="lg:block xl:block top-10 left-10 absolute animate-two-tone-pulse icon icon-xl icon-primary icon-crosshair"></div>
+        <div className="lg:block xl:block top-20 right-20 absolute animate-two-tone-pulse animation-delay-1000 icon icon-lg icon-secondary icon-target"></div>
+        <div className="lg:block xl:block bottom-20 left-20 absolute animate-two-tone-pulse animation-delay-2000 icon icon-md icon-accent icon-bullet"></div>
         
         {/* Enhanced Typography Content - Always Visible on Large Screens */}
         <div className="block lg:block 2xl:block xl:block z-10 relative text-center animate-fade-in-up container-enhanced">
-          {/* Elite Badge */}
+          {/* Elite Badge - Enhanced with larger icons */}
           <div className="block lg:block xl:block mb-8 section-badge-enhanced">
-            <div className="icon icon-xs icon-primary icon-shield"></div>
+            <div className="icon icon-md icon-primary icon-shield"></div>
             <span className="text-highlight-red">Elite Training Available</span>
-            <div className="icon icon-xs icon-secondary icon-star"></div>
+            <div className="icon icon-md icon-secondary icon-star"></div>
           </div>
           
           {/* Main Title with Enhanced LR Typography - Always Visible on Large Screens */}
@@ -38,17 +38,17 @@ export default function Home() {
           {/* Enhanced Subtitle with Icon Integration - Always Visible on Large Screens */}
           <div className="block lg:block 2xl:block xl:block space-x-4 mb-8 animate-fade-in-up animation-delay-500 hero-subtitle-enhanced">
             <span className="inline-flex items-center gap-2 text-highlight-red">
-              <div className="icon icon-xs icon-primary icon-target"></div>
+              <div className="icon icon-sm icon-primary icon-target"></div>
               Practical Tactical Training
             </span>
             <span className="text-text-secondary">•</span>
             <span className="inline-flex items-center gap-2 text-highlight-blue">
-              <div className="icon icon-xs icon-secondary icon-shield"></div>
+              <div className="icon icon-sm icon-secondary icon-shield"></div>
               Veteran Excellence
             </span>
             <span className="text-text-secondary">•</span>
             <span className="inline-flex items-center gap-2 text-highlight-red">
-              <div className="icon icon-xs icon-accent icon-crosshair"></div>
+              <div className="icon icon-sm icon-accent icon-crosshair"></div>
               Combat-Ready Skills
             </span>
           </div>
@@ -61,29 +61,29 @@ export default function Home() {
           {/* Enhanced CTA Buttons - Always Visible on Large Screens */}
           <div className="flex lg:flex 2xl:flex xl:flex sm:flex-row flex-col justify-center gap-6 mb-16 animate-fade-in-up animation-delay-1500">
             <Link href="/signup" className="block lg:block xl:block btn-hero-primary">
-              <div className="icon icon-sm icon-primary icon-flag-usa"></div>
+              <div className="icon icon-lg icon-primary icon-flag-usa"></div>
               Start Training Today
             </Link>
             <Link href="/courses" className="block lg:block xl:block btn-hero-secondary">
-              <div className="icon icon-sm icon-secondary icon-target"></div>
+              <div className="icon icon-lg icon-secondary icon-target"></div>
               View Courses
             </Link>
           </div>
           
-          {/* Enhanced Stats Preview - Always Visible on Large Screens */}
+          {/* Enhanced Stats Preview - Always Visible on Large Screens with Larger Icons */}
           <div className="block lg:grid 2xl:grid xl:grid grid-3-enhanced mx-auto max-w-2xl animate-fade-in-up animation-delay-2000">
-            <div className="hover:border-patriot-red stats-card">
-              <div className="mb-3 icon icon-lg icon-primary icon-users"></div>
+            <div className="group hover:border-patriot-red stats-card">
+              <div className="mb-4 group-hover:scale-110 transition-transform duration-300 icon icon-2xl icon-primary icon-users"></div>
               <div className="text-patriot-red stats-counter">100+</div>
               <div className="stats-label">Students Trained</div>
             </div>
-            <div className="hover:border-patriot-blue stats-card">
-              <div className="mb-3 icon icon-lg icon-secondary icon-shield"></div>
+            <div className="group hover:border-patriot-blue stats-card">
+              <div className="mb-4 group-hover:scale-110 transition-transform duration-300 icon icon-2xl icon-secondary icon-shield"></div>
               <div className="text-patriot-blue stats-counter">100%</div>
               <div className="stats-label">Safety Record</div>
             </div>
-            <div className="hover:border-accent-gold stats-card">
-              <div className="mb-3 icon icon-lg icon-accent icon-award"></div>
+            <div className="group hover:border-accent-gold stats-card">
+              <div className="mb-4 group-hover:scale-110 transition-transform duration-300 icon icon-2xl icon-accent icon-award"></div>
               <div className="text-accent-gold stats-counter">#12</div>
               <div className="stats-label">Regional Ranking</div>
             </div>
@@ -104,10 +104,10 @@ export default function Home() {
         <div className="bottom-20 left-20 absolute bg-patriot-red rounded-xs w-2 h-2 animate-two-tone-pulse animation-delay-1500"></div>
         
         <div className="z-10 relative mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
-          {/* Sharp Badge */}
-          <div className="group inline-flex items-center space-x-3 bg-pure-black dark:bg-pure-white shadow-sharp hover:shadow-sharp-lg mb-8 px-6 py-3 border border-patriot-red hover:border-patriot-blue rounded-sm transition-all duration-300">
+          {/* Sharp Badge - Fixed for better dark mode contrast */}
+          <div className="group inline-flex items-center space-x-3 bg-surface-tactical dark:bg-surface shadow-sharp hover:shadow-sharp-lg mb-8 px-6 py-3 border border-patriot-red hover:border-patriot-blue rounded-sm transition-all duration-300">
             <div className="bg-patriot-red rounded-xs w-2 h-2 animate-two-tone-pulse"></div>
-            <span className="font-bold text-pure-white dark:text-pure-black group-hover:text-patriot-blue text-sm uppercase tracking-wider transition-colors duration-300">
+            <span className="font-bold text-text-inverse dark:text-text-primary group-hover:text-patriot-blue text-sm uppercase tracking-wider transition-colors duration-300">
               Elite Training Available
             </span>
             <div className="bg-patriot-blue rounded-xs w-2 h-2 animate-two-tone-pulse animation-delay-500"></div>
@@ -143,7 +143,7 @@ export default function Home() {
             
             <Link 
               href="/courses" 
-              className="group relative bg-pure-white dark:bg-pure-black shadow-sharp hover:shadow-sharp-lg px-12 py-6 border-2 border-patriot-blue rounded-sm overflow-hidden font-bold text-patriot-blue hover:text-pure-white dark:hover:text-pure-black text-xl hover:scale-102 transition-all duration-300"
+              className="group relative bg-surface dark:bg-surface-elevated shadow-sharp hover:shadow-sharp-lg px-12 py-6 border-2 border-patriot-blue rounded-sm overflow-hidden font-bold text-patriot-blue hover:text-text-inverse text-xl hover:scale-102 transition-all duration-300"
             >
               <span className="z-10 relative flex justify-center items-center">
                 View All Courses
@@ -196,7 +196,7 @@ export default function Home() {
           <div className="items-center grid-2-enhanced">
             <div className="space-y-enhanced">
               <div className="mb-8 section-badge-enhanced">
-                <div className="icon icon-xs icon-primary icon-shield"></div>
+                <div className="icon icon-md icon-primary icon-shield"></div>
                 <span className="text-highlight-red">Veteran Leadership</span>
               </div>
               
@@ -205,7 +205,7 @@ export default function Home() {
                   Meet Your Liberty Ridge Instructor
                 </h2>
                 <h3 className="mb-6 text-highlight-red heading-secondary">
-                  <div className="inline-block mr-3 icon icon-md icon-primary icon-flag-usa"></div>
+                  <div className="inline-block mr-3 icon icon-xl icon-primary icon-flag-usa"></div>
                   Zach Gaudette - U.S. Army Veteran
                 </h3>
               </div>
@@ -228,12 +228,12 @@ export default function Home() {
                 <div className="stats-flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
-                      <div className="mb-3 icon icon-xl icon-primary icon-users"></div>
+                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 icon icon-2xl icon-primary icon-users"></div>
                       <div className="text-patriot-red stats-counter">100+</div>
                       <div className="stats-label">Students Trained</div>
                     </div>
                     <div className="flip-card-back">
-                      <div className="mb-3 icon icon-lg icon-accent icon-star"></div>
+                      <div className="mb-4 icon icon-xl icon-accent icon-star"></div>
                       <div className="mb-2 text-text-inverse heading-card">Student Success</div>
                       <div className="text-body text-text-inverse/80">
                         Over 100 students have completed our programs with exceptional results and confidence.
@@ -245,12 +245,12 @@ export default function Home() {
                 <div className="stats-flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
-                      <div className="mb-3 icon icon-xl icon-secondary icon-clock"></div>
+                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 icon icon-2xl icon-secondary icon-clock"></div>
                       <div className="text-patriot-blue stats-counter">5+</div>
                       <div className="stats-label">Years Experience</div>
                     </div>
                     <div className="flip-card-back">
-                      <div className="mb-3 icon icon-lg icon-accent icon-lightning"></div>
+                      <div className="mb-4 icon icon-xl icon-accent icon-lightning"></div>
                       <div className="mb-2 text-text-inverse heading-card">Expert Training</div>
                       <div className="text-body text-text-inverse/80">
                         Years of military and civilian training experience ensuring top-tier instruction.
@@ -262,12 +262,12 @@ export default function Home() {
                 <div className="stats-flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
-                      <div className="mb-3 icon icon-xl icon-accent icon-award"></div>
+                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 icon icon-2xl icon-accent icon-award"></div>
                       <div className="text-accent-gold stats-counter">#12</div>
                       <div className="stats-label">Regional Ranking</div>
                     </div>
                     <div className="flip-card-back">
-                      <div className="mb-3 icon icon-lg icon-accent icon-crosshair"></div>
+                      <div className="mb-4 icon icon-xl icon-accent icon-crosshair"></div>
                       <div className="mb-2 text-text-inverse heading-card">Championship Level</div>
                       <div className="text-body text-text-inverse/80">
                         Ranked #12 regionally in long-range shooting competitions in first year.
@@ -279,12 +279,12 @@ export default function Home() {
                 <div className="stats-flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
-                      <div className="mb-3 icon icon-xl icon-success icon-shield"></div>
+                      <div className="mb-4 group-hover:scale-110 transition-transform duration-300 icon icon-2xl icon-success icon-shield"></div>
                       <div className="text-military-green stats-counter">100%</div>
                       <div className="stats-label">Safety Record</div>
                     </div>
                     <div className="flip-card-back">
-                      <div className="mb-3 icon icon-lg icon-success icon-check"></div>
+                      <div className="mb-4 icon icon-xl icon-success icon-check"></div>
                       <div className="mb-2 text-text-inverse heading-card">Zero Incidents</div>
                       <div className="text-body text-text-inverse/80">
                         Perfect safety record with comprehensive protocols and veteran oversight.
@@ -299,7 +299,7 @@ export default function Home() {
               <div className="h-96 lg:h-[500px] feature-card">
                 <div className="flex flex-col justify-center items-center h-full text-center">
                   <div className="mb-6 w-32 h-32 text-6xl feature-card-icon">
-                    <div className="icon icon-3xl icon-primary icon-flag-usa"></div>
+                    <div className="icon icon-4xl icon-primary icon-flag-usa"></div>
                   </div>
                   <div className="mb-4 text-text-primary heading-tertiary">Zach Gaudette</div>
                   <div className="mb-4 text-compact text-highlight-blue">U.S. Army Veteran</div>
@@ -308,19 +308,19 @@ export default function Home() {
                   {/* Enhanced credentials */}
                   <div className="gap-4 grid grid-cols-2 w-full max-w-xs">
                     <div className="text-center">
-                      <div className="mb-1 icon icon-md icon-accent icon-award"></div>
+                      <div className="mb-1 icon icon-xl icon-accent icon-award"></div>
                       <div className="text-caption text-text-muted">Military Trained</div>
                     </div>
                     <div className="text-center">
-                      <div className="mb-1 icon icon-md icon-primary icon-target"></div>
+                      <div className="mb-1 icon icon-xl icon-primary icon-target"></div>
                       <div className="text-caption text-text-muted">Competition Shooter</div>
                     </div>
                     <div className="text-center">
-                      <div className="mb-1 icon icon-md icon-success icon-users"></div>
+                      <div className="mb-1 icon icon-xl icon-success icon-users"></div>
                       <div className="text-caption text-text-muted">100+ Students</div>
                     </div>
                     <div className="text-center">
-                      <div className="mb-1 icon icon-md icon-secondary icon-shield"></div>
+                      <div className="mb-1 icon icon-xl icon-secondary icon-shield"></div>
                       <div className="text-caption text-text-muted">Safety Expert</div>
                     </div>
                   </div>
@@ -356,7 +356,7 @@ export default function Home() {
             <span className="text-white">EXCELLENCE</span>
           </h2>
           
-          <p className="mx-auto mb-16 max-w-4xl text-gray-300 text-xl lg:text-2xl leading-relaxed">
+          <p className="mx-auto mb-16 max-w-4xl text-text-secondary text-xl lg:text-2xl leading-relaxed">
             In his first year of competitive shooting, Zach has achieved <strong className="text-accent-gold">remarkable regional recognition</strong> 
             in long-range shooting competitions, demonstrating exceptional natural talent and unwavering dedication to precision marksmanship.
           </p>
@@ -396,7 +396,7 @@ export default function Home() {
                     </div>
                   </div>
                   
-                  <Link href="/rankings" className="shadow-tactical px-8 py-4 group-hover:text-surface-tactical text-lg transition-all duration-300 group-hover:bg-accent-gold btn-primary">
+                  <Link href="/rankings" className="shadow-tactical px-8 py-4 group-hover:text-text-inverse text-lg transition-all duration-300 group-hover:bg-accent-gold btn-primary">
                     View Full Rankings
                   </Link>
                 </div>
@@ -464,7 +464,7 @@ export default function Home() {
               <Link href="/courses" className="shadow-tactical px-8 py-4 text-lg btn-primary">
                 Train Like a Champion
               </Link>
-              <Link href="/rankings" className="hover:bg-white px-8 py-4 border-white btn-outline text-white hover:text-surface-tactical text-lg">
+              <Link href="/rankings" className="hover:bg-surface px-8 py-4 border-white btn-outline text-white hover:text-text-primary text-lg">
                 View All Rankings
               </Link>
             </div>
@@ -477,7 +477,7 @@ export default function Home() {
         <div className="container-enhanced">
           <div className="section-header-enhanced">
             <div className="mb-8 section-badge-enhanced">
-              <div className="icon icon-xs icon-primary icon-target"></div>
+              <div className="icon icon-md icon-primary icon-target"></div>
               <span className="text-highlight-red">Training Programs</span>
             </div>
             
@@ -509,31 +509,31 @@ export default function Home() {
               <h3 className="mb-4 font-black text-white group-hover:text-yellow-400 text-2xl transition-colors duration-300">
                 Precision Long Range
               </h3>
-              <p className="mb-6 text-slate-300 leading-relaxed">
+              <p className="mb-6 text-text-secondary leading-relaxed">
                 Master the fundamentals of long-range shooting with military-grade precision techniques and championship-level instruction.
               </p>
               
               {/* Price and Duration */}
               <div className="flex justify-between items-center mb-6">
                 <span className="font-bold text-white text-3xl">$299</span>
-                <span className="font-medium text-slate-400">8 hours intensive</span>
+                <span className="font-medium text-text-muted">8 hours intensive</span>
               </div>
               
               {/* Features List */}
               <ul className="space-y-3 mb-8">
-                <li className="flex items-center text-slate-300">
+                <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mr-3 rounded-full w-2 h-2"></div>
                   Ballistics & wind reading mastery
                 </li>
-                <li className="flex items-center text-slate-300">
+                <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mr-3 rounded-full w-2 h-2"></div>
                   Precision rifle setup & tuning
                 </li>
-                <li className="flex items-center text-slate-300">
+                <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mr-3 rounded-full w-2 h-2"></div>
                   Advanced marksmanship techniques
                 </li>
-                <li className="flex items-center text-slate-300">
+                <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mr-3 rounded-full w-2 h-2"></div>
                   Competition-level training
                 </li>
@@ -564,31 +564,31 @@ export default function Home() {
               <h3 className="mb-4 font-black text-white group-hover:text-blue-400 text-2xl transition-colors duration-300">
                 Tactical Pistol
               </h3>
-              <p className="mb-6 text-slate-300 leading-relaxed">
+              <p className="mb-6 text-text-secondary leading-relaxed">
                 Develop combat-ready pistol skills with real-world tactical applications and stress inoculation training.
               </p>
               
               {/* Price and Duration */}
               <div className="flex justify-between items-center mb-6">
                 <span className="font-bold text-white text-3xl">$199</span>
-                <span className="font-medium text-slate-400">6 hours intensive</span>
+                <span className="font-medium text-text-muted">6 hours intensive</span>
               </div>
               
               {/* Features List */}
               <ul className="space-y-3 mb-8">
-                <li className="flex items-center text-slate-300">
+                <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-blue-400 to-blue-500 mr-3 rounded-full w-2 h-2"></div>
                   Draw & presentation mastery
                 </li>
-                <li className="flex items-center text-slate-300">
+                <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-blue-400 to-blue-500 mr-3 rounded-full w-2 h-2"></div>
                   Tactical reload techniques
                 </li>
-                <li className="flex items-center text-slate-300">
+                <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-blue-400 to-blue-500 mr-3 rounded-full w-2 h-2"></div>
                   Movement & cover tactics
                 </li>
-                <li className="flex items-center text-slate-300">
+                <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-blue-400 to-blue-500 mr-3 rounded-full w-2 h-2"></div>
                   Stress inoculation training
                 </li>
@@ -619,31 +619,31 @@ export default function Home() {
               <h3 className="mb-4 font-black text-white group-hover:text-green-400 text-2xl transition-colors duration-300">
                 Firearms Fundamentals
               </h3>
-              <p className="mb-6 text-slate-300 leading-relaxed">
+              <p className="mb-6 text-text-secondary leading-relaxed">
                 Build a solid foundation with comprehensive safety protocols and essential marksmanship training.
               </p>
               
               {/* Price and Duration */}
               <div className="flex justify-between items-center mb-6">
                 <span className="font-bold text-white text-3xl">$149</span>
-                <span className="font-medium text-slate-400">4 hours essential</span>
+                <span className="font-medium text-text-muted">4 hours essential</span>
               </div>
               
               {/* Features List */}
               <ul className="space-y-3 mb-8">
-                <li className="flex items-center text-slate-300">
+                <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-green-400 to-green-500 mr-3 rounded-full w-2 h-2"></div>
                   Comprehensive safety protocols
                 </li>
-                <li className="flex items-center text-slate-300">
+                <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-green-400 to-green-500 mr-3 rounded-full w-2 h-2"></div>
                   Basic marksmanship principles
                 </li>
-                <li className="flex items-center text-slate-300">
+                <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-green-400 to-green-500 mr-3 rounded-full w-2 h-2"></div>
                   Proper stance & grip technique
                 </li>
-                <li className="flex items-center text-slate-300">
+                <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-green-400 to-green-500 mr-3 rounded-full w-2 h-2"></div>
                   Equipment basics & selection
                 </li>
@@ -660,24 +660,24 @@ export default function Home() {
           {/* Enhanced Course Features Grid */}
           <div className="mt-12">
             <div className="gap-6 grid grid-cols-1 md:grid-cols-3">
-              <div className="bg-surface p-6 border border-border rounded-lg text-center">
-                <div className="mx-auto mb-4 text-primary icon icon-2xl icon-clock"></div>
+              <div className="group bg-surface p-6 border border-border rounded-lg text-center hover:scale-105 transition-all duration-300">
+                <div className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform duration-300 icon icon-3xl icon-clock"></div>
                 <h4 className="mb-3 heading-card">Flexible Scheduling</h4>
                 <p className="text-body">
                   Weekend and evening classes available to fit your busy schedule.
                 </p>
               </div>
               
-              <div className="bg-surface p-6 border border-border rounded-lg text-center">
-                <div className="mx-auto mb-4 text-accent-gold icon icon-2xl icon-award"></div>
+              <div className="group bg-surface p-6 border border-border rounded-lg text-center hover:scale-105 transition-all duration-300">
+                <div className="mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 text-accent-gold icon icon-3xl icon-award"></div>
                 <h4 className="mb-3 heading-card">Certification Included</h4>
                 <p className="text-body">
                   Receive official completion certificates for all training programs.
                 </p>
               </div>
               
-              <div className="bg-surface p-6 border border-border rounded-lg text-center">
-                <div className="mx-auto mb-4 text-military-green icon icon-2xl icon-users"></div>
+              <div className="group bg-surface p-6 border border-border rounded-lg text-center hover:scale-105 transition-all duration-300">
+                <div className="mx-auto mb-4 text-military-green group-hover:scale-110 transition-transform duration-300 icon icon-3xl icon-users"></div>
                 <h4 className="mb-3 heading-card">Small Class Sizes</h4>
                 <p className="text-body">
                   Maximum 8 students per class for personalized attention and safety.
@@ -690,15 +690,15 @@ export default function Home() {
       <section className="section-padding-enhanced" style={{ backgroundColor: 'rgb(var(--background))' }}>
         <div className="container-enhanced">
           <div className="mb-12 text-center">
-            <div className="inline-flex items-center space-x-2 bg-white mx-auto mb-6 px-4 py-2 border-2 border-gray-200 rounded-lg section-badge-enhanced">
-              <div className="text-patriot-red icon icon-xs icon-shield"></div>
-              <span className="font-semibold text-gray-700 text-sm uppercase tracking-wide">Our Values</span>
+            <div className="inline-flex items-center space-x-2 bg-surface mx-auto mb-6 px-4 py-2 border-2 border-border rounded-lg section-badge-enhanced">
+              <div className="text-patriot-red icon icon-md icon-shield"></div>
+              <span className="font-semibold text-text-primary text-sm uppercase tracking-wide">Our Values</span>
             </div>
             
-            <h2 className="mb-4 font-black text-gray-900 text-4xl lg:text-5xl leading-tight">
+            <h2 className="mb-4 font-black text-text-primary text-4xl lg:text-5xl leading-tight">
               Built on Military Principles
             </h2>
-            <p className="mx-auto max-w-3xl text-gray-700 text-lg leading-relaxed">
+            <p className="mx-auto max-w-3xl text-text-secondary text-lg leading-relaxed">
               Every aspect of our training is grounded in proven military values 
               and time-tested principles that build character and competence.
             </p>
@@ -706,9 +706,9 @@ export default function Home() {
           
           <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
             <div className="group text-center">
-              <div className="bg-white group-hover:shadow-lg p-6 border-2 border-gray-200 group-hover:border-patriot-red rounded-lg h-full hover:scale-105 transition-all duration-300">
-                <div className="mx-auto mb-4 text-patriot-red group-hover:scale-110 transition-transform duration-300 icon icon-3xl icon-shield"></div>
-                <h3 className="mb-3 font-bold text-gray-900 text-xl">Safety First</h3>
+              <div className="bg-surface group-hover:shadow-lg p-6 border-2 group-hover:border-patriot-red border-border rounded-lg h-full hover:scale-105 transition-all duration-300">
+                <div className="mx-auto mb-4 text-patriot-red group-hover:scale-110 transition-transform duration-300 icon icon-4xl icon-shield"></div>
+                <h3 className="mb-3 font-bold text-text-primary text-xl">Safety First</h3>
                 <p className="text-body text-sm">
                   Unwavering commitment to safety protocols and responsible firearm handling in every training session.
                 </p>
@@ -717,7 +717,7 @@ export default function Home() {
             
             <div className="group text-center">
               <div className="bg-surface-elevated group-hover:shadow-md p-6 border group-hover:border-accent-gold border-border rounded-lg h-full transition-all duration-300">
-                <div className="mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 text-accent-gold icon icon-3xl icon-award"></div>
+                <div className="mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 text-accent-gold icon icon-4xl icon-award"></div>
                 <h3 className="mb-3 text-text-primary heading-card">Excellence</h3>
                 <p className="text-body text-sm">
                   Pursuit of perfection in marksmanship, technique, and personal development through disciplined practice.
@@ -727,7 +727,7 @@ export default function Home() {
             
             <div className="group text-center">
               <div className="bg-surface-elevated group-hover:shadow-md p-6 border group-hover:border-military-green border-border rounded-lg h-full transition-all duration-300">
-                <div className="mx-auto mb-4 text-military-green group-hover:scale-110 transition-transform duration-300 icon icon-3xl icon-users"></div>
+                <div className="mx-auto mb-4 text-military-green group-hover:scale-110 transition-transform duration-300 icon icon-4xl icon-users"></div>
                 <h3 className="mb-3 text-text-primary heading-card">Brotherhood</h3>
                 <p className="text-body text-sm">
                   Building a community of responsible shooters who support and learn from each other.
@@ -737,7 +737,7 @@ export default function Home() {
             
             <div className="group text-center">
               <div className="bg-surface-elevated group-hover:shadow-md p-6 border group-hover:border-primary border-border rounded-lg h-full transition-all duration-300">
-                <div className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform duration-300 icon icon-3xl icon-target"></div>
+                <div className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform duration-300 icon icon-4xl icon-target"></div>
                 <h3 className="mb-3 text-text-primary heading-card">Precision</h3>
                 <p className="text-body text-sm">
                   Focus on accuracy, attention to detail, and methodical improvement in all training aspects.
@@ -753,7 +753,7 @@ export default function Home() {
         <div className="container-enhanced">
           <div className="mb-12 text-center">
             <div className="bg-background mx-auto mb-6 border-border section-badge-enhanced">
-              <div className="text-accent-gold icon icon-xs icon-award"></div>
+              <div className="text-accent-gold icon icon-md icon-award"></div>
               <span className="font-semibold text-text-secondary text-sm uppercase tracking-wide">Tactical Advantage</span>
             </div>
             
@@ -770,7 +770,7 @@ export default function Home() {
             <div className="h-72 flip-card">
               <div className="flip-card-inner">
                 <div className="bg-surface p-6 border-border flip-card-front">
-                  <div className="mb-4 text-primary icon icon-3xl icon-shield"></div>
+                  <div className="mb-4 text-primary hover:scale-110 transition-transform duration-300 icon icon-4xl icon-shield"></div>
                   <h3 className="mb-3 heading-card">Veteran Instruction</h3>
                   <p className="text-body text-sm">Expert military professionals with real-world tactical knowledge.</p>
                 </div>
@@ -792,7 +792,7 @@ export default function Home() {
             <div className="h-72 flip-card">
               <div className="flip-card-inner">
                 <div className="bg-surface p-6 border-border flip-card-front">
-                  <div className="mb-4 text-accent-gold icon icon-3xl icon-target"></div>
+                  <div className="mb-4 hover:scale-110 transition-transform duration-300 text-accent-gold icon icon-4xl icon-target"></div>
                   <h3 className="mb-3 heading-card">Proven Methods</h3>
                   <p className="text-body text-sm">Time-tested training techniques adapted from military and competitive shooting.</p>
                 </div>
@@ -814,7 +814,7 @@ export default function Home() {
             <div className="h-72 flip-card">
               <div className="flip-card-inner">
                 <div className="bg-surface p-6 border-border flip-card-front">
-                  <div className="mb-4 text-military-green icon icon-3xl icon-users"></div>
+                  <div className="mb-4 text-military-green hover:scale-110 transition-transform duration-300 icon icon-4xl icon-users"></div>
                   <h3 className="mb-3 heading-card">Personalized Training</h3>
                   <p className="text-body text-sm">Small class sizes ensure individual attention and customized instruction.</p>
                 </div>
@@ -836,7 +836,7 @@ export default function Home() {
             <div className="h-72 flip-card">
               <div className="flip-card-inner">
                 <div className="bg-surface p-6 border-border flip-card-front">
-                  <div className="mb-4 text-primary icon icon-3xl icon-clock"></div>
+                  <div className="mb-4 text-primary hover:scale-110 transition-transform duration-300 icon icon-4xl icon-clock"></div>
                   <h3 className="mb-3 heading-card">Flexible Schedule</h3>
                   <p className="text-body text-sm">Evening and weekend classes available to accommodate your busy lifestyle.</p>
                 </div>
@@ -858,7 +858,7 @@ export default function Home() {
             <div className="h-72 flip-card">
               <div className="flip-card-inner">
                 <div className="bg-surface p-6 border-border flip-card-front">
-                  <div className="mb-4 text-accent-gold icon icon-3xl icon-award"></div>
+                  <div className="mb-4 hover:scale-110 transition-transform duration-300 text-accent-gold icon icon-4xl icon-award"></div>
                   <h3 className="mb-3 heading-card">Progressive Curriculum</h3>
                   <p className="text-body text-sm">Structured learning path from fundamentals to advanced competitive techniques.</p>
                 </div>
@@ -880,7 +880,7 @@ export default function Home() {
             <div className="h-72 flip-card">
               <div className="flip-card-inner">
                 <div className="bg-surface p-6 border-border flip-card-front">
-                  <div className="mb-4 text-military-green icon icon-3xl icon-crosshair"></div>
+                  <div className="mb-4 text-military-green hover:scale-110 transition-transform duration-300 icon icon-4xl icon-crosshair"></div>
                   <h3 className="mb-3 heading-card">Equipment Included</h3>
                   <p className="text-body text-sm">All necessary firearms and safety equipment provided for training sessions.</p>
                 </div>
@@ -907,7 +907,7 @@ export default function Home() {
         <div className="container-enhanced">
           <div className="mb-12 text-center">
             <div className="bg-surface-elevated mx-auto mb-6 border-border section-badge-enhanced">
-              <div className="text-accent-gold icon icon-xs icon-star"></div>
+              <div className="text-accent-gold icon icon-md icon-star"></div>
               <span className="font-semibold text-text-secondary text-sm uppercase tracking-wide">Student Success</span>
             </div>
             
@@ -1078,7 +1078,7 @@ export default function Home() {
         
         <div className="z-10 relative text-center container-enhanced">
           <div className="bg-surface-elevated/20 backdrop-blur-sm mx-auto mb-8 border-accent-gold/30 section-badge-enhanced">
-            <div className="text-accent-gold icon icon-xs icon-star"></div>
+            <div className="text-accent-gold icon icon-md icon-star"></div>
             <span className="font-semibold text-sm uppercase tracking-wide" style={{ color: 'rgb(var(--accent-gold))' }}>Start Training</span>
           </div>
           
@@ -1094,25 +1094,25 @@ export default function Home() {
             <Link href="/signup" className="bg-patriot-red hover:bg-primary-hover shadow-tactical px-8 py-4 rounded-lg font-bold text-white text-lg hover:scale-105 transition-all duration-300 transform">
               Book Your Training
             </Link>
-            <Link href="/contact" className="px-8 py-4 border-2 border-accent-gold rounded-lg font-bold hover:text-surface-tactical text-lg transition-all duration-300 text-accent-gold hover:bg-accent-gold">
+            <Link href="/contact" className="px-8 py-4 border-2 border-accent-gold rounded-lg font-bold hover:text-text-inverse text-lg transition-all duration-300 text-accent-gold hover:bg-accent-gold">
               Contact Us
             </Link>
           </div>
           
-          {/* Enhanced trust indicators with color coordination */}
+          {/* Enhanced trust indicators with color coordination and larger icons */}
           <div className="gap-6 grid grid-cols-1 md:grid-cols-3 mb-6">
-            <div className="text-center">
-              <div className="mx-auto mb-2 icon icon-2xl icon-users" style={{ color: 'rgb(var(--accent-gold))' }}></div>
+            <div className="group text-center">
+              <div className="mx-auto mb-2 group-hover:scale-110 transition-transform duration-300 icon icon-4xl icon-users" style={{ color: 'rgb(var(--accent-gold))' }}></div>
               <div className="mb-1 font-bold text-2xl" style={{ color: 'rgb(var(--text-inverse))' }}>100+</div>
               <div className="text-sm uppercase tracking-wide" style={{ color: 'rgba(var(--text-inverse), 0.7)' }}>Trained Students</div>
             </div>
-            <div className="text-center">
-              <div className="mx-auto mb-2 icon icon-2xl icon-shield" style={{ color: 'rgb(var(--military-green))' }}></div>
+            <div className="group text-center">
+              <div className="mx-auto mb-2 group-hover:scale-110 transition-transform duration-300 icon icon-4xl icon-shield" style={{ color: 'rgb(var(--military-green))' }}></div>
               <div className="mb-1 font-bold text-2xl" style={{ color: 'rgb(var(--text-inverse))' }}>100%</div>
               <div className="text-sm uppercase tracking-wide" style={{ color: 'rgba(var(--text-inverse), 0.7)' }}>Safety Record</div>
             </div>
-            <div className="text-center">
-              <div className="mx-auto mb-2 icon icon-2xl icon-award" style={{ color: 'rgb(var(--patriot-red))' }}></div>
+            <div className="group text-center">
+              <div className="mx-auto mb-2 group-hover:scale-110 transition-transform duration-300 icon icon-4xl icon-award" style={{ color: 'rgb(var(--patriot-red))' }}></div>
               <div className="mb-1 font-bold text-2xl" style={{ color: 'rgb(var(--text-inverse))' }}>#12</div>
               <div className="text-sm uppercase tracking-wide" style={{ color: 'rgba(var(--text-inverse), 0.7)' }}>Regional Ranking</div>
             </div>
