@@ -8,146 +8,137 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       
-      {/* Modern Hero Section with Advanced Tailwind Patterns */}
-      <section className="relative flex justify-center items-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen overflow-hidden">
-        {/* Enhanced Background with Parallax Effect */}
+      {/* Sleek Black & White Hero Section */}
+      <section className="relative flex justify-center items-center bg-pure-black dark:bg-pure-white min-h-screen overflow-hidden">
+        {/* Clean geometric background patterns */}
         <div className="z-0 absolute inset-0">
-          <img 
-            src="/we-want-you.jpg" 
-            alt="Liberty Ridge Training Grounds - Elite Tactical Training"
-            className="w-full h-full object-cover hover:scale-110 transition-transform duration-[20s] ease-out"
-          />
-          {/* Multi-layer gradient overlays */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-slate-900/40"></div>
+          {/* Sharp geometric shapes for visual interest without images */}
+          <div className="absolute inset-0 bg-gradient-to-br from-pure-black dark:from-pure-white via-off-black dark:via-off-white to-pure-black dark:to-pure-white"></div>
+          
+          {/* Subtle accent overlays - Red & Blue highlights only */}
+          <div className="top-0 left-0 absolute bg-gradient-to-br from-patriot-red/10 via-transparent to-transparent w-1/3 h-full"></div>
+          <div className="top-0 right-0 absolute bg-gradient-to-bl from-patriot-blue/10 via-transparent to-transparent w-1/4 h-2/3"></div>
         </div>
         
-        {/* Animated Patriotic Accent Layers */}
-        <div className="top-0 left-0 absolute bg-gradient-to-br from-red-600/25 via-red-500/15 to-transparent w-1/3 h-full animate-pulse"></div>
-        <div className="top-0 right-0 absolute bg-gradient-to-bl from-blue-600/25 via-blue-500/15 to-transparent w-1/4 h-2/3 animate-pulse animation-delay-1000"></div>
-        <div className="right-0 bottom-0 absolute bg-gradient-to-tl from-yellow-400/20 via-yellow-300/10 to-transparent w-1/2 h-1/3 animate-pulse animation-delay-2000"></div>
+        {/* Minimal floating accent dots */}
+        <div className="top-10 left-10 absolute bg-patriot-red rounded-xs w-1 h-1 animate-two-tone-pulse"></div>
+        <div className="top-20 right-20 absolute bg-patriot-blue rounded-xs w-1 h-1 animate-two-tone-pulse animation-delay-1000"></div>
+        <div className="bottom-20 left-20 absolute bg-patriot-red rounded-xs w-1 h-1 animate-two-tone-pulse animation-delay-2000"></div>
         
-        {/* Floating Elements */}
-        <div className="top-10 left-10 absolute bg-yellow-400/60 rounded-full w-2 h-2 animate-bounce animation-delay-500"></div>
-        <div className="top-20 right-20 absolute bg-red-500/60 rounded-full w-3 h-3 animate-bounce animation-delay-1500"></div>
-        <div className="bottom-20 left-20 absolute bg-blue-500/60 rounded-full w-2 h-2 animate-bounce animation-delay-2500"></div>
-        
-        {/* Enhanced Hero Content */}
-        <div className="z-10 relative mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 max-w-7xl text-center animate-fade-in-up">
-          {/* Main Title with Advanced Typography */}
-          <h1 className="mb-4 sm:mb-6 font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-tight hover:scale-105 transition-all duration-1000 transform">
-            <span className="inline-block drop-shadow-2xl text-white hover:text-gray-100 transition-colors duration-500 filter">
+        {/* Sharp Typography Content */}
+        <div className="z-10 relative mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 max-w-7xl text-center animate-fadeIn">
+          {/* Main Title with Black & White Typography */}
+          <h1 className="mb-4 sm:mb-6 font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-tighter hover:scale-105 transition-all duration-500 transform">
+            <span className="inline-block text-pure-white dark:text-pure-black transition-colors duration-300">
               LIBERTY RIDGE
             </span>
             <br />
-            <span className="inline-block bg-300% bg-clip-text bg-gradient-to-r from-yellow-400 hover:from-yellow-300 via-red-500 hover:via-red-400 to-blue-600 hover:to-blue-500 text-transparent transition-all animate-gradient-x duration-1000">
+            <span className="inline-block bg-clip-text bg-gradient-to-r from-patriot-red via-patriot-blue to-patriot-red text-transparent">
               TRAINING GROUNDS
             </span>
           </h1>
           
-          {/* Enhanced Subtitle with Separator Animation */}
+          {/* Clean Subtitle with Red & Blue Highlights */}
           <div className="mb-6 sm:mb-8 font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-tight tracking-wide">
-            <span className="inline-block drop-shadow-lg text-yellow-400 hover:text-yellow-300 transition-colors duration-300">
+            <span className="inline-block text-patriot-red hover:text-patriot-red/80 transition-colors duration-300">
               Practical Tactical Training
             </span>
-            <span className="mx-2 sm:mx-3 text-white text-xl sm:text-2xl animate-pulse">•</span>
-            <span className="inline-block drop-shadow-lg text-blue-400 hover:text-blue-300 transition-colors duration-300">
+            <span className="mx-2 sm:mx-3 text-pure-white dark:text-pure-black text-xl sm:text-2xl">•</span>
+            <span className="inline-block text-patriot-blue hover:text-patriot-blue/80 transition-colors duration-300">
               Veteran Excellence
             </span>
-            <span className="mx-2 sm:mx-3 text-white text-xl sm:text-2xl animate-pulse animation-delay-500">•</span>
-            <span className="inline-block drop-shadow-lg text-red-400 hover:text-red-300 transition-colors duration-300">
+            <span className="mx-2 sm:mx-3 text-pure-white dark:text-pure-black text-xl sm:text-2xl">•</span>
+            <span className="inline-block text-patriot-red hover:text-patriot-red/80 transition-colors duration-300">
               Combat-Ready Skills
             </span>
           </div>
           
-          {/* Enhanced Description */}
-          <p className="drop-shadow-md mx-auto mb-10 sm:mb-12 max-w-5xl font-medium text-white/95 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed animate-fade-in-up animation-delay-1000">
-            Master tactical fundamentals through proven military methodologies and elite-level firearm training programs designed for serious practitioners seeking <span className="font-semibold text-yellow-400">championship-level excellence</span>.
+          {/* Clean Description with Accent Highlighting */}
+          <p className="mx-auto mb-10 sm:mb-12 max-w-5xl font-medium text-pure-white/90 dark:text-pure-black/90 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed animate-fadeIn animation-delay-500">
+            Master tactical fundamentals through proven military methodologies and elite-level firearm training programs designed for serious practitioners seeking <span className="font-semibold text-patriot-blue">championship-level excellence</span>.
           </p>
           
-          {/* Modern CTA Buttons with Advanced Hover Effects */}
-          <div className="flex sm:flex-row flex-col justify-center gap-4 sm:gap-6 mb-16 animate-fade-in-up animation-delay-1500">
+          {/* Sharp CTA Buttons with Two-Tone Design */}
+          <div className="flex sm:flex-row flex-col justify-center gap-4 sm:gap-6 mb-16 animate-fadeIn animation-delay-1000">
             <Link 
               href="/signup" 
-              className="group relative bg-gradient-to-r from-red-600 hover:from-red-500 to-red-700 hover:to-red-600 shadow-2xl hover:shadow-red-500/25 px-8 sm:px-10 py-4 sm:py-5 rounded-xl overflow-hidden font-bold text-white text-base sm:text-lg hover:scale-105 transition-all duration-300 transform"
+              className="group relative bg-patriot-red hover:bg-patriot-red/90 shadow-sharp hover:shadow-sharp-lg px-8 sm:px-10 py-4 sm:py-5 rounded-sm overflow-hidden font-bold text-pure-white text-base sm:text-lg hover:scale-102 transition-all duration-300 transform"
             >
               <span className="z-10 relative">Start Training Today</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-500 transition-transform translate-y-full group-hover:translate-y-0 duration-300"></div>
+              <div className="absolute inset-0 bg-pure-black transition-transform translate-x-full group-hover:translate-x-0 duration-300"></div>
             </Link>
             
             <Link 
               href="/courses" 
-              className="group relative bg-black/20 shadow-lg hover:shadow-yellow-400/25 backdrop-blur-sm px-8 sm:px-10 py-4 sm:py-5 border-2 border-yellow-400 rounded-xl overflow-hidden font-bold text-yellow-400 hover:text-slate-900 text-base sm:text-lg transition-all duration-300"
+              className="group relative bg-pure-white dark:bg-pure-black shadow-sharp hover:shadow-sharp-lg px-8 sm:px-10 py-4 sm:py-5 border-2 border-patriot-blue rounded-sm overflow-hidden font-bold text-patriot-blue hover:text-pure-white dark:hover:text-pure-black text-base sm:text-lg transition-all duration-300"
             >
               <span className="z-10 relative">View Courses</span>
-              <div className="absolute inset-0 bg-yellow-400 transition-transform translate-y-full group-hover:translate-y-0 duration-300"></div>
+              <div className="absolute inset-0 bg-patriot-blue transition-transform translate-x-full group-hover:translate-x-0 duration-300"></div>
             </Link>
           </div>
           
-          {/* Scroll Indicator */}
-          <div className="hidden sm:block bottom-4 sm:bottom-8 left-1/2 absolute -translate-x-1/2 animate-bounce transform">
-            <div className="flex justify-center border-2 border-white/60 rounded-full w-6 h-10">
-              <div className="bg-white/60 mt-2 rounded-full w-1 h-3 animate-pulse"></div>
+          {/* Minimal Scroll Indicator */}
+          <div className="hidden sm:block bottom-4 sm:bottom-8 left-1/2 absolute -translate-x-1/2 animate-two-tone-pulse transform">
+            <div className="flex justify-center border-2 border-pure-white/60 dark:border-pure-black/60 rounded-xs w-6 h-10">
+              <div className="bg-patriot-red mt-2 rounded-xs w-1 h-3"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Modern Call-to-Action Banner with Advanced Animations */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-24 overflow-hidden">
-        {/* Animated Background Effects */}
+      {/* Sleek Call-to-Action Banner with Black & White Design */}
+      <section className="relative bg-pure-white dark:bg-pure-black py-24 overflow-hidden">
+        {/* Clean Background with Subtle Accents */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-red-900/30 via-transparent to-blue-900/30 animate-pulse"></div>
-          <div className="top-0 left-1/4 absolute bg-yellow-500/10 blur-3xl rounded-full w-96 h-96 animate-bounce animation-delay-1000"></div>
-          <div className="right-1/4 bottom-0 absolute bg-red-500/10 blur-3xl rounded-full w-80 h-80 animate-bounce animation-delay-2000"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-patriot-red/5 via-transparent to-patriot-blue/5"></div>
         </div>
         
-        {/* Floating Geometric Elements */}
-        <div className="top-10 left-10 absolute border-2 border-yellow-400/60 w-4 h-4 rotate-45 animate-spin animation-delay-500"></div>
-        <div className="top-20 right-20 absolute border-2 border-red-500/60 rounded-full w-6 h-6 animate-pulse animation-delay-1500"></div>
-        <div className="bottom-20 left-20 absolute bg-blue-500/60 w-3 h-3 rotate-45 animate-bounce animation-delay-2500"></div>
+        {/* Minimal Sharp Geometric Elements */}
+        <div className="top-10 left-10 absolute border-2 border-patriot-red rounded-xs w-4 h-4 rotate-45 animate-sharp-hover animation-delay-500"></div>
+        <div className="top-20 right-20 absolute border-2 border-patriot-blue rounded-xs w-3 h-3 animate-two-tone-pulse animation-delay-1000"></div>
+        <div className="bottom-20 left-20 absolute bg-patriot-red rounded-xs w-2 h-2 animate-two-tone-pulse animation-delay-1500"></div>
         
         <div className="z-10 relative mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
-          {/* Animated Badge */}
-          <div className="group inline-flex items-center space-x-3 bg-gradient-to-r from-slate-800/80 to-slate-900/80 shadow-2xl hover:shadow-yellow-500/20 backdrop-blur-lg mb-8 px-6 py-3 border border-yellow-500/30 hover:border-yellow-400/50 rounded-full transition-all duration-500">
-            <div className="bg-yellow-400 rounded-full w-2 h-2 animate-pulse"></div>
-            <span className="font-bold text-yellow-400 group-hover:text-yellow-300 text-sm uppercase tracking-wider transition-colors duration-300">
+          {/* Sharp Badge */}
+          <div className="group inline-flex items-center space-x-3 bg-pure-black dark:bg-pure-white shadow-sharp hover:shadow-sharp-lg mb-8 px-6 py-3 border border-patriot-red hover:border-patriot-blue rounded-sm transition-all duration-300">
+            <div className="bg-patriot-red rounded-xs w-2 h-2 animate-two-tone-pulse"></div>
+            <span className="font-bold text-pure-white dark:text-pure-black group-hover:text-patriot-blue text-sm uppercase tracking-wider transition-colors duration-300">
               Elite Training Available
             </span>
-            <div className="bg-yellow-400 rounded-full w-2 h-2 animate-pulse animation-delay-500"></div>
+            <div className="bg-patriot-blue rounded-xs w-2 h-2 animate-two-tone-pulse animation-delay-500"></div>
           </div>
           
-          {/* Main Heading with Typing Animation Effect */}
-          <h3 className="mb-6 font-black text-white text-4xl sm:text-5xl lg:text-6xl leading-tight">
+          {/* Sharp Main Heading */}
+          <h3 className="mb-6 font-black text-pure-black dark:text-pure-white text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tighter">
             Ready to Master 
-            <span className="block bg-300% bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-blue-600 text-transparent animate-gradient-x">
+            <span className="block bg-clip-text bg-gradient-to-r from-patriot-red via-patriot-blue to-patriot-red text-transparent">
               Tactical Excellence?
             </span>
           </h3>
           
-          {/* Enhanced Description */}
-          <p className="mx-auto mb-12 max-w-4xl text-slate-300 text-xl lg:text-2xl leading-relaxed">
-            Join <span className="font-bold text-yellow-400 animate-pulse">100+ trained students</span> in professional firearm safety and tactical training programs that deliver <span className="font-bold text-red-400">real results</span>.
+          {/* Clean Description with Highlights */}
+          <p className="mx-auto mb-12 max-w-4xl text-pure-black/80 dark:text-pure-white/80 text-xl lg:text-2xl leading-relaxed">
+            Join <span className="font-bold text-patriot-red">100+ trained students</span> in professional firearm safety and tactical training programs that deliver <span className="font-bold text-patriot-blue">real results</span>.
           </p>
           
-          {/* Advanced CTA Buttons */}
+          {/* Sharp CTA Buttons */}
           <div className="flex sm:flex-row flex-col justify-center gap-6 mb-16">
             <Link 
               href="/signup" 
-              className="group relative bg-gradient-to-r from-red-600 hover:from-red-500 to-red-700 hover:to-red-600 shadow-2xl hover:shadow-red-500/30 px-12 py-6 rounded-2xl overflow-hidden font-bold text-white text-xl hover:scale-110 transition-all duration-500 transform"
+              className="group relative bg-patriot-red hover:bg-patriot-red/90 shadow-sharp hover:shadow-sharp-lg px-12 py-6 rounded-sm overflow-hidden font-bold text-pure-white text-xl hover:scale-102 transition-all duration-300 transform"
             >
               <span className="z-10 relative flex justify-center items-center">
                 Start Training Today
-                <svg className="ml-3 w-6 h-6 transition-transform group-hover:translate-x-2 duration-300 transform" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="ml-3 w-6 h-6 transition-transform group-hover:translate-x-1 duration-300 transform" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
                 </svg>
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-500 transition-transform translate-y-full group-hover:translate-y-0 duration-500"></div>
+              <div className="absolute inset-0 bg-pure-black transition-transform translate-x-full group-hover:translate-x-0 duration-300"></div>
             </Link>
             
             <Link 
               href="/courses" 
-              className="group relative bg-black/20 shadow-xl hover:shadow-yellow-400/30 backdrop-blur-sm px-12 py-6 border-2 border-yellow-400 rounded-2xl overflow-hidden font-bold text-yellow-400 hover:text-slate-900 text-xl hover:scale-105 transition-all duration-500"
+              className="group relative bg-pure-white dark:bg-pure-black shadow-sharp hover:shadow-sharp-lg px-12 py-6 border-2 border-patriot-blue rounded-sm overflow-hidden font-bold text-patriot-blue hover:text-pure-white dark:hover:text-pure-black text-xl hover:scale-102 transition-all duration-300"
             >
               <span className="z-10 relative flex justify-center items-center">
                 View All Courses
@@ -155,40 +146,40 @@ export default function Home() {
                   <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,17L8,13H11V7H13V13H16L12,17Z"/>
                 </svg>
               </span>
-              <div className="absolute inset-0 bg-yellow-400 transition-transform translate-y-full group-hover:translate-y-0 duration-500"></div>
+              <div className="absolute inset-0 bg-patriot-blue transition-transform translate-x-full group-hover:translate-x-0 duration-300"></div>
             </Link>
           </div>
           
-          {/* Animated Stats Counter */}
+          {/* Sharp Stats Counter */}
           <div className="gap-8 grid grid-cols-1 sm:grid-cols-3">
             <div className="group text-center cursor-pointer">
-              <div className="mb-2 font-black text-white text-5xl group-hover:scale-110 transition-transform duration-300">
-                <span className="bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-500 text-transparent">100+</span>
+              <div className="mb-2 font-black text-pure-black dark:text-pure-white text-5xl group-hover:scale-110 transition-transform duration-300">
+                <span className="text-patriot-red">100+</span>
               </div>
-              <div className="font-semibold text-slate-400 group-hover:text-yellow-400 uppercase tracking-wider transition-colors duration-300">
+              <div className="font-semibold text-pure-black/70 dark:text-pure-white/70 group-hover:text-patriot-red uppercase tracking-wider transition-colors duration-300">
                 Students Trained
               </div>
-              <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto mt-3 rounded-full w-12 h-1 scale-0 group-hover:scale-100 transition-transform duration-500 transform"></div>
+              <div className="bg-patriot-red mx-auto mt-3 rounded-xs w-12 h-1 scale-0 group-hover:scale-100 transition-transform duration-300 transform"></div>
             </div>
             
             <div className="group text-center cursor-pointer">
-              <div className="mb-2 font-black text-white text-5xl group-hover:scale-110 transition-transform duration-300">
-                <span className="bg-clip-text bg-gradient-to-r from-green-400 to-green-500 text-transparent">100%</span>
+              <div className="mb-2 font-black text-pure-black dark:text-pure-white text-5xl group-hover:scale-110 transition-transform duration-300">
+                <span className="text-patriot-blue">100%</span>
               </div>
-              <div className="font-semibold text-slate-400 group-hover:text-green-400 uppercase tracking-wider transition-colors duration-300">
+              <div className="font-semibold text-pure-black/70 dark:text-pure-white/70 group-hover:text-patriot-blue uppercase tracking-wider transition-colors duration-300">
                 Safety Record
               </div>
-              <div className="bg-gradient-to-r from-green-400 to-green-500 mx-auto mt-3 rounded-full w-12 h-1 scale-0 group-hover:scale-100 transition-transform duration-500 transform"></div>
+              <div className="bg-patriot-blue mx-auto mt-3 rounded-xs w-12 h-1 scale-0 group-hover:scale-100 transition-transform duration-300 transform"></div>
             </div>
             
             <div className="group text-center cursor-pointer">
-              <div className="mb-2 font-black text-white text-5xl group-hover:scale-110 transition-transform duration-300">
-                <span className="bg-clip-text bg-gradient-to-r from-red-400 to-red-500 text-transparent">#12</span>
+              <div className="mb-2 font-black text-pure-black dark:text-pure-white text-5xl group-hover:scale-110 transition-transform duration-300">
+                <span className="text-patriot-red">#12</span>
               </div>
-              <div className="font-semibold text-slate-400 group-hover:text-red-400 uppercase tracking-wider transition-colors duration-300">
+              <div className="font-semibold text-pure-black/70 dark:text-pure-white/70 group-hover:text-patriot-red uppercase tracking-wider transition-colors duration-300">
                 Regional Ranking
               </div>
-              <div className="bg-gradient-to-r from-red-400 to-red-500 mx-auto mt-3 rounded-full w-12 h-1 scale-0 group-hover:scale-100 transition-transform duration-500 transform"></div>
+              <div className="bg-patriot-red mx-auto mt-3 rounded-xs w-12 h-1 scale-0 group-hover:scale-100 transition-transform duration-300 transform"></div>
             </div>
           </div>
         </div>

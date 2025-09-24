@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+// @ts-ignore
 import './globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 

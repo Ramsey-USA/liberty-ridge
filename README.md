@@ -14,25 +14,27 @@ Liberty Ridge Training Grounds LLC represents the pinnacle of tactical training 
 **🌐 Domain:** [libertyridegetraininggrounds.com](https://libertyridegetraininggrounds.com)  
 **🎖️ Instructor Rating:** Regional #12 | 100+ Students Trained | 100% Safety Record
 
-## 🎨 Elite Tactical Design System
+## 🎨 LR Theme (Liberty Ridge Design System)
 
-This championship-grade website features our revolutionary **Liberty Ridge Design System** - a comprehensive tactical aesthetic framework that sets the gold standard for military-inspired web applications:
+This championship-grade website features our revolutionary **LR Theme** - a sleek black and white design system with strategic red/blue highlights that sets the gold standard for professional tactical training websites:
 
-### 🏆 Design Philosophy
+### 🏆 LR Theme Design Philosophy
 
-- **Championship-Grade Aesthetics**: Advanced gradient systems, patriotic color schemes, and elite professional styling
-- **Military Precision Animations**: Custom keyframe animations including `fadeInUp`, `gradientShift`, and `animate-gradient-x`
-- **Liberty Ridge Branding**: Consistent military/patriotic theme with red, blue, and gold accent colors
-- **Advanced Micro-Interactions**: Professional hover effects, scale transforms, and sliding background animations
-- **Mobile-First Responsive**: Optimized for all devices while maintaining tactical excellence
+- **Pure Black & White Foundation**: Clean, professional aesthetic with `#000000` and `#ffffff` as primary colors
+- **Strategic Red/Blue Highlights**: `#dc2626` (Patriot Red) and `#2563eb` (Patriot Blue) used exclusively for emphasis and CTAs
+- **Sharp, Sleek Design**: Minimal border radius (2px-8px), compact spacing, and clean geometry
+- **Two-Tone Component System**: Consistent black/white styling with red/blue accent interactions
+- **Military Precision**: Sharp corners, compact layouts, and professional typography
+- **Light/Dark Mode Excellence**: Seamless adaptation between pure black and pure white themes
 
-### 🚀 Advanced Features
+### 🚀 LR Theme Advanced Features
 
-- **Custom Animation System**: Professional animation delays and orchestrated effects
-- **Enhanced Glass-Morphism**: Modern backdrop blur with tactical overlays
-- **Advanced Gradient Patterns**: Multi-layered background effects with pulse animations
-- **Professional Component Cards**: Custom Liberty Ridge themed cards with unique color systems
-- **Interactive Elements**: Advanced hover states with color transitions and elevation effects
+- **Sharp Animation System**: Clean transitions with `animate-two-tone-pulse`, `animate-sharp-hover`, and `animate-fadeIn`
+- **Two-Tone Icon Library**: 20+ custom CSS icons with black base and red/blue accents
+- **Sleek Component Cards**: Sharp-cornered cards with minimal shadows and two-tone interactions
+- **Professional Button System**: `.btn-primary`, `.btn-secondary`, `.btn-black` with sharp styling
+- **Compact Typography**: Clean font stacks with strategic red/blue highlighting
+- **Responsive Excellence**: Mobile-first design maintaining LR Theme consistency across all devices
 
 ### Development Phases
 
@@ -118,54 +120,54 @@ Every page follows our championship-grade structure:
 - **Advanced CTA Buttons** - Sliding background effects with scale transforms
 - **Responsive Design Components** - Mobile-first with Liberty Ridge aesthetic consistency
 
-### CSS Organization (Elite Tactical System)
+### CSS Organization (LR Theme System)
 
-The `globals.css` file implements a comprehensive elite tactical design system:
+The `globals.css` file implements the comprehensive **LR Theme** - a sleek black and white design system:
 
-#### CSS Variable Architecture
+#### LR Theme CSS Variable Architecture
 
-- **Root Variables**: 50+ tactical colors, gradients, and effects
-- **Patriotic Colors**: Red, white, and blue palette with tactical variants
-- **Tactical Backgrounds**: Dark gradients and military-inspired textures
-- **Text Effects**: Gold glow effects and tactical typography
-- **Component Styling**: Optimized button, card, and section styles
+- **Core Variables**: Black/white foundation with strategic red/blue highlights
+- **Semantic Tokens**: Background, text, border, and interaction color systems
+- **Sharp Spacing**: Compact spacing system with minimal border radius values
+- **Clean Shadows**: Professional shadow system with sharp, minimal depth
+- **Two-Tone Components**: Button, card, and icon styling with black/white base
 
-#### Organized Sections
+#### LR Theme Organized Sections
 
-- **CSS Variables** - Comprehensive root variable system for theming
-- **Animations** - Bullet trajectories, muzzle flash, and tactical effects
-- **Typography** - Elite tactical text styling with glow effects
-- **Buttons** - Primary, secondary, and tactical-themed CTAs
-- **Cards** - Glass-morphism effects with backdrop blur
-- **Hero Sections** - Animated backgrounds and tactical overlays
-- **Utilities** - Helper classes and responsive design patterns
+- **Color System** - Pure black/white foundation with red/blue highlights
+- **Sharp Components** - Buttons, cards, and inputs with minimal border radius
+- **Two-Tone Icons** - 20+ custom CSS icons with professional styling
+- **Clean Animations** - Sharp, professional transitions and interactions
+- **Typography** - Inter font system with strategic color highlighting
+- **Utilities** - Black/white theming with light/dark mode support
 
-### Elite Tactical Design System
+### LR Theme Design System
 
-#### Color Palette (CSS Variables)
+#### LR Theme Color Palette (CSS Variables)
 
-- **Patriotic Red:** `var(--patriot-red)` - Primary CTA and accents
-- **Patriotic Blue:** `var(--patriot-blue)` - Secondary brand elements  
-- **Patriotic White:** `var(--patriot-white)` - Clean contrast elements
-- **Tactical Dark:** `var(--tactical-dark)` - Primary backgrounds
-- **Tactical Gray:** `var(--tactical-gray)` - Secondary backgrounds
-- **Gold Accent:** `var(--gold)` - Premium highlights and glow effects
-- **Military Green:** `var(--military-green)` - Tactical accents
+- **Pure Black:** `var(--pure-black)` - Primary dark foundation (`#000000`)
+- **Pure White:** `var(--pure-white)` - Primary light foundation (`#ffffff`)
+- **Patriot Red:** `var(--patriot-red)` - Strategic highlight color (`#dc2626`)
+- **Patriot Blue:** `var(--patriot-blue)` - Strategic highlight color (`#2563eb`)
+- **Off-Black:** `var(--off-black)` - Subtle black variant (`#080808`)
+- **Off-White:** `var(--off-white)` - Subtle white variant (`#f8f8f8`)
+- **Gray Scale:** Minimal 9-tone gray system for subtle accents only
 
-#### Advanced Features
+#### LR Theme Advanced Features
 
-- **Gradient System**: 15+ tactical gradient combinations
-- **Glow Effects**: Gold text glow for premium elements
-- **Glass-Morphism**: Backdrop blur effects for modern appeal
-- **Reticle Logo**: Custom crosshair design with tactical precision
-- **Bullet Animations**: CSS keyframe animations for hero section
+- **Sharp Border System**: Border radius limited to 0px-8px for clean, professional appearance
+- **Two-Tone Interactions**: Black/white base with red/blue accent transformations
+- **Sleek Shadow System**: Minimal shadows (`shadow-sharp`, `shadow-sharp-lg`) for clean depth
+- **Strategic Color Usage**: Red and blue exclusively for highlights, buttons, and emphasis
+- **Clean Animations**: `animate-two-tone-pulse`, `animate-sharp-hover` for professional interactions
 
-#### Typography System
+#### LR Theme Typography System
 
-- **Font Family:** Inter (optimized for tactical readability)
-- **Tactical Headers:** Bold styling with gradient effects and glow
-- **Elite Text**: Premium gold glow effects for key messaging
-- **Responsive Scaling:** Mobile-first typography with tactical aesthetics
+- **Font Family:** Inter (optimized for professional readability)
+- **Sharp Typography:** Clean, bold styling with strategic red/blue highlighting
+- **Two-Tone Text**: Black/white base with red/blue accents for key messaging
+- **Responsive Excellence:** Mobile-first typography maintaining LR Theme consistency
+- **Professional Hierarchy:** Clear type scale with strategic color emphasis
 
 ## Core Values
 
@@ -341,34 +343,34 @@ See [FIREBASE_DEPLOYMENT.md](./FIREBASE_DEPLOYMENT.md) for detailed setup instru
 
 ## 🏆 Liberty Ridge Excellence Summary
 
-**Liberty Ridge Training Grounds** now represents the pinnacle of tactical training website development, featuring championship-grade design patterns, professional animations, and advanced development standards that set the gold standard for military-inspired web applications.
+**Liberty Ridge Training Grounds** now represents the pinnacle of tactical training website development, featuring the revolutionary **LR Theme** - a sleek black and white design system with strategic red/blue highlights that sets the gold standard for professional training websites.
 
-### 🎯 Key Achievements
+### 🎯 Key LR Theme Achievements
 
-- **🥇 Championship Design System**: Advanced Tailwind CSS integration with custom Liberty Ridge theming
-- **⚡ Professional Animations**: Custom keyframe animations with orchestrated timing and micro-interactions  
-- **📱 Mobile Excellence**: Mobile-first responsive design maintaining tactical aesthetic across all devices
+- **🥇 LR Theme Design System**: Pure black/white foundation with strategic red/blue highlighting
+- **⚡ Sharp Professional Animations**: Clean keyframe animations with two-tone interactions
+- **📱 Mobile Excellence**: Mobile-first responsive design maintaining LR Theme consistency across all devices
 - **🛡️ Type Safety**: Comprehensive TypeScript implementation with strict mode compliance
 - **🚀 Performance Optimized**: Static export ready for Firebase Hosting with CDN distribution
-- **🎖️ Brand Consistency**: Military/patriotic theme with professional execution throughout
+- **🎖️ Design Precision**: Sleek black/white aesthetic with strategic color usage throughout
 
-### 🔥 Technical Excellence
+### 🔥 LR Theme Technical Excellence
 
-Built with modern development practices, advanced animation systems, and professional code standards that ensure maintainability, performance, and scalability for the elite tactical training industry.
+Built with modern development practices, clean animation systems, and professional code standards that ensure maintainability, performance, and scalability for the elite tactical training industry.
 
-**Ready for deployment. Ready for excellence. Ready for Liberty Ridge.**
+**Ready for deployment. Ready for excellence. Ready for LR Theme.**
 
 ## 🏆 Current Status - Championship Ready
 
-### ✅ Liberty Ridge Design System - Elite Implementation Complete
+### ✅ LR Theme Implementation - Championship Complete
 
-#### Home Page Enhancement (Championship Grade)
+#### Home Page Enhancement (LR Theme Standards)
 
-- **Advanced Hero Section:** Professional animations with gradient shifts, pulse effects, and Liberty Ridge branding
-- **Custom Course Cards:** Unique color-themed cards with enhanced hover effects and professional micro-interactions
-- **Elite CTA Buttons:** Sliding background animations with scale transforms and professional styling
-- **Advanced Animations:** Custom keyframes (`fadeInUp`, `gradientShift`, `animate-gradient-x`) with orchestrated delays
-- **Mobile-First Responsive:** Professional responsive design maintaining Liberty Ridge aesthetic across all devices
+- **Sleek Hero Section:** Pure black/white background with strategic red/blue accents and clean typography
+- **Sharp Component Cards:** Two-tone cards with minimal shadows and professional hover interactions
+- **Professional CTA Buttons:** Sharp-cornered buttons with clean color transitions and scale effects
+- **Clean Animations:** LR Theme keyframes (`animate-fadeIn`, `animate-two-tone-pulse`, `animate-sharp-hover`)
+- **Mobile-First Excellence:** Responsive design maintaining LR Theme consistency across all devices
 
 #### Contact Page Enhancement (Professional Standards)
 
@@ -387,13 +389,13 @@ Built with modern development practices, advanced animation systems, and profess
 - **ESLint Compliance:** Proper import ordering and code quality standards maintained
 - **TypeScript Strict Mode:** Full type safety with comprehensive error handling
 
-#### Championship-Grade Features
+#### LR Theme Features
 
-- **Liberty Ridge Component System:** Consistent branding and styling across all components
-- **Professional Micro-Interactions:** Advanced hover states, scale transforms, and color transitions
-- **Optimized Performance:** Smooth animations with professional timing and easing
-- **Mobile Excellence:** Mobile-first responsive design with Liberty Ridge aesthetic maintained
-- **Brand Consistency:** Military/patriotic theme with professional execution throughout
+- **Two-Tone Component System:** Consistent black/white styling with strategic red/blue highlights
+- **Sharp Professional Interactions:** Clean hover states, minimal transforms, and strategic color transitions
+- **Performance Optimized:** Smooth animations with sharp timing and professional easing
+- **Mobile Excellence:** Mobile-first responsive design with LR Theme consistency maintained
+- **Brand Precision:** Sleek black/white foundation with strategic red/blue accent execution
 
 ### ✅ Production Ready Infrastructure
 
@@ -408,6 +410,6 @@ Built with modern development practices, advanced animation systems, and profess
 #### Code Quality Standards
 
 - **TypeScript Excellence:** Strict type checking with comprehensive interfaces
-- **Component Architecture:** Reusable component library with Liberty Ridge standards
+- **Component Architecture:** Reusable component library with LR Theme standards
 - **Data Management:** Centralized data constants with proper TypeScript definitions
-- **Professional Standards:** Clean code architecture following Liberty Ridge development guidelines
+- **Professional Standards:** Clean code architecture following LR Theme development guidelines
