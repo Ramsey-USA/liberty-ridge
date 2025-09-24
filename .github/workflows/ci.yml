@@ -1,4 +1,5 @@
 # GitHub Actions workflow for CI/CD
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: "Liberty Ridge CI/CD"
 
 on:

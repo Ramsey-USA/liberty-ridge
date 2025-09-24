@@ -1,8 +1,8 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import BulletHero from '@/components/BulletHero';
 import { StatsCard } from '@/components/cards';
-import { teamMembers, getActiveTeamMembers, teamRoles, organizationStats } from '@/data/team';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { getActiveTeamMembers } from '@/data/team';
 import Link from 'next/link';
 
 export default function TeamPage() {
@@ -57,29 +57,29 @@ export default function TeamPage() {
       />
 
       {/* Stats Section */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-8">
+      <section className="bg-white py-12">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="flex justify-center items-center space-x-8">
             <StatsCard 
               stat={{
                 title: 'Active Operator',
                 value: getActiveTeamMembers().length,
-                icon: '👨‍💼'
+                icon: '🎖️'
               }}
               variant="compact"
               className="text-center"
             />
-            <div className="w-1 h-12 bg-tactical-gray/30"></div>
+            <div className="bg-tactical-gray/30 w-1 h-12"></div>
             <StatsCard 
               stat={{
                 title: 'Positions Open',
                 value: 3,
-                icon: '🔍'
+                icon: '⚔️'
               }}
               variant="compact"
               className="text-center"
             />
-            <div className="w-1 h-12 bg-tactical-gray/30"></div>
+            <div className="bg-tactical-gray/30 w-1 h-12"></div>
             <StatsCard 
               stat={{
                 title: 'Potential Impact',
@@ -94,36 +94,36 @@ export default function TeamPage() {
       </section>
 
       {/* Elite Team Showcase */}
-      <section className="py-24 bg-gradient-to-br from-tactical-dark via-black to-patriot-blue relative overflow-hidden">
+      <section className="relative bg-gradient-to-br from-tactical-dark via-black to-patriot-blue py-24 overflow-hidden">
         {/* Epic Background Effects */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_30%,_rgba(255,255,255,0.1)_30.5%,_rgba(255,255,255,0.1)_35%,_transparent_35.5%)]"></div>
         </div>
-        <div className="absolute top-10 right-10 w-96 h-96 bg-gradient-to-bl from-patriot-red/20 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-tr from-patriot-blue/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="top-10 right-10 absolute bg-gradient-to-bl from-patriot-red/20 to-transparent blur-3xl rounded-full w-96 h-96"></div>
+        <div className="bottom-10 left-10 absolute bg-gradient-to-tr from-patriot-blue/20 to-transparent blur-3xl rounded-full w-80 h-80"></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="z-10 relative mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Warrior Header */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-patriot-red/30 to-patriot-blue/30 backdrop-blur-sm px-8 py-4 rounded-full border border-yellow-400/50 mb-8 shadow-2xl">
+          <div className="mb-20 text-center">
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-patriot-red/30 to-patriot-blue/30 shadow-2xl backdrop-blur-sm mb-8 px-8 py-4 border border-yellow-400/50 rounded-full">
               <span className="text-3xl animate-pulse">⚔️</span>
-              <span className="text-yellow-400 font-bold text-lg tracking-wider">ELITE OPERATORS</span>
+              <span className="font-bold text-yellow-400 text-lg tracking-wider">ELITE OPERATORS</span>
               <span className="text-3xl animate-pulse">⚔️</span>
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold mb-8 text-white">
-              <span className="bg-gradient-to-r from-yellow-400 via-red-500 to-orange-500 bg-clip-text text-transparent">
+            <h2 className="mb-8 font-bold text-white text-5xl md:text-7xl">
+              <span className="bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-orange-500 text-transparent">
                 TEAM
               </span>
               <br />
               <span className="text-white">SHOWCASE</span>
             </h2>
-            <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="mx-auto max-w-4xl text-gray-300 text-2xl leading-relaxed">
               Meet our elite operators and discover available positions
             </p>
           </div>
 
           {/* Team Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+          <div className="gap-8 grid grid-cols-1 lg:grid-cols-2 mb-20">
             {allTeamDisplay.map((member, index) => (
               <div key={member.id} className={`group relative overflow-hidden backdrop-blur-sm rounded-3xl border-2 shadow-2xl transition-all duration-700 hover:shadow-yellow-400/20 hover:shadow-[0_0_50px_rgba(250,204,21,0.3)] hover:-translate-y-2 hover:scale-[1.02] ${
                 member.status === 'active' 
@@ -137,39 +137,39 @@ export default function TeamPage() {
                     ? 'bg-gradient-to-br from-yellow-500/10 via-red-500/10 to-orange-500/10'
                     : 'bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-green-500/10'
                 }`}></div>
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-yellow-400/30 to-transparent star-bg-top-right"></div>
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-red-500/30 to-transparent star-bg-bottom-left"></div>
+                <div className="top-0 right-0 absolute bg-gradient-to-bl from-yellow-400/30 to-transparent star-bg-top-right w-64 h-64"></div>
+                <div className="bottom-0 left-0 absolute bg-gradient-to-tr from-red-500/30 to-transparent star-bg-bottom-left w-48 h-48"></div>
                 
-                <div className="relative z-10 p-8 pt-12">
+                <div className="z-10 relative p-8 pt-12">
                   {/* Status Badge */}
                   <div className={`absolute top-4 right-4 px-4 py-2 rounded-full text-xs font-bold shadow-lg ${
                     member.status === 'active' 
                       ? 'bg-gradient-to-r from-green-600 to-green-800 text-white border border-green-400' 
                       : 'bg-gradient-to-r from-blue-600 to-blue-800 text-white border border-blue-400'
                   }`}>
-                    {member.status === 'active' ? '🟢 ACTIVE OPERATOR' : '🔍 RECRUITING'}
+                    {member.status === 'active' ? '🎖️ ACTIVE OPERATOR' : '⚔️ RECRUITING'}
                   </div>
                   
                   {/* Profile Section */}
                   <div className="flex items-start space-x-6 mb-6">
-                    <div className="relative inline-block">
+                    <div className="inline-block relative">
                       <div className={`w-24 h-24 mx-auto tactical-star flex items-center justify-center text-4xl shadow-2xl border-4 border-yellow-300 group-hover:scale-110 transition-transform duration-500 ${
                         member.status === 'active' 
                           ? 'bg-gradient-to-br from-yellow-600 via-red-600 to-orange-600' 
                           : 'bg-gradient-to-br from-blue-600 via-purple-600 to-green-600'
                       }`}>
-                        <span className="filter drop-shadow-lg">{member.status === 'active' ? '👨‍💼' : '❓'}</span>
-                        <div className="absolute -inset-2 tactical-star border-2 border-yellow-400/50 animate-ping"></div>
+                        <span className="drop-shadow-lg filter">{member.status === 'active' ? '🎖️' : '⚔️'}</span>
+                        <div className="absolute -inset-2 border-2 border-yellow-400/50 animate-ping tactical-star"></div>
                       </div>
                     </div>
                     
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors duration-300">{member.name}</h3>
-                      <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-white font-bold text-sm shadow-lg border border-red-400 mb-4">
+                      <h3 className="mb-2 font-bold text-white group-hover:text-yellow-300 text-2xl transition-colors duration-300">{member.name}</h3>
+                      <div className="inline-flex items-center bg-gradient-to-r from-red-600 to-red-800 shadow-lg mb-4 px-4 py-2 border border-red-400 rounded-full font-bold text-white text-sm">
                         <span className="mr-2">🏆</span>
                         {member.rank}
                       </div>
-                      <div className="text-sm text-gray-300 mb-2">{member.branch}</div>
+                      <div className="mb-2 text-gray-300 text-sm">{member.branch}</div>
                       <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${
                         member.status === 'active' ? 'bg-yellow-400/20 text-yellow-400' : 'bg-blue-400/20 text-blue-400'
                       }`}>
@@ -179,16 +179,16 @@ export default function TeamPage() {
                   </div>
                   
                   {/* Bio */}
-                  <p className="text-gray-300 text-sm leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-300">
+                  <p className="mb-6 text-gray-300 group-hover:text-gray-200 text-sm leading-relaxed transition-colors duration-300">
                     {member.bio}
                   </p>
                   
                   {/* Specialties */}
                   <div className="mb-6">
-                    <h4 className="text-lg font-semibold mb-3 text-yellow-400">🎯 Specialties:</h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <h4 className="mb-3 font-semibold text-yellow-400 text-lg">🎯 Specialties:</h4>
+                    <div className="gap-2 grid grid-cols-1 sm:grid-cols-3">
                       {member.specialties.map((specialty, specIndex) => (
-                        <div key={specIndex} className="bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg text-sm text-center border border-white/20 hover:bg-white/15 transition-all duration-300">
+                        <div key={specIndex} className="bg-white/10 hover:bg-white/15 backdrop-blur-sm px-3 py-2 border border-white/20 rounded-lg text-sm text-center transition-all duration-300">
                           {specialty}
                         </div>
                       ))}
@@ -197,12 +197,12 @@ export default function TeamPage() {
                   
                   {/* Certifications */}
                   <div className="mb-6">
-                    <h4 className="text-lg font-semibold mb-3 text-yellow-400">📜 Certifications:</h4>
+                    <h4 className="mb-3 font-semibold text-yellow-400 text-lg">📜 Certifications:</h4>
                     <div className="space-y-2">
                       {member.certifications?.map((cert: string, certIndex: number) => (
                         <div key={certIndex} className="flex items-center">
-                          <span className="text-green-400 mr-2">✓</span>
-                          <span className="text-sm text-gray-300">{cert}</span>
+                          <span className="mr-2 text-green-400">✓</span>
+                          <span className="text-gray-300 text-sm">{cert}</span>
                         </div>
                       ))}
                     </div>
@@ -210,11 +210,11 @@ export default function TeamPage() {
                   
                   {/* Action Button */}
                   {member.status === 'recruiting' && (
-                    <div className="pt-4 border-t border-white/20">
-                      <Link href="/join" className="w-full group/btn relative overflow-hidden bg-gradient-to-r from-yellow-400 to-orange-500 text-black hover:from-orange-500 hover:to-red-500 font-bold py-3 px-6 rounded-2xl text-center block transition-all transform hover:scale-105 shadow-2xl border-2 border-yellow-300">
+                    <div className="pt-4 border-white/20 border-t">
+                      <Link href="/join" className="group/btn block relative bg-gradient-to-r from-yellow-400 hover:from-orange-500 to-orange-500 hover:to-red-500 shadow-2xl px-6 py-3 border-2 border-yellow-300 rounded-2xl w-full overflow-hidden font-bold text-black text-center hover:scale-105 transition-all transform">
                         <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
                         <span className="mr-2 text-lg">⚔️</span>
-                        <span className="relative z-10">Apply for This Position</span>
+                        <span className="z-10 relative">Apply for This Position</span>
                         <span className="ml-2 text-lg">⚔️</span>
                       </Link>
                     </div>
@@ -227,53 +227,53 @@ export default function TeamPage() {
       </section>
 
       {/* Team Vision */}
-      <section className="py-20 bg-gradient-to-br from-tactical-dark via-black to-patriot-blue relative overflow-hidden">
+      <section className="relative bg-gradient-to-br from-tactical-dark via-black to-patriot-blue py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_30%,_rgba(255,255,255,0.1)_30.5%,_rgba(255,255,255,0.1)_35%,_transparent_35.5%)]"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              <span className="bg-gradient-to-r from-yellow-400 via-red-500 to-orange-500 bg-clip-text text-transparent">
+        <div className="z-10 relative mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="mb-12 text-center">
+            <h2 className="mb-6 font-bold text-white text-4xl md:text-5xl">
+              <span className="bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-orange-500 text-transparent">
                 Building an Elite Unit
               </span>
             </h2>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed text-gray-300">
+            <p className="mx-auto max-w-4xl text-gray-300 text-xl md:text-2xl leading-relaxed">
               Our vision is to assemble a diverse team of military veterans, each bringing 
               unique specializations to create the most comprehensive tactical training program 
               in the Pacific Northwest.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-yellow-600 to-red-600 tactical-star flex items-center justify-center text-3xl shadow-2xl border-4 border-yellow-300 group-hover:scale-110 transition-transform duration-500">
-                <span className="filter drop-shadow-lg">🎖️</span>
+          <div className="gap-8 grid grid-cols-1 md:grid-cols-3 mb-12">
+            <div className="group text-center">
+              <div className="flex justify-center items-center bg-gradient-to-br from-yellow-600 to-red-600 shadow-2xl mx-auto mb-4 border-4 border-yellow-300 w-20 h-20 text-3xl group-hover:scale-110 transition-transform duration-500 tactical-star">
+                <span className="drop-shadow-lg filter">🎖️</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Diverse Expertise</h3>
+              <h3 className="mb-3 font-bold text-white text-xl">Diverse Expertise</h3>
               <p className="text-gray-300">
                 Combat medics, precision shooters, tactical specialists, and fitness experts 
                 working together as one unit.
               </p>
             </div>
             
-            <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-green-600 tactical-star flex items-center justify-center text-3xl shadow-2xl border-4 border-yellow-300 group-hover:scale-110 transition-transform duration-500">
-                <span className="filter drop-shadow-lg">🤝</span>
+            <div className="group text-center">
+              <div className="flex justify-center items-center bg-gradient-to-br from-blue-600 to-green-600 shadow-2xl mx-auto mb-4 border-4 border-yellow-300 w-20 h-20 text-3xl group-hover:scale-110 transition-transform duration-500 tactical-star">
+                <span className="drop-shadow-lg filter">🛡️</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Veteran Brotherhood</h3>
+              <h3 className="mb-3 font-bold text-white text-xl">Veteran Brotherhood</h3>
               <p className="text-gray-300">
                 Creating a supportive environment where veterans can continue serving 
                 their community through education and training.
               </p>
             </div>
             
-            <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-red-600 to-orange-600 tactical-star flex items-center justify-center text-3xl shadow-2xl border-4 border-yellow-300 group-hover:scale-110 transition-transform duration-500">
-                <span className="filter drop-shadow-lg">🎯</span>
+            <div className="group text-center">
+              <div className="flex justify-center items-center bg-gradient-to-br from-red-600 to-orange-600 shadow-2xl mx-auto mb-4 border-4 border-yellow-300 w-20 h-20 text-3xl group-hover:scale-110 transition-transform duration-500 tactical-star">
+                <span className="drop-shadow-lg filter">🎯</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Mission Excellence</h3>
+              <h3 className="mb-3 font-bold text-white text-xl">Mission Excellence</h3>
               <p className="text-gray-300">
                 Maintaining the highest standards of tactical training while adapting 
                 military precision for civilian applications.
@@ -282,10 +282,10 @@ export default function TeamPage() {
           </div>
           
           <div className="text-center">
-            <Link href="/join" className="group relative overflow-hidden bg-gradient-to-r from-yellow-400 to-orange-500 text-black hover:from-orange-500 hover:to-red-500 font-bold py-4 px-8 rounded-2xl text-lg transition-all transform hover:scale-110 shadow-2xl border-2 border-yellow-300">
+            <Link href="/join" className="group relative bg-gradient-to-r from-yellow-400 hover:from-orange-500 to-orange-500 hover:to-red-500 shadow-2xl px-8 py-4 border-2 border-yellow-300 rounded-2xl overflow-hidden font-bold text-black text-lg hover:scale-110 transition-all transform">
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="mr-3 text-xl">⚔️</span>
-              <span className="relative z-10">Join Our Elite Team</span>
+              <span className="z-10 relative">Join Our Elite Team</span>
               <span className="ml-3 text-xl">⚔️</span>
             </Link>
           </div>

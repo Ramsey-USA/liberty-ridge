@@ -8,24 +8,24 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       
-      {/* Enhanced Hero Section with LR Theme */}
-      <section className="relative min-h-screen overflow-hidden hero-gradient-bg section-padding-enhanced">
+      {/* Enhanced Hero Section with LR Theme - Always Visible on Large Screens */}
+      <section className="block relative min-h-screen lg:min-h-screen 2xl:min-h-screen xl:min-h-screen overflow-hidden hero-gradient-bg section-padding-enhanced">
         {/* Tactical accent elements */}
-        <div className="top-10 left-10 absolute animate-two-tone-pulse icon icon-md icon-primary icon-crosshair"></div>
-        <div className="top-20 right-20 absolute animate-two-tone-pulse animation-delay-1000 icon icon-sm icon-secondary icon-target"></div>
-        <div className="bottom-20 left-20 absolute animate-two-tone-pulse animation-delay-2000 icon icon-xs icon-accent icon-bullet"></div>
+        <div className="lg:block xl:block top-10 left-10 absolute animate-two-tone-pulse icon icon-md icon-primary icon-crosshair"></div>
+        <div className="lg:block xl:block top-20 right-20 absolute animate-two-tone-pulse animation-delay-1000 icon icon-sm icon-secondary icon-target"></div>
+        <div className="lg:block xl:block bottom-20 left-20 absolute animate-two-tone-pulse animation-delay-2000 icon icon-xs icon-accent icon-bullet"></div>
         
-        {/* Enhanced Typography Content */}
-        <div className="z-10 relative text-center animate-fade-in-up container-enhanced">
+        {/* Enhanced Typography Content - Always Visible on Large Screens */}
+        <div className="block lg:block 2xl:block xl:block z-10 relative text-center animate-fade-in-up container-enhanced">
           {/* Elite Badge */}
-          <div className="mb-8 section-badge-enhanced">
+          <div className="block lg:block xl:block mb-8 section-badge-enhanced">
             <div className="icon icon-xs icon-primary icon-shield"></div>
             <span className="text-highlight-red">Elite Training Available</span>
             <div className="icon icon-xs icon-secondary icon-star"></div>
           </div>
           
-          {/* Main Title with Enhanced LR Typography */}
-          <h1 className="mb-6 animate-fade-in-up hero-title-enhanced">
+          {/* Main Title with Enhanced LR Typography - Always Visible on Large Screens */}
+          <h1 className="block lg:block 2xl:block xl:block mb-6 animate-fade-in-up hero-title-enhanced">
             <span className="drop-shadow-text text-text-primary">
               LIBERTY RIDGE
             </span>
@@ -35,8 +35,8 @@ export default function Home() {
             </span>
           </h1>
           
-          {/* Enhanced Subtitle with Icon Integration */}
-          <div className="space-x-4 mb-8 animate-fade-in-up animation-delay-500 hero-subtitle-enhanced">
+          {/* Enhanced Subtitle with Icon Integration - Always Visible on Large Screens */}
+          <div className="block lg:block 2xl:block xl:block space-x-4 mb-8 animate-fade-in-up animation-delay-500 hero-subtitle-enhanced">
             <span className="inline-flex items-center gap-2 text-highlight-red">
               <div className="icon icon-xs icon-primary icon-target"></div>
               Practical Tactical Training
@@ -53,25 +53,25 @@ export default function Home() {
             </span>
           </div>
           
-          {/* Enhanced Description */}
-          <p className="mx-auto mb-12 max-w-5xl text-enhanced animate-fade-in-up animation-delay-1000">
+          {/* Enhanced Description - Always Visible on Large Screens */}
+          <p className="block lg:block 2xl:block xl:block mx-auto mb-12 max-w-5xl text-enhanced animate-fade-in-up animation-delay-1000">
             Master tactical fundamentals through proven military methodologies and elite-level firearm training programs designed for serious practitioners seeking <span className="text-highlight-blue">championship-level excellence</span>.
           </p>
           
-          {/* Enhanced CTA Buttons */}
-          <div className="flex sm:flex-row flex-col justify-center gap-6 mb-16 animate-fade-in-up animation-delay-1500">
-            <Link href="/signup" className="btn-hero-primary">
+          {/* Enhanced CTA Buttons - Always Visible on Large Screens */}
+          <div className="flex lg:flex 2xl:flex xl:flex sm:flex-row flex-col justify-center gap-6 mb-16 animate-fade-in-up animation-delay-1500">
+            <Link href="/signup" className="block lg:block xl:block btn-hero-primary">
               <div className="icon icon-sm icon-primary icon-flag-usa"></div>
               Start Training Today
             </Link>
-            <Link href="/courses" className="btn-hero-secondary">
+            <Link href="/courses" className="block lg:block xl:block btn-hero-secondary">
               <div className="icon icon-sm icon-secondary icon-target"></div>
               View Courses
             </Link>
           </div>
           
-          {/* Enhanced Stats Preview */}
-          <div className="grid-3-enhanced mx-auto max-w-2xl animate-fade-in-up animation-delay-2000">
+          {/* Enhanced Stats Preview - Always Visible on Large Screens */}
+          <div className="block lg:grid 2xl:grid xl:grid grid-3-enhanced mx-auto max-w-2xl animate-fade-in-up animation-delay-2000">
             <div className="hover:border-patriot-red stats-card">
               <div className="mb-3 icon icon-lg icon-primary icon-users"></div>
               <div className="text-patriot-red stats-counter">100+</div>

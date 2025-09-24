@@ -40,38 +40,36 @@ const Header = () => {
       {/* LR Theme accent bar */}
       <div className="bg-gradient-to-r from-patriot-red via-patriot-blue to-patriot-red h-1"></div>
       
-      <nav className="mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl">
-        <div className="flex items-center h-20 sm:h-22 lg:h-24">
+      <nav className="mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 max-w-7xl">
+        <div className="flex items-center h-24 sm:h-26 lg:h-28">
           
           {/* Enhanced LR Reticle Logo - Clean Design */}
-          <Link href="/" className="group flex items-center mr-6">
+          <Link href="/" className="group flex items-center mr-8 lg:mr-12">
             {/* LR Theme Reticle Logo */}
-            <div className="relative mr-3 sm:mr-4 w-12 sm:w-14 h-12 sm:h-14">
-              {/* Outer reticle ring */}
-              <div className="absolute inset-0 bg-patriot-red shadow-sharp border-2 border-pure-black dark:border-pure-white rounded-full group-hover:scale-105 transition-transform duration-200 transform">
-                {/* Inner reticle background */}
-                <div className="absolute inset-1 flex justify-center items-center bg-pure-white dark:bg-pure-black rounded-full">
-                  {/* Reticle crosshairs */}
-                  <div className="absolute inset-0 flex justify-center items-center">
-                    {/* Horizontal crosshair line */}
-                    <div className="absolute bg-patriot-red w-8 h-0.5"></div>
-                    {/* Vertical crosshair line */}
-                    <div className="absolute bg-patriot-blue w-0.5 h-8"></div>
-                    {/* Outer targeting ring */}
-                    <div className="absolute border border-patriot-red/40 rounded-full w-10 h-10"></div>
-                    {/* Inner targeting ring */}
-                    <div className="absolute border border-patriot-blue/40 rounded-full w-6 h-6"></div>
-                    {/* Center targeting dot */}
-                    <div className="absolute bg-pure-black dark:bg-pure-white rounded-full w-1.5 h-1.5"></div>
-                  </div>
-                  {/* LR Letters positioned in reticle */}
-                  <div className="top-1 left-1 absolute font-black text-patriot-red text-xs">L</div>
-                  <div className="right-1 bottom-1 absolute font-black text-patriot-blue text-xs">R</div>
+          <div className="relative mr-3 sm:mr-4 w-24 sm:w-28 h-24 sm:h-28">
+            {/* Outer reticle ring */}
+            <div className="absolute inset-0 bg-pure-black dark:bg-pure-white shadow-sharp border-2 border-pure-black dark:border-pure-white rounded-full group-hover:scale-105 transition-transform duration-200 transform">
+              {/* Inner reticle background */}
+              <div className="absolute inset-1 flex justify-center items-center bg-pure-white dark:bg-pure-black rounded-full">
+                {/* Reticle crosshairs */}
+                <div className="absolute inset-0 flex justify-center items-center">
+                  {/* Horizontal crosshair line */}
+                  <div className="absolute bg-pure-black dark:bg-pure-white w-16 h-1"></div>
+                  {/* Vertical crosshair line */}
+                  <div className="absolute bg-pure-black dark:bg-pure-white w-1 h-16"></div>
+                  {/* Outer targeting ring */}
+                  <div className="absolute border border-pure-black/40 dark:border-pure-white/40 rounded-full w-20 h-20"></div>
+                  {/* Inner targeting ring */}
+                  <div className="absolute border border-pure-black/40 dark:border-pure-white/40 rounded-full w-12 h-12"></div>
+                  {/* Center targeting dot */}
+                  <div className="absolute bg-pure-black dark:bg-pure-white rounded-full w-3 h-3"></div>
                 </div>
+                {/* Enlarged LR Letters positioned closer to center */}
+                <div className="top-1/3 left-1/3 absolute font-black text-patriot-red text-3xl sm:text-4xl" style={{transform: 'translate(-25%, -25%)'}}>L</div>
+                <div className="right-1/3 bottom-1/3 absolute font-black text-patriot-blue text-3xl sm:text-4xl" style={{transform: 'translate(25%, 25%)'}}>R</div>
               </div>
             </div>
-            
-            <div className="flex flex-col">
+          </div>            <div className="flex flex-col">
               <span className="font-black text-text-primary group-hover:text-patriot-red text-lg sm:text-xl tracking-tight transition-colors duration-200">
                 LIBERTY RIDGE
               </span>
@@ -85,7 +83,7 @@ const Header = () => {
           <div className="flex-1"></div>
 
           {/* Action Items - Always Visible */}
-          <div className="flex items-center space-x-3 sm:space-x-4 lg:space-x-6">
+          <div className="flex items-center space-x-4 sm:space-x-6 lg:space-x-8">
             {/* Theme Toggle - Always Visible */}
             <div className="flex items-center">
               <ThemeToggle />
@@ -94,7 +92,7 @@ const Header = () => {
             {/* LR Theme Book Now Button */}
             <Link
               href="/signup"
-              className="group relative px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-sm sm:text-base btn-hero-primary"
+              className="group relative px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base btn-hero-primary"
             >
               <div className="relative flex items-center space-x-2">
                 <span className="font-bold tracking-wide">BOOK NOW</span>
@@ -105,7 +103,7 @@ const Header = () => {
             {/* LR Theme Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="group relative bg-surface shadow-sharp hover:shadow-md p-3 border hover:border-patriot-red border-border rounded-sm focus:ring-2 focus:ring-patriot-red/50 text-text-primary hover:scale-102 transition-all duration-300"
+              className="group relative bg-surface shadow-sharp hover:shadow-md p-4 border hover:border-patriot-red border-border rounded-sm focus:ring-2 focus:ring-patriot-red/50 text-text-primary hover:scale-102 transition-all duration-300"
               aria-label="Toggle main navigation menu"
             >
               <span className="sr-only">Toggle main menu</span>
@@ -125,13 +123,13 @@ const Header = () => {
         {/* Enhanced LR Theme Navigation Menu */}
         {isMenuOpen && (
           <div className="top-full right-0 left-0 absolute bg-surface-elevated shadow-lg border-patriot-red border-t">
-            <div className="space-y-2 mx-auto px-4 py-8 max-w-7xl">
-              <div className="gap-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="space-y-3 mx-auto px-6 sm:px-8 lg:px-12 py-10 max-w-7xl">
+              <div className="gap-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {navigation.map((item, index) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="group flex justify-between items-center bg-surface hover:bg-surface-elevated shadow-sharp hover:shadow-md px-6 py-4 border hover:border-patriot-red border-border rounded-sm font-medium text-text-primary hover:text-patriot-red hover:scale-102 transition-all duration-300 transform"
+                    className="group flex justify-between items-center bg-surface hover:bg-surface-elevated shadow-sharp hover:shadow-md px-8 py-5 border hover:border-patriot-red border-border rounded-sm font-medium text-text-primary hover:text-patriot-red hover:scale-102 transition-all duration-300 transform"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <span className="flex items-center space-x-3">
@@ -156,14 +154,14 @@ const Header = () => {
               </div>
               
               {/* Enhanced LR Theme menu footer */}
-              <div className="mt-6 pt-6 border-t border-border">
-                <div className="flex sm:flex-row flex-col justify-between items-center space-y-4 sm:space-y-0">
+              <div className="mt-8 pt-8 border-t border-border">
+                <div className="flex sm:flex-row flex-col justify-between items-center space-y-6 sm:space-y-0">
                   <div className="sm:text-left text-center">
                     <p className="font-medium text-text-secondary text-sm">Ready to start training?</p>
                     <p className="font-bold text-patriot-red text-xs uppercase tracking-wide">Elite • Professional • Results</p>
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2 bg-surface px-4 py-2 border border-border rounded-sm">
+                  <div className="flex items-center space-x-6">
+                    <div className="flex items-center space-x-3 bg-surface px-5 py-3 border border-border rounded-sm">
                       <span className="font-medium text-text-secondary text-sm">Theme:</span>
                       <ThemeToggle />
                     </div>

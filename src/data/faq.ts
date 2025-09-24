@@ -145,7 +145,7 @@ export const faqCategories: FAQCategory[] = [
 // Contact methods for the "Still Have Questions" section
 export const contactMethods: ContactMethod[] = [
   {
-    icon: "📞",
+    icon: "🎖️",
     title: "Call Us",
     description: "Immediate assistance",
     detail: "(555) 123-4567"
@@ -157,7 +157,7 @@ export const contactMethods: ContactMethod[] = [
     detail: "info@libertyridegetraininggrounds.com"
   },
   {
-    icon: "💬",
+    icon: "⚔️",
     title: "Visit Contact Page",
     description: "All contact options",
     detail: "Contact Page",
@@ -186,7 +186,7 @@ export const quickNavigation = {
 export const stillHaveQuestions = {
   title: "Still Have Questions?",
   description: "Can't find what you're looking for? Our team is standing by to help answer any questions and guide you through the registration process.",
-  icon: "❓"
+  icon: "🎯"
 };
 
 // Call to action buttons

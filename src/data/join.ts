@@ -58,7 +58,7 @@ export const openPositions: Position[] = [
     shortTitle: 'Combat Medic',
     status: 'PRIORITY HIRE',
     statusColor: 'bg-patriot-red',
-    icon: '⚕️',
+    icon: '🛡️',
     gradient: 'from-red-600 to-red-800',
     requirements: [
       'Combat medic experience (68W or similar)',
@@ -83,7 +83,7 @@ export const openPositions: Position[] = [
     shortTitle: 'Tactical Movement',
     status: 'HIGH DEMAND',
     statusColor: 'bg-patriot-blue',
-    icon: '🏃‍♀️',
+    icon: '⚔️',
     gradient: 'from-blue-600 to-blue-800',
     requirements: [
       'Marine Corps infantry experience',
@@ -138,19 +138,19 @@ export const teamBenefits: TeamBenefit[] = [
     gradient: 'from-patriot-red to-red-700'
   },
   {
-    icon: '📈',
+    icon: '⚔️',
     title: 'Growth Opportunity',
     description: 'Ground floor opportunity with a rapidly expanding company. Shape the future of tactical education in the Pacific Northwest.',
     gradient: 'from-patriot-blue to-blue-700'
   },
   {
-    icon: '🤝',
+    icon: '🛡️',
     title: 'Continue Serving',
     description: 'Use your military skills to serve civilians, law enforcement, and fellow veterans through professional training.',
     gradient: 'from-green-600 to-green-700'
   },
   {
-    icon: '💰',
+    icon: '🎖️',
     title: 'Competitive Compensation',
     description: 'Competitive salary plus performance bonuses. Equity opportunities as the company grows and expands operations.',
     gradient: 'from-yellow-600 to-orange-600'
@@ -175,17 +175,17 @@ export const companyVisionItems: CompanyVisionItem[] = [
     description: 'Training civilians for emergency preparedness'
   },
   {
-    icon: '⭐',
+    icon: '🏛️',
     text: 'Military values in civilian world',
     description: 'Honor, integrity, and excellence in everything'
   },
   {
-    icon: '🎓',
+    icon: '�️',
     text: 'Next generation of prepared citizens',
     description: 'Educated and responsible gun ownership'
   },
   {
-    icon: '📈',
+    icon: '⚔️',
     text: 'Professional development platform',
     description: 'Continuous learning and skill advancement'
   }

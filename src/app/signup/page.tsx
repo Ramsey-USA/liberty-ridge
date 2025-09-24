@@ -1,10 +1,10 @@
 'use client';
 
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import BulletHero from '@/components/BulletHero';
-import { useState } from 'react';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 import { enrollStudent } from '@/lib/firestore';
+import { useState } from 'react';
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
@@ -73,19 +73,19 @@ export default function SignupPage() {
       />
 
       {/* Registration Form */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white py-20">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="bg-white shadow-2xl rounded-lg overflow-hidden">
             <div className="px-8 py-12">
-              <h2 className="text-3xl font-bold text-center mb-8 text-tactical-dark">
+              <h2 className="mb-8 font-bold text-tactical-dark text-3xl text-center">
                 Register for Training
               </h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Information */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-medium text-tactical-dark mb-2">
+                    <label className="block mb-2 font-medium text-tactical-dark text-sm">
                       First Name *
                     </label>
                     <input
@@ -94,12 +94,12 @@ export default function SignupPage() {
                       required
                       value={formData.firstName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-patriot-red focus:border-transparent"
+                      className="px-4 py-3 border border-gray-300 focus:border-transparent rounded-lg focus:ring-2 focus:ring-patriot-red w-full"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-tactical-dark mb-2">
+                    <label className="block mb-2 font-medium text-tactical-dark text-sm">
                       Last Name *
                     </label>
                     <input
@@ -108,14 +108,14 @@ export default function SignupPage() {
                       required
                       value={formData.lastName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-patriot-red focus:border-transparent"
+                      className="px-4 py-3 border border-gray-300 focus:border-transparent rounded-lg focus:ring-2 focus:ring-patriot-red w-full"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-medium text-tactical-dark mb-2">
+                    <label className="block mb-2 font-medium text-tactical-dark text-sm">
                       Email Address *
                     </label>
                     <input
@@ -124,12 +124,12 @@ export default function SignupPage() {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-patriot-red focus:border-transparent"
+                      className="px-4 py-3 border border-gray-300 focus:border-transparent rounded-lg focus:ring-2 focus:ring-patriot-red w-full"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-tactical-dark mb-2">
+                    <label className="block mb-2 font-medium text-tactical-dark text-sm">
                       Phone Number *
                     </label>
                     <input
@@ -138,14 +138,14 @@ export default function SignupPage() {
                       required
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-patriot-red focus:border-transparent"
+                      className="px-4 py-3 border border-gray-300 focus:border-transparent rounded-lg focus:ring-2 focus:ring-patriot-red w-full"
                     />
                   </div>
                 </div>
 
                 {/* Course Selection */}
                 <div>
-                  <label className="block text-sm font-medium text-tactical-dark mb-2">
+                  <label className="block mb-2 font-medium text-tactical-dark text-sm">
                     Select Course *
                   </label>
                   <select
@@ -153,7 +153,7 @@ export default function SignupPage() {
                     required
                     value={formData.course}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-patriot-red focus:border-transparent"
+                    className="px-4 py-3 border border-gray-300 focus:border-transparent rounded-lg focus:ring-2 focus:ring-patriot-red w-full"
                   >
                     <option value="">Choose a course...</option>
                     {courses.map((course) => (
@@ -166,7 +166,7 @@ export default function SignupPage() {
 
                 {/* Experience Level */}
                 <div>
-                  <label className="block text-sm font-medium text-tactical-dark mb-2">
+                  <label className="block mb-2 font-medium text-tactical-dark text-sm">
                     Experience Level *
                   </label>
                   <select
@@ -174,7 +174,7 @@ export default function SignupPage() {
                     required
                     value={formData.experience}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-patriot-red focus:border-transparent"
+                    className="px-4 py-3 border border-gray-300 focus:border-transparent rounded-lg focus:ring-2 focus:ring-patriot-red w-full"
                   >
                     <option value="">Select your experience level...</option>
                     <option value="beginner">Beginner - No prior experience</option>
@@ -186,7 +186,7 @@ export default function SignupPage() {
 
                 {/* Additional Information */}
                 <div>
-                  <label className="block text-sm font-medium text-tactical-dark mb-2">
+                  <label className="block mb-2 font-medium text-tactical-dark text-sm">
                     Additional Information or Questions
                   </label>
                   <textarea
@@ -195,7 +195,7 @@ export default function SignupPage() {
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Tell us about your goals, any specific concerns, or questions you may have..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-patriot-red focus:border-transparent resize-none"
+                    className="px-4 py-3 border border-gray-300 focus:border-transparent rounded-lg focus:ring-2 focus:ring-patriot-red w-full resize-none"
                   />
                 </div>
 
@@ -205,9 +205,9 @@ export default function SignupPage() {
                     <input
                       type="checkbox"
                       required
-                      className="mt-1 mr-3 h-4 w-4 text-patriot-red focus:ring-patriot-red border-gray-300 rounded"
+                      className="mt-1 mr-3 border-gray-300 rounded focus:ring-patriot-red w-4 h-4 text-patriot-red"
                     />
-                    <label className="text-sm text-tactical-gray">
+                    <label className="text-tactical-gray text-sm">
                       I acknowledge that I have read and understand the safety requirements 
                       and waiver policies. I agree to the terms and conditions of training. *
                     </label>
@@ -216,9 +216,9 @@ export default function SignupPage() {
                   <div className="flex items-start mb-6">
                     <input
                       type="checkbox"
-                      className="mt-1 mr-3 h-4 w-4 text-patriot-red focus:ring-patriot-red border-gray-300 rounded"
+                      className="mt-1 mr-3 border-gray-300 rounded focus:ring-patriot-red w-4 h-4 text-patriot-red"
                     />
-                    <label className="text-sm text-tactical-gray">
+                    <label className="text-tactical-gray text-sm">
                       I would like to receive updates about new courses and training opportunities.
                     </label>
                   </div>
@@ -226,7 +226,7 @@ export default function SignupPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full btn-primary text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="disabled:opacity-50 py-4 w-full text-lg disabled:cursor-not-allowed btn-primary"
                   >
                     {isSubmitting ? 'Submitting...' : 'Submit Registration'}
                   </button>
@@ -238,32 +238,32 @@ export default function SignupPage() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-20 bg-tactical-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-tactical-dark">
+      <section className="bg-tactical-light py-20">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
+          <h2 className="mb-6 font-bold text-tactical-dark text-3xl">
             Need Assistance?
           </h2>
-          <p className="text-xl text-tactical-gray mb-8 max-w-3xl mx-auto">
+          <p className="mx-auto mb-8 max-w-3xl text-tactical-gray text-xl">
             Have questions about our courses or need help with registration? 
             Our team is here to help.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="tactical-card text-center">
-              <div className="text-4xl mb-4">📞</div>
-              <h3 className="font-semibold text-tactical-dark mb-2">Call Us</h3>
+          <div className="gap-8 grid grid-cols-1 md:grid-cols-3">
+            <div className="text-center tactical-card">
+              <div className="mb-4 text-4xl">🎖️</div>
+              <h3 className="mb-2 font-semibold text-tactical-dark">Call Us</h3>
               <p className="text-tactical-gray">(555) 123-4567</p>
             </div>
             
-            <div className="tactical-card text-center">
-              <div className="text-4xl mb-4">📧</div>
-              <h3 className="font-semibold text-tactical-dark mb-2">Email</h3>
+            <div className="text-center tactical-card">
+              <div className="mb-4 text-4xl">🎖️</div>
+              <h3 className="mb-2 font-semibold text-tactical-dark">Email</h3>
               <p className="text-tactical-gray">info@libertyridegetraininggrounds.com</p>
             </div>
             
-            <div className="tactical-card text-center">
-              <div className="text-4xl mb-4">📍</div>
-              <h3 className="font-semibold text-tactical-dark mb-2">Location</h3>
+            <div className="text-center tactical-card">
+              <div className="mb-4 text-4xl">🏛️</div>
+              <h3 className="mb-2 font-semibold text-tactical-dark">Location</h3>
               <p className="text-tactical-gray">Pasco, WA</p>
             </div>
           </div>

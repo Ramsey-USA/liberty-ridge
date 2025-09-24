@@ -115,6 +115,20 @@ Every page follows our championship-grade structure:
 4. **Modern Component Design** - Functional components with advanced Tailwind patterns
 5. **Professional Export** - Default exports with descriptive component names
 
+#### Serious Tactical Icon Standards
+
+##### Military-Grade Icon System
+
+- **🎯** Target/Precision Training, Course Navigation, Achievement Markers
+- **⚔️** Combat Operations, Team Training, Advanced Skills  
+- **🛡️** Protection Training, Defense Courses, Safety Records
+- **🎖️** Military Achievement, Instructor Credentials, Honor System
+- **🏆** Excellence, Competition Results, Championship Records
+
+##### Icon Guidelines
+
+**Prohibited Casual Icons**: NO 🚀, 💪, 👥, 🌟, 📞, 💥, ⚡, 🔥, 💬, ❓, 📊 - maintains professional military training atmosphere
+
 #### Championship Component Library
 
 - **Enhanced Hero Sections** - Professional animations with gradient shifts and pulse effects
@@ -399,6 +413,7 @@ Built with modern development practices, clean animation systems, and profession
 #### LR Theme Features
 
 - **Two-Tone Component System:** Consistent black/white styling with strategic red/blue highlights
+- **Serious Tactical Icon System:** Professional military icons (🎯, ⚔️, 🛡️, 🎖️, 🏆) maintaining tactical training aesthetics
 - **Sharp Professional Interactions:** Clean hover states, minimal transforms, and strategic color transitions
 - **Performance Optimized:** Smooth animations with sharp timing and professional easing
 - **Mobile Excellence:** Mobile-first responsive design with LR Theme consistency maintained

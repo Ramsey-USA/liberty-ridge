@@ -40,7 +40,7 @@ export const teamMembers: TeamMember[] = [
       'First Year Competition Achiever',
       'Tactical Training Specialist'
     ],
-    image: '👨‍💼',
+    image: '🎖️',
     bio: 'Zach Gaudette is a dedicated U.S. Army veteran who brings years of military experience and tactical expertise to civilian training. His commitment to excellence and safety has made Liberty Ridge Training Grounds a trusted name in tactical education throughout the Pacific Northwest.',
     experience: '5+ years in tactical training and firearm education',
     featured: true,

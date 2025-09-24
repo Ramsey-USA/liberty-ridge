@@ -122,7 +122,7 @@ export const competitionTimeline: CompetitionTimelineEvent[] = [
     month: "JUN",
     title: "Steady Improvement",
     description: "Consistent top-20 placements",
-    icon: "📈",
+    icon: "⚔️",
     gradient: "from-blue-600 to-blue-800"
   },
   {
@@ -136,7 +136,7 @@ export const competitionTimeline: CompetitionTimelineEvent[] = [
     month: "SEP",
     title: "Next Challenge",
     description: "Defending position",
-    icon: "🚀",
+    icon: "�️",
     gradient: "from-patriot-red to-patriot-blue",
     isUpcoming: true
   }
@@ -153,7 +153,7 @@ export const competitionBenefits: CompetitionBenefit[] = [
     color: "yellow-300"
   },
   {
-    icon: "🧠",
+    icon: "🎖️",
     title: "Mental Discipline",
     description: "Competition shooting requires intense focus and mental control, teaching students to overcome anxiety and maintain concentration.",
     application: "Mindset Training",
@@ -161,7 +161,7 @@ export const competitionBenefits: CompetitionBenefit[] = [
     color: "blue-300"
   },
   {
-    icon: "📊",
+    icon: "⚔️",
     title: "Data-Driven Improvement",
     description: "Competition requires detailed analysis of ballistics, wind, and environmental factors, providing advanced technical knowledge for students.",
     application: "Long-Range Precision Courses",
@@ -169,7 +169,7 @@ export const competitionBenefits: CompetitionBenefit[] = [
     color: "green-300"
   },
   {
-    icon: "⚡",
+    icon: "🛡️",
     title: "Adaptability Training",
     description: "Competing in various weather conditions and ranges teaches adaptation skills essential for real-world defensive situations.",
     application: "Environmental Training",
@@ -181,11 +181,11 @@ export const competitionBenefits: CompetitionBenefit[] = [
 // Competition equipment list
 export const competitionEquipment: CompetitionEquipment[] = [
   { icon: "🔫", text: "Precision rifle systems" },
-  { icon: "🔭", text: "High-end optics (Vortex, Leupold)" },
-  { icon: "📡", text: "Ballistic calculators" },
-  { icon: "🌡️", text: "Environmental monitoring" },
+  { icon: "⚫", text: "High-end optics (Vortex, Leupold)" },
+  { icon: "⚙️", text: "Ballistic calculators" },
+  { icon: "�️", text: "Environmental monitoring" },
   { icon: "🎯", text: "Custom ammunition loads" },
-  { icon: "⚖️", text: "Precision measurement tools" }
+  { icon: "⚔️", text: "Precision measurement tools" }
 ];
 
 // Student benefits from competitive experience
@@ -229,9 +229,9 @@ export const upcomingCompetition: UpcomingCompetition = {
 
 // Navigation links for the upcoming competition section
 export const competitionNavLinks = [
-  { href: "/contact", text: "📧 Get Competition Updates", style: "primary" },
+  { href: "/contact", text: "🎖️ Get Competition Updates", style: "primary" },
   { href: "/courses", text: "🎯 Train with Zach", style: "secondary" },
-  { href: "/team", text: "👥 Meet the Team", style: "accent" }
+  { href: "/team", text: "⚔️ Meet the Team", style: "accent" }
 ];
 
 // Elite team members
@@ -259,7 +259,7 @@ export const teamMembers: TeamMember[] = [
     title: "PRECISION RIFLE SPECIALIST",
     rank: 18,
     competition: "Western States Championship",
-    avatar: "🏹",
+    avatar: "�",
     stats: {
       accuracy: 92,
       maxDistance: 1000,
@@ -293,7 +293,7 @@ export const teamMembers: TeamMember[] = [
     title: "RISING CHAMPION",
     rank: 35,
     competition: "Northwest Precision Series",
-    avatar: "🔥",
+    avatar: "�️",
     stats: {
       accuracy: 87,
       maxDistance: 900,

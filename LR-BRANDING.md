@@ -178,24 +178,28 @@ Liberty Ridge Training Grounds utilizes the **LR Theme** - a revolutionary black
 
 ## 🎨 Icon System
 
-### Two-Tone Icon Library
+### Serious Tactical Icon Standards
 
-LR Theme includes 20+ custom CSS icons with consistent styling:
+LR Theme implements a comprehensive tactical icon system maintaining professional military training aesthetics:
 
-#### Available Icons
+#### Primary Tactical Icons
 
-- `icon-star` - Five-pointed star with red accent
-- `icon-shield` - Military shield with blue accent
-- `icon-target` - Bullseye target with red center
-- `icon-award` - Medal with ribbon accents
-- `icon-users` - Multiple users with color accents
-- `icon-clock` - Timepiece with white details
-- `icon-crosshair` - Precision targeting reticle
-- `icon-phone` - Communication device
-- `icon-email` - Message envelope
-- `icon-location` - Geographic marker
+- **🎯** - Target/Precision Training, Course Navigation, Achievement Markers
+- **⚔️** - Combat Operations, Team Training, Advanced Skills  
+- **🛡️** - Protection Training, Defense Courses, Safety Records
+- **🎖️** - Military Achievement, Instructor Credentials, Honor System
+- **🏆** - Excellence, Competition Results, Championship Records
 
-#### Icon Sizes
+#### Icon Implementation Guidelines
+
+#### Serious Military Aesthetic Only
+
+- NO casual emojis (🚀, 💪, 👥, 🌟, 📞, 💥, ⚡, 🔥, 💬, ❓, 📊)
+- ALL icons must convey tactical professionalism
+- Consistent with military training environment
+- Emphasizes precision, honor, and combat readiness
+
+#### CSS Icon Classes
 
 - `.icon-xs` - 1rem (16px)
 - `.icon-sm` - 1.25rem (20px)
@@ -392,7 +396,8 @@ box-shadow: var(--shadow-sharp);
 - [ ] **Spacing**: Compact spacing system implementation
 - [ ] **Borders**: Sharp corners with minimal radius (0px-8px)
 - [ ] **Shadows**: Clean, minimal shadow system
-- [ ] **Icons**: Two-tone icon system with proper sizing
+- [ ] **Icons**: Serious tactical icons only (🎯, ⚔️, 🛡️, 🎖️, 🏆) - NO casual emojis
+- [ ] **Icon Consistency**: All emojis must convey military professionalism and tactical training
 - [ ] **Animations**: Smooth, professional transitions
 - [ ] **Contrast**: High contrast ratios for accessibility
 - [ ] **Responsive**: Consistent appearance across all devices

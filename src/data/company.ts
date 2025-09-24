@@ -33,7 +33,7 @@ export const coreValues: CoreValue[] = [
     id: 4,
     title: 'Selfless Service',
     description: 'Dedicating ourselves to student safety and readiness, putting their welfare above our own interests',
-    icon: '🤝',
+    icon: '⚔️',
     militaryPrinciple: true,
   },
   {
@@ -129,5 +129,5 @@ export const companyAdvantages = [
   { icon: '👨‍🏫', text: 'Personalized training approach' },
   { icon: '🏠', text: 'Strong community focus' },
   { icon: '📚', text: 'Evidence-based methodologies' },
-  { icon: '🤝', text: 'Family protection emphasis' }
+  { icon: '⚔️', text: 'Family protection emphasis' }
 ];

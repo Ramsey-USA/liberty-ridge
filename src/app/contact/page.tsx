@@ -4,14 +4,14 @@ import ContactCard from '@/components/cards/ContactCard';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import {
-  callToAction,
-  contactMethods,
-  detailedOfficeHours,
-  emergencyContact,
-  locationInfo,
-  officeHours,
-  pageContent,
-  quickAction
+    callToAction,
+    contactMethods,
+    detailedOfficeHours,
+    emergencyContact,
+    locationInfo,
+    officeHours,
+    pageContent,
+    quickAction
 } from '@/data/contact';
 
 export default function ContactPage() {
@@ -78,7 +78,7 @@ export default function ContactPage() {
               className="group relative bg-gradient-to-r from-red-600 hover:from-red-500 to-red-700 hover:to-red-600 shadow-2xl hover:shadow-red-500/25 px-8 sm:px-10 py-4 sm:py-5 rounded-xl overflow-hidden font-bold text-white text-base sm:text-lg hover:scale-105 transition-all duration-300 transform"
             >
               <span className="z-10 relative flex justify-center items-center">
-                📞 Call Now
+                🎖️ Call Now
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-500 transition-transform translate-y-full group-hover:translate-y-0 duration-300"></div>
             </a>
@@ -88,7 +88,7 @@ export default function ContactPage() {
               className="group relative bg-black/20 shadow-lg hover:shadow-yellow-400/25 backdrop-blur-sm px-8 sm:px-10 py-4 sm:py-5 border-2 border-yellow-400 rounded-xl overflow-hidden font-bold text-yellow-400 hover:text-slate-900 text-base sm:text-lg transition-all duration-300"
             >
               <span className="z-10 relative flex justify-center items-center">
-                📧 Send Email
+                🎖️ Send Email
               </span>
               <div className="absolute inset-0 bg-yellow-400 transition-transform translate-y-full group-hover:translate-y-0 duration-300"></div>
             </a>
@@ -132,7 +132,7 @@ export default function ContactPage() {
               <div className="group relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl hover:shadow-red-500/20 p-6 sm:p-8 border border-slate-700/50 hover:border-red-500/50 rounded-2xl transition-all hover:-translate-y-2 duration-500">
                 <div className="flex items-center mb-6">
                   <div className="bg-gradient-to-br from-red-600 to-red-700 shadow-lg mr-4 p-3 rounded-xl">
-                    <span className="text-2xl">📞</span>
+                    <span className="text-2xl">🎖️</span>
                   </div>
                   <div>
                     <h3 className="font-black text-white group-hover:text-red-400 text-xl sm:text-2xl transition-colors duration-300">
@@ -165,7 +165,7 @@ export default function ContactPage() {
               <div className="group relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl hover:shadow-blue-500/20 p-6 sm:p-8 border border-slate-700/50 hover:border-blue-500/50 rounded-2xl transition-all hover:-translate-y-2 duration-500">
                 <div className="flex items-center mb-6">
                   <div className="bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg mr-4 p-3 rounded-xl">
-                    <span className="text-2xl">📧</span>
+                    <span className="text-2xl">🎖️</span>
                   </div>
                   <div>
                     <h3 className="font-black text-white group-hover:text-blue-400 text-xl sm:text-2xl transition-colors duration-300">
@@ -198,7 +198,7 @@ export default function ContactPage() {
               <div className="group relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl hover:shadow-green-500/20 p-6 sm:p-8 border border-slate-700/50 hover:border-green-500/50 rounded-2xl transition-all hover:-translate-y-2 duration-500">
                 <div className="flex items-center mb-6">
                   <div className="bg-gradient-to-br from-green-600 to-green-700 shadow-lg mr-4 p-3 rounded-xl">
-                    <span className="text-2xl">💬</span>
+                    <span className="text-2xl">🎖️</span>
                   </div>
                   <div>
                     <h3 className="font-black text-white group-hover:text-green-400 text-xl sm:text-2xl transition-colors duration-300">
@@ -231,7 +231,7 @@ export default function ContactPage() {
               <div className="group relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl hover:shadow-purple-500/20 p-6 sm:p-8 border border-slate-700/50 hover:border-purple-500/50 rounded-2xl transition-all hover:-translate-y-2 duration-500">
                 <div className="flex items-center mb-6">
                   <div className="bg-gradient-to-br from-purple-600 to-purple-700 shadow-lg mr-4 p-3 rounded-xl">
-                    <span className="text-2xl">🕐</span>
+                    <span className="text-2xl">⏰</span>
                   </div>
                   <div>
                     <h3 className="font-black text-white group-hover:text-purple-400 text-xl sm:text-2xl transition-colors duration-300">
@@ -276,7 +276,7 @@ export default function ContactPage() {
                       href={quickAction.primaryButton.href} 
                       className="block bg-white/90 hover:bg-white shadow-lg backdrop-blur-sm px-6 py-4 border border-white/20 rounded-lg font-bold text-red-700 text-lg text-center hover:scale-105 transition-all duration-300 transform"
                     >
-                      🎓 {quickAction.primaryButton.text}
+                      �️ {quickAction.primaryButton.text}
                     </Link>
                     <Link 
                       href={quickAction.secondaryLink.href} 
@@ -288,9 +288,9 @@ export default function ContactPage() {
                   
                   <div className="mt-8 text-center">
                     <div className="flex justify-center items-center space-x-2 text-gray-200 text-sm">
-                      <span className="text-yellow-400">⭐</span>
+                      <span className="text-yellow-400">🎖️</span>
                       <span>100+ Students Trained</span>
-                      <span className="text-yellow-400">⭐</span>
+                      <span className="text-yellow-400">🎖️</span>
                     </div>
                     <div className="mt-3 text-gray-300 text-xs">
                       🛡️ 100% Safety Record • 🏆 Regional #12 Instructor
@@ -385,7 +385,7 @@ export default function ContactPage() {
               <div className="group bg-white/10 hover:shadow-2xl backdrop-blur-sm p-8 border border-white/20 hover:border-yellow-400/50 rounded-xl transition-all hover:-translate-y-1 duration-300 transform">
                 <div className="flex items-center mb-6">
                   <div className="flex justify-center items-center bg-gradient-to-br from-purple-600 to-purple-700 shadow-lg mr-4 rounded-xl w-16 h-16 text-white text-2xl group-hover:scale-110 transition-transform duration-300">
-                    🕐
+                    ⏰
                   </div>
                   <div>
                     <h3 className="font-bold text-white group-hover:text-yellow-400 text-2xl transition-colors duration-300">Office Hours</h3>
@@ -464,7 +464,7 @@ export default function ContactPage() {
                     <span>100% Safety Record</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="text-yellow-400">⭐</span>
+                    <span className="text-yellow-400">🎖️</span>
                     <span>100+ Students</span>
                   </div>
                   <div className="flex items-center space-x-2">

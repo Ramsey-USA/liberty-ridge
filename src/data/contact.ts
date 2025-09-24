@@ -38,28 +38,28 @@ export const contactHero = {
 
 export const contactCards = [
   {
-    icon: "📞",
+    icon: "⚔️",
     title: "Call Us",
     description: "Ready to talk? Give us a call during business hours.",
     primary: "(555) 123-4567",
     secondary: "Mon-Fri: 9AM-6PM PST"
   },
   {
-    icon: "📧",
+    icon: "🎖️",
     title: "Email Us",
     description: "Send us a message and we'll respond within 24 hours.",
     primary: "info@libertyridegetraininggrounds.com",
     secondary: ""
   },
   {
-    icon: "📍",
+    icon: "🏛️",
     title: "Visit Us",
     description: "Located in the heart of Eastern Washington.",
     primary: "Pasco, WA",
     secondary: "Specific address provided upon enrollment"
   },
   {
-    icon: "🕐",
+    icon: "⏰",
     title: "Office Hours",
     description: "",
     primary: "",
@@ -69,7 +69,7 @@ export const contactCards = [
 
 export const contactMethods: ContactMethod[] = [
   {
-    icon: "📞",
+    icon: "⚔️",
     title: "Phone Support",
     description: "Direct line to our team",
     primary: "(555) 123-4567",
@@ -79,7 +79,7 @@ export const contactMethods: ContactMethod[] = [
     responseTime: "Immediate during business hours"
   },
   {
-    icon: "📧",
+    icon: "🎖️",
     title: "Email Support",
     description: "Detailed inquiries and documentation",
     primary: "info@libertyridegetraininggrounds.com",
@@ -89,7 +89,7 @@ export const contactMethods: ContactMethod[] = [
     responseTime: "Within 24 hours (usually faster)"
   },
   {
-    icon: "💬",
+    icon: "�",
     title: "Quick Questions",
     description: "Common inquiries and support",
     primary: "📋 Visit Our FAQ Page",
@@ -113,7 +113,7 @@ export const detailedOfficeHours = [
 ];
 
 export const locationInfo = {
-  icon: "📍",
+  icon: "🏛️",
   title: "Training Location",
   description: "Eastern Washington facility",
   city: "Pasco, Washington",
@@ -127,7 +127,7 @@ export const locationInfo = {
 };
 
 export const emergencyContact = {
-  icon: "🚨",
+  icon: "�️",
   title: "Emergency Contact",
   description: "For enrolled students only",
   phone: "(555) TACTICAL",
@@ -152,7 +152,7 @@ export const callToAction = {
   title: "Ready to Begin Your Training?",
   description: "Don't wait - start your tactical education journey today with Liberty Ridge Training Grounds.",
   primaryButton: {
-    text: "📋 Register for Course",
+    text: "🎖️ Register for Course",
     href: "/signup"
   },
   secondaryButton: {

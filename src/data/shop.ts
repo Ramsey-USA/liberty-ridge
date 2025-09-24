@@ -53,7 +53,7 @@ export const ratingCategories: RatingCategory[] = [
   { 
     key: 'easeOfUse', 
     label: 'Ease of Use', 
-    icon: '⚡',
+    icon: '🎖️',
     description: 'User-friendliness and setup simplicity'
   },
   { 
@@ -130,7 +130,7 @@ export const shopFeatures: ShopFeature[] = [
     description: "Every product personally tested and approved by our veteran team, ensuring only the highest quality gear makes it to our store."
   },
   {
-    icon: "📊",
+    icon: "🎯",
     title: "Expert Ratings",
     description: "Comprehensive 1-10 scale ratings across 5 key areas: Durability, Accuracy, Value, Ease of Use, and Features, plus overall scores."
   },
@@ -164,7 +164,7 @@ export const phaseTwoInfo = {
 export const callToAction = {
   title: "Be First to Access Our Shop",
   description: "Sign up for notifications and be the first to know when our tactical gear shop launches with expert-rated equipment from Vortex, Sig Sauer, and more.",
-  features: "🏪 Curated Selection ★ 📊 Expert Ratings ★ 🎖️ Veteran Approved"
+  features: "🏪 Curated Selection ★ 🎯 Expert Ratings ★ 🎖️ Veteran Approved"
 };
 
 // Utility functions
