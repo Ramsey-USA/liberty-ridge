@@ -8,79 +8,84 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       
-      {/* Sleek Black & White Hero Section */}
-      <section className="relative flex justify-center items-center bg-pure-black dark:bg-pure-white min-h-screen overflow-hidden">
-        {/* Clean geometric background patterns */}
-        <div className="z-0 absolute inset-0">
-          {/* Sharp geometric shapes for visual interest without images */}
-          <div className="absolute inset-0 bg-gradient-to-br from-pure-black dark:from-pure-white via-off-black dark:via-off-white to-pure-black dark:to-pure-white"></div>
+      {/* Enhanced Hero Section with LR Theme */}
+      <section className="relative min-h-screen overflow-hidden hero-gradient-bg section-padding-enhanced">
+        {/* Tactical accent elements */}
+        <div className="top-10 left-10 absolute animate-two-tone-pulse icon icon-md icon-primary icon-crosshair"></div>
+        <div className="top-20 right-20 absolute animate-two-tone-pulse animation-delay-1000 icon icon-sm icon-secondary icon-target"></div>
+        <div className="bottom-20 left-20 absolute animate-two-tone-pulse animation-delay-2000 icon icon-xs icon-accent icon-bullet"></div>
+        
+        {/* Enhanced Typography Content */}
+        <div className="z-10 relative text-center animate-fade-in-up container-enhanced">
+          {/* Elite Badge */}
+          <div className="mb-8 section-badge-enhanced">
+            <div className="icon icon-xs icon-primary icon-shield"></div>
+            <span className="text-highlight-red">Elite Training Available</span>
+            <div className="icon icon-xs icon-secondary icon-star"></div>
+          </div>
           
-          {/* Subtle accent overlays - Red & Blue highlights only */}
-          <div className="top-0 left-0 absolute bg-gradient-to-br from-patriot-red/10 via-transparent to-transparent w-1/3 h-full"></div>
-          <div className="top-0 right-0 absolute bg-gradient-to-bl from-patriot-blue/10 via-transparent to-transparent w-1/4 h-2/3"></div>
-        </div>
-        
-        {/* Minimal floating accent dots */}
-        <div className="top-10 left-10 absolute bg-patriot-red rounded-xs w-1 h-1 animate-two-tone-pulse"></div>
-        <div className="top-20 right-20 absolute bg-patriot-blue rounded-xs w-1 h-1 animate-two-tone-pulse animation-delay-1000"></div>
-        <div className="bottom-20 left-20 absolute bg-patriot-red rounded-xs w-1 h-1 animate-two-tone-pulse animation-delay-2000"></div>
-        
-        {/* Sharp Typography Content */}
-        <div className="z-10 relative mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 max-w-7xl text-center animate-fadeIn">
-          {/* Main Title with Black & White Typography */}
-          <h1 className="mb-4 sm:mb-6 font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-none tracking-tighter hover:scale-105 transition-all duration-500 transform">
-            <span className="inline-block text-pure-white dark:text-pure-black transition-colors duration-300">
+          {/* Main Title with Enhanced LR Typography */}
+          <h1 className="mb-6 animate-fade-in-up hero-title-enhanced">
+            <span className="drop-shadow-text text-text-primary">
               LIBERTY RIDGE
             </span>
             <br />
-            <span className="inline-block bg-clip-text bg-gradient-to-r from-patriot-red via-patriot-blue to-patriot-red text-transparent">
+            <span className="text-gradient">
               TRAINING GROUNDS
             </span>
           </h1>
           
-          {/* Clean Subtitle with Red & Blue Highlights */}
-          <div className="mb-6 sm:mb-8 font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-tight tracking-wide">
-            <span className="inline-block text-patriot-red hover:text-patriot-red/80 transition-colors duration-300">
+          {/* Enhanced Subtitle with Icon Integration */}
+          <div className="space-x-4 mb-8 animate-fade-in-up animation-delay-500 hero-subtitle-enhanced">
+            <span className="inline-flex items-center gap-2 text-highlight-red">
+              <div className="icon icon-xs icon-primary icon-target"></div>
               Practical Tactical Training
             </span>
-            <span className="mx-2 sm:mx-3 text-pure-white dark:text-pure-black text-xl sm:text-2xl">•</span>
-            <span className="inline-block text-patriot-blue hover:text-patriot-blue/80 transition-colors duration-300">
+            <span className="text-text-secondary">•</span>
+            <span className="inline-flex items-center gap-2 text-highlight-blue">
+              <div className="icon icon-xs icon-secondary icon-shield"></div>
               Veteran Excellence
             </span>
-            <span className="mx-2 sm:mx-3 text-pure-white dark:text-pure-black text-xl sm:text-2xl">•</span>
-            <span className="inline-block text-patriot-red hover:text-patriot-red/80 transition-colors duration-300">
+            <span className="text-text-secondary">•</span>
+            <span className="inline-flex items-center gap-2 text-highlight-red">
+              <div className="icon icon-xs icon-accent icon-crosshair"></div>
               Combat-Ready Skills
             </span>
           </div>
           
-          {/* Clean Description with Accent Highlighting */}
-          <p className="mx-auto mb-10 sm:mb-12 max-w-5xl font-medium text-pure-white/90 dark:text-pure-black/90 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed animate-fadeIn animation-delay-500">
-            Master tactical fundamentals through proven military methodologies and elite-level firearm training programs designed for serious practitioners seeking <span className="font-semibold text-patriot-blue">championship-level excellence</span>.
+          {/* Enhanced Description */}
+          <p className="mx-auto mb-12 max-w-5xl text-enhanced animate-fade-in-up animation-delay-1000">
+            Master tactical fundamentals through proven military methodologies and elite-level firearm training programs designed for serious practitioners seeking <span className="text-highlight-blue">championship-level excellence</span>.
           </p>
           
-          {/* Sharp CTA Buttons with Two-Tone Design */}
-          <div className="flex sm:flex-row flex-col justify-center gap-4 sm:gap-6 mb-16 animate-fadeIn animation-delay-1000">
-            <Link 
-              href="/signup" 
-              className="group relative bg-patriot-red hover:bg-patriot-red/90 shadow-sharp hover:shadow-sharp-lg px-8 sm:px-10 py-4 sm:py-5 rounded-sm overflow-hidden font-bold text-pure-white text-base sm:text-lg hover:scale-102 transition-all duration-300 transform"
-            >
-              <span className="z-10 relative">Start Training Today</span>
-              <div className="absolute inset-0 bg-pure-black transition-transform translate-x-full group-hover:translate-x-0 duration-300"></div>
+          {/* Enhanced CTA Buttons */}
+          <div className="flex sm:flex-row flex-col justify-center gap-6 mb-16 animate-fade-in-up animation-delay-1500">
+            <Link href="/signup" className="btn-hero-primary">
+              <div className="icon icon-sm icon-primary icon-flag-usa"></div>
+              Start Training Today
             </Link>
-            
-            <Link 
-              href="/courses" 
-              className="group relative bg-pure-white dark:bg-pure-black shadow-sharp hover:shadow-sharp-lg px-8 sm:px-10 py-4 sm:py-5 border-2 border-patriot-blue rounded-sm overflow-hidden font-bold text-patriot-blue hover:text-pure-white dark:hover:text-pure-black text-base sm:text-lg transition-all duration-300"
-            >
-              <span className="z-10 relative">View Courses</span>
-              <div className="absolute inset-0 bg-patriot-blue transition-transform translate-x-full group-hover:translate-x-0 duration-300"></div>
+            <Link href="/courses" className="btn-hero-secondary">
+              <div className="icon icon-sm icon-secondary icon-target"></div>
+              View Courses
             </Link>
           </div>
           
-          {/* Minimal Scroll Indicator */}
-          <div className="hidden sm:block bottom-4 sm:bottom-8 left-1/2 absolute -translate-x-1/2 animate-two-tone-pulse transform">
-            <div className="flex justify-center border-2 border-pure-white/60 dark:border-pure-black/60 rounded-xs w-6 h-10">
-              <div className="bg-patriot-red mt-2 rounded-xs w-1 h-3"></div>
+          {/* Enhanced Stats Preview */}
+          <div className="grid-3-enhanced mx-auto max-w-2xl animate-fade-in-up animation-delay-2000">
+            <div className="hover:border-patriot-red stats-card">
+              <div className="mb-3 icon icon-lg icon-primary icon-users"></div>
+              <div className="text-patriot-red stats-counter">100+</div>
+              <div className="stats-label">Students Trained</div>
+            </div>
+            <div className="hover:border-patriot-blue stats-card">
+              <div className="mb-3 icon icon-lg icon-secondary icon-shield"></div>
+              <div className="text-patriot-blue stats-counter">100%</div>
+              <div className="stats-label">Safety Record</div>
+            </div>
+            <div className="hover:border-accent-gold stats-card">
+              <div className="mb-3 icon icon-lg icon-accent icon-award"></div>
+              <div className="text-accent-gold stats-counter">#12</div>
+              <div className="stats-label">Regional Ranking</div>
             </div>
           </div>
         </div>
@@ -185,96 +190,103 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enhanced About Section with Optimized Color Scheme */}
-      <section className="section-padding-enhanced" style={{ backgroundColor: 'rgb(var(--background))' }}>
+      {/* Enhanced About Section with LR Theme */}
+      <section className="bg-background section-padding-enhanced">
         <div className="container-enhanced">
-          <div className="items-center gap-16 grid grid-cols-1 lg:grid-cols-2">
-            <div>
-              <div className="inline-flex items-center space-x-2 bg-white mb-8 px-4 py-2 border-2 border-gray-200 rounded-lg section-badge-enhanced">
-                <div className="text-patriot-red icon icon-xs icon-shield"></div>
-                <span className="font-semibold text-gray-700 text-sm uppercase tracking-wide">Veteran Leadership</span>
+          <div className="items-center grid-2-enhanced">
+            <div className="space-y-enhanced">
+              <div className="mb-8 section-badge-enhanced">
+                <div className="icon icon-xs icon-primary icon-shield"></div>
+                <span className="text-highlight-red">Veteran Leadership</span>
               </div>
               
-              <h2 className="mb-6 font-black text-gray-900 text-4xl lg:text-5xl leading-tight">
-                Meet Your Liberty Ridge Instructor
-              </h2>
-              <h3 className="mb-6 font-bold text-patriot-red text-2xl lg:text-3xl">
-                Zach Gaudette - U.S. Army Veteran
-              </h3>
+              <div className="mb-0 text-left section-header-enhanced">
+                <h2 className="mb-6 text-left section-title-enhanced">
+                  Meet Your Liberty Ridge Instructor
+                </h2>
+                <h3 className="mb-6 text-highlight-red heading-secondary">
+                  <div className="inline-block mr-3 icon icon-md icon-primary icon-flag-usa"></div>
+                  Zach Gaudette - U.S. Army Veteran
+                </h3>
+              </div>
               
-              <p className="mb-6 text-gray-700 text-lg leading-relaxed">
+              <p className="mb-6 text-compact">
                 Led by founder and owner Zach Gaudette, a dedicated U.S. Army veteran 
                 with extensive experience in tactical training and firearm safety. 
                 Zach brings military discipline and expertise to civilian training, 
                 ensuring the highest standards of safety and professionalism.
               </p>
               
-              <p className="mb-8 text-gray-600 leading-relaxed">
+              <p className="mb-8 text-body text-text-secondary">
                 Proudly married and father to a wonderful son, 
                 Zach understands the importance of personal protection and family safety. 
                 His passion for training extends beyond the classroom to real-world application.
               </p>
               
-              {/* Enhanced Statistics Grid with Modern Styling */}
-              <div className="gap-3 grid grid-cols-2 lg:grid-cols-4">
-                <div className="flip-card">
+              {/* Enhanced Statistics Grid with LR Theme */}
+              <div className="grid-4-enhanced">
+                <div className="stats-flip-card">
                   <div className="flip-card-inner">
-                    <div className="bg-surface border-border flip-card-front">
-                      <div className="mb-3 text-primary icon icon-xl icon-users"></div>
-                      <div className="mb-1 font-bold text-text-primary text-2xl">100+</div>
-                      <div className="text-text-muted text-sm">Students Trained</div>
+                    <div className="flip-card-front">
+                      <div className="mb-3 icon icon-xl icon-primary icon-users"></div>
+                      <div className="text-patriot-red stats-counter">100+</div>
+                      <div className="stats-label">Students Trained</div>
                     </div>
-                    <div className="bg-surface-tactical border-border-tactical flip-card-back">
-                      <div className="mb-2 font-semibold text-text-inverse text-sm">Student Success</div>
-                      <div className="text-text-inverse/80 text-xs leading-relaxed">
+                    <div className="flip-card-back">
+                      <div className="mb-3 icon icon-lg icon-accent icon-star"></div>
+                      <div className="mb-2 text-text-inverse heading-card">Student Success</div>
+                      <div className="text-body text-text-inverse/80">
                         Over 100 students have completed our programs with exceptional results and confidence.
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="flip-card">
+                <div className="stats-flip-card">
                   <div className="flip-card-inner">
-                    <div className="bg-surface border-border flip-card-front">
-                      <div className="mb-3 text-primary icon icon-xl icon-clock"></div>
-                      <div className="mb-1 font-bold text-text-primary text-2xl">5+</div>
-                      <div className="text-text-muted text-sm">Years Experience</div>
+                    <div className="flip-card-front">
+                      <div className="mb-3 icon icon-xl icon-secondary icon-clock"></div>
+                      <div className="text-patriot-blue stats-counter">5+</div>
+                      <div className="stats-label">Years Experience</div>
                     </div>
-                    <div className="bg-surface-tactical border-border-tactical flip-card-back">
-                      <div className="mb-2 font-semibold text-text-inverse text-sm">Expert Training</div>
-                      <div className="text-text-inverse/80 text-xs leading-relaxed">
+                    <div className="flip-card-back">
+                      <div className="mb-3 icon icon-lg icon-accent icon-lightning"></div>
+                      <div className="mb-2 text-text-inverse heading-card">Expert Training</div>
+                      <div className="text-body text-text-inverse/80">
                         Years of military and civilian training experience ensuring top-tier instruction.
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="flip-card">
+                <div className="stats-flip-card">
                   <div className="flip-card-inner">
-                    <div className="bg-surface border-border flip-card-front">
-                      <div className="mb-3 text-accent-gold icon icon-xl icon-award"></div>
-                      <div className="mb-1 font-bold text-text-primary text-2xl">#12</div>
-                      <div className="text-text-muted text-sm">Regional Ranking</div>
+                    <div className="flip-card-front">
+                      <div className="mb-3 icon icon-xl icon-accent icon-award"></div>
+                      <div className="text-accent-gold stats-counter">#12</div>
+                      <div className="stats-label">Regional Ranking</div>
                     </div>
-                    <div className="bg-surface-tactical border-border-tactical flip-card-back">
-                      <div className="mb-2 font-semibold text-text-inverse text-sm">Championship Level</div>
-                      <div className="text-text-inverse/80 text-xs leading-relaxed">
+                    <div className="flip-card-back">
+                      <div className="mb-3 icon icon-lg icon-accent icon-crosshair"></div>
+                      <div className="mb-2 text-text-inverse heading-card">Championship Level</div>
+                      <div className="text-body text-text-inverse/80">
                         Ranked #12 regionally in long-range shooting competitions in first year.
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="flip-card">
+                <div className="stats-flip-card">
                   <div className="flip-card-inner">
-                    <div className="bg-surface border-border flip-card-front">
-                      <div className="mb-3 text-military-green icon icon-xl icon-shield"></div>
-                      <div className="mb-1 font-bold text-text-primary text-2xl">100%</div>
-                      <div className="text-text-muted text-sm">Safety Record</div>
+                    <div className="flip-card-front">
+                      <div className="mb-3 icon icon-xl icon-success icon-shield"></div>
+                      <div className="text-military-green stats-counter">100%</div>
+                      <div className="stats-label">Safety Record</div>
                     </div>
-                    <div className="bg-surface-tactical border-border-tactical flip-card-back">
-                      <div className="mb-2 font-semibold text-text-inverse text-sm">Zero Incidents</div>
-                      <div className="text-text-inverse/80 text-xs leading-relaxed">
+                    <div className="flip-card-back">
+                      <div className="mb-3 icon icon-lg icon-success icon-check"></div>
+                      <div className="mb-2 text-text-inverse heading-card">Zero Incidents</div>
+                      <div className="text-body text-text-inverse/80">
                         Perfect safety record with comprehensive protocols and veteran oversight.
                       </div>
                     </div>
@@ -283,19 +295,38 @@ export default function Home() {
               </div>
             </div>
             
-            <div>
-              <div className="relative">
-                <div className="relative flex justify-center items-center bg-surface-elevated shadow-md border border-border rounded-lg h-96 lg:h-[500px] overflow-hidden">
-                  <div className="text-text-primary text-center">
-                    <div className="flex justify-center items-center bg-surface-tactical shadow-tactical mx-auto mb-6 rounded-lg w-32 h-32 text-text-inverse text-6xl">
-                      ZG
+            <div className="relative">
+              <div className="h-96 lg:h-[500px] feature-card">
+                <div className="flex flex-col justify-center items-center h-full text-center">
+                  <div className="mb-6 w-32 h-32 text-6xl feature-card-icon">
+                    <div className="icon icon-3xl icon-primary icon-flag-usa"></div>
+                  </div>
+                  <div className="mb-4 text-text-primary heading-tertiary">Zach Gaudette</div>
+                  <div className="mb-4 text-compact text-highlight-blue">U.S. Army Veteran</div>
+                  <div className="mb-6 text-body text-text-secondary">Expert Instructor & Founder</div>
+                  
+                  {/* Enhanced credentials */}
+                  <div className="gap-4 grid grid-cols-2 w-full max-w-xs">
+                    <div className="text-center">
+                      <div className="mb-1 icon icon-md icon-accent icon-award"></div>
+                      <div className="text-caption text-text-muted">Military Trained</div>
                     </div>
-                    <div className="mb-4 text-text-secondary text-lg">U.S. Army Veteran</div>
-                    <div className="mb-4 font-semibold text-text-primary text-lg">Expert Instructor</div>
+                    <div className="text-center">
+                      <div className="mb-1 icon icon-md icon-primary icon-target"></div>
+                      <div className="text-caption text-text-muted">Competition Shooter</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="mb-1 icon icon-md icon-success icon-users"></div>
+                      <div className="text-caption text-text-muted">100+ Students</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="mb-1 icon icon-md icon-secondary icon-shield"></div>
+                      <div className="text-caption text-text-muted">Safety Expert</div>
+                    </div>
                   </div>
-                  <div className="top-4 right-4 absolute bg-primary px-3 py-2 rounded font-bold text-text-inverse text-sm">
-                    INSTRUCTOR
-                  </div>
+                </div>
+                <div className="top-4 right-4 absolute bg-patriot-red px-3 py-1 rounded text-caption text-white">
+                  INSTRUCTOR
                 </div>
               </div>
             </div>
@@ -441,19 +472,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enhanced Courses Section with Optimized Color Scheme */}
-      <section className="bg-gray-100 section-padding-enhanced">
+      {/* Enhanced Courses Section with LR Theme */}
+      <section className="bg-surface-elevated section-padding-enhanced">
         <div className="container-enhanced">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
-            <div className="inline-flex items-center space-x-2 bg-white mx-auto mb-6 px-4 py-2 border-2 border-gray-200 rounded-lg section-badge-enhanced">
-              <div className="text-patriot-red icon icon-xs icon-target"></div>
-              <span className="font-semibold text-gray-700 text-sm uppercase tracking-wide">Training Programs</span>
+          <div className="section-header-enhanced">
+            <div className="mb-8 section-badge-enhanced">
+              <div className="icon icon-xs icon-primary icon-target"></div>
+              <span className="text-highlight-red">Training Programs</span>
             </div>
             
-            <h2 className="mb-4 font-black text-gray-900 text-4xl lg:text-5xl leading-tight">
+            <h2 className="mb-6 section-title-enhanced">
               Master Every Shooting Discipline
             </h2>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="section-subtitle-enhanced">
               From precision long-range shooting to tactical pistol training, our comprehensive 
               courses are designed to elevate your skills under expert veteran instruction.
             </p>

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /* ============================================================================
    OPTIMIZED CSS VARIABLES SYSTEM
@@ -16,6 +16,10 @@
     --patriot-red: 220 38 38;       /* #dc2626 - Primary highlight */
     --patriot-blue: 37 99 235;      /* #2563eb - Secondary highlight */
     --patriot-navy: 15 23 42;       /* #0f172a - Deep navy for contrast */
+    
+    /* Additional LR Theme Colors */
+    --accent-gold: 251 191 36;      /* #fbbf24 - Gold accent */
+    --military-green: 34 197 94;    /* #22c55e - Military green */
     
     /* Black & White Foundation */
     --pure-black: 0 0 0;            /* #000000 - True black */
@@ -36,12 +40,13 @@
     --gray-900: 23 23 23;           /* #171717 - Almost black */
     
     /* ===== SLEEK SEMANTIC COLOR TOKENS ===== */
-    /* Backgrounds - Pure black & white foundation */
+    /* Backgrounds - Pure white foundation in light mode */
     --background: var(--pure-white);
     --surface: var(--pure-white);
-    --surface-elevated: var(--gray-50);
+    --surface-elevated: var(--pure-white);  /* Changed from gray-50 to pure white */
     --surface-dark: var(--pure-black);
     --surface-contrast: var(--off-black);
+    --surface-tactical: var(--gray-900);  /* Tactical dark surface for special sections */
     
     /* Text Colors - High contrast */
     --text-primary: var(--pure-black);
@@ -53,6 +58,7 @@
     --border: var(--gray-200);
     --border-strong: var(--gray-400);
     --border-dark: var(--pure-black);
+    --border-tactical: var(--gray-700);   /* Tactical border color */
     
     /* Interactive States - Red & Blue highlights */
     --primary: var(--patriot-red);
@@ -84,6 +90,7 @@
     --surface-elevated: var(--gray-900);
     --surface-dark: var(--pure-white);
     --surface-contrast: var(--off-white);
+    --surface-tactical: var(--gray-800);  /* Tactical dark surface */
     
     --text-primary: var(--pure-white);
     --text-secondary: var(--gray-300);
@@ -93,6 +100,7 @@
     --border: var(--gray-800);
     --border-strong: var(--gray-600);
     --border-dark: var(--pure-white);
+    --border-tactical: var(--gray-600);   /* Tactical border color */
     
     /* Enhanced shadows for dark mode */
     --shadow-sm: 0 1px 3px 0 rgb(255 255 255 / 0.1);
@@ -117,9 +125,10 @@
     font-feature-settings: "rlig" 1, "calt" 1;
     background-color: rgb(var(--background));
     color: rgb(var(--text-primary));
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
     transition: background-color 0.2s ease, color 0.2s ease;
+    font-weight: 400;
   }
   
   html {
@@ -132,13 +141,14 @@
    ============================================================================ */
 
 @layer components {
-  /* ===== SLEEK SHARP BUTTONS ===== */
+  /* ===== ROBOTO BUTTON SYSTEM ===== */
   .btn {
-    @apply inline-flex items-center justify-center whitespace-nowrap text-sm font-semibold transition-all duration-200 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex items-center justify-center whitespace-nowrap text-sm transition-all duration-200 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
     border-radius: var(--radius-md);
     letter-spacing: 0.025em;
     text-transform: uppercase;
-    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;  /* Roboto Medium for base buttons */
   }
   
   .btn-primary {
@@ -786,6 +796,24 @@
   
   .bg-red-highlight { background-color: rgb(var(--patriot-red)); color: rgb(var(--pure-white)); }
   .bg-blue-highlight { background-color: rgb(var(--patriot-blue)); color: rgb(var(--pure-white)); }
+  
+  /* ===== ADDITIONAL LR THEME COLORS ===== */
+  .text-accent-gold { color: rgb(var(--accent-gold)); }
+  .text-military-green { color: rgb(var(--military-green)); }
+  .bg-accent-gold { background-color: rgb(var(--accent-gold)); }
+  .bg-military-green { background-color: rgb(var(--military-green)); }
+  .border-accent-gold { border-color: rgb(var(--accent-gold)); }
+  .border-military-green { border-color: rgb(var(--military-green)); }
+  
+  /* Surface utilities */
+  .bg-surface-tactical { background-color: rgb(var(--surface-tactical)); }
+  .border-border-tactical { border-color: rgb(var(--border-tactical)); }
+  
+  /* Enhanced text classes */
+  .text-enhanced { 
+    @apply text-lg lg:text-xl leading-relaxed; 
+    color: rgb(var(--text-secondary));
+  }
 
   /* ===== ANIMATIONS ===== */
   @keyframes fadeIn {
@@ -872,12 +900,20 @@
     @apply py-4 lg:py-6;
   }
   
+  .section-padding-enhanced {
+    @apply py-16 lg:py-24;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
   .section-primary {
     background-color: rgb(var(--pure-white));
   }
   
   .section-secondary {
-    background-color: rgb(var(--gray-50));
+    background-color: rgb(var(--pure-white));  /* Changed from gray-50 to pure white */
   }
   
   .section-dark {
@@ -896,47 +932,54 @@
     border-bottom: 2px solid rgb(var(--pure-white));
   }
   
-  /* ===== SHARP TYPOGRAPHY UTILITIES ===== */
+  /* ===== ROBOTO TYPOGRAPHY SYSTEM ===== */
   .heading-sharp {
-    @apply font-bold leading-tight tracking-tight;
+    @apply leading-tight tracking-tight;
     color: rgb(var(--pure-black));
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
   }
   
   .heading-primary {
-    @apply text-4xl lg:text-5xl font-bold leading-tight tracking-tight;
+    @apply text-4xl lg:text-5xl leading-tight tracking-tight;
     color: rgb(var(--pure-black));
-    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;  /* Use Roboto Black for primary headings */
   }
   
   .heading-secondary {
-    @apply text-3xl lg:text-4xl font-semibold leading-tight tracking-normal;
+    @apply text-3xl lg:text-4xl leading-tight tracking-normal;
     color: rgb(var(--text-primary));
-    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;  /* Use Roboto Bold for secondary headings */
   }
   
   .heading-tertiary {
-    @apply text-2xl lg:text-3xl font-semibold leading-snug tracking-normal;
+    @apply text-2xl lg:text-3xl leading-snug tracking-normal;
     color: rgb(var(--text-primary));
-    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;  /* Use Roboto Medium for tertiary headings */
   }
   
   .text-compact {
-    @apply text-base lg:text-lg leading-normal font-medium tracking-normal;
+    @apply text-base lg:text-lg leading-normal tracking-normal;
     color: rgb(var(--text-secondary));
-    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;  /* Use Roboto Medium for compact text */
   }
   
   .text-body {
-    @apply text-sm lg:text-base leading-normal font-normal tracking-normal;
+    @apply text-sm lg:text-base leading-relaxed tracking-normal;
     color: rgb(var(--text-secondary));
-    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;  /* Use Roboto Regular for body text */
   }
   
   .text-caption {
-    @apply text-xs lg:text-sm leading-tight font-semibold tracking-wider uppercase;
+    @apply text-xs lg:text-sm leading-tight tracking-wider uppercase;
     color: rgb(var(--text-muted));
-    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;  /* Use Roboto Medium for captions */
   }
   
   .text-highlight-red {
@@ -953,6 +996,21 @@
     letter-spacing: 0.05em;
   }
   
+  /* ===== ENHANCED ROBOTO TYPOGRAPHY CLASSES ===== */
+  .heading-card {
+    @apply text-xl lg:text-2xl leading-tight;
+    color: rgb(var(--text-primary));
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;  /* Roboto Bold for card headings */
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, rgb(var(--accent-gold)), rgb(var(--patriot-red)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
   /* ===== EFFECTS ===== */
   .drop-shadow-text {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -960,6 +1018,24 @@
   
   .glow-effect {
     box-shadow: 0 0 20px rgba(var(--primary), 0.3);
+  }
+  
+  /* Enhanced shadows */
+  .shadow-tactical {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  .shadow-sharp-sm {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .shadow-sharp-lg {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Button variants */
+  .btn-outline {
+    @apply border-2 bg-transparent font-semibold transition-all duration-300;
   }
   
   /* ===== FLIP CARDS - Optimized ===== */
@@ -1016,5 +1092,244 @@
     background-color: rgb(var(--surface-elevated));
     border-color: rgb(var(--border));
     backdrop-filter: blur(10px);
+  }
+
+  /* ===== ENHANCED STATS COUNTER WITH ROBOTO ===== */
+  .stats-counter {
+    @apply text-4xl lg:text-5xl leading-none;
+    color: rgb(var(--patriot-red));
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;  /* Roboto Black for maximum impact */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stats-label {
+    @apply text-sm lg:text-base uppercase tracking-wider;
+    color: rgb(var(--text-secondary));
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;  /* Roboto Medium for labels */
+    letter-spacing: 0.1em;
+  }
+  
+  .stats-card {
+    @apply bg-surface border border-border rounded-lg p-6 text-center transition-all duration-300;
+    box-shadow: var(--shadow-sharp);
+  }
+  
+  .stats-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    border-color: rgb(var(--patriot-red));
+  }
+
+  /* ===== ENHANCED HERO STYLES ===== */
+  .hero-gradient-bg {
+    background: rgb(var(--pure-white));  /* Pure white background instead of gradient */
+    position: relative;
+  }
+  
+  .hero-gradient-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      transparent 40%, 
+      rgba(var(--patriot-red), 0.05) 50%, 
+      transparent 60%);
+    pointer-events: none;
+  }
+  
+  .hero-title-enhanced {
+    @apply text-5xl lg:text-7xl leading-tight tracking-tight;
+    color: rgb(var(--pure-black));
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;  /* Roboto Black for maximum impact */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-subtitle-enhanced {
+    @apply text-xl lg:text-2xl leading-relaxed;
+    color: rgb(var(--text-secondary));
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;  /* Roboto Regular for subtitles */
+  }
+
+  /* ===== ENHANCED SECTION STYLES ===== */
+  .section-header-enhanced {
+    @apply text-center mb-16;
+  }
+  
+  .section-title-enhanced {
+    @apply text-4xl lg:text-5xl leading-tight tracking-tight mb-6;
+    color: rgb(var(--pure-black));
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;  /* Roboto Black for section titles */
+  }
+  
+  .section-subtitle-enhanced {
+    @apply text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto;
+    color: rgb(var(--text-secondary));
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;  /* Roboto Regular for subtitles */
+  }
+
+  /* ===== ENHANCED CARD VARIANTS ===== */
+  .feature-card {
+    @apply bg-surface border border-border rounded-lg p-8 transition-all duration-300;
+    box-shadow: var(--shadow-sharp);
+  }
+  
+  .feature-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: rgb(var(--patriot-blue));
+  }
+  
+  .feature-card-icon {
+    @apply w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-lg;
+    background: linear-gradient(135deg, rgb(var(--patriot-red)), rgb(var(--patriot-blue)));
+  }
+  
+  .service-card {
+    @apply bg-surface border-2 border-border rounded-lg p-6 transition-all duration-300;
+    box-shadow: var(--shadow-sharp);
+  }
+  
+  .service-card:hover {
+    border-color: rgb(var(--patriot-red));
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+  
+  .service-card-primary {
+    @apply service-card border-patriot-red;
+    background-color: rgb(var(--pure-white));  /* Pure white background */
+  }
+  
+  .service-card-secondary {
+    @apply service-card border-patriot-blue;
+    background-color: rgb(var(--pure-white));  /* Pure white background */
+  }
+
+  /* ===== ENHANCED BUTTON VARIANTS ===== */
+  .btn-enhanced {
+    @apply inline-flex items-center justify-center gap-3 px-8 py-4 text-base;
+    @apply transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    border-radius: var(--radius-md);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;  /* Roboto Bold for buttons */
+  }
+  
+  .btn-hero-primary {
+    @apply btn-enhanced bg-patriot-red text-white border-2 border-patriot-red;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .btn-hero-primary:hover {
+    background-color: rgb(var(--primary-hover));
+    border-color: rgb(var(--primary-hover));
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+  
+  .btn-hero-secondary {
+    @apply btn-enhanced bg-white text-patriot-blue border-2 border-patriot-blue;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .btn-hero-secondary:hover {
+    background-color: rgb(var(--patriot-blue));
+    color: rgb(var(--pure-white));
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  /* ===== ENHANCED GRID LAYOUTS ===== */
+  .grid-enhanced {
+    @apply grid gap-8 lg:gap-12;
+  }
+  
+  .grid-2-enhanced {
+    @apply grid-enhanced grid-cols-1 lg:grid-cols-2;
+  }
+  
+  .grid-3-enhanced {
+    @apply grid-enhanced grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  .grid-4-enhanced {
+    @apply grid-enhanced grid-cols-1 md:grid-cols-2 lg:grid-cols-4;
+  }
+
+  /* ===== ENHANCED SPACING UTILITIES ===== */
+  .space-y-enhanced > * + * {
+    margin-top: 2rem;
+  }
+  
+  .space-y-enhanced-lg > * + * {
+    margin-top: 3rem;
+  }
+
+  /* ===== ENHANCED CONTACT SECTION ===== */
+  .contact-card {
+    @apply bg-surface border border-border rounded-lg p-6 text-center transition-all duration-300;
+    box-shadow: var(--shadow-sharp);
+  }
+  
+  .contact-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    border-color: rgb(var(--patriot-blue));
+  }
+  
+  .contact-icon {
+    @apply w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full;
+    background: linear-gradient(135deg, rgb(var(--patriot-blue)), rgb(var(--patriot-red)));
+  }
+
+  /* ===== RESPONSIVE UTILITIES ===== */
+  .text-responsive-lg {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+  
+  .text-responsive-xl {
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  .text-responsive-2xl {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  .text-responsive-3xl {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  /* ===== DARK MODE ENHANCEMENTS ===== */
+  .dark .hero-gradient-bg {
+    background: linear-gradient(135deg, 
+      rgb(var(--pure-black)) 0%, 
+      rgb(var(--gray-900)) 50%, 
+      rgb(var(--pure-black)) 100%);
+  }
+  
+  .dark .hero-gradient-bg::before {
+    background: linear-gradient(45deg, 
+      transparent 40%, 
+      rgba(var(--patriot-red), 0.1) 50%, 
+      transparent 60%);
+  }
+  
+  .dark .feature-card-icon {
+    background: linear-gradient(135deg, rgb(var(--patriot-red)), rgb(var(--patriot-blue)));
+  }
+  
+  .dark .service-card-primary,
+  .dark .service-card-secondary {
+    background: linear-gradient(135deg, rgb(var(--gray-900)), rgb(var(--gray-800)));
   }
 }

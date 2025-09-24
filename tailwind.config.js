@@ -15,6 +15,14 @@ module.exports = {
         'patriot-blue': 'rgb(var(--patriot-blue) / <alpha-value>)', 
         'patriot-navy': 'rgb(var(--patriot-navy) / <alpha-value>)',
         
+        /* Additional LR Theme Colors */
+        'accent-gold': 'rgb(var(--accent-gold) / <alpha-value>)',
+        'military-green': 'rgb(var(--military-green) / <alpha-value>)',
+        
+        /* Enhanced LR Theme Surface Colors */
+        'surface-tactical': 'rgb(var(--surface-tactical) / <alpha-value>)',
+        'border-tactical': 'rgb(var(--border-tactical) / <alpha-value>)',
+        
         /* Pure Black & White Foundation */
         'pure-black': 'rgb(var(--pure-black) / <alpha-value>)',
         'pure-white': 'rgb(var(--pure-white) / <alpha-value>)',

@@ -140,19 +140,29 @@ Liberty Ridge Training Grounds utilizes the **LR Theme** - a revolutionary black
 
 ### Font Stack
 
-**Primary**: Inter (Google Fonts)  
+**Primary**: Roboto (Google Fonts)  
 **Fallback**: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif
 
-### Type Scale
+### Type Scale & Weight Hierarchy
 
 | Class | Font Size | Line Height | Weight | Usage |
 |-------|-----------|-------------|---------|-------|
-| `.heading-primary` | `text-4xl lg:text-5xl` | `leading-tight` | `font-bold` | Main page headings |
-| `.heading-secondary` | `text-3xl lg:text-4xl` | `leading-tight` | `font-semibold` | Section headings |
-| `.heading-tertiary` | `text-2xl lg:text-3xl` | `leading-snug` | `font-semibold` | Subsection headings |
-| `.text-compact` | `text-base lg:text-lg` | `leading-normal` | `font-medium` | Important body text |
-| `.text-body` | `text-sm lg:text-base` | `leading-normal` | `font-normal` | Standard body text |
-| `.text-caption` | `text-xs lg:text-sm` | `leading-tight` | `font-semibold` | Labels, captions |
+| `.heading-primary` | `text-4xl lg:text-5xl` | `leading-tight` | `font-weight: 900` (Black) | Main page headings |
+| `.heading-secondary` | `text-3xl lg:text-4xl` | `leading-tight` | `font-weight: 700` (Bold) | Section headings |
+| `.heading-tertiary` | `text-2xl lg:text-3xl` | `leading-snug` | `font-weight: 500` (Medium) | Subsection headings |
+| `.text-compact` | `text-base lg:text-lg` | `leading-normal` | `font-weight: 500` (Medium) | Important body text |
+| `.text-body` | `text-sm lg:text-base` | `leading-relaxed` | `font-weight: 400` (Regular) | Standard body text |
+| `.text-caption` | `text-xs lg:text-sm` | `leading-tight` | `font-weight: 500` (Medium) | Labels, captions |
+
+### Enhanced Typography Classes
+
+| Class | Font Weight | Usage |
+|-------|-------------|-------|
+| `.hero-title-enhanced` | `font-weight: 900` (Black) | Maximum impact hero titles |
+| `.stats-counter` | `font-weight: 900` (Black) | Statistics and counters |
+| `.heading-card` | `font-weight: 700` (Bold) | Card headings |
+| `.btn-enhanced` | `font-weight: 700` (Bold) | Button text |
+| `.text-enhanced` | `font-weight: 400` (Regular) | Enhanced body text |
 
 ### Color Applications
 
@@ -211,9 +221,9 @@ The LR Theme automatically adapts between light and dark modes:
 
 #### Light Mode (Default)
 
-- **Background**: Pure White (`ffffff`)
+- **Background**: Pure White (`ffffff`) - All sections use consistent white backgrounds
 - **Text**: Pure Black (`000000`)
-- **Surface**: Off White (`f8f8f8`)
+- **Surface**: Pure White (`ffffff`) - Updated from off-white for consistency
 - **Borders**: Light Gray (`e5e5e5`)
 
 #### Dark Mode
@@ -302,19 +312,47 @@ box-shadow: var(--shadow-sharp);
 ### Tailwind CSS Classes
 
 ```html
-<!-- Primary button -->
-<button class="px-6 py-3 transition-all rounded-sm bg-patriot-red text-pure-white hover:scale-102">
+<!-- Primary button with Roboto Bold -->
+<button class="px-6 py-3 font-bold transition-all rounded-sm bg-patriot-red text-pure-white hover:scale-102">
   Start Training
 </button>
 
-<!-- Two-tone card -->
+<!-- Two-tone card with Roboto typography -->
 <div class="p-6 transition-all border rounded-lg bg-surface border-border shadow-sharp hover:shadow-md">
-  <h3 class="mb-2 font-semibold text-text-primary">Card Title</h3>
-  <p class="text-text-secondary">Card content with <span class="font-semibold text-patriot-red">red highlight</span></p>
+  <h3 class="mb-2 text-xl font-bold text-text-primary">Card Title</h3>
+  <p class="text-base text-text-secondary">Card content with <span class="font-medium text-patriot-red">red highlight</span></p>
 </div>
+
+<!-- Hero title with Roboto Black -->
+<h1 class="text-5xl font-black leading-tight text-pure-black lg:text-7xl">
+  LIBERTY RIDGE TRAINING
+</h1>
 
 <!-- Icon with color -->
 <div class="icon icon-lg icon-primary icon-star"></div>
+```
+
+### Roboto Font Implementation
+
+```css
+/* Import Roboto with full weight range */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Typography classes with Roboto weights */
+.hero-title-enhanced {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900; /* Black */
+}
+
+.heading-card {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700; /* Bold */
+}
+
+.text-body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; /* Regular */
+}
 ```
 
 ---
@@ -348,7 +386,8 @@ box-shadow: var(--shadow-sharp);
 ### Design Review Checklist
 
 - [ ] **Color Palette**: Only black, white, and strategic red/blue usage
-- [ ] **Typography**: Inter font family with proper hierarchy
+- [ ] **Typography**: Roboto font family with proper weight hierarchy (Black 900, Bold 700, Medium 500, Regular 400)
+- [ ] **Background Consistency**: Pure white backgrounds across all sections in light mode
 - [ ] **Spacing**: Compact spacing system implementation
 - [ ] **Borders**: Sharp corners with minimal radius (0px-8px)
 - [ ] **Shadows**: Clean, minimal shadow system
