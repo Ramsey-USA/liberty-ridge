@@ -17,10 +17,10 @@ export default function Home() {
         
         {/* Enhanced Typography Content - Always Visible on Large Screens */}
         <div className="block lg:block 2xl:block xl:block z-10 relative text-center animate-fade-in-up container-enhanced">
-          {/* Elite Badge - Enhanced with larger icons */}
+          {/* Professional Badge - Enhanced with larger icons */}
           <div className="block lg:block xl:block mb-8 section-badge-enhanced">
             <div className="icon icon-md icon-primary icon-shield"></div>
-            <span className="text-highlight-red">Elite Training Available</span>
+            <span className="text-highlight-red">Professional Training Available</span>
             <div className="icon icon-md icon-secondary icon-star"></div>
           </div>
           
@@ -39,7 +39,7 @@ export default function Home() {
           <div className="block lg:block 2xl:block xl:block space-x-4 mb-8 animate-fade-in-up animation-delay-500 hero-subtitle-enhanced">
             <span className="inline-flex items-center gap-2 text-highlight-red">
               <div className="icon icon-sm icon-primary icon-target"></div>
-              Practical Tactical Training
+              Safe Professional Training
             </span>
             <span className="text-text-secondary">•</span>
             <span className="inline-flex items-center gap-2 text-highlight-blue">
@@ -49,13 +49,13 @@ export default function Home() {
             <span className="text-text-secondary">•</span>
             <span className="inline-flex items-center gap-2 text-highlight-red">
               <div className="icon icon-sm icon-accent icon-crosshair"></div>
-              Combat-Ready Skills
+              Community Focused
             </span>
           </div>
           
           {/* Enhanced Description - Always Visible on Large Screens */}
           <p className="block lg:block 2xl:block xl:block mx-auto mb-12 max-w-5xl text-enhanced animate-fade-in-up animation-delay-1000">
-            Master tactical fundamentals through proven military methodologies and elite-level firearm training programs designed for serious practitioners seeking <span className="text-highlight-blue">championship-level excellence</span>.
+            Master firearms fundamentals through proven professional methodologies and comprehensive firearm training programs designed for all skill levels seeking <span className="text-highlight-blue">safe, responsible gun ownership</span>.
           </p>
           
           {/* Enhanced CTA Buttons - Always Visible on Large Screens */}
@@ -104,26 +104,26 @@ export default function Home() {
         <div className="bottom-20 left-20 absolute bg-patriot-red rounded-xs w-2 h-2 animate-two-tone-pulse animation-delay-1500"></div>
         
         <div className="z-10 relative mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
-          {/* Sharp Badge - Fixed for better dark mode contrast */}
+          {/* Professional Badge - Fixed for better dark mode contrast */}
           <div className="group inline-flex items-center space-x-3 bg-surface-tactical dark:bg-surface shadow-sharp hover:shadow-sharp-lg mb-8 px-6 py-3 border border-patriot-red hover:border-patriot-blue rounded-sm transition-all duration-300">
             <div className="bg-patriot-red rounded-xs w-2 h-2 animate-two-tone-pulse"></div>
             <span className="font-bold text-text-inverse dark:text-text-primary group-hover:text-patriot-blue text-sm uppercase tracking-wider transition-colors duration-300">
-              Elite Training Available
+              Professional Training Available
             </span>
             <div className="bg-patriot-blue rounded-xs w-2 h-2 animate-two-tone-pulse animation-delay-500"></div>
           </div>
           
-          {/* Sharp Main Heading */}
+          {/* Professional Main Heading */}
           <h3 className="mb-6 font-black text-pure-black dark:text-pure-white text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tighter">
             Ready to Master 
             <span className="block bg-clip-text bg-gradient-to-r from-patriot-red via-patriot-blue to-patriot-red text-transparent">
-              Tactical Excellence?
+              Firearms Excellence?
             </span>
           </h3>
           
           {/* Clean Description with Highlights */}
           <p className="mx-auto mb-12 max-w-4xl text-pure-black/80 dark:text-pure-white/80 text-xl lg:text-2xl leading-relaxed">
-            Join <span className="font-bold text-patriot-red">100+ trained students</span> in professional firearm safety and tactical training programs that deliver <span className="font-bold text-patriot-blue">real results</span>.
+            Join <span className="font-bold text-patriot-red">100+ trained students</span> in professional firearm safety and comprehensive training programs that deliver <span className="font-bold text-patriot-blue">real results</span>.
           </p>
           
           {/* Sharp CTA Buttons */}
@@ -212,8 +212,8 @@ export default function Home() {
               
               <p className="mb-6 text-compact">
                 Led by founder and owner Zach Gaudette, a dedicated U.S. Army veteran 
-                with extensive experience in tactical training and firearm safety. 
-                Zach brings military discipline and expertise to civilian training, 
+                with extensive experience in professional training and firearm safety. 
+                Zach brings professional discipline and expertise to civilian training, 
                 ensuring the highest standards of safety and professionalism.
               </p>
               
@@ -253,7 +253,7 @@ export default function Home() {
                       <div className="mb-4 icon icon-xl icon-accent icon-lightning"></div>
                       <div className="mb-2 text-text-inverse heading-card">Expert Training</div>
                       <div className="text-body text-text-inverse/80">
-                        Years of military and civilian training experience ensuring top-tier instruction.
+                        Years of professional and civilian training experience ensuring top-tier instruction.
                       </div>
                     </div>
                   </div>
@@ -268,7 +268,7 @@ export default function Home() {
                     </div>
                     <div className="flip-card-back">
                       <div className="mb-4 icon icon-xl icon-accent icon-crosshair"></div>
-                      <div className="mb-2 text-text-inverse heading-card">Championship Level</div>
+                      <div className="mb-2 text-text-inverse heading-card">Competition Level</div>
                       <div className="text-body text-text-inverse/80">
                         Ranked #12 regionally in long-range shooting competitions in first year.
                       </div>
@@ -309,7 +309,7 @@ export default function Home() {
                   <div className="gap-4 grid grid-cols-2 w-full max-w-xs">
                     <div className="text-center">
                       <div className="mb-1 icon icon-xl icon-accent icon-award"></div>
-                      <div className="text-caption text-text-muted">Military Trained</div>
+                      <div className="text-caption text-text-muted">Professionally Trained</div>
                     </div>
                     <div className="text-center">
                       <div className="mb-1 icon icon-xl icon-primary icon-target"></div>
@@ -344,7 +344,7 @@ export default function Home() {
         <div className="z-10 relative mx-auto max-w-6xl text-center container-padding">
           <div className="bg-surface-elevated/10 backdrop-blur-sm mx-auto mb-8 border-border/30 section-badge-enhanced">
             <div className="text-accent-gold icon icon-sm icon-award"></div>
-            <span className="font-semibold text-white text-sm uppercase tracking-wide">Championship Excellence</span>
+            <span className="font-semibold text-white text-sm uppercase tracking-wide">Professional Excellence</span>
             <div className="text-accent-gold icon icon-sm icon-award"></div>
           </div>
           
@@ -433,7 +433,7 @@ export default function Home() {
             <h3 className="mb-8 font-bold text-white text-2xl">2024 Competition Highlights</h3>
             <div className="gap-6 grid grid-cols-1 md:grid-cols-3">
               <div className="bg-gradient-to-br to-yellow-400/20 p-6 border border-accent-gold/30 rounded-xl text-center from-accent-gold/20">
-                <div className="mb-2 font-bold text-lg text-accent-gold">Spring Championship</div>
+                <div className="mb-2 font-bold text-lg text-accent-gold">Spring Competition</div>
                 <div className="mb-2 font-black text-white text-3xl">#15</div>
                 <div className="text-white/80 text-sm">Regional Placement</div>
                 <div className="mt-2 text-white/60 text-xs">First Major Competition</div>
@@ -485,7 +485,7 @@ export default function Home() {
               Master Every Shooting Discipline
             </h2>
             <p className="section-subtitle-enhanced">
-              From precision long-range shooting to tactical pistol training, our comprehensive 
+              From precision long-range shooting to professional pistol training, our comprehensive 
               courses are designed to elevate your skills under expert veteran instruction.
             </p>
           </div>
@@ -510,7 +510,7 @@ export default function Home() {
                 Precision Long Range
               </h3>
               <p className="mb-6 text-text-secondary leading-relaxed">
-                Master the fundamentals of long-range shooting with military-grade precision techniques and championship-level instruction.
+                Master the fundamentals of long-range shooting with professional precision techniques and expert instruction.
               </p>
               
               {/* Price and Duration */}
@@ -562,10 +562,10 @@ export default function Home() {
               
               {/* Card Content */}
               <h3 className="mb-4 font-black text-white group-hover:text-blue-400 text-2xl transition-colors duration-300">
-                Tactical Pistol
+                Professional Pistol
               </h3>
               <p className="mb-6 text-text-secondary leading-relaxed">
-                Develop combat-ready pistol skills with real-world tactical applications and stress inoculation training.
+                Develop confident pistol skills with real-world applications and progressive training techniques.
               </p>
               
               {/* Price and Duration */}
@@ -582,15 +582,15 @@ export default function Home() {
                 </li>
                 <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-blue-400 to-blue-500 mr-3 rounded-full w-2 h-2"></div>
-                  Tactical reload techniques
+                  Advanced reload techniques
                 </li>
                 <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-blue-400 to-blue-500 mr-3 rounded-full w-2 h-2"></div>
-                  Movement & cover tactics
+                  Movement & positioning skills
                 </li>
                 <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-blue-400 to-blue-500 mr-3 rounded-full w-2 h-2"></div>
-                  Stress inoculation training
+                  Confidence building training
                 </li>
               </ul>
               
@@ -696,10 +696,10 @@ export default function Home() {
             </div>
             
             <h2 className="mb-4 font-black text-text-primary text-4xl lg:text-5xl leading-tight">
-              Built on Military Principles
+              Built on Professional Principles
             </h2>
             <p className="mx-auto max-w-3xl text-text-secondary text-lg leading-relaxed">
-              Every aspect of our training is grounded in proven military values 
+              Every aspect of our training is grounded in proven professional values 
               and time-tested principles that build character and competence.
             </p>
           </div>
@@ -728,7 +728,7 @@ export default function Home() {
             <div className="group text-center">
               <div className="bg-surface-elevated group-hover:shadow-md p-6 border group-hover:border-military-green border-border rounded-lg h-full transition-all duration-300">
                 <div className="mx-auto mb-4 text-military-green group-hover:scale-110 transition-transform duration-300 icon icon-4xl icon-users"></div>
-                <h3 className="mb-3 text-text-primary heading-card">Brotherhood</h3>
+                <h3 className="mb-3 text-text-primary heading-card">Community</h3>
                 <p className="text-body text-sm">
                   Building a community of responsible shooters who support and learn from each other.
                 </p>
@@ -981,19 +981,19 @@ export default function Home() {
                     <div className="icon icon-sm icon-star"></div>
                   </div>
                   <p className="text-body text-sm italic">
-                    "The tactical pistol course elevated my skills to competition level..."
+                    "The professional pistol course elevated my skills to competition level..."
                   </p>
                 </div>
                 <div className="bg-surface-tactical p-6 border-border-tactical flip-card-back">
                   <h4 className="mb-3 font-bold text-text-inverse text-lg">Professional Excellence</h4>
                   <p className="mb-3 text-text-inverse/90 text-sm leading-relaxed">
-                    "Even with law enforcement experience, the tactical pistol course elevated my skills 
+                    "Even with law enforcement experience, the professional pistol course elevated my skills 
                     to competition level. Zach's attention to detail and advanced techniques are 
                     exactly what serious shooters need."
                   </p>
                   <p className="flex items-center font-semibold text-text-inverse/80 text-xs">
                     <div className="mr-2 text-accent-gold icon icon-xs icon-star"></div>
-                    Tactical Pistol Graduate
+                    Professional Pistol Graduate
                   </p>
                 </div>
               </div>

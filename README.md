@@ -1,41 +1,61 @@
 # Liberty Ridge Training Grounds 🎯
 
-Elite Professional Tactical Training Website - Championship Grade
+Professional Firearms Training Website - Community Focused
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.5.3-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
+[![Next.js](https://img.sh#### Professional Icon Standards
+
+##### Professional Icon System
+
+- **🎯** - Target/Precision Training, Course Navigation, Achievement Markers
+- **⚔️** - Training Operations, Team Training, Advanced Skills  
+- **🛡️** - Protection Training, Defense Courses, Safety Records
+- **🎖️** - Professional Achievement, Instructor Credentials, Honor System
+- **🏆** - Excellence, Competition Results, Competition Records
+
+#### Icon Guidelines
+
+**Prohibited Casual Icons**: NO 🚀, 💪, 👥, 🌟, 📞, 💥, ⚡, 🔥, 💬, ❓, 📊 - maintains professional firearms training atmosphere
+
+#### Professional Component LibraryNext.js-15.5.3-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
 [![Firebase](https://img.shields.io/badge/Firebase-Hosting-orange?style=for-the-badge&logo=firebase)](https://firebase.google.com)
 
 ## 🏆 Project Overview
 
-Liberty Ridge Training Grounds LLC represents the pinnacle of tactical training excellence, founded and led by **Zach Gaudette** - a decorated Army veteran and Regional #12 firearms instructor. This championship-grade website showcases professional elite self-defense and firearm training courses with an uncompromising tactical aesthetic that attracts serious students committed to tactical excellence.
+Liberty Ridge Training Grounds LLC represents the pinnacle of firearms training excellence, founded and led by **Zach Gaudette** - a decorated Army veteran and Regional #12 firearms instructor. This professional website showcases comprehensive self-defense and firearm training courses with a welcoming aesthetic that attracts students of all skill levels committed to safe, responsible firearms ownership.
 
 **🌐 Domain:** [libertyridegetraininggrounds.com](https://libertyridegetraininggrounds.com)  
 **🎖️ Instructor Rating:** Regional #12 | 100+ Students Trained | 100% Safety Record
 
+### Target Audience
+
+**Primary Demographics**: Civilians, Law Enforcement, Military personnel, Competitive Shooters (PRS, USPSA, IDPA).
+
+Our comprehensive training programs serve a diverse community of responsible gun owners, from first-time shooters seeking foundational safety knowledge to competitive athletes pursuing precision excellence and professionals requiring specialized skills.
+
 ## 🎨 LR Theme (Liberty Ridge Design System)
 
-This championship-grade website features our revolutionary **LR Theme** - a sleek black and white design system with strategic red/blue highlights that sets the gold standard for professional tactical training websites:
+This professional website features our **LR Theme** - a sleek black and white design system with strategic red/blue highlights that sets the standard for professional firearms training websites:
 
 ### 🏆 LR Theme Design Philosophy
 
 - **Pure White Foundation**: Clean, professional aesthetic with `#ffffff` backgrounds across all sections in light mode
 - **Strategic Red/Blue Highlights**: `#dc2626` (Patriot Red) and `#2563eb` (Patriot Blue) used exclusively for emphasis and CTAs
-- **Sharp, Sleek Design**: Minimal border radius (2px-8px), compact spacing, and clean geometry
+- **Clean, Sleek Design**: Minimal border radius (2px-8px), compact spacing, and clean geometry
 - **Roboto Typography System**: Professional Roboto font family with strategic weight hierarchy for superior readability
 - **Two-Tone Component System**: Consistent black/white styling with red/blue accent interactions
-- **Military Precision**: Sharp corners, compact layouts, and professional typography
+- **Professional Precision**: Clean corners, compact layouts, and professional typography
 - **Light/Dark Mode Excellence**: Seamless adaptation between pure white and pure black backgrounds
 
 ### 🚀 LR Theme Advanced Features
 
 - **Pure White Background System**: Consistent white backgrounds across all sections for clean, professional appearance
 - **Roboto Font Excellence**: Complete Roboto family (weights 100-900) with strategic typography hierarchy
-- **Sharp Animation System**: Clean transitions with `animate-two-tone-pulse`, `animate-sharp-hover`, and `animate-fadeIn`
+- **Clean Animation System**: Clean transitions with `animate-two-tone-pulse`, `animate-smooth-hover`, and `animate-fadeIn`
 - **Two-Tone Icon Library**: 20+ custom CSS icons with black base and red/blue accents
-- **Sleek Component Cards**: Sharp-cornered cards with minimal shadows and two-tone interactions
-- **Professional Button System**: `.btn-primary`, `.btn-secondary`, `.btn-black` with sharp styling
+- **Sleek Component Cards**: Clean-cornered cards with minimal shadows and two-tone interactions
+- **Professional Button System**: `.btn-primary`, `.btn-secondary`, `.btn-black` with clean styling
 - **Enhanced Typography Hierarchy**: Roboto Black (900) for headings, Medium (500) for emphasis, Regular (400) for body
 - **Responsive Excellence**: Mobile-first design maintaining LR Theme consistency across all devices
 
@@ -43,17 +63,17 @@ This championship-grade website features our revolutionary **LR Theme** - a slee
 
 **Phase One (November):** Classroom-only courses covering firearm safety and unique personal firearm training. Integration of High Level CRM platform for lead management, automated communications, and streamlined student sign-ups.
 
-**Phase Two (Upcoming):** E-commerce functionality to sell tactical gear and accessories, with focus on brands like Vortex and Sig Sauer.
+**Phase Two (Upcoming):** E-commerce functionality to sell firearms accessories and training gear, with focus on quality brands like Vortex and Sig Sauer.
 
 **Phase Three (Future):** Live firearm training sessions once land is acquired.
 
-## 🛠️ Championship Technology Stack
+## 🛠️ Professional Technology Stack
 
 ### Core Technologies
 
 - **Frontend Framework:** Next.js 15.5.3 with TypeScript (App Router)
 - **Styling Engine:** Tailwind CSS with Advanced Custom Properties
-- **Design System:** Liberty Ridge Design System (50+ tactical variables)
+- **Design System:** Liberty Ridge Design System (50+ professional variables)
 - **Animation Framework:** Custom CSS keyframes + Tailwind transitions
 - **Development Experience:** ESLint + Prettier + Headwind (auto-sorting)
 - **Type Safety:** Strict TypeScript with comprehensive interfaces
@@ -76,19 +96,19 @@ This championship-grade website features our revolutionary **LR Theme** - a slee
   - Git Graph for version control
   - YAML Support for configuration
 
-## 🏗️ Championship Code Architecture
+## 🏗️ Professional Code Architecture
 
 ### Enhanced File Structure
 
 ```typescript
 src/
 ├── app/                    # Next.js 15+ App Router (Static Export Ready)
-│   ├── page.tsx           # Enhanced Home Page (Championship Design)
+│   ├── page.tsx           # Enhanced Home Page (Professional Design)
 │   ├── contact/page.tsx   # Modernized Contact Page (Liberty Ridge Standards)
-│   ├── courses/page.tsx   # Course Catalog (Tactical Themed)
+│   ├── courses/page.tsx   # Course Catalog (Community Themed)
 │   ├── about/page.tsx     # About/Team Pages
 │   └── globals.css        # Advanced Animation System + Custom Properties
-├── components/             # Elite Component Library
+├── components/             # Professional Component Library
 │   ├── cards/             # Liberty Ridge Card System
 │   │── Header.tsx         # Enhanced Navigation with Liberty Ridge Branding
 │   │── Footer.tsx         # Professional Footer with Liberty Ridge Identity
@@ -107,7 +127,7 @@ src/
 
 #### Enhanced Page Structure Template
 
-Every page follows our championship-grade structure:
+Every page follows our professional structure:
 
 1. **Organized Imports** - ESLint compliant ordering (Next.js → Components → Data)
 2. **TypeScript Interfaces** - Strict type safety with comprehensive prop definitions
@@ -115,21 +135,23 @@ Every page follows our championship-grade structure:
 4. **Modern Component Design** - Functional components with advanced Tailwind patterns
 5. **Professional Export** - Default exports with descriptive component names
 
-#### Serious Tactical Icon Standards
+#### Professional Icon Standards
 
-##### Military-Grade Icon System
+**Professional Icon System**
 
-- **🎯** Target/Precision Training, Course Navigation, Achievement Markers
-- **⚔️** Combat Operations, Team Training, Advanced Skills  
-- **🛡️** Protection Training, Defense Courses, Safety Records
-- **🎖️** Military Achievement, Instructor Credentials, Honor System
-- **🏆** Excellence, Competition Results, Championship Records
+- **🎯** - Target/Precision Training, Course Navigation, Achievement Markers
+- **⚔️** - Training Operations, Team Training, Advanced Skills  
+- **🛡️** - Protection Training, Defense Courses, Safety Records
+- **🎖️** - Professional Achievement, Instructor Credentials, Honor System
+- **🏆** - Excellence, Competition Results, Competition Records
 
-##### Icon Guidelines
+**Icon Guidelines**
 
-**Prohibited Casual Icons**: NO 🚀, 💪, 👥, 🌟, 📞, 💥, ⚡, 🔥, 💬, ❓, 📊 - maintains professional military training atmosphere
+**Prohibited Casual Icons**: NO 🚀, 💪, 👥, 🌟, 📞, 💥, ⚡, 🔥, 💬, ❓, 📊 - maintains professional firearms training atmosphere
 
-#### Championship Component Library
+#### Professional Component Library
+
+#### LR Theme Component System
 
 - **Enhanced Hero Sections** - Professional animations with gradient shifts and pulse effects
 - **Liberty Ridge Course Cards** - Custom themed cards with unique color systems
@@ -146,17 +168,17 @@ The `globals.css` file implements the comprehensive **LR Theme** - a sleek black
 - **Core Variables**: Pure white foundation with strategic red/blue highlights
 - **Semantic Tokens**: Background, text, border, and interaction color systems optimized for white backgrounds
 - **Roboto Typography**: Professional font family with weight hierarchy (Regular 400, Medium 500, Bold 700, Black 900)
-- **Sharp Spacing**: Compact spacing system with minimal border radius values
-- **Clean Shadows**: Professional shadow system with sharp, minimal depth
+- **Clean Spacing**: Compact spacing system with minimal border radius values
+- **Clean Shadows**: Professional shadow system with clean, minimal depth
 - **Two-Tone Components**: Button, card, and icon styling with white foundation base
 
 #### LR Theme Organized Sections
 
 - **Color System** - Pure white foundation with strategic red/blue highlights
 - **Roboto Typography System** - Professional font hierarchy with strategic weight usage
-- **Sharp Components** - Buttons, cards, and inputs with minimal border radius
+- **Clean Components** - Buttons, cards, and inputs with minimal border radius
 - **Two-Tone Icons** - 20+ custom CSS icons with professional styling
-- **Clean Animations** - Sharp, professional transitions and interactions
+- **Clean Animations** - Clean, professional transitions and interactions
 - **White Background Utilities** - Pure white theming with light/dark mode support
 
 ### LR Theme Design System
@@ -173,16 +195,16 @@ The `globals.css` file implements the comprehensive **LR Theme** - a sleek black
 
 #### LR Theme Advanced Features
 
-- **Sharp Border System**: Border radius limited to 0px-8px for clean, professional appearance
+- **Clean Border System**: Border radius limited to 0px-8px for clean, professional appearance
 - **Two-Tone Interactions**: Black/white base with red/blue accent transformations
-- **Sleek Shadow System**: Minimal shadows (`shadow-sharp`, `shadow-sharp-lg`) for clean depth
+- **Sleek Shadow System**: Minimal shadows (`shadow-clean`, `shadow-clean-lg`) for clean depth
 - **Strategic Color Usage**: Red and blue exclusively for highlights, buttons, and emphasis
-- **Clean Animations**: `animate-two-tone-pulse`, `animate-sharp-hover` for professional interactions
+- **Clean Animations**: `animate-two-tone-pulse`, `animate-smooth-hover` for professional interactions
 
 #### LR Theme Typography System
 
 - **Font Family:** Roboto (Google Fonts) - optimized for professional readability and modern appearance
-- **Sharp Typography:** Clean, bold styling with strategic red/blue highlighting
+- **Clean Typography:** Clean, bold styling with strategic red/blue highlighting
 - **Weight Hierarchy:** Roboto Black (900) for impact headings, Bold (700) for section headers, Medium (500) for emphasis, Regular (400) for body content
 - **Two-Tone Text**: White background base with red/blue accents for key messaging
 - **Responsive Excellence:** Mobile-first typography maintaining LR Theme consistency
@@ -228,13 +250,13 @@ Rooted in U.S. Army veteran principles:
 
 ## Website Structure
 
-### Core Pages (Tactical-Themed)
+### Core Pages (Community-Themed)
 
-- **Homepage (/)** - Elite hero section with bullet animations, tactical overview
-- **Courses (/courses)** - Military-grade course catalog with tactical styling
-- **About (/about)** - Veteran founder story with tactical background elements
-- **Contact (/contact)** - Professional contact forms with tactical aesthetics
-- **Shop (/shop)** - Elite tactical gear showcase with glass-morphism cards
+- **Homepage (/)** - Professional hero section with animations, community overview
+- **Courses (/courses)** - Professional course catalog with clean styling
+- **About (/about)** - Veteran founder story with professional background elements
+- **Contact (/contact)** - Professional contact forms with clean aesthetics
+- **Shop (/shop)** - Professional training gear showcase with glass-morphism cards
 
 ### Specialized Pages  
 
@@ -250,7 +272,7 @@ Rooted in U.S. Army veteran principles:
 
 ## 📋 Liberty Ridge Development Standards
 
-### 🎯 Championship Code Quality
+### 🎯 Professional Code Quality
 
 #### TypeScript Excellence
 
@@ -286,7 +308,7 @@ Rooted in U.S. Army veteran principles:
 
 #### Liberty Ridge Accessibility
 
-- **Color Contrast:** Professional contrast ratios maintaining tactical aesthetic
+- **Color Contrast:** Professional contrast ratios maintaining community aesthetic
 - **Keyboard Navigation:** Full keyboard accessibility with Liberty Ridge styling
 - **Screen Reader Support:** Semantic HTML with descriptive ARIA labels
 - **Responsive Excellence:** Mobile-first design with Liberty Ridge consistency
@@ -362,12 +384,12 @@ See [FIREBASE_DEPLOYMENT.md](./FIREBASE_DEPLOYMENT.md) for detailed setup instru
 
 ## 🏆 Liberty Ridge Excellence Summary
 
-**Liberty Ridge Training Grounds** now represents the pinnacle of tactical training website development, featuring the revolutionary **LR Theme** - a sleek black and white design system with strategic red/blue highlights that sets the gold standard for professional training websites.
+**Liberty Ridge Training Grounds** now represents the pinnacle of professional training website development, featuring the comprehensive **LR Theme** - a sleek black and white design system with strategic red/blue highlights that sets the gold standard for professional training websites.
 
 ### 🎯 Key LR Theme Achievements
 
 - **🥇 LR Theme Design System**: Pure black/white foundation with strategic red/blue highlighting
-- **⚡ Sharp Professional Animations**: Clean keyframe animations with two-tone interactions
+- **⚡ Clean Professional Animations**: Clean keyframe animations with two-tone interactions
 - **📱 Mobile Excellence**: Mobile-first responsive design maintaining LR Theme consistency across all devices
 - **🛡️ Type Safety**: Comprehensive TypeScript implementation with strict mode compliance
 - **🚀 Performance Optimized**: Static export ready for Firebase Hosting with CDN distribution
@@ -375,22 +397,22 @@ See [FIREBASE_DEPLOYMENT.md](./FIREBASE_DEPLOYMENT.md) for detailed setup instru
 
 ### 🔥 LR Theme Technical Excellence
 
-Built with modern development practices, clean animation systems, and professional code standards that ensure maintainability, performance, and scalability for the elite tactical training industry.
+Built with modern development practices, clean animation systems, and professional code standards that ensure maintainability, performance, and scalability for the professional firearms training industry.
 
 **Ready for deployment. Ready for excellence. Ready for LR Theme.**
 
-## 🏆 Current Status - Championship Ready
+## 🏆 Current Status - Professional Ready
 
-### ✅ LR Theme Implementation - Championship Complete
+### ✅ LR Theme Implementation - Professional Complete
 
 #### Home Page Enhancement (LR Theme Standards)
 
 - **Pure White Background System:** Consistent white backgrounds across all sections for professional appearance
 - **Roboto Typography Excellence:** Strategic weight hierarchy with Black (900), Bold (700), Medium (500), and Regular (400)
 - **Sleek Hero Section:** Pure white background with strategic red/blue accents and clean Roboto typography
-- **Sharp Component Cards:** Two-tone cards with minimal shadows and professional hover interactions
-- **Professional CTA Buttons:** Sharp-cornered buttons with clean color transitions and scale effects
-- **Clean Animations:** LR Theme keyframes (`animate-fadeIn`, `animate-two-tone-pulse`, `animate-sharp-hover`)
+- **Clean Component Cards:** Two-tone cards with minimal shadows and professional hover interactions
+- **Professional CTA Buttons:** Clean-cornered buttons with clean color transitions and scale effects
+- **Clean Animations:** LR Theme keyframes (`animate-fadeIn`, `animate-two-tone-pulse`, `animate-clean-hover`)
 - **Mobile-First Excellence:** Responsive design maintaining LR Theme consistency across all devices
 
 #### Contact Page Enhancement (Professional Standards)
@@ -413,9 +435,9 @@ Built with modern development practices, clean animation systems, and profession
 #### LR Theme Features
 
 - **Two-Tone Component System:** Consistent black/white styling with strategic red/blue highlights
-- **Serious Tactical Icon System:** Professional military icons (🎯, ⚔️, 🛡️, 🎖️, 🏆) maintaining tactical training aesthetics
-- **Sharp Professional Interactions:** Clean hover states, minimal transforms, and strategic color transitions
-- **Performance Optimized:** Smooth animations with sharp timing and professional easing
+- **Professional Icon System:** Professional community icons (🎯, ⚖️, 🛡️, 🎖️, 🏆) maintaining professional training aesthetics
+- **Clean Professional Interactions:** Clean hover states, minimal transforms, and strategic color transitions
+- **Performance Optimized:** Smooth animations with clean timing and professional easing
 - **Mobile Excellence:** Mobile-first responsive design with LR Theme consistency maintained
 - **Brand Precision:** Sleek black/white foundation with strategic red/blue accent execution
 

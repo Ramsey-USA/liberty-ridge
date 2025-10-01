@@ -7,18 +7,27 @@
 
 ## 🏆 Brand Overview
 
-Liberty Ridge Training Grounds utilizes the **LR Theme** - a revolutionary black and white design system that embodies professionalism, precision, and tactical excellence through clean aesthetics and strategic color usage.
+Liberty Ridge Training Grounds utilizes the **LR Theme** - a welcoming black and white design system that embodies professionalism, precision, and firearms excellence through clean aesthetics and strategic color usage.
 
 ### Brand Mission
 
-> "Elite tactical training through sleek, professional design that reflects our commitment to precision and excellence."
+> "The site's core mission is to promote safe, professional, and comprehensive firearms training while building a community of responsible gun owners."
 
 ### Design Philosophy
 
-- **Sleek & Professional**: Clean, minimal aesthetic that commands respect
+The design philosophy is **Modern, Sleek, and Tightly Spaced**, reflecting the precision and professionalism of the training offered.
+
+- **Modern & Sleek**: Clean, contemporary aesthetic that welcomes all skill levels
+- **Tightly Spaced**: Compact, precise spacing that reflects training precision
 - **Strategic Color Usage**: Red and blue exclusively for emphasis and calls-to-action
-- **Sharp Precision**: Clean lines, minimal radius, and professional typography
+- **Clean Precision**: Clean lines, minimal radius, and approachable typography
 - **Two-Tone Excellence**: Black and white foundation with strategic highlights
+
+### Target Audience
+
+**Primary Demographics**: Civilians, Law Enforcement, Military personnel, Competitive Shooters (PRS, USPSA, IDPA).
+
+Our comprehensive training programs serve a diverse community of responsible gun owners, from first-time shooters seeking foundational safety knowledge to competitive athletes pursuing precision excellence and professionals requiring specialized skills.
 
 ---
 
@@ -64,7 +73,7 @@ Liberty Ridge Training Grounds utilizes the **LR Theme** - a revolutionary black
 
 | Size | Value | CSS Variable | Usage |
 |------|-------|--------------|-------|
-| **None** | `0px` | `--radius-none` | Pure sharp corners |
+| **None** | `0px` | `--radius-none` | Pure clean corners |
 | **XS** | `2px` | `--radius-xs` | Minimal radius |
 | **SM** | `4px` | `--radius-sm` | Buttons, inputs |
 | **MD** | `6px` | `--radius-md` | Standard cards |
@@ -76,10 +85,10 @@ Liberty Ridge Training Grounds utilizes the **LR Theme** - a revolutionary black
 
 | Type | CSS Variable | Value | Usage |
 |------|--------------|-------|-------|
-| **Sharp SM** | `--shadow-sm` | `0 1px 3px 0 rgb(0 0 0 / 0.1)` | Subtle depth |
-| **Sharp MD** | `--shadow-md` | `0 2px 8px 0 rgb(0 0 0 / 0.15)` | Standard elevation |
-| **Sharp LG** | `--shadow-lg` | `0 4px 16px 0 rgb(0 0 0 / 0.2)` | High elevation |
-| **Sharp** | `--shadow-sharp` | `0 0 0 1px rgb(0 0 0 / 0.1)` | Clean border shadow |
+| **Clean SM** | `--shadow-sm` | `0 1px 3px 0 rgb(0 0 0 / 0.1)` | Subtle depth |
+| **Clean MD** | `--shadow-md` | `0 2px 8px 0 rgb(0 0 0 / 0.15)` | Standard elevation |
+| **Clean LG** | `--shadow-lg` | `0 4px 16px 0 rgb(0 0 0 / 0.2)` | High elevation |
+| **Clean** | `--shadow-clean` | `0 0 0 1px rgb(0 0 0 / 0.1)` | Clean border shadow |
 | **Inset** | `--shadow-inset` | `inset 0 1px 2px 0 rgb(0 0 0 / 0.1)` | Button pressed state |
 
 ---
@@ -119,7 +128,7 @@ Liberty Ridge Training Grounds utilizes the **LR Theme** - a revolutionary black
 - **Background**: Surface color (adapts to theme)
 - **Border**: 1px solid border color
 - **Radius**: 6px (--radius-lg)
-- **Shadow**: Sharp shadow for clean depth
+- **Shadow**: Clean shadow for clean depth
 - **Hover**: Subtle lift with enhanced shadow
 
 #### Primary Card (.card-primary)
@@ -178,26 +187,26 @@ Liberty Ridge Training Grounds utilizes the **LR Theme** - a revolutionary black
 
 ## 🎨 Icon System
 
-### Serious Tactical Icon Standards
+### Professional Icon Standards
 
-LR Theme implements a comprehensive tactical icon system maintaining professional military training aesthetics:
+LR Theme implements a comprehensive professional icon system maintaining community-focused training aesthetics:
 
-#### Primary Tactical Icons
+#### Primary Professional Icons
 
 - **🎯** - Target/Precision Training, Course Navigation, Achievement Markers
-- **⚔️** - Combat Operations, Team Training, Advanced Skills  
-- **🛡️** - Protection Training, Defense Courses, Safety Records
-- **🎖️** - Military Achievement, Instructor Credentials, Honor System
-- **🏆** - Excellence, Competition Results, Championship Records
+- **⚖️** - Professional Training, Community Programs, Skill Development  
+- **🛡️** - Safety Training, Defense Courses, Safety Records
+- **🎖️** - Professional Achievement, Instructor Credentials, Honor System
+- **🏆** - Excellence, Competition Results, Achievement Records
 
 #### Icon Implementation Guidelines
 
-#### Serious Military Aesthetic Only
+#### Professional Community Aesthetic
 
 - NO casual emojis (🚀, 💪, 👥, 🌟, 📞, 💥, ⚡, 🔥, 💬, ❓, 📊)
-- ALL icons must convey tactical professionalism
-- Consistent with military training environment
-- Emphasizes precision, honor, and combat readiness
+- ALL icons must convey professional community
+- Consistent with welcoming training environment
+- Emphasizes precision, honor, and professional readiness
 
 #### CSS Icon Classes
 
@@ -253,7 +262,7 @@ The LR Theme automatically adapts between light and dark modes:
 |-----------|----------|---------|-------|
 | `animate-fadeIn` | `0.5s` | `ease-out` | Content entrance |
 | `animate-two-tone-pulse` | `2s` | `ease-in-out infinite` | Attention elements |
-| `animate-sharp-hover` | `0.2s` | `ease-out` | Interactive feedback |
+| `animate-clean-hover` | `0.2s` | `ease-out` | Interactive feedback |
 | `hover:scale-102` | `0.3s` | `ease` | Button hover |
 | `hover:scale-105` | `0.3s` | `ease` | Card hover |
 
@@ -272,7 +281,7 @@ The LR Theme automatically adapts between light and dark modes:
 
 - **Use pure black and white** as primary colors
 - **Limit red/blue usage** to highlights and CTAs only
-- **Maintain sharp corners** with minimal border radius (0px-8px)
+- **Maintain clean corners** with minimal border radius (0px-8px)
 - **Apply consistent spacing** using the compact system
 - **Ensure high contrast** for accessibility
 - **Use two-tone interactions** for professional feedback
@@ -283,7 +292,7 @@ The LR Theme automatically adapts between light and dark modes:
 
 - **Avoid colorful backgrounds** - stick to black/white foundation
 - **Don't overuse red/blue** - reserve for strategic emphasis
-- **Avoid large border radius** - maintain sharp, professional appearance
+- **Avoid large border radius** - maintain clean, professional appearance
 - **Don't use complex gradients** - keep backgrounds clean
 - **Avoid bright colors** outside of red/blue system
 - **Don't mix inconsistent shadows** - use LR Theme shadow system
@@ -310,7 +319,7 @@ border-color: rgb(var(--border));
 border-radius: var(--radius-sm);
 
 /* Shadows */
-box-shadow: var(--shadow-sharp);
+box-shadow: var(--shadow-clean);
 ```
 
 ### Tailwind CSS Classes
@@ -325,7 +334,7 @@ box-shadow: var(--shadow-sharp);
 </button>
 
 <!-- Two-tone card with Roboto typography -->
-<div class="p-6 transition-all border rounded-lg bg-surface border-border shadow-sharp hover:shadow-md">
+<div class="p-6 transition-all border rounded-lg bg-surface border-border shadow-clean hover:shadow-md">
   <h3 class="mb-2 text-xl font-bold text-text-primary">Card Title</h3>
   <p class="text-base text-text-secondary">Card content with <span class="font-medium text-patriot-red">red highlight</span></p>
 </div>
@@ -373,7 +382,7 @@ box-shadow: var(--shadow-sharp);
 
 ### Typography Lock-ups
 
-- **Tagline**: "Elite Tactical Training"
+- **Tagline**: "Professional Firearms Training"
 - **Subtitle**: "Professional • Veteran-Led • Results-Driven"
 - **Colors**: Black/white primary, red/blue for emphasis
 
@@ -394,10 +403,10 @@ box-shadow: var(--shadow-sharp);
 - [ ] **Typography**: Roboto font family with proper weight hierarchy (Black 900, Bold 700, Medium 500, Regular 400)
 - [ ] **Background Consistency**: Pure white backgrounds across all sections in light mode
 - [ ] **Spacing**: Compact spacing system implementation
-- [ ] **Borders**: Sharp corners with minimal radius (0px-8px)
+- [ ] **Borders**: Clean corners with minimal radius (0px-8px)
 - [ ] **Shadows**: Clean, minimal shadow system
-- [ ] **Icons**: Serious tactical icons only (🎯, ⚔️, 🛡️, 🎖️, 🏆) - NO casual emojis
-- [ ] **Icon Consistency**: All emojis must convey military professionalism and tactical training
+- [ ] **Icons**: Professional icons only (🎯, ⚖️, 🛡️, 🎖️, 🏆) - NO casual emojis
+- [ ] **Icon Consistency**: All emojis must convey professional community and professional training
 - [ ] **Animations**: Smooth, professional transitions
 - [ ] **Contrast**: High contrast ratios for accessibility
 - [ ] **Responsive**: Consistent appearance across all devices
@@ -421,6 +430,45 @@ box-shadow: var(--shadow-sharp);
 **Phone**: (509) 555-0123  
 **Email**: <info@libertyridgetraining.com>  
 **Website**: <libertyridegetraininggrounds.com>
+
+---
+
+## 🛠️ Developer Quick Reference
+
+### CSS Icon Library
+
+LR Theme includes 20+ custom CSS icons with consistent styling for technical implementation:
+
+#### Available CSS Icons
+
+- `icon-star` - Five-pointed star with red accent
+- `icon-shield` - Protective shield with blue accent  
+- `icon-target` - Bullseye target with red center
+- `icon-award` - Medal with ribbon accents
+- `icon-users` - Multiple users with color accents
+- `icon-clock` - Timepiece with white details
+- `icon-crosshair` - Precision aiming reticle
+- `icon-phone` - Communication device
+- `icon-email` - Message envelope
+- `icon-location` - Geographic marker
+
+#### Icon Sizing Classes
+
+- `.icon-xs` - 1rem (16px)
+- `.icon-sm` - 1.25rem (20px)  
+- `.icon-md` - 1.5rem (24px)
+- `.icon-lg` - 2rem (32px)
+- `.icon-xl` - 2.5rem (40px)
+
+### Quick Implementation Guide
+
+**Colors**: Use only black (`#000000`), white (`#ffffff`), red (`#dc2626`), blue (`#2563eb`)
+
+**Typography**: Roboto family - Black (900), Bold (700), Medium (500), Regular (400)
+
+**Animations**: `animate-fadeIn`, `animate-two-tone-pulse`, `animate-clean-hover`
+
+**Shadows**: `shadow-clean` for borders, `shadow-sm/md/lg` for elevation
 
 ---
 
