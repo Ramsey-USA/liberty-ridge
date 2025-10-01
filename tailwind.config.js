@@ -17,11 +17,11 @@ module.exports = {
         
         /* Additional LR Theme Colors */
         'accent-gold': 'rgb(var(--accent-gold) / <alpha-value>)',
-        'military-green': 'rgb(var(--military-green) / <alpha-value>)',
+        'community-green': 'rgb(var(--community-green) / <alpha-value>)',
         
         /* Enhanced LR Theme Surface Colors */
-        'surface-tactical': 'rgb(var(--surface-tactical) / <alpha-value>)',
-        'border-tactical': 'rgb(var(--border-tactical) / <alpha-value>)',
+        'surface-professional': 'rgb(var(--surface-professional) / <alpha-value>)',
+        'border-professional': 'rgb(var(--border-professional) / <alpha-value>)',
         
         /* Pure Black & White Foundation */
         'pure-black': 'rgb(var(--pure-black) / <alpha-value>)',
@@ -67,13 +67,13 @@ module.exports = {
         'surface-contrast': 'rgb(var(--surface-contrast) / <alpha-value>)',
       },
       
-      /* ===== SHARP BORDER RADIUS SYSTEM ===== */
+      /* ===== CLEAN BORDER RADIUS SYSTEM ===== */
       borderRadius: {
-        'none': '0px',      // Pure sharp corners
+        'none': '0px',      // Pure clean corners
         'xs': '2px',        // Minimal radius
         'sm': '4px',        // Buttons and inputs
         'md': '6px',        // Standard cards
-        'lg': '8px',        // Sharp but not harsh
+        'lg': '8px',        // Clean but not harsh
         'xl': '12px',       // Larger elements
         '2xl': '16px',      // Hero sections
       },
@@ -81,7 +81,7 @@ module.exports = {
       /* ===== ENHANCED TYPOGRAPHY ===== */
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        tactical: ['Inter', 'system-ui', 'sans-serif'],
+        professional: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Inter', 'system-ui', 'sans-serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
@@ -141,22 +141,22 @@ module.exports = {
         '32': '8rem',        // 128px
       },
       
-      /* ===== SLEEK SHADOWS ===== */
+      /* ===== CLEAN SHADOWS ===== */
       boxShadow: {
         'sm': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
         'md': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
         'lg': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
         'xl': '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
         '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
-        'sharp': '0 2px 8px 0 rgb(0 0 0 / 0.15)',
-        'sharp-lg': '0 4px 16px 0 rgb(0 0 0 / 0.2)',
+        'clean': '0 2px 8px 0 rgb(0 0 0 / 0.15)',
+        'clean-lg': '0 4px 16px 0 rgb(0 0 0 / 0.2)',
       },
       
       /* ===== ANIMATIONS ===== */
       animation: {
         'fadeIn': 'fadeIn 0.5s ease-out',
         'slideIn': 'slideIn 0.3s ease-out',
-        'sharp-hover': 'sharpHover 0.2s ease-out',
+        'clean-hover': 'cleanHover 0.2s ease-out',
         'two-tone-pulse': 'twoTonePulse 2s ease-in-out infinite',
       },
       
@@ -169,7 +169,7 @@ module.exports = {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(0)' },
         },
-        sharpHover: {
+        cleanHover: {
           '0%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.05)' },
           '100%': { transform: 'scale(1.02)' },

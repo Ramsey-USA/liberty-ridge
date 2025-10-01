@@ -19,7 +19,7 @@
     
     /* Additional LR Theme Colors */
     --accent-gold: 251 191 36;      /* #fbbf24 - Gold accent */
-    --military-green: 34 197 94;    /* #22c55e - Military green */
+    --community-green: 34 197 94;   /* #22c55e - Community green */
     
     /* Black & White Foundation */
     --pure-black: 0 0 0;            /* #000000 - True black */
@@ -46,7 +46,7 @@
     --surface-elevated: var(--pure-white);  /* Changed from gray-50 to pure white */
     --surface-dark: var(--pure-black);
     --surface-contrast: var(--off-black);
-    --surface-tactical: var(--gray-900);  /* Tactical dark surface for special sections */
+    --surface-professional: var(--gray-900);  /* Professional dark surface for special sections */
     
     /* Text Colors - High contrast */
     --text-primary: var(--pure-black);
@@ -58,7 +58,7 @@
     --border: var(--gray-200);
     --border-strong: var(--gray-400);
     --border-dark: var(--pure-black);
-    --border-tactical: var(--gray-700);   /* Tactical border color */
+    --border-professional: var(--gray-700);   /* Professional border color */
     
     /* Interactive States - Red & Blue highlights */
     --primary: var(--patriot-red);
@@ -68,18 +68,18 @@
     --accent: var(--pure-black);    /* Black accents */
     --accent-hover: var(--gray-800);
     
-    /* ===== SPACING & LAYOUT - Sharp corners ===== */
-    --radius-sm: 2px;               /* Sharp, minimal radius */
+    /* ===== SPACING & LAYOUT - Clean corners ===== */
+    --radius-sm: 2px;               /* Clean, minimal radius */
     --radius-md: 4px;               /* Slightly rounded for buttons */
     --radius-lg: 6px;               /* Maximum radius for cards */
     --radius-xl: 8px;               /* Largest radius for major elements */
-    --radius-none: 0px;             /* Completely sharp corners */
+    --radius-none: 0px;             /* Completely clean corners */
     
-    /* ===== SHARP SHADOWS - Clean and minimal ===== */
+    /* ===== CLEAN SHADOWS - Clean and minimal ===== */
     --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1);
     --shadow-md: 0 2px 8px 0 rgb(0 0 0 / 0.15);
     --shadow-lg: 0 4px 16px 0 rgb(0 0 0 / 0.2);
-    --shadow-sharp: 0 0 0 1px rgb(0 0 0 / 0.1);      /* Clean border shadow */
+    --shadow-clean: 0 0 0 1px rgb(0 0 0 / 0.1);      /* Clean border shadow */
     --shadow-inset: inset 0 1px 2px 0 rgb(0 0 0 / 0.1); /* Inset shadow for buttons */
   }
   
@@ -90,7 +90,7 @@
     --surface-elevated: var(--gray-900);
     --surface-dark: var(--pure-white);
     --surface-contrast: var(--off-white);
-    --surface-tactical: var(--gray-800);  /* Tactical dark surface */
+    --surface-professional: var(--gray-800);  /* Professional dark surface */
     
     --text-primary: var(--pure-white);
     --text-secondary: var(--gray-300);
@@ -100,13 +100,13 @@
     --border: var(--gray-800);
     --border-strong: var(--gray-600);
     --border-dark: var(--pure-white);
-    --border-tactical: var(--gray-600);   /* Tactical border color */
+    --border-professional: var(--gray-600);   /* Professional border color */
     
     /* Enhanced shadows for dark mode */
     --shadow-sm: 0 1px 3px 0 rgb(255 255 255 / 0.1);
     --shadow-md: 0 2px 8px 0 rgb(255 255 255 / 0.15);
     --shadow-lg: 0 4px 16px 0 rgb(255 255 255 / 0.2);
-    --shadow-sharp: 0 0 0 1px rgb(255 255 255 / 0.1);
+    --shadow-clean: 0 0 0 1px rgb(255 255 255 / 0.1);
     --shadow-inset: inset 0 1px 2px 0 rgb(255 255 255 / 0.1);
   }
 }
@@ -156,7 +156,7 @@
     color: rgb(var(--pure-white));
     padding: 12px 24px;
     border: 2px solid rgb(var(--primary));
-    box-shadow: var(--shadow-sharp);
+    box-shadow: var(--shadow-clean);
     transition: all 0.15s ease;
     cursor: pointer;
     text-decoration: none;
@@ -179,7 +179,7 @@
     cursor: pointer;
     text-decoration: none;
     display: inline-flex;
-    box-shadow: var(--shadow-sharp);
+    box-shadow: var(--shadow-clean);
   }
   
   .btn-secondary:hover {
@@ -215,7 +215,7 @@
     cursor: pointer;
     text-decoration: none;
     display: inline-flex;
-    box-shadow: var(--shadow-sharp);
+    box-shadow: var(--shadow-clean);
   }
   
   .btn-black:hover {
@@ -225,13 +225,13 @@
     box-shadow: var(--shadow-md);
   }
   
-  /* ===== SHARP COMPACT CARDS ===== */
+  /* ===== CLEAN COMPACT CARDS ===== */
   .card {
     background-color: rgb(var(--surface));
     border: 1px solid rgb(var(--border));
     padding: 1rem;
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sharp);
+    box-shadow: var(--shadow-clean);
     transition: all 0.15s ease;
   }
   
@@ -276,17 +276,22 @@
 }
 
 /* ============================================================================
-   ICON SYSTEM - Optimized Two-Toned Icons
+   PROFESSIONAL TWO-TONE ICON SYSTEM
+   Optimized for dark/light mode with semantic color tokens
    ============================================================================ */
 
 @layer utilities {
   /* ===== ICON BASE ===== */
   .icon {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     vertical-align: middle;
+    flex-shrink: 0;
   }
   
+  /* ===== ICON SIZES ===== */
   .icon-xs { width: 1rem; height: 1rem; }
   .icon-sm { width: 1.25rem; height: 1.25rem; }
   .icon-md { width: 1.5rem; height: 1.5rem; }
@@ -294,45 +299,74 @@
   .icon-xl { width: 2.5rem; height: 2.5rem; }
   .icon-2xl { width: 3rem; height: 3rem; }
   .icon-3xl { width: 4rem; height: 4rem; }
+  .icon-4xl { width: 5rem; height: 5rem; }
   
-  /* ===== TWO-TONE ICON VARIANTS ===== */
-  .icon-star::before {
-    content: "";
-    position: absolute;
-    inset: 15%;
-    background: rgb(var(--pure-black));
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  /* ===== MODERN ICON COLOR VARIANTS ===== */
+  .icon-primary::before,
+  .icon-primary::after { 
+    background: linear-gradient(135deg, rgb(var(--patriot-red)), rgb(var(--patriot-red) / 0.8));
+    border-color: rgb(var(--patriot-red));
   }
   
-  .icon-star::after {
-    content: "";
-    position: absolute;
-    inset: 25%;
-    background: rgb(var(--primary));
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  .icon-secondary::before,
+  .icon-secondary::after { 
+    background: linear-gradient(135deg, rgb(var(--patriot-blue)), rgb(var(--patriot-blue) / 0.8));
+    border-color: rgb(var(--patriot-blue));
   }
   
+  .icon-accent::before,
+  .icon-accent::after { 
+    background: linear-gradient(135deg, rgb(var(--accent-gold)), rgb(var(--accent-gold) / 0.8));
+    border-color: rgb(var(--accent-gold));
+  }
+  
+  .icon-white::before,
+  .icon-white::after { 
+    background: linear-gradient(135deg, rgb(255 255 255), rgb(255 255 255 / 0.9));
+    border-color: rgb(255 255 255);
+  }
+  
+  .icon-success::before,
+  .icon-success::after { 
+    background: linear-gradient(135deg, rgb(var(--community-green)), rgb(var(--community-green) / 0.8));
+    border-color: rgb(var(--community-green));
+  }
+  
+  /* ===== PROFESSIONAL TWO-TONE ICON DESIGNS ===== */
+  
+  /* Shield Icon - Professional Security Symbol */
   .icon-shield::before {
     content: "";
     position: absolute;
-    inset: 15%;
-    background: rgb(var(--pure-black));
-    clip-path: polygon(50% 0%, 85% 20%, 85% 65%, 50% 100%, 15% 65%, 15% 20%);
+    top: 15%;
+    left: 50%;
+    width: 50%;
+    height: 65%;
+    background: currentColor;
+    transform: translateX(-50%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   }
   
   .icon-shield::after {
     content: "";
     position: absolute;
-    inset: 25%;
-    background: rgb(var(--secondary));
-    clip-path: polygon(50% 0%, 85% 20%, 85% 65%, 50% 100%, 15% 65%, 15% 20%);
+    top: 30%;
+    left: 50%;
+    width: 25%;
+    height: 35%;
+    background: rgb(var(--background));
+    transform: translateX(-50%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+    clip-path: polygon(50% 10%, 80% 20%, 80% 60%, 50% 90%, 20% 60%, 20% 20%);
   }
   
+  /* Target Icon - Precision Training Symbol */
   .icon-target::before {
     content: "";
     position: absolute;
-    inset: 15%;
-    background: rgb(var(--pure-black));
+    inset: 10%;
+    background: rgb(var(--text-primary));
     border-radius: 50%;
   }
   
@@ -341,47 +375,88 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 50%;
-    height: 50%;
-    background: rgb(var(--primary));
+    width: 60%;
+    height: 60%;
+    background: rgb(var(--patriot-red));
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }
   
+  /* Crosshair Icon - Accuracy Symbol */
+  .icon-crosshair::before {
+    content: "";
+    position: absolute;
+    inset: 15%;
+    background: transparent;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+  }
+  
+  .icon-crosshair::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 70%;
+    background: currentColor;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 calc(34% - 1px) transparent, calc(-34% + 1px) 0 0 0 currentColor, calc(34% - 1px) 0 0 0 currentColor;
+  }
+  
+  /* Star Icon - Excellence Symbol */
+  .icon-star::before {
+    content: "";
+    position: absolute;
+    inset: 10%;
+    background: rgb(var(--text-primary));
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  
+  .icon-star::after {
+    content: "";
+    position: absolute;
+    inset: 25%;
+    background: rgb(var(--accent-gold));
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  
+  /* Award Icon - Achievement Symbol */
   .icon-award::before {
     content: "";
     position: absolute;
-    top: 15%;
-    left: 25%;
-    width: 50%;
-    height: 50%;
-    background: rgb(var(--pure-black));
+    top: 10%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    background: rgb(var(--text-primary));
     border-radius: 50%;
   }
   
   .icon-award::after {
     content: "";
     position: absolute;
-    top: 25%;
-    left: 35%;
-    width: 30%;
-    height: 30%;
-    background: rgb(var(--primary));
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+    background: rgb(var(--accent-gold));
     border-radius: 50%;
   }
   
   .icon-award-ribbon::before {
     content: "";
     position: absolute;
-    bottom: 15%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
-    width: 25%;
-    height: 30%;
-    background: rgb(var(--secondary));
+    width: 30%;
+    height: 40%;
+    background: rgb(var(--patriot-red));
     clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 50% 80%, 15% 100%);
   }
   
+  /* Users Icon - Community Symbol */
   .icon-users::before {
     content: "";
     position: absolute;
@@ -389,7 +464,7 @@
     left: 15%;
     width: 30%;
     height: 30%;
-    background: rgb(var(--pure-black));
+    background: rgb(var(--text-primary));
     border-radius: 50%;
   }
   
@@ -400,26 +475,27 @@
     right: 15%;
     width: 30%;
     height: 30%;
-    background: rgb(var(--secondary));
+    background: rgb(var(--patriot-blue));
     border-radius: 50%;
   }
   
   .icon-users-body::before {
     content: "";
     position: absolute;
-    bottom: 25%;
-    left: 15%;
-    width: 70%;
-    height: 20%;
-    background: rgb(var(--pure-black));
+    bottom: 20%;
+    left: 10%;
+    width: 80%;
+    height: 25%;
+    background: rgb(var(--text-primary));
     border-radius: var(--radius-sm) var(--radius-sm) 0 0;
   }
   
+  /* Clock Icon - Training Time Symbol */
   .icon-clock::before {
     content: "";
     position: absolute;
-    inset: 15%;
-    background: linear-gradient(135deg, rgb(var(--gray-800)), rgb(var(--gray-600)));
+    inset: 10%;
+    background: rgb(var(--text-primary));
     border-radius: 50%;
   }
   
@@ -428,139 +504,339 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 2px;
-    height: 25%;
-    background: white;
+    width: 3px;
+    height: 35%;
+    background: rgb(var(--patriot-blue));
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
     transform-origin: bottom center;
   }
   
+  /* USA Flag Icon - Patriotic Symbol */
+  .icon-flag-usa::before {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    width: 60%;
+    height: 40%;
+    background: currentColor;
+    border-radius: 2px;
+  }
+  
+  .icon-flag-usa::after {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 3px;
+    height: 70%;
+    background: currentColor;
+    opacity: 0.7;
+    border-radius: 1px;
+  }
+  
+  /* Bullet Icon - Ammunition Symbol */
+  .icon-bullet::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    height: 60%;
+    background: rgb(var(--text-primary));
+    border-radius: 50% 50% 0 0;
+  }
+  
+  .icon-bullet::after {
+    content: "";
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    width: 50%;
+    height: 30%;
+    background: rgb(var(--accent-gold));
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  }
+  
+  /* Lightning Icon - Power/Energy Symbol */
+  .icon-lightning::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    width: 40%;
+    height: 80%;
+    background: rgb(var(--text-primary));
+    clip-path: polygon(0% 0%, 100% 0%, 40% 50%, 70% 50%, 0% 100%, 60% 50%, 30% 50%);
+  }
+  
+  .icon-lightning::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 20%;
+    height: 60%;
+    background: rgb(var(--accent-gold));
+    clip-path: polygon(0% 0%, 100% 0%, 40% 50%, 70% 50%, 0% 100%, 60% 50%, 30% 50%);
+  }
+  
+  /* Book Icon - Education Symbol */
   .icon-book::before {
     content: "";
     position: absolute;
-    inset: 15%;
-    background: linear-gradient(135deg, rgb(var(--gray-800)), rgb(var(--gray-600)));
-    border-radius: 2px;
+    inset: 10%;
+    background: rgb(var(--text-primary));
+    border-radius: var(--radius-sm);
   }
   
   .icon-book::after {
     content: "";
     position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 60%;
+    height: 3px;
+    background: rgb(var(--patriot-blue));
+  }
+  
+  .icon-book-lines::before {
+    content: "";
+    position: absolute;
     top: 50%;
+    left: 20%;
+    width: 60%;
+    height: 2px;
+    background: rgb(var(--patriot-blue));
+  }
+  
+  .icon-book-lines::after {
+    content: "";
+    position: absolute;
+    top: 65%;
+    left: 20%;
+    width: 40%;
+    height: 2px;
+    background: rgb(var(--patriot-blue));
+  }
+  
+  /* Calendar Icon - Scheduling Symbol */
+  .icon-calendar::before {
+    content: "";
+    position: absolute;
+    inset: 10%;
+    background: rgb(var(--text-primary));
+    border-radius: var(--radius-sm);
+  }
+  
+  .icon-calendar::after {
+    content: "";
+    position: absolute;
+    top: 30%;
     left: 15%;
     width: 70%;
     height: 2px;
-    background: white;
-    transform: translateY(-50%);
+    background: rgb(var(--patriot-red));
   }
   
-  .icon-flag::before {
+  .icon-calendar-dots::before {
     content: "";
     position: absolute;
-    left: 15%;
-    top: 15%;
-    width: 3px;
-    height: 70%;
-    background: linear-gradient(135deg, rgb(var(--gray-800)), rgb(var(--gray-600)));
+    top: 45%;
+    left: 25%;
+    width: 8%;
+    height: 8%;
+    background: rgb(var(--patriot-blue));
+    border-radius: 50%;
+    box-shadow: 
+      15px 0 rgb(var(--patriot-blue)),
+      30px 0 rgb(var(--patriot-blue)),
+      0 15px rgb(var(--patriot-blue)),
+      15px 15px rgb(var(--patriot-blue));
   }
   
-  .icon-flag::after {
-    content: "";
-    position: absolute;
-    left: 18%;
-    top: 15%;
-    width: 60%;
-    height: 40%;
-    background: linear-gradient(135deg, rgb(var(--gray-700)), rgb(var(--gray-500)));
-    clip-path: polygon(0% 0%, 100% 0%, 85% 50%, 100% 100%, 0% 100%);
-  }
-  
-  .icon-strength::before {
-    content: "";
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    width: 60%;
-    height: 20%;
-    background: linear-gradient(135deg, rgb(var(--gray-800)), rgb(var(--gray-600)));
-    border-radius: 10px;
-  }
-  
-  .icon-strength::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 3px;
-    height: 40%;
-    background: linear-gradient(135deg, rgb(var(--gray-700)), rgb(var(--gray-500)));
-    transform: translateX(-50%);
-  }
-  
-  .icon-home::before {
-    content: "";
-    position: absolute;
-    top: 35%;
-    left: 20%;
-    width: 60%;
-    height: 50%;
-    background: linear-gradient(135deg, rgb(var(--gray-800)), rgb(var(--gray-600)));
-    border-radius: 2px;
-  }
-  
-  .icon-home::after {
-    content: "";
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 25px solid rgb(var(--gray-700));
-    transform: translateX(-50%);
-  }
-  
-  .icon-lightning::before {
-    content: "";
-    position: absolute;
-    inset: 15%;
-    background: linear-gradient(135deg, rgb(var(--gray-800)), rgb(var(--gray-600)));
-    clip-path: polygon(25% 0%, 50% 0%, 35% 45%, 75% 45%, 50% 100%, 25% 100%, 40% 55%, 0% 55%);
-  }
-  
+  /* Check Icon - Success Symbol */
   .icon-check::before {
     content: "";
     position: absolute;
     top: 45%;
     left: 25%;
-    width: 20%;
+    width: 25%;
     height: 3px;
-    background: linear-gradient(135deg, rgb(var(--gray-800)), rgb(var(--gray-600)));
+    background: rgb(var(--text-primary));
     transform: rotate(45deg);
-    transform-origin: right bottom;
+    transform-origin: left center;
   }
   
   .icon-check::after {
     content: "";
     position: absolute;
     top: 35%;
-    left: 35%;
-    width: 40%;
+    left: 40%;
+    width: 50%;
     height: 3px;
-    background: linear-gradient(135deg, rgb(var(--gray-800)), rgb(var(--gray-600)));
+    background: rgb(var(--community-green));
     transform: rotate(-45deg);
-    transform-origin: left bottom;
+    transform-origin: left center;
+  }
+  
+  /* ===== PROFESSIONAL ICON ENHANCEMENTS ===== */
+  
+  /* Hover Effects for Interactive Icons */
+  .icon:hover::before {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+  
+  .icon:hover::after {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+  }
+  
+  /* Professional shadows for elevated appearance */
+  .icon-elevated::before {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+  
+  .icon-elevated::after {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  }
+  
+  /* Subtle animations for dynamic feel */
+  .icon-animated::before,
+  .icon-animated::after {
+    transition: all 0.3s ease;
+  }
+  
+  /* Professional glow effect for premium feel */
+  .icon-glow {
+    filter: drop-shadow(0 0 8px rgba(var(--patriot-red), 0.3));
+  }
+  
+  .icon-glow:hover {
+    filter: drop-shadow(0 0 12px rgba(var(--patriot-red), 0.5));
+  }
+  
+  /* ===== ENHANCED ICON-TEXT INTEGRATION ===== */
+  
+  /* Professional spacing for icon-text combinations */
+  .icon-text-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem; /* Slightly tighter gap for better cohesion */
+    vertical-align: middle;
+    line-height: 1.4; /* Improved line height for better text flow */
+  }
+  
+  .icon-text-group .icon {
+    flex-shrink: 0;
+    margin-top: -0.0625rem; /* Fine optical alignment */
   }
 
-  /* ===== ENHANCED TACTICAL ICONS ===== */
+  /* Enhanced icon-text color coordination */
+  .icon-text-group.text-primary-coordination {
+    color: rgb(var(--text-primary));
+  }
+
+  .icon-text-group.text-primary-coordination .icon {
+    color: rgb(var(--patriot-red));
+  }
+
+  .icon-text-group.text-secondary-coordination {
+    color: rgb(var(--text-primary));
+  }
+
+  .icon-text-group.text-secondary-coordination .icon {
+    color: rgb(var(--patriot-blue));
+  }
+
+  .icon-text-group.text-accent-coordination {
+    color: rgb(var(--text-primary));
+  }
+
+  .icon-text-group.text-accent-coordination .icon {
+    color: rgb(var(--accent-gold));
+  }
+  
+  /* Balanced visual hierarchy for headings with icons */
+  .heading-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    line-height: 1.2;
+  }
+  
+  .heading-with-icon .icon {
+    flex-shrink: 0;
+    margin-top: -0.125rem; /* Optical alignment adjustment */
+  }
+  
+  /* Professional badge styling with icons - Enhanced */
+  .professional-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem; /* Consistent with icon-text-group */
+    padding: 0.625rem 1.25rem; /* Better padding balance */
+    border-radius: var(--radius-md);
+    background: rgba(var(--surface-professional), 0.08);
+    border: 1px solid rgba(var(--border), 0.15);
+    transition: all 0.3s ease;
+    line-height: 1.3; /* Improved text flow */
+  }
+  
+  .professional-badge:hover {
+    background: rgba(var(--surface-professional), 0.12);
+    border-color: rgba(var(--patriot-blue), 0.25);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Enhanced typography for icon-enhanced content */
+  .icon-enhanced-content {
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    color: rgb(var(--text-secondary)); /* Proper semantic color */
+  }
+  
+  .icon-enhanced-content .icon {
+    margin: 0 0.25rem;
+    vertical-align: middle;
+  }
+  
+  /* ===== PROFESSIONAL TACTICAL ICONS ===== */
+  
+  /* Target/Crosshair Icon - Modern precision design */
+  .icon-target::before {
+    content: "";
+    position: absolute;
+    inset: 10%;
+    background: transparent;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    opacity: 0.9;
+  }
+  
+  .icon-target::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 40%;
+    background: transparent;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.7;
+  }
+  
   .icon-crosshair::before {
     content: "";
     position: absolute;
     inset: 15%;
-    background: linear-gradient(135deg, rgb(var(--gray-800)), rgb(var(--gray-600)));
+    background: transparent;
+    border: 2px solid currentColor;
     border-radius: 50%;
-    border: 2px solid rgb(var(--accent-gold));
   }
   
   .icon-crosshair::after {
@@ -568,17 +844,158 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 60%;
-    height: 60%;
-    border: 1px solid rgb(var(--accent-gold));
-    border-radius: 50%;
+    width: 2px;
+    height: 70%;
+    background: currentColor;
     transform: translate(-50%, -50%);
-    box-shadow: 
-      0 0 0 1px rgb(var(--accent-gold)) inset,
-      -1px 0 0 0 rgb(var(--accent-gold)),
-      1px 0 0 0 rgb(var(--accent-gold)),
-      0 -1px 0 0 rgb(var(--accent-gold)),
-      0 1px 0 0 rgb(var(--accent-gold));
+    box-shadow: 0 0 0 calc(34% - 1px) transparent, calc(-34% + 1px) 0 0 0 currentColor, calc(34% - 1px) 0 0 0 currentColor;
+  }
+  
+  /* Shield Icon - Strong protection symbol */
+  .icon-shield::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 60%;
+    height: 75%;
+    background: currentColor;
+    transform: translateX(-50%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    opacity: 0.9;
+  }
+  
+  .icon-shield::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 35%;
+    height: 45%;
+    background: rgb(var(--background));
+    transform: translateX(-50%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  
+  /* Flag USA Icon - Patriotic symbol */
+  .icon-flag-usa::before {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    width: 60%;
+    height: 40%;
+    background: currentColor;
+    border-radius: 2px;
+  }
+  
+  .icon-flag-usa::after {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 3px;
+    height: 70%;
+    background: rgb(var(--text-secondary));
+    border-radius: 1px;
+  }
+  
+  /* Star Icon - Excellence symbol */
+  .icon-star::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 70%;
+    background: currentColor;
+    transform: translate(-50%, -50%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  
+  /* Leaf Icon - Sustainability symbol */
+  .icon-leaf::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 50%;
+    height: 60%;
+    background: currentColor;
+    border-radius: 0 100% 0 100%;
+    transform: rotate(-45deg);
+  }
+  
+  .icon-leaf::after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    width: 40%;
+    height: 2px;
+    background: rgb(var(--background));
+    transform: rotate(-45deg);
+  }
+  
+  /* Check Icon - Success/completion */
+  .icon-check::before {
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    width: 25%;
+    height: 3px;
+    background: currentColor;
+    transform: rotate(45deg);
+    transform-origin: right bottom;
+    border-radius: 1px;
+  }
+  
+  .icon-check::after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 50%;
+    height: 3px;
+    background: currentColor;
+    transform: rotate(-45deg);
+    transform-origin: left bottom;
+    border-radius: 1px;
+  }
+  
+  /* Lightning Icon - Speed/power */
+  .icon-lightning::before {
+    content: "";
+    position: absolute;
+    inset: 10%;
+    background: currentColor;
+    clip-path: polygon(30% 0%, 60% 0%, 40% 45%, 85% 45%, 55% 100%, 25% 100%, 45% 55%, 0% 55%);
+  }
+  
+  /* Home Icon - Community/base */
+  .icon-home::before {
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    width: 50%;
+    height: 40%;
+    background: currentColor;
+    border-radius: 2px;
+  }
+  
+  .icon-home::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid currentColor;
+    transform: translateX(-50%);
   }
 
   .icon-bullet::before {
@@ -613,7 +1030,7 @@
     left: 50%;
     width: 70%;
     height: 50%;
-    background: linear-gradient(135deg, rgb(var(--military-green)), rgb(var(--patriot-blue)));
+    background: linear-gradient(135deg, rgb(var(--community-green)), rgb(var(--patriot-blue)));
     border-radius: 2px;
     transform: translate(-50%, -50%);
   }
@@ -625,7 +1042,7 @@
     left: 50%;
     width: 50%;
     height: 2px;
-    background: rgb(var(--surface-tactical));
+    background: rgb(var(--surface-professional));
     transform: translate(-50%, -50%);
   }
 
@@ -648,7 +1065,7 @@
     left: 50%;
     width: 30%;
     height: 30%;
-    background: rgb(var(--surface-tactical));
+    background: rgb(var(--surface-professional));
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }
@@ -660,7 +1077,7 @@
     left: 50%;
     width: 70%;
     height: 70%;
-    background: linear-gradient(135deg, rgb(var(--military-green)), rgb(var(--patriot-blue)));
+    background: linear-gradient(135deg, rgb(var(--community-green)), rgb(var(--patriot-blue)));
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }
@@ -672,7 +1089,7 @@
     left: 50%;
     width: 40%;
     height: 40%;
-    border: 2px solid rgb(var(--surface-tactical));
+    border: 2px solid rgb(var(--surface-professional));
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }
@@ -705,7 +1122,7 @@
   .icon-primary { color: rgb(var(--patriot-red)); }
   .icon-secondary { color: rgb(var(--patriot-blue)); }
   .icon-accent { color: rgb(var(--accent-gold)); }
-  .icon-success { color: rgb(var(--military-green)); }
+  .icon-success { color: rgb(var(--community-green)); }
   .icon-highlight { color: rgb(var(--accent-gold)); }
   
   /* Dark mode icon adaptations */
@@ -741,7 +1158,6 @@
   .dark .icon-home::after {
     border-bottom-color: rgb(var(--gray-600));
   }
-}
 
 /* ============================================================================
    ANIMATIONS & EFFECTS
@@ -799,15 +1215,15 @@
   
   /* ===== ADDITIONAL LR THEME COLORS ===== */
   .text-accent-gold { color: rgb(var(--accent-gold)); }
-  .text-military-green { color: rgb(var(--military-green)); }
+  .text-community-green { color: rgb(var(--community-green)); }
   .bg-accent-gold { background-color: rgb(var(--accent-gold)); }
-  .bg-military-green { background-color: rgb(var(--military-green)); }
+  .bg-community-green { background-color: rgb(var(--community-green)); }
   .border-accent-gold { border-color: rgb(var(--accent-gold)); }
-  .border-military-green { border-color: rgb(var(--military-green)); }
+  .border-community-green { border-color: rgb(var(--community-green)); }
   
   /* Surface utilities */
-  .bg-surface-tactical { background-color: rgb(var(--surface-tactical)); }
-  .border-border-tactical { border-color: rgb(var(--border-tactical)); }
+  .bg-surface-professional { background-color: rgb(var(--surface-professional)); }
+  .border-border-professional { border-color: rgb(var(--border-professional)); }
   
   /* Enhanced text classes */
   .text-enhanced { 
@@ -933,16 +1349,16 @@
   }
   
   /* ===== ROBOTO TYPOGRAPHY SYSTEM ===== */
-  .heading-sharp {
+  .heading-clean {
     @apply leading-tight tracking-tight;
-    color: rgb(var(--pure-black));
+    color: rgb(var(--text-primary));
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
   }
   
   .heading-primary {
     @apply text-4xl lg:text-5xl leading-tight tracking-tight;
-    color: rgb(var(--pure-black));
+    color: rgb(var(--text-primary));
     font-family: 'Roboto', sans-serif;
     font-weight: 900;  /* Use Roboto Black for primary headings */
   }
@@ -994,6 +1410,28 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+  }
+
+  /* Enhanced text utility classes with proper semantic colors */
+  .text-primary-enhanced {
+    color: rgb(var(--text-primary));
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .text-secondary-enhanced {
+    color: rgb(var(--text-secondary));
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .text-muted-enhanced {
+    color: rgb(var(--text-muted));
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .text-accent-enhanced {
+    color: rgb(var(--accent-gold));
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
   }
   
   /* ===== ENHANCED ROBOTO TYPOGRAPHY CLASSES ===== */
@@ -1077,7 +1515,7 @@
   }
   
   .flip-card-back {
-    background-color: rgb(var(--surface-tactical));
+    background-color: rgb(var(--surface-professional));
     color: rgb(var(--text-inverse));
     transform: rotateY(180deg);
   }
@@ -1144,7 +1582,7 @@
   
   .hero-title-enhanced {
     @apply text-5xl lg:text-7xl leading-tight tracking-tight;
-    color: rgb(var(--pure-black));
+    color: rgb(var(--text-primary));
     font-family: 'Roboto', sans-serif;
     font-weight: 900;  /* Roboto Black for maximum impact */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -1164,7 +1602,7 @@
   
   .section-title-enhanced {
     @apply text-4xl lg:text-5xl leading-tight tracking-tight mb-6;
-    color: rgb(var(--pure-black));
+    color: rgb(var(--text-primary));
     font-family: 'Roboto', sans-serif;
     font-weight: 900;  /* Roboto Black for section titles */
   }

@@ -4,7 +4,7 @@ Professional Firearms Training Website - Community Focused
 
 [![Next.js](https://img.sh#### Professional Icon Standards
 
-##### Professional Icon System
+## Professional Icon System
 
 - **🎯** - Target/Precision Training, Course Navigation, Achievement Markers
 - **⚔️** - Training Operations, Team Training, Advanced Skills  
@@ -12,11 +12,12 @@ Professional Firearms Training Website - Community Focused
 - **🎖️** - Professional Achievement, Instructor Credentials, Honor System
 - **🏆** - Excellence, Competition Results, Competition Records
 
-#### Icon Guidelines
+### Icon Guidelines
 
 **Prohibited Casual Icons**: NO 🚀, 💪, 👥, 🌟, 📞, 💥, ⚡, 🔥, 💬, ❓, 📊 - maintains professional firearms training atmosphere
 
-#### Professional Component LibraryNext.js-15.5.3-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
+#### Professional Component LibraryNext.js-15.5.3-black?style=for-the-badge&logo=next.js)](<https://nextjs.org>)
+
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
 [![Firebase](https://img.shields.io/badge/Firebase-Hosting-orange?style=for-the-badge&logo=firebase)](https://firebase.google.com)
@@ -135,9 +136,7 @@ Every page follows our professional structure:
 4. **Modern Component Design** - Functional components with advanced Tailwind patterns
 5. **Professional Export** - Default exports with descriptive component names
 
-#### Professional Icon Standards
-
-**Professional Icon System**
+### Icon System
 
 - **🎯** - Target/Precision Training, Course Navigation, Achievement Markers
 - **⚔️** - Training Operations, Team Training, Advanced Skills  
@@ -145,7 +144,7 @@ Every page follows our professional structure:
 - **🎖️** - Professional Achievement, Instructor Credentials, Honor System
 - **🏆** - Excellence, Competition Results, Competition Records
 
-**Icon Guidelines**
+#### Icon Usage Guidelines
 
 **Prohibited Casual Icons**: NO 🚀, 💪, 👥, 🌟, 📞, 💥, ⚡, 🔥, 💬, ❓, 📊 - maintains professional firearms training atmosphere
 
