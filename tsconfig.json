@@ -28,6 +28,7 @@
       ]
     },
     "target": "ES2017",
+    "ignoreDeprecations": "6.0",
     // Enhanced error reporting
     "noUncheckedIndexedAccess": true,
     "noImplicitReturns": true,

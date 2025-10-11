@@ -1,11 +1,11 @@
-# Liberty Ridge Branding Guide 🎯
+# Liberty Ridge Branding Guide
 
 **LR Theme Official Brand Standards & Guidelines**  
 *Sleek Black & White Design System with Strategic Red/Blue Highlights*
 
 ---
 
-## 🏆 Brand Overview
+## Brand Overview
 
 Liberty Ridge Training Grounds utilizes the **LR Theme** - a welcoming black and white design
 system that embodies professionalism, precision, and firearms excellence through clean aesthetics
@@ -37,7 +37,7 @@ precision excellence and professionals requiring specialized skills.
 
 ---
 
-## 🎨 LR Theme Color System
+## LR Theme Color System
 
 ### Primary Foundation Colors
 
@@ -73,19 +73,21 @@ precision excellence and professionals requiring specialized skills.
 
 ---
 
-## 🔲 LR Theme Design Elements
+## LR Theme Design Elements
 
 ### Border Radius System
 
 | Size | Value | CSS Variable | Usage |
 |------|-------|--------------|-------|
-| **None** | `0px` | `--radius-none` | Pure clean corners |
-| **XS** | `2px` | `--radius-xs` | Minimal radius |
-| **SM** | `4px` | `--radius-sm` | Buttons, inputs |
+| **None** | `0px` | `--radius-none` | **BUTTONS (square design)**, pure clean corners |
+| **XS** | `2px` | `--radius-xs` | Minimal radius for small elements |
+| **SM** | `4px` | `--radius-sm` | Input fields, small components |
 | **MD** | `6px` | `--radius-md` | Standard cards |
 | **LG** | `8px` | `--radius-lg` | Large elements |
 | **XL** | `12px` | `--radius-xl` | Hero sections |
 | **2XL** | `16px` | `--radius-2xl` | Maximum radius |
+
+**Button Standard**: All buttons use `border-radius: 0px` for consistent square appearance.
 
 ### Shadow System
 
@@ -99,33 +101,88 @@ precision excellence and professionals requiring specialized skills.
 
 ---
 
-## 🎯 Component Standards
+## Component Standards
 
 ### Button System
 
+All buttons follow a **square design with consistent outlines** and full **dark/light mode compatibility**.
+
+#### Button Design Standards
+
+- **Shape**: Square corners (border-radius: 0px) for clean, precise appearance
+- **Border**: 2px solid outline on all buttons for consistency
+- **Padding**: Equal padding (px-6 py-3) for square proportions
+- **Typography**: Bold font weight for enhanced readability
+- **Transitions**: Smooth hover effects with color and scale changes
+- **Dark/Light Mode**: Automatic color inversion for optimal contrast
+
 #### Primary Button (.btn-primary)
 
-- **Background**: Patriot Red (`dc2626`)
-- **Text**: Pure White (`ffffff`)
-- **Border**: 2px solid Patriot Red
-- **Hover**: Darker red with lift effect
-- **Usage**: Main CTAs, primary actions
-
-#### Secondary Button (.btn-secondary)
-
-- **Background**: Pure White (`ffffff`)
-- **Text**: Patriot Blue (`2563eb`)
-- **Border**: 2px solid Patriot Blue
-- **Hover**: Blue background with white text
-- **Usage**: Secondary actions, alternative CTAs
-
-#### Black Button (.btn-black)
+**Light Mode:**
 
 - **Background**: Pure Black (`000000`)
 - **Text**: Pure White (`ffffff`)
-- **Border**: 2px solid Pure Black
-- **Hover**: Dark gray with lift effect
-- **Usage**: Professional actions, subtle emphasis
+- **Border**: 2px solid Pure Black (`000000`)
+
+**Dark Mode:**
+
+- **Background**: Pure White (`ffffff`)
+- **Text**: Pure Black (`000000`)
+- **Border**: 2px solid Pure White (`ffffff`)
+
+**Hover**: Scale 1.02 with background darkening (light) / lightening (dark)  
+**Usage**: Main CTAs, primary actions
+
+#### Secondary Button (.btn-secondary)
+
+**Light Mode:**
+
+- **Background**: Transparent
+- **Text**: Pure Black (`000000`)
+- **Border**: 2px solid Pure Black (`000000`)
+
+**Dark Mode:**
+
+- **Background**: Transparent
+- **Text**: Pure White (`ffffff`)
+- **Border**: 2px solid Pure White (`ffffff`)
+
+**Hover**: Background fills with border color, text inverts  
+**Usage**: Secondary actions, alternative CTAs
+
+#### Gray Button (.btn-gray)
+
+**Light Mode:**
+
+- **Background**: Transparent
+- **Text**: Gray-600 (`525252`)
+- **Border**: 2px solid Gray-400 (`a3a3a3`)
+
+**Dark Mode:**
+
+- **Background**: Transparent
+- **Text**: Gray-400 (`a3a3a3`)
+- **Border**: 2px solid Gray-600 (`525252`)
+
+**Hover**: Background fills with border color, text becomes white/black  
+**Usage**: Neutral actions, form buttons
+
+#### Disabled Button (.btn-disabled)
+
+**Light Mode:**
+
+- **Background**: Transparent
+- **Text**: Gray-300 (`d4d4d4`)
+- **Border**: 2px solid Gray-200 (`e5e5e5`)
+
+**Dark Mode:**
+
+- **Background**: Transparent
+- **Text**: Gray-700 (`404040`)
+- **Border**: 2px solid Gray-800 (`262626`)
+
+**Hover**: No hover effects  
+**Usage**: Disabled states, inactive buttons
 
 ### Card System
 
@@ -191,30 +248,43 @@ precision excellence and professionals requiring specialized skills.
 
 ---
 
-## 🎨 Icon System
+## Icon System
 
-### Professional Icon Standards
+### Material Icons Only
 
-LR Theme implements a comprehensive professional icon system maintaining community-focused training aesthetics:
+LR Theme exclusively uses Material Icons for all visual elements. **NO EMOJIS** are permitted anywhere in the design system.
 
-#### Primary Professional Icons
+#### Core Material Icons
 
-- **🎯** - Target/Precision Training, Course Navigation, Achievement Markers
-- **⚖️** - Professional Training, Community Programs, Skill Development  
-- **🛡️** - Safety Training, Defense Courses, Safety Records
-- **🎖️** - Professional Achievement, Instructor Credentials, Honor System
-- **🏆** - Excellence, Competition Results, Achievement Records
+- **target** - Target/Precision Training, Course Navigation, Achievement Markers
+- **balance** - Professional Training, Community Programs, Skill Development  
+- **shield** - Safety Training, Defense Courses, Safety Records
+- **military_tech** - Professional Achievement, Instructor Credentials, Honor System
+- **emoji_events** - Excellence, Competition Results, Achievement Records
+- **group** - Community, Team Building, Group Training
+- **schedule** - Timing, Course Schedules, Training Sessions
+- **location_on** - Location Services, Range Information
+- **phone** - Contact Information
+- **email** - Communication, Contact Forms
 
 #### Icon Implementation Guidelines
 
-#### Professional Community Aesthetic
+##### Professional Standards Only
 
-- NO casual emojis (🚀, 💪, 👥, 🌟, 📞, 💥, ⚡, 🔥, 💬, ❓, 📊)
-- ALL icons must convey professional community
-- Consistent with welcoming training environment
-- Emphasizes precision, honor, and professional readiness
+- **ONLY Material Icons** - No emojis, custom icons, or third-party icon sets
+- **Consistent sizing** - Use Material Icons standard sizing system
+- **Semantic meaning** - Icons must clearly represent their function
+- **Accessibility** - All icons include proper aria-labels and alt text
+- **Color consistency** - Icons follow the established color system
 
-#### CSS Icon Classes
+#### Material Icons Classes
+
+- `.material-icons-outlined` - Outlined style (preferred)
+- `.material-icons` - Filled style (for emphasis)
+- `.material-icons-round` - Rounded style (for softer appearance)
+- `.material-icons-sharp` - Sharp style (for precision contexts)
+
+#### Icon Size Classes
 
 - `.icon-xs` - 1rem (16px)
 - `.icon-sm` - 1.25rem (20px)
@@ -226,13 +296,14 @@ LR Theme implements a comprehensive professional icon system maintaining communi
 
 #### Icon Color Variants
 
-- `.icon-primary` - Patriot Red
-- `.icon-secondary` - Patriot Blue
-- `.icon-accent` - Pure Black (light mode) / Pure White (dark mode)
+- `.icon-primary` - Pure Black (light mode) / Pure White (dark mode)
+- `.icon-secondary` - Gray-600
+- `.icon-muted` - Gray-400
+- `.icon-accent` - Red or Blue (sparingly used)
 
 ---
 
-## 🌓 Light/Dark Mode System
+## Light/Dark Mode System
 
 ### Automatic Theme Switching
 
@@ -260,7 +331,7 @@ The LR Theme automatically adapts between light and dark modes:
 
 ---
 
-## ⚡ Animation Standards
+## Animation Standards
 
 ### LR Theme Animations
 
@@ -281,21 +352,23 @@ The LR Theme automatically adapts between light and dark modes:
 
 ---
 
-## 📋 Usage Guidelines
+## Usage Guidelines
 
-### ✅ Do's
+### Do's
 
 - **Use pure black and white** as primary colors
 - **Limit red/blue usage** to highlights and CTAs only
+- **Use Material Icons exclusively** - no emojis anywhere
 - **Maintain clean corners** with minimal border radius (0px-8px)
 - **Apply consistent spacing** using the compact system
 - **Ensure high contrast** for accessibility
-- **Use two-tone interactions** for professional feedback
+- **Use black/white/gray button scheme** for professional appearance
 - **Implement clean shadows** for subtle depth
 - **Follow typography hierarchy** for clear communication
 
-### ❌ Don'ts
+### Don'ts
 
+- **NEVER use emojis** - Material Icons only
 - **Avoid colorful backgrounds** - stick to black/white foundation
 - **Don't overuse red/blue** - reserve for strategic emphasis
 - **Avoid large border radius** - maintain clean, professional appearance
@@ -307,7 +380,7 @@ The LR Theme automatically adapts between light and dark modes:
 
 ---
 
-## 🛠️ Implementation Examples
+## Implementation Examples
 
 ### CSS Variable Usage
 
@@ -334,24 +407,43 @@ box-shadow: var(--shadow-clean);
 ### Tailwind CSS Classes
 
 ```html
-<!-- Primary button with Roboto Bold -->
-<button class="px-6 py-3 font-bold transition-all rounded-sm bg-patriot-red text-pure-white hover:scale-102">
+<!-- Primary button - Square with outline, dark/light mode compatible -->
+<button class="px-6 py-3 font-bold text-white transition-all bg-black border-2 border-black rounded-none hover:bg-gray-800 hover:scale-102 dark:bg-white dark:text-black dark:border-white dark:hover:bg-gray-100">
   Start Training
 </button>
 
-<!-- Two-tone card with Roboto typography -->
-<div class="p-6 transition-all border rounded-lg bg-surface border-border shadow-clean hover:shadow-md">
-  <h3 class="mb-2 text-xl font-bold text-text-primary">Card Title</h3>
-  <p class="text-base text-text-secondary">Card content with <span class="font-medium text-patriot-red">red highlight</span></p>
+<!-- Secondary button - Square outline only -->
+<button class="px-6 py-3 font-bold text-black transition-all bg-transparent border-2 border-black rounded-none hover:bg-black hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black">
+  Learn More
+</button>
+
+<!-- Gray button - Square outline with gray theme -->
+<button class="px-6 py-3 font-bold text-gray-600 transition-all bg-transparent border-2 border-gray-400 rounded-none hover:bg-gray-400 hover:text-white dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-black">
+  View Details
+</button>
+
+<!-- Disabled button - Square outline, muted colors -->
+<button class="px-6 py-3 font-bold text-gray-300 bg-transparent border-2 border-gray-200 rounded-none cursor-not-allowed dark:text-gray-700 dark:border-gray-800" disabled>
+  Disabled
+</button>
+
+<!-- Material Icon implementation -->
+<span class="material-icons-outlined icon-md icon-primary">target</span>
+<span class="material-icons-outlined icon-lg icon-secondary">shield</span>
+
+<!-- Card with clean styling and dark mode support -->
+<div class="p-6 transition-all bg-white border border-gray-200 rounded-lg shadow-clean hover:shadow-md dark:bg-gray-900 dark:border-gray-700">
+  <div class="flex items-center mb-4">
+    <span class="mr-3 material-icons-outlined icon-lg icon-primary">military_tech</span>
+    <h3 class="text-xl font-bold text-black dark:text-white">Card Title</h3>
+  </div>
+  <p class="text-base text-gray-600 dark:text-gray-400">Card content with Material Icons</p>
 </div>
 
-<!-- Hero title with Roboto Black -->
-<h1 class="text-5xl font-black leading-tight text-pure-black lg:text-7xl">
+<!-- Hero title with clean typography -->
+<h1 class="text-5xl font-black leading-tight text-black dark:text-white lg:text-7xl">
   LIBERTY RIDGE TRAINING
 </h1>
-
-<!-- Icon with color -->
-<div class="icon icon-lg icon-primary icon-star"></div>
 ```
 
 ### Roboto Font Implementation
@@ -377,7 +469,7 @@ box-shadow: var(--shadow-clean);
 }
 ```
 
-## 📊 Brand Assets
+## Brand Assets
 
 ### Logo Usage
 
@@ -401,7 +493,7 @@ box-shadow: var(--shadow-clean);
 
 ---
 
-## 🎯 Brand Compliance Checklist
+## Brand Compliance Checklist
 
 ### Design Review Checklist
 
@@ -411,8 +503,11 @@ box-shadow: var(--shadow-clean);
 - [ ] **Spacing**: Compact spacing system implementation
 - [ ] **Borders**: Clean corners with minimal radius (0px-8px)
 - [ ] **Shadows**: Clean, minimal shadow system
-- [ ] **Icons**: Professional icons only (🎯, ⚖️, 🛡️, 🎖️, 🏆) - NO casual emojis
-- [ ] **Icon Consistency**: All emojis must convey professional community and professional training
+- [ ] **Icons**: Material Icons only - NO emojis anywhere in the system
+- [ ] **Button Design**: Square corners (border-radius: 0px) with 2px outlines
+- [ ] **Button Colors**: Black, white, gray color scheme only
+- [ ] **Dark/Light Mode**: All buttons adapt automatically to theme changes
+- [ ] **Icon Consistency**: All visual elements use Material Icons exclusively
 - [ ] **Animations**: Smooth, professional transitions
 - [ ] **Contrast**: High contrast ratios for accessibility
 - [ ] **Responsive**: Consistent appearance across all devices
@@ -439,26 +534,42 @@ box-shadow: var(--shadow-clean);
 
 ---
 
-## 🛠️ Developer Quick Reference
+## Developer Quick Reference
 
-### CSS Icon Library
+### Material Icons Library
 
-LR Theme includes 20+ custom CSS icons with consistent styling for technical implementation:
+LR Theme uses Material Icons exclusively for all visual elements:
 
-#### Available CSS Icons
+#### Core Icons for Training Context
 
-- `icon-star` - Five-pointed star with red accent
-- `icon-shield` - Protective shield with blue accent  
-- `icon-target` - Bullseye target with red center
-- `icon-award` - Medal with ribbon accents
-- `icon-users` - Multiple users with color accents
-- `icon-clock` - Timepiece with white details
-- `icon-crosshair` - Precision aiming reticle
-- `icon-phone` - Communication device
-- `icon-email` - Message envelope
-- `icon-location` - Geographic marker
+- `target` - Training precision and accuracy
+- `shield` - Safety and protection training  
+- `military_tech` - Professional credentials and achievements
+- `emoji_events` - Competition and excellence
+- `balance` - Professional training standards
+- `group` - Community and team building
+- `schedule` - Training schedules and timing
+- `location_on` - Range and facility locations
+- `phone` - Contact and communication
+- `email` - Electronic communication
 
-#### Icon Sizing Classes
+#### Material Icons Implementation
+
+```html
+<!-- Outlined style (preferred) -->
+<span class="material-icons-outlined">target</span>
+
+<!-- With size and color classes -->
+<span class="material-icons-outlined icon-lg icon-primary">shield</span>
+
+<!-- In buttons -->
+<button class="btn-primary">
+  <span class="mr-2 material-icons-outlined">military_tech</span>
+  Professional Training
+</button>
+```
+
+#### Icon Size Classes
 
 - `.icon-xs` - 1rem (16px)
 - `.icon-sm` - 1.25rem (20px)  
@@ -468,7 +579,12 @@ LR Theme includes 20+ custom CSS icons with consistent styling for technical imp
 
 ### Quick Implementation Guide
 
-**Colors**: Use only black (`#000000`), white (`#ffffff`), red (`#dc2626`), blue (`#2563eb`)
+**Colors**: Use primarily black (`#000000`), white (`#ffffff`), and gray shades.  
+Red (`#dc2626`) and blue (`#2563eb`) sparingly for accents only.
+
+**Buttons**: Black, white, and gray color schemes - no bright colors for buttons
+
+**Icons**: Material Icons only - completely eliminate all emojis
 
 **Typography**: Roboto family - Black (900), Bold (700), Medium (500), Regular (400)
 

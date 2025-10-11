@@ -10,18 +10,18 @@
 
 ### Core Purpose
 
-All content for Liberty Ridge Training Grounds should promote safe, professional, and comprehensive
-firearms training while building a community of responsible gun owners. Every piece of content must
-reflect our commitment to excellence, safety, and professional development.
+All content for Liberty Ridge Training Grounds should promote Zach Gaudette as a professional
+firearms instructor and consultant, focusing on personalized client consultation and individual
+training services. Every piece of content must reflect his personal expertise, military background,
+and commitment to safety-focused consultation.
 
 ### Content Principles
 
-- **Professional Excellence**: All content maintains the highest standards of professionalism
-- **Safety First**: Safety considerations are paramount in all training-related content
-- **Community Focus**: Content builds and supports our training community
-- **Veteran Values**: Content reflects U.S. Army veteran principles and honor
-- **Accessibility**: Content is approachable for all skill levels while maintaining professional
-  standards
+- **Personal Expertise**: Content emphasizes Zach's individual qualifications and experience
+- **Consultation Focus**: Content guides visitors toward booking personal consultations
+- **Client-Centered**: Content focuses on individual client needs and personalized solutions
+- **Veteran Credibility**: Content highlights Zach's military service and professional credentials
+- **Accessible Expertise**: Content makes Zach's knowledge accessible for consultation bookings
 
 ---
 
@@ -29,18 +29,19 @@ reflect our commitment to excellence, safety, and professional development.
 
 ### Brand Voice
 
-**Professional | Authoritative | Welcoming | Safety-Focused**
+**Professional | Authoritative | Personal | Consultation-Focused**
 
-Liberty Ridge Training Grounds speaks with the voice of a highly experienced, professional
-instructor who prioritizes safety while creating an encouraging learning environment.
+Liberty Ridge Training Grounds speaks with Zach Gaudette's voice - a highly experienced, professional
+instructor who offers personalized consultation and training services with a focus on individual
+client needs and safety.
 
 #### Voice Characteristics
 
-- **Confident Authority**: We speak from extensive experience and proven expertise
-- **Professional Warmth**: Approachable and encouraging without being casual
+- **Personal Authority**: Zach speaks from extensive military experience and proven expertise
+- **Consultative Approach**: Encouraging clients to book consultations for personalized solutions
 - **Safety-Conscious**: Always emphasizing proper procedures and risk management
-- **Community-Oriented**: Inclusive language that builds belonging
-- **Results-Driven**: Focus on measurable skills and advancement
+- **Individual-Focused**: Personal attention and customized solutions for each client
+- **Results-Driven**: Focus on measurable improvements through consultation and training
 
 ### Tone Guidelines
 
@@ -55,27 +56,27 @@ instructor who prioritizes safety while creating an encouraging learning environ
 > techniques, and situational awareness. Students develop foundational skills through structured
 > training exercises led by certified instructors."
 
-#### Community Contexts (About, Team, Testimonials)
+#### Community Contexts (About Zach, Credentials, Testimonials)
 
-- **Tone**: Warm, welcoming, pride-filled
-- **Language**: Personal stories, achievements, community building
-- **Approach**: Inspiring, inclusive, veteran-proud
-
-**Example:**
-> "Founded by Army veteran Zach Gaudette, Liberty Ridge represents a commitment to excellence in
-> firearms training. Our community includes first-time shooters, competitive athletes, and
-> professionals—all united in their dedication to safe, responsible firearms ownership."
-
-#### Marketing Contexts (CTAs, Features, Benefits)
-
-- **Tone**: Confident, compelling, results-oriented
-- **Language**: Benefit-focused, action-oriented, professional
-- **Approach**: Clear value proposition, professional urgency
+- **Tone**: Personal, credible, achievement-focused
+- **Language**: Personal achievements, military service, individual qualifications
+- **Approach**: Inspiring confidence, personal connection, veteran-proud
 
 **Example:**
-> "Take your shooting skills to the next level with professional instruction from Regional #12
-> instructor Zach Gaudette. Join over 100 successfully trained students who've mastered safe,
-> effective firearms handling."
+> "Army veteran Zach Gaudette brings years of military experience and competitive shooting expertise
+> to provide personalized firearms consultation. As a Regional #12 instructor, Zach offers individual
+> consultations tailored to your specific needs and goals."
+
+#### Consultation Contexts (Services, Booking, Contact)
+
+- **Tone**: Professional, helpful, action-oriented
+- **Language**: Consultation-focused, personalized service, individual attention
+- **Approach**: Clear consultation process, personal expertise, professional guidance
+
+**Example:**
+> "Schedule a personal consultation with Zach to discuss your firearms training needs, safety
+> concerns, or competitive shooting goals. Each consultation is tailored to your specific
+> situation and objectives."
 
 ---
 

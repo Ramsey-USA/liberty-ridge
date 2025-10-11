@@ -14,7 +14,11 @@
     "firebase:init": "npx firebase init",
     "firebase:deploy": "npx firebase deploy",
     "firebase:serve": "npx firebase serve",
-    "firebase:login": "npx firebase login"
+    "firebase:login": "npx firebase login",
+    "lint:md": "markdownlint docs/*.md",
+    "lint:md:fix": "markdownlint docs/*.md --fix",
+    "create:md": "./scripts/create-md-file.sh",
+    "fix:md": "./scripts/fix-md-lint.sh"
   },
   "keywords": [
     "tactical",

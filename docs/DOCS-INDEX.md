@@ -199,6 +199,22 @@ Lint-free template structure for creating new documentation files.
 
 **When to Use:** Starting any new documentation file to ensure consistent, lint-free formatting
 
+### 🛠️ [Markdown Creation Tools](../scripts/)
+
+Automated tools for creating and maintaining markdown documentation.
+
+**Available Tools:**
+
+- `create-md-file.sh`: Creates new markdown files with proper template structure
+- `fix-md-lint.sh`: Automatically fixes common markdown linting errors
+- `npm run create:md`: Shortcut for creating new markdown files
+- `npm run lint:md`: Check all markdown files for linting errors
+- `npm run lint:md:fix`: Auto-fix markdown linting errors where possible
+
+**Primary Audience:** Anyone creating or maintaining documentation
+
+**When to Use:** Before creating new markdown files or when fixing linting errors
+
 ---
 
 ## �📊 Documentation Usage Matrix
