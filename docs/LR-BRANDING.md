@@ -7,15 +7,19 @@
 
 ## 🏆 Brand Overview
 
-Liberty Ridge Training Grounds utilizes the **LR Theme** - a welcoming black and white design system that embodies professionalism, precision, and firearms excellence through clean aesthetics and strategic color usage.
+Liberty Ridge Training Grounds utilizes the **LR Theme** - a welcoming black and white design
+system that embodies professionalism, precision, and firearms excellence through clean aesthetics
+and strategic color usage.
 
 ### Brand Mission
 
-> "The site's core mission is to promote safe, professional, and comprehensive firearms training while building a community of responsible gun owners."
+> "The site's core mission is to promote safe, professional, and comprehensive firearms training
+> while building a community of responsible gun owners."
 
 ### Design Philosophy
 
-The design philosophy is **Modern, Sleek, and Tightly Spaced**, reflecting the precision and professionalism of the training offered.
+The design philosophy is **Modern, Sleek, and Tightly Spaced**, reflecting the precision and
+professionalism of the training offered.
 
 - **Modern & Sleek**: Clean, contemporary aesthetic that welcomes all skill levels
 - **Tightly Spaced**: Compact, precise spacing that reflects training precision
@@ -27,7 +31,9 @@ The design philosophy is **Modern, Sleek, and Tightly Spaced**, reflecting the p
 
 **Primary Demographics**: Civilians, Law Enforcement, Military personnel, Competitive Shooters (PRS, USPSA, IDPA).
 
-Our comprehensive training programs serve a diverse community of responsible gun owners, from first-time shooters seeking foundational safety knowledge to competitive athletes pursuing precision excellence and professionals requiring specialized skills.
+Our comprehensive training programs serve a diverse community of responsible gun owners, from
+first-time shooters seeking foundational safety knowledge to competitive athletes pursuing
+precision excellence and professionals requiring specialized skills.
 
 ---
 
@@ -73,7 +79,7 @@ Our comprehensive training programs serve a diverse community of responsible gun
 
 | Size | Value | CSS Variable | Usage |
 |------|-------|--------------|-------|
-| **None** | `0px` | `--radius-none` | Clean corners |
+| **None** | `0px` | `--radius-none` | Pure clean corners |
 | **XS** | `2px` | `--radius-xs` | Minimal radius |
 | **SM** | `4px` | `--radius-sm` | Buttons, inputs |
 | **MD** | `6px` | `--radius-md` | Standard cards |
@@ -128,7 +134,7 @@ Our comprehensive training programs serve a diverse community of responsible gun
 - **Background**: Surface color (adapts to theme)
 - **Border**: 1px solid border color
 - **Radius**: 6px (--radius-lg)
-- **Shadow**: Clean shadow for subtle depth
+- **Shadow**: Clean shadow for clean depth
 - **Hover**: Subtle lift with enhanced shadow
 
 #### Primary Card (.card-primary)
@@ -187,24 +193,28 @@ Our comprehensive training programs serve a diverse community of responsible gun
 
 ## 🎨 Icon System
 
-### Two-Tone Icon Library
+### Professional Icon Standards
 
-LR Theme includes 20+ custom CSS icons with consistent styling:
+LR Theme implements a comprehensive professional icon system maintaining community-focused training aesthetics:
 
-#### Available Icons
+#### Primary Professional Icons
 
-- `icon-star` - Five-pointed star with red accent
-- `icon-shield` - Protective shield with blue accent
-- `icon-target` - Bullseye target with red center
-- `icon-award` - Medal with ribbon accents
-- `icon-users` - Multiple users with color accents
-- `icon-clock` - Timepiece with white details
-- `icon-crosshair` - Precision aiming reticle
-- `icon-phone` - Communication device
-- `icon-email` - Message envelope
-- `icon-location` - Geographic marker
+- **🎯** - Target/Precision Training, Course Navigation, Achievement Markers
+- **⚖️** - Professional Training, Community Programs, Skill Development  
+- **🛡️** - Safety Training, Defense Courses, Safety Records
+- **🎖️** - Professional Achievement, Instructor Credentials, Honor System
+- **🏆** - Excellence, Competition Results, Achievement Records
 
-#### Icon Sizes
+#### Icon Implementation Guidelines
+
+#### Professional Community Aesthetic
+
+- NO casual emojis (🚀, 💪, 👥, 🌟, 📞, 💥, ⚡, 🔥, 💬, ❓, 📊)
+- ALL icons must convey professional community
+- Consistent with welcoming training environment
+- Emphasizes precision, honor, and professional readiness
+
+#### CSS Icon Classes
 
 - `.icon-xs` - 1rem (16px)
 - `.icon-sm` - 1.25rem (20px)
@@ -258,7 +268,7 @@ The LR Theme automatically adapts between light and dark modes:
 |-----------|----------|---------|-------|
 | `animate-fadeIn` | `0.5s` | `ease-out` | Content entrance |
 | `animate-two-tone-pulse` | `2s` | `ease-in-out infinite` | Attention elements |
-| `animate-smooth-hover` | `0.2s` | `ease-out` | Interactive feedback |
+| `animate-clean-hover` | `0.2s` | `ease-out` | Interactive feedback |
 | `hover:scale-102` | `0.3s` | `ease` | Button hover |
 | `hover:scale-105` | `0.3s` | `ease` | Card hover |
 
@@ -287,7 +297,7 @@ The LR Theme automatically adapts between light and dark modes:
 ### ❌ Don'ts
 
 - **Avoid colorful backgrounds** - stick to black/white foundation
-- **Don't overuse red/blue** - reserve for emphasis
+- **Don't overuse red/blue** - reserve for strategic emphasis
 - **Avoid large border radius** - maintain clean, professional appearance
 - **Don't use complex gradients** - keep backgrounds clean
 - **Avoid bright colors** outside of red/blue system
@@ -318,6 +328,9 @@ border-radius: var(--radius-sm);
 box-shadow: var(--shadow-clean);
 ```
 
+### Tailwind CSS Classes
+
+```html
 ### Tailwind CSS Classes
 
 ```html
@@ -364,8 +377,6 @@ box-shadow: var(--shadow-clean);
 }
 ```
 
----
-
 ## 📊 Brand Assets
 
 ### Logo Usage
@@ -394,13 +405,14 @@ box-shadow: var(--shadow-clean);
 
 ### Design Review Checklist
 
-- [ ] **Color Palette**: Only black, white, and red/blue usage
+- [ ] **Color Palette**: Only black, white, and strategic red/blue usage
 - [ ] **Typography**: Roboto font family with proper weight hierarchy (Black 900, Bold 700, Medium 500, Regular 400)
 - [ ] **Background Consistency**: Pure white backgrounds across all sections in light mode
 - [ ] **Spacing**: Compact spacing system implementation
 - [ ] **Borders**: Clean corners with minimal radius (0px-8px)
 - [ ] **Shadows**: Clean, minimal shadow system
-- [ ] **Icons**: Two-tone icon system with proper sizing
+- [ ] **Icons**: Professional icons only (🎯, ⚖️, 🛡️, 🎖️, 🏆) - NO casual emojis
+- [ ] **Icon Consistency**: All emojis must convey professional community and professional training
 - [ ] **Animations**: Smooth, professional transitions
 - [ ] **Contrast**: High contrast ratios for accessibility
 - [ ] **Responsive**: Consistent appearance across all devices
@@ -427,4 +439,45 @@ box-shadow: var(--shadow-clean);
 
 ---
 
-*This document serves as the official brand guide for Liberty Ridge Training Grounds LR Theme implementation. All design decisions should reference these standards to maintain brand consistency and professional excellence
+## 🛠️ Developer Quick Reference
+
+### CSS Icon Library
+
+LR Theme includes 20+ custom CSS icons with consistent styling for technical implementation:
+
+#### Available CSS Icons
+
+- `icon-star` - Five-pointed star with red accent
+- `icon-shield` - Protective shield with blue accent  
+- `icon-target` - Bullseye target with red center
+- `icon-award` - Medal with ribbon accents
+- `icon-users` - Multiple users with color accents
+- `icon-clock` - Timepiece with white details
+- `icon-crosshair` - Precision aiming reticle
+- `icon-phone` - Communication device
+- `icon-email` - Message envelope
+- `icon-location` - Geographic marker
+
+#### Icon Sizing Classes
+
+- `.icon-xs` - 1rem (16px)
+- `.icon-sm` - 1.25rem (20px)  
+- `.icon-md` - 1.5rem (24px)
+- `.icon-lg` - 2rem (32px)
+- `.icon-xl` - 2.5rem (40px)
+
+### Quick Implementation Guide
+
+**Colors**: Use only black (`#000000`), white (`#ffffff`), red (`#dc2626`), blue (`#2563eb`)
+
+**Typography**: Roboto family - Black (900), Bold (700), Medium (500), Regular (400)
+
+**Animations**: `animate-fadeIn`, `animate-two-tone-pulse`, `animate-clean-hover`
+
+**Shadows**: `shadow-clean` for borders, `shadow-sm/md/lg` for elevation
+
+---
+
+*This document serves as the official brand guide for Liberty Ridge Training Grounds LR Theme
+implementation. All design decisions should reference these standards to maintain brand
+consistency and professional excellence.*
