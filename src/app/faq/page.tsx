@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import BulletHero from '@/components/BulletHero';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
@@ -10,7 +12,6 @@ import {
     quickNavigation,
     stillHaveQuestions
 } from '@/data/faq';
-import Link from 'next/link';
 
 export default function FAQPage() {
   return (

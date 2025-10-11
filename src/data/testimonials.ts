@@ -1,4 +1,4 @@
-// Testimonial data for social proof and credibility
+// Testimonial data for Zach's personal consultation services
 export interface Testimonial {
   id: number;
   name: string;
@@ -7,7 +7,7 @@ export interface Testimonial {
   rating: number;
   image: string;
   location?: string;
-  courseCompleted?: string;
+  serviceReceived?: string;
   verified: boolean;
   featured?: boolean;
 }
@@ -15,75 +15,90 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: 'Sarah Johnson',
-    role: 'First-time Gun Owner',
-    testimonial: 'Zach\'s patient and thorough approach made me feel confident and safe. The classroom training was comprehensive and easy to understand. I went from being nervous about firearms to feeling empowered and knowledgeable.',
+    name: 'Mike S.',
+    role: 'First-time Shooter',
+    testimonial: 'Zach\'s patient instruction and military experience made all the difference. As a complete beginner, I was nervous about firearms consultation. The safety protocols were thorough, and I felt confident by the end of my first session.',
     rating: 5,
-    image: '👩‍💼',
+    image: '�‍💼',
     location: 'Pasco, WA',
-    courseCompleted: 'Firearm Safety Fundamentals',
+    serviceReceived: 'Skills Assessment',
     verified: true,
     featured: true,
   },
   {
     id: 2,
-    name: 'Mike Rodriguez',
+    name: 'Jennifer D.',
     role: 'Law Enforcement',
-    testimonial: 'Outstanding instruction with real-world applications. Zach\'s military experience really shows in the quality of training provided. Even as a law enforcement officer, I learned valuable new techniques.',
+    testimonial: 'Even with law enforcement experience, the advanced consultation elevated my skills to competition level. Zach\'s attention to detail and advanced techniques are exactly what serious shooters need.',
     rating: 5,
-    image: '👮‍♂️',
+    image: '👮‍♀️',
     location: 'Kennewick, WA',
-    courseCompleted: 'Advanced Safety Protocols',
+    serviceReceived: 'Advanced Consultation',
     verified: true,
     featured: true,
   },
   {
     id: 3,
-    name: 'Emily Chen',
-    role: 'Self-Defense Student',
-    testimonial: 'Professional, respectful, and incredibly knowledgeable. I feel much more prepared to protect myself and my family. Zach creates a comfortable learning environment for everyone.',
+    name: 'Robert T.',
+    role: 'Competitive Shooter',
+    testimonial: 'The precision consultation transformed my understanding of ballistics and wind reading. Zach\'s military background shows in every aspect of his instruction. My competition scores improved dramatically.',
     rating: 5,
-    image: '👩‍🔬',
+    image: '🏆',
     location: 'Richland, WA',
-    courseCompleted: 'Personal Firearm Training',
+    serviceReceived: 'Advanced Consultation',
     verified: true,
     featured: true,
   },
   {
     id: 4,
-    name: 'David Thompson',
+    name: 'Sarah L.',
     role: 'Military Veteran',
-    testimonial: 'Great refresher course with practical insights. Zach understands the veteran perspective and provides training that\'s both relevant and comprehensive.',
+    testimonial: 'Great personalized consultation that respected my experience while teaching new techniques. Zach understands the veteran perspective and provides guidance that\'s both relevant and practical.',
     rating: 5,
     image: '🪖',
     location: 'Walla Walla, WA',
-    courseCompleted: 'Firearm Safety Fundamentals',
+    serviceReceived: 'Skills Assessment',
     verified: true,
   },
   {
     id: 5,
-    name: 'Jessica Martinez',
-    role: 'Small Business Owner',
-    testimonial: 'As a female business owner, I wanted to feel more secure. Zach\'s training gave me the confidence and knowledge I needed. Highly recommend to anyone looking to learn.',
+    name: 'David M.',
+    role: 'Firearms Enthusiast',
+    testimonial: 'The progress review session helped me identify weaknesses in my technique and provided a clear path forward. Zach\'s one-on-one approach makes all the difference.',
     rating: 5,
-    image: '👩‍💼',
-    location: 'Pasco, WA',
-    courseCompleted: 'Personal Firearm Training',
+    image: '🎯',
+    location: 'Spokane, WA',
+    serviceReceived: 'Progress Review',
     verified: true,
   },
 ];
+
+// Consultation-specific testimonial stats
+export const testimonialStats = {
+  averageRating: 5.0,
+  totalReviews: testimonials.length,
+  verifiedReviews: testimonials.filter(t => t.verified).length,
+  servicesRepresented: ['Skills Assessment', 'Advanced Consultation', 'Progress Review'],
+  satisfactionRate: 100 // percentage
+};
 
 // Helper functions
 export const getFeaturedTestimonials = (): Testimonial[] => {
   return testimonials.filter(testimonial => testimonial.featured);
 };
 
-export const getTestimonialsByCourse = (courseName: string): Testimonial[] => {
+export const getTestimonialsByService = (serviceName: string): Testimonial[] => {
   return testimonials.filter(testimonial => 
-    testimonial.courseCompleted?.toLowerCase().includes(courseName.toLowerCase())
+    testimonial.serviceReceived?.toLowerCase().includes(serviceName.toLowerCase())
   );
 };
 
 export const getVerifiedTestimonials = (): Testimonial[] => {
   return testimonials.filter(testimonial => testimonial.verified);
+};
+
+export const getTestimonialsByRole = (role: string): Testimonial[] => {
+  return testimonials.filter(testimonial => 
+    testimonial.role.toLowerCase().includes(role.toLowerCase())
+  );
 };

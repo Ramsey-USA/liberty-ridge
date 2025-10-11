@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 interface BulletHeroProps {
   title: string;
@@ -98,7 +98,7 @@ const BulletHero: React.FC<BulletHeroProps> = ({
 
   useEffect(() => {
     // Start initial sequence after mount
-    const initialTimeout = addTimeout(() => startSequence(), 1000);
+    addTimeout(() => startSequence(), 1000);
 
     // Repeat sequence every 7 seconds
     const repeatInterval = setInterval(() => {
@@ -117,7 +117,7 @@ const BulletHero: React.FC<BulletHeroProps> = ({
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center bg-tactical overflow-hidden pt-28 sm:pt-32 lg:pt-36"
+      className="relative flex justify-center items-center bg-tactical pt-28 sm:pt-32 lg:pt-36 min-h-[600px] md:min-h-[700px] lg:min-h-[800px] overflow-hidden"
     >
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -125,21 +125,21 @@ const BulletHero: React.FC<BulletHeroProps> = ({
       </div>
 
       {/* Epic Background Effects */}
-      <div className="absolute top-10 right-10 w-96 h-96 bg-gradient-to-bl from-patriot-red/20 to-transparent rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-tr from-patriot-blue/20 to-transparent rounded-full blur-3xl"></div>
+      <div className="top-10 right-10 absolute bg-gradient-to-bl from-patriot-red/20 to-transparent blur-3xl rounded-full w-96 h-96"></div>
+      <div className="bottom-10 left-10 absolute bg-gradient-to-tr from-patriot-blue/20 to-transparent blur-3xl rounded-full w-80 h-80"></div>
 
       {/* Muzzle Flash */}
       {showMuzzleFlash && (
-        <div className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20">
+        <div className="top-1/2 left-8 z-20 absolute -translate-y-1/2 transform">
           <div 
-            className="w-16 h-8 rounded-full opacity-90 glow-effect"
+            className="opacity-90 rounded-full w-16 h-8 glow-effect"
             style={{
               background: 'radial-gradient(ellipse, var(--accent-yellow) 0%, var(--accent-orange) 50%, var(--patriot-red) 100%)',
               filter: 'blur(1px)',
             }}
           />
           <div 
-            className="absolute inset-0 w-16 h-8 rounded-full opacity-60"
+            className="absolute inset-0 opacity-60 rounded-full w-16 h-8"
             style={{
               background: 'radial-gradient(ellipse, #ffffff 0%, var(--accent-yellow) 40%, transparent 70%)',
             }}
@@ -150,7 +150,7 @@ const BulletHero: React.FC<BulletHeroProps> = ({
       {/* Flying Bullet */}
       {bullet.isVisible && (
         <div
-          className="absolute top-1/2 transform -translate-y-1/2 z-20"
+          className="top-1/2 z-20 absolute -translate-y-1/2 transform"
           style={{
             left: `${bullet.x}px`,
             transform: 'translateY(-50%)',
@@ -159,7 +159,7 @@ const BulletHero: React.FC<BulletHeroProps> = ({
         >
           {/* Bullet */}
           <div 
-            className="w-4 h-2 rounded-full shadow-lg glow-effect"
+            className="shadow-lg rounded-full w-4 h-2 glow-effect"
             style={{
               background: 'linear-gradient(to right, var(--accent-gold), var(--accent-orange))',
             }}
@@ -167,7 +167,7 @@ const BulletHero: React.FC<BulletHeroProps> = ({
           
           {/* Bullet Trail */}
           <div 
-            className="absolute right-full top-0 w-24 h-full rounded-full opacity-80"
+            className="top-0 right-full absolute opacity-80 rounded-full w-24 h-full"
             style={{
               background: 'linear-gradient(to left, rgba(249, 115, 22, 0.8) 0%, rgba(252, 211, 77, 0.6) 30%, transparent 100%)',
               boxShadow: '0 0 10px rgba(255, 193, 7, 0.4)',
@@ -178,27 +178,27 @@ const BulletHero: React.FC<BulletHeroProps> = ({
       )}
 
       {/* Target */}
-      <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-10">
+      <div className="top-1/2 right-8 z-10 absolute -translate-y-1/2 transform">
         <div 
           className={`relative w-20 h-20 transition-all duration-200 ease-out ${targetHit ? 'scale-110' : 'scale-100'}`}
           style={{ willChange: 'transform' }}
         >
           {/* Target Rings */}
-          <div className="absolute inset-0 rounded-full border-4 border-white bg-red-600 shadow-lg"></div>
-          <div className="absolute inset-2 rounded-full border-2 border-white bg-white"></div>
-          <div className="absolute inset-4 rounded-full border-2 border-red-600 bg-red-600"></div>
-          <div className="absolute inset-6 rounded-full bg-white"></div>
-          <div className="absolute inset-7 rounded-full bg-red-600"></div>
+          <div className="absolute inset-0 bg-red-600 shadow-lg border-4 border-white rounded-full"></div>
+          <div className="absolute inset-2 bg-white border-2 border-white rounded-full"></div>
+          <div className="absolute inset-4 bg-red-600 border-2 border-red-600 rounded-full"></div>
+          <div className="absolute inset-6 bg-white rounded-full"></div>
+          <div className="absolute inset-7 bg-red-600 rounded-full"></div>
           
           {/* Bull's Eye */}
-          <div className="absolute inset-8 rounded-full bg-black"></div>
+          <div className="absolute inset-8 bg-black rounded-full"></div>
           
           {/* Impact Effect */}
           {targetHit && (
             <>
               {/* Impact Flash */}
               <div 
-                className="absolute inset-0 rounded-full opacity-90"
+                className="absolute inset-0 opacity-90 rounded-full"
                 style={{
                   background: 'radial-gradient(circle, #fbbf24 0%, #f97316 50%, transparent 100%)',
                   animation: 'ping 0.4s cubic-bezier(0, 0, 0.2, 1)',
@@ -207,18 +207,18 @@ const BulletHero: React.FC<BulletHeroProps> = ({
               
               {/* Bullet Hole */}
               <div 
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-black rounded-full z-20"
+                className="top-1/2 left-1/2 z-20 absolute bg-black rounded-full w-2 h-2 -translate-x-1/2 -translate-y-1/2 transform"
                 style={{
                   boxShadow: 'inset 0 0 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.3)',
                 }}
               />
               
               {/* Impact Sparks */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2 transform">
                 {[...Array(6)].map((_, i) => (
                   <div
                     key={i}
-                    className="absolute w-1 h-1 bg-yellow-400 rounded-full"
+                    className="absolute bg-yellow-400 rounded-full w-1 h-1"
                     style={{
                       left: `${Math.cos(i * 60 * Math.PI / 180) * 18}px`,
                       top: `${Math.sin(i * 60 * Math.PI / 180) * 18}px`,
@@ -235,17 +235,17 @@ const BulletHero: React.FC<BulletHeroProps> = ({
 
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 pr-32 py-12 sm:py-16 lg:py-20">
-        <h1 className="text-6xl lg:text-7xl xl:text-8xl font-black mb-6 text-white leading-none tracking-tight">
-          <span className="text-gradient drop-shadow-text">
+      <div className="z-10 relative mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 pr-32 max-w-4xl text-white text-center">
+        <h1 className="mb-6 font-black text-white text-6xl lg:text-7xl xl:text-8xl leading-none tracking-tight">
+          <span className="drop-shadow-text text-gradient">
             {title}
           </span>
         </h1>
-        <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-8 text-yellow-400 drop-shadow-lg text-shadow leading-tight tracking-wide">
+        <h2 className="text-shadow drop-shadow-lg mb-8 font-bold text-yellow-400 text-2xl lg:text-3xl xl:text-4xl leading-tight tracking-wide">
           {subtitle}
         </h2>
         {description && (
-          <p className="text-lg lg:text-xl xl:text-2xl text-gray-300 max-w-3xl mx-auto drop-shadow-md font-medium leading-relaxed text-shadow tracking-normal">
+          <p className="text-shadow drop-shadow-md mx-auto max-w-3xl font-medium text-gray-300 text-lg lg:text-xl xl:text-2xl leading-relaxed tracking-normal">
             {description}
           </p>
         )}
@@ -253,7 +253,7 @@ const BulletHero: React.FC<BulletHeroProps> = ({
 
       {/* Tactical Grid Overlay */}
       <div className="absolute inset-0 opacity-5">
-        <svg width="100%" height="100%" className="h-full w-full">
+        <svg width="100%" height="100%" className="w-full h-full">
           <defs>
             <pattern id="tactical-grid" width="40" height="40" patternUnits="userSpaceOnUse">
               <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1"/>

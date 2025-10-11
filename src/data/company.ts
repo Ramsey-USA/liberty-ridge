@@ -61,7 +61,7 @@ export const coreValues: CoreValue[] = [
 
 export const companyInfo = {
   name: 'Liberty Ridge Training Grounds',
-  tagline: 'Elite Tactical Training by Army Veteran Zach Gaudette',
+  tagline: 'Personal Firearms Consultation by Army Veteran Zach Gaudette',
   foundedYear: 2020,
   location: {
     city: 'Pasco',
@@ -79,38 +79,39 @@ export const companyInfo = {
     linkedin: 'https://linkedin.com/company/liberty-ridge-training',
   },
   businessHours: {
-    weekdays: '9:00 AM - 6:00 PM',
-    saturday: '9:00 AM - 4:00 PM',
-    sunday: 'By Appointment',
+    consultations: 'Tuesday - Thursday, Saturday - Sunday',
+    availability: '9:00 AM - 8:00 PM',
+    booking: 'Online scheduling available',
+    emergency: 'By special arrangement',
   },
 };
 
 export const missionStatement = 
-  'Dedicated to providing exceptional tactical and firearm safety education rooted in honor, integrity, and service to our community.';
+  'Dedicated to providing personalized firearms consultation and expert guidance rooted in military experience, honor, and commitment to individual excellence.';
 
 export const visionStatement = 
-  'To be the premier tactical training destination in the Pacific Northwest, empowering individuals with the skills and confidence needed for personal protection and safety.';
+  'To be the premier personal firearms consultant in the Pacific Northwest, empowering individuals through one-on-one expertise and personalized guidance from a Regional #12 ranked instructor.';
 
-// Feature highlights for marketing
+// Feature highlights for personal consultation platform
 export const keyFeatures = [
   {
-    title: 'Veteran-Owned & Operated',
-    description: 'Led by U.S. Army veteran Zach Gaudette, bringing authentic military experience and discipline to civilian tactical training.',
+    title: 'Army Veteran Expertise',
+    description: 'Personal consultation with U.S. Army veteran Zach Gaudette, bringing authentic military experience to civilian firearms guidance.',
     icon: '🎖️',
   },
   {
-    title: 'Rising Competition Talent',
-    description: 'Learn from an instructor who achieved #12 regional ranking in his first year of long-range shooting competition.',
+    title: 'Regional #12 Achievement',
+    description: 'Learn from a consultant who achieved Regional #12 ranking in his first year of competitive long-range shooting.',
     icon: '🏆',
   },
   {
     title: '100% Safety Record',
-    description: 'Maintaining the highest safety standards with comprehensive protocols, ensuring every student trains in a secure environment.',
+    description: 'Maintaining the highest safety standards with comprehensive protocols in every personal consultation session.',
     icon: '🛡️',
   },
   {
-    title: 'Personalized Training',
-    description: 'Customized instruction tailored to individual needs and specific firearm types for maximum effectiveness.',
+    title: 'Personalized Consultation',
+    description: 'One-on-one guidance tailored to your specific goals, experience level, and individual firearms needs.',
     icon: '🎯',
   },
 ];
@@ -120,14 +121,14 @@ export const getMilitaryValues = (): CoreValue[] => {
   return coreValues.filter(value => value.militaryPrinciple);
 };
 
-// Company advantages and differentiators
+// Company advantages and differentiators for personal consultation
 export const companyAdvantages = [
-  { icon: '🎖️', text: 'Veteran-owned and operated' },
-  { icon: '⚔️', text: 'Military-grade training standards' },
-  { icon: '🏆', text: 'Nationally competitive instructor' },
+  { icon: '🎖️', text: 'Army veteran owned and operated' },
+  { icon: '🏆', text: 'Regional #12 competitive achievement' },
+  { icon: '👤', text: 'One-on-one personal consultation' },
   { icon: '🛡️', text: 'Comprehensive safety protocols' },
-  { icon: '👨‍🏫', text: 'Personalized training approach' },
-  { icon: '🏠', text: 'Strong community focus' },
-  { icon: '📚', text: 'Evidence-based methodologies' },
-  { icon: '⚔️', text: 'Family protection emphasis' }
+  { icon: '�', text: 'Personalized guidance approach' },
+  { icon: '📈', text: 'Proven competition-level results' },
+  { icon: '🏠', text: 'Local Pacific Northwest expertise' },
+  { icon: '⚔️', text: 'Military-grade standards applied' }
 ];

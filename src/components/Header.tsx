@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
+
 import ThemeToggle from './ThemeToggle';
 
-const Header = () => {
+const Header = memo(() => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -17,14 +18,22 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Memoize menu toggle function
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen(prev => !prev);
+  }, []);
+
+  // Memoize close menu function
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []);
+
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Courses', href: '/courses' },
-    { name: 'Shop', href: '/shop' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Team', href: '/team' },
+    { name: 'About Zach', href: '/about' },
+    { name: 'Consultation Services', href: '/consultation' },
     { name: 'Rankings', href: '/rankings' },
-    { name: 'Join Team', href: '/join' },
+    { name: 'Media Gallery', href: '/gallery' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -89,20 +98,20 @@ const Header = () => {
               <ThemeToggle />
             </div>
             
-            {/* LR Theme Book Now Button */}
+            {/* Personal Consultation CTA Button */}
             <Link
-              href="/signup"
+              href="/consultation"
               className="group relative px-6 sm:px-8 lg:px-10 py-3 sm:py-4 text-sm sm:text-base btn-hero-primary"
             >
               <div className="relative flex items-center space-x-2">
-                <span className="font-bold tracking-wide">BOOK NOW</span>
+                <span className="font-bold tracking-wide">BOOK CONSULTATION</span>
                 <span className="text-pure-white text-lg sm:text-xl">→</span>
               </div>
             </Link>
 
             {/* LR Theme Menu Button */}
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={toggleMenu}
               className="group relative bg-surface shadow-sharp hover:shadow-md p-4 border hover:border-patriot-red border-border rounded-sm focus:ring-2 focus:ring-patriot-red/50 text-text-primary hover:scale-102 transition-all duration-300"
               aria-label="Toggle main navigation menu"
             >
@@ -125,25 +134,28 @@ const Header = () => {
           <div className="top-full right-0 left-0 absolute bg-surface-elevated shadow-lg border-patriot-red border-t">
             <div className="space-y-3 mx-auto px-6 sm:px-8 lg:px-12 py-10 max-w-7xl">
               <div className="gap-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                {navigation.map((item, index) => (
+                {navigation.map((item, _index) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     className="group flex justify-between items-center bg-surface hover:bg-surface-elevated shadow-sharp hover:shadow-md px-8 py-5 border hover:border-patriot-red border-border rounded-sm font-medium text-text-primary hover:text-patriot-red hover:scale-102 transition-all duration-300 transform"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={closeMenu}
                   >
                     <span className="flex items-center space-x-3">
-                      {/* LR Theme indicators for special pages */}
-                      {item.name === 'Courses' && (
+                      {/* Personal Brand indicators for navigation */}
+                      {item.name === 'Consultation Services' && (
                         <div className="bg-patriot-red shadow-sharp rounded-xs w-3 h-3"></div>
                       )}
-                      {item.name === 'Join Team' && (
+                      {item.name === 'About Zach' && (
                         <div className="bg-patriot-blue shadow-sharp rounded-xs w-3 h-3"></div>
                       )}
                       {item.name === 'Rankings' && (
                         <div className="shadow-sharp rounded-xs w-3 h-3 bg-accent-gold"></div>
                       )}
-                      {!['Courses', 'Join Team', 'Rankings'].includes(item.name) && (
+                      {item.name === 'Media Gallery' && (
+                        <div className="bg-community-green shadow-sharp rounded-xs w-3 h-3"></div>
+                      )}
+                      {!['Consultation Services', 'About Zach', 'Rankings', 'Media Gallery'].includes(item.name) && (
                         <div className="bg-border rounded-xs w-3 h-3"></div>
                       )}
                       <span className="font-medium text-base">{item.name}</span>
@@ -157,8 +169,8 @@ const Header = () => {
               <div className="mt-8 pt-8 border-t border-border">
                 <div className="flex sm:flex-row flex-col justify-between items-center space-y-6 sm:space-y-0">
                   <div className="sm:text-left text-center">
-                    <p className="font-medium text-text-secondary text-sm">Ready to start training?</p>
-                    <p className="font-bold text-patriot-red text-xs uppercase tracking-wide">Elite • Professional • Results</p>
+                    <p className="font-medium text-text-secondary text-sm">Ready for personal consultation?</p>
+                    <p className="font-bold text-patriot-red text-xs uppercase tracking-wide">Expert • Personal • Professional</p>
                   </div>
                   <div className="flex items-center space-x-6">
                     <div className="flex items-center space-x-3 bg-surface px-5 py-3 border border-border rounded-sm">
@@ -168,7 +180,7 @@ const Header = () => {
                     <Link
                       href="/contact"
                       className="font-bold text-patriot-blue hover:text-patriot-red text-sm transition-colors duration-300"
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={closeMenu}
                     >
                       Contact Us
                     </Link>
@@ -181,6 +193,9 @@ const Header = () => {
       </nav>
     </header>
   );
-};
+});
+
+// Add display name for debugging
+Header.displayName = 'Header';
 
 export default Header;

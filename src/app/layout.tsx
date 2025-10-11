@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
-// @ts-ignore
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore CSS module import
 import './globals.css'
+
 import { ThemeProvider } from '@/contexts/ThemeContext'
 
 export const metadata: Metadata = {

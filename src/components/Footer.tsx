@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import { memo } from 'react';
 
-const Footer = () => {
+const Footer = memo(() => {
   return (
     <footer className="relative bg-surface-tactical text-text-inverse">
       {/* Enhanced accent bar with optimized variables */}
@@ -268,6 +269,9 @@ const Footer = () => {
       <div className="bg-gradient-to-r via-primary h-1 from-accent-gold to-accent-gold"></div>
     </footer>
   );
-};
+});
+
+// Add display name for debugging
+Footer.displayName = 'Footer';
 
 export default Footer;

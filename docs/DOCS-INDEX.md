@@ -40,6 +40,30 @@ Project Overview & Quick Start - The main entry point for the project, providing
 
 **When to Use:** First time encountering the project, need overview, sharing project information
 
+### 📚 [USER-GUIDE.md](./USER-GUIDE.md)
+
+### 🎯 **User Documentation**
+
+**[📚 User Guide](./USER-GUIDE.md)** - Complete guide for Zach to use the CMS
+
+- Step-by-step instructions for uploading photos and videos
+- Media organization and management
+- Security and best practices
+- Troubleshooting and support information
+- Mobile usage tips
+
+**[📋 Page Enhancement Strategy](./PAGE-ENHANCEMENT-STRATEGY.md)** - Comprehensive enhancement plan for all pages
+
+- Phased approach for implementing updated LR guidelines
+- Personal brand transformation strategy
+- LR Theme compliance requirements
+- Consultation-focused page improvements
+- Material Icons and square button implementation
+
+**Primary Audience:** Zach Gaudette (primary user), content managers, CMS users
+
+**When to Use:** First time using CMS, learning upload procedures, organizing content, troubleshooting issues
+
 ---
 
 ## 🛠️ Technical Documentation
@@ -217,11 +241,13 @@ Automated tools for creating and maintaining markdown documentation.
 
 ---
 
-## �📊 Documentation Usage Matrix
+## 📊 Documentation Usage Matrix
 
 | Task | Primary Document | Supporting Documents |
 |------|------------------|---------------------|
 | **Project Overview** | README.md | All others for details |
+| **Using the CMS** | USER-GUIDE.md | LR-BRANDING.md for design context |
+| **Page Enhancement Planning** | PAGE-ENHANCEMENT-STRATEGY.md | LR-BRANDING.md, COMPONENTS.md |
 | **Setting Up Development** | PROJECT-SETUP.md | DEVELOPMENT.md |
 | **Writing Code** | DEVELOPMENT.md | COMPONENTS.md, TESTING.md |
 | **Creating Components** | COMPONENTS.md | DEVELOPMENT.md, LR-BRANDING.md |
@@ -233,6 +259,14 @@ Automated tools for creating and maintaining markdown documentation.
 ---
 
 ## 🎯 Documentation Best Practices
+
+### For CMS Users (Zach)
+
+1. **Start with USER-GUIDE.md** for complete CMS training
+2. **Bookmark the admin login** for easy access
+3. **Follow security best practices** in the guide
+4. **Use descriptive tags and descriptions** for content organization
+5. **Reference troubleshooting section** for common issues
 
 ### For Developers
 

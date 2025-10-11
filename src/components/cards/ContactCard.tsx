@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import { ContactMethod } from '@/data/contact';
 
 interface ContactCardProps {

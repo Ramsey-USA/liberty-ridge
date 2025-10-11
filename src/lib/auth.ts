@@ -1,5 +1,6 @@
-import { auth } from './firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, User } from 'firebase/auth';
+
+import { auth } from './firebase';
 
 // User authentication functions for future admin panel
 export const signIn = async (email: string, password: string) => {

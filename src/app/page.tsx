@@ -8,74 +8,74 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       
-      {/* Enhanced Hero Section with LR Theme - Always Visible on Large Screens */}
+      {/* Personal Brand Hero Section - Focused on Zach */}
       <section className="block relative min-h-screen lg:min-h-screen 2xl:min-h-screen xl:min-h-screen overflow-hidden hero-gradient-bg section-padding-enhanced">
-        {/* Community accent elements - Enhanced with larger icons */}
+        {/* Clean accent elements */}
         <div className="lg:block xl:block top-10 left-10 absolute animate-two-tone-pulse icon icon-xl icon-primary icon-crosshair icon-elevated icon-animated"></div>
         <div className="lg:block xl:block top-20 right-20 absolute animate-two-tone-pulse animation-delay-1000 icon icon-lg icon-secondary icon-target icon-elevated icon-animated"></div>
         <div className="lg:block xl:block bottom-20 left-20 absolute animate-two-tone-pulse animation-delay-2000 icon icon-md icon-accent icon-bullet icon-elevated icon-animated"></div>
         
-        {/* Enhanced Typography Content - Always Visible on Large Screens */}
+        {/* Personal Brand Content - Always Visible */}
         <div className="block lg:block 2xl:block xl:block z-10 relative text-center animate-fade-in-up container-enhanced">
-          {/* Community Badge - Enhanced with larger icons */}
+          {/* Personal Credentials Badge */}
           <div className="block lg:block xl:block mb-8 professional-badge">
             <div className="icon icon-md icon-primary icon-shield icon-animated"></div>
-            <span className="font-semibold text-highlight-red tracking-wide">Community Training Available</span>
+            <span className="font-semibold text-highlight-red tracking-wide">Army Veteran • Regional #12 Instructor</span>
             <div className="icon icon-md icon-secondary icon-star icon-animated"></div>
           </div>
           
-          {/* Main Title with Enhanced LR Typography - Always Visible on Large Screens */}
+          {/* Main Personal Brand Title */}
           <h1 className="block lg:block 2xl:block xl:block mb-6 animate-fade-in-up hero-title-enhanced">
             <span className="drop-shadow-text text-primary-enhanced">
-              LIBERTY RIDGE
+              ZACH GAUDETTE
             </span>
             <br />
             <span className="text-gradient">
-              TRAINING GROUNDS
+              FIREARMS CONSULTATION
             </span>
           </h1>
           
-          {/* Enhanced Subtitle with Icon Integration - Always Visible on Large Screens */}
+          {/* Personal Expertise Subtitle */}
           <div className="block lg:block 2xl:block xl:block flex-wrap justify-center gap-x-6 gap-y-3 mb-8 animate-fade-in-up animation-delay-500 hero-subtitle-enhanced">
             <span className="icon-text-group text-highlight-red">
-              <div className="icon icon-sm icon-primary icon-target icon-animated"></div>
-              <span className="font-medium">Safe Community Training</span>
+              <div className="icon icon-sm icon-primary icon-flag-usa icon-animated"></div>
+              <span className="font-medium">U.S. Army Veteran</span>
             </span>
             <span className="font-light text-secondary-enhanced">•</span>
             <span className="icon-text-group text-highlight-blue">
-              <div className="icon icon-sm icon-secondary icon-shield icon-animated"></div>
-              <span className="font-medium">Veteran Leadership</span>
+              <div className="icon icon-sm icon-secondary icon-award icon-animated"></div>
+              <span className="font-medium">Regional #12 Ranking</span>
             </span>
             <span className="font-light text-secondary-enhanced">•</span>
             <span className="icon-text-group text-highlight-red">
-              <div className="icon icon-sm icon-accent icon-crosshair icon-animated"></div>
-              <span className="font-medium">Community Focused</span>
+              <div className="icon icon-sm icon-accent icon-target icon-animated"></div>
+              <span className="font-medium">Personal Consultation</span>
             </span>
           </div>
           
-          {/* Enhanced Description - Always Visible on Large Screens */}
+          {/* Personal Value Proposition */}
           <p className="block lg:block 2xl:block xl:block mx-auto mb-12 max-w-5xl text-enhanced animate-fade-in-up animation-delay-1000">
-            Master firearms fundamentals through proven professional methodologies and comprehensive firearm training programs designed for all skill levels seeking <span className="text-highlight-blue">safe, responsible gun ownership</span>.
+            Get personalized firearms consultation and training from an experienced Army veteran who achieved <span className="text-highlight-blue">Regional #12 ranking in his first competitive year</span>. Professional, one-on-one guidance tailored to your specific goals.
           </p>
           
-          {/* Enhanced CTA Buttons - Always Visible on Large Screens */}
+          {/* Consultation-Focused CTA Buttons */}
           <div className="flex lg:flex 2xl:flex xl:flex sm:flex-row flex-col justify-center gap-6 mb-16 animate-fade-in-up animation-delay-1500">
-            <Link href="/signup" className="block lg:block xl:block btn-hero-primary">
-              <div className="icon icon-lg icon-white icon-flag-usa icon-animated"></div>
-              Start Training Today
+            <Link href="/consultation" className="block lg:block xl:block btn-hero-primary">
+              <div className="icon icon-lg icon-white icon-calendar icon-animated"></div>
+              Book Consultation
             </Link>
-            <Link href="/courses" className="block lg:block xl:block btn-hero-secondary">
-              <div className="icon icon-lg icon-secondary icon-target icon-animated"></div>
-              View Courses
+            <Link href="/about" className="block lg:block xl:block btn-hero-secondary">
+              <div className="icon icon-lg icon-secondary icon-user icon-animated"></div>
+              Learn About Zach
             </Link>
           </div>
           
-          {/* Enhanced Stats Preview - Always Visible on Large Screens with Larger Icons */}
+          {/* Personal Achievement Stats */}
           <div className="block lg:grid 2xl:grid xl:grid grid-3-enhanced mx-auto max-w-2xl animate-fade-in-up animation-delay-2000">
             <div className="group hover:border-patriot-red stats-card">
-              <div className="mb-4 group-hover:scale-110 transition-transform duration-300 icon icon-2xl icon-primary icon-users icon-elevated icon-animated"></div>
-              <div className="text-patriot-red stats-counter">100+</div>
-              <div className="stats-label">Students Trained</div>
+              <div className="mb-4 group-hover:scale-110 transition-transform duration-300 icon icon-2xl icon-primary icon-flag-usa icon-elevated icon-animated"></div>
+              <div className="text-patriot-red stats-counter">Veteran</div>
+              <div className="stats-label">U.S. Army Service</div>
             </div>
             <div className="group hover:border-patriot-blue stats-card">
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300 icon icon-2xl icon-secondary icon-shield icon-elevated icon-animated"></div>
@@ -91,7 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sleek Call-to-Action Banner with Black & White Design */}
+      {/* Personal Consultation CTA Banner */}
       <section className="relative bg-pure-white dark:bg-pure-black py-24 overflow-hidden">
         {/* Clean Background with Subtle Accents */}
         <div className="absolute inset-0">
@@ -104,36 +104,36 @@ export default function Home() {
         <div className="bottom-20 left-20 absolute bg-patriot-red rounded-xs w-2 h-2 animate-two-tone-pulse animation-delay-1500"></div>
         
         <div className="z-10 relative mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
-          {/* Professional Badge - Fixed for better dark mode contrast */}
+          {/* Personal Consultation Badge */}
           <div className="group inline-flex items-center space-x-3 bg-surface-professional dark:bg-surface shadow-clean hover:shadow-clean-lg mb-8 px-6 py-3 border border-patriot-red hover:border-patriot-blue rounded-sm transition-all duration-300">
             <div className="bg-patriot-red rounded-xs w-2 h-2 animate-two-tone-pulse"></div>
             <span className="font-bold text-text-inverse dark:text-text-primary group-hover:text-patriot-blue text-sm uppercase tracking-wider transition-colors duration-300">
-              Community Training Available
+              Personal Consultation Available
             </span>
             <div className="bg-patriot-blue rounded-xs w-2 h-2 animate-two-tone-pulse animation-delay-500"></div>
           </div>
           
-          {/* Professional Main Heading */}
+          {/* Personal Consultation Heading */}
           <h3 className="mb-6 font-black text-primary-enhanced text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tighter">
-            Ready to Master 
+            Ready for Expert 
             <span className="block bg-clip-text bg-gradient-to-r from-patriot-red via-patriot-blue to-patriot-red text-transparent">
-              Firearms Excellence?
+              Personal Guidance?
             </span>
           </h3>
           
-          {/* Clean Description with Highlights */}
+          {/* Personal Value Proposition */}
           <p className="mx-auto mb-12 max-w-4xl text-secondary-enhanced text-xl lg:text-2xl leading-relaxed">
-            Join <span className="font-bold text-patriot-red">100+ trained students</span> in professional firearm safety and comprehensive training programs that deliver <span className="font-bold text-patriot-blue">real results</span>.
+            Work directly with <span className="font-bold text-patriot-red">Zach Gaudette</span>, Army veteran and Regional #12 ranked instructor, for personalized firearms consultation tailored to <span className="font-bold text-patriot-blue">your specific needs and goals</span>.
           </p>
           
-          {/* Community CTA Buttons */}
+          {/* Personal Consultation CTA Buttons */}
           <div className="flex sm:flex-row flex-col justify-center gap-6 mb-16">
             <Link 
-              href="/signup" 
+              href="/consultation" 
               className="group relative bg-patriot-red hover:bg-patriot-red/90 shadow-clean hover:shadow-clean-lg px-12 py-6 rounded-sm overflow-hidden font-bold text-pure-white text-xl hover:scale-102 transition-all duration-300 transform"
             >
               <span className="z-10 relative flex justify-center items-center">
-                Start Training Today
+                Book Personal Consultation
                 <svg className="ml-3 w-6 h-6 transition-transform group-hover:translate-x-1 duration-300 transform" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
                 </svg>
@@ -142,11 +142,11 @@ export default function Home() {
             </Link>
             
             <Link 
-              href="/courses" 
+              href="/about" 
               className="group relative bg-surface dark:bg-surface-elevated shadow-clean hover:shadow-clean-lg px-12 py-6 border-2 border-patriot-blue rounded-sm overflow-hidden font-bold text-patriot-blue hover:text-text-inverse text-xl hover:scale-102 transition-all duration-300"
             >
               <span className="z-10 relative flex justify-center items-center">
-                View All Courses
+                Meet Zach Gaudette
                 <svg className="ml-3 w-6 h-6 group-hover:rotate-45 transition-transform duration-300 transform" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,17L8,13H11V7H13V13H16L12,17Z"/>
                 </svg>
@@ -155,14 +155,14 @@ export default function Home() {
             </Link>
           </div>
           
-          {/* Community Stats Counter */}
+          {/* Personal Achievement Stats */}
           <div className="gap-8 grid grid-cols-1 sm:grid-cols-3">
             <div className="group text-center cursor-pointer">
               <div className="mb-2 font-black text-primary-enhanced text-5xl group-hover:scale-110 transition-transform duration-300">
-                <span className="text-patriot-red">100+</span>
+                <span className="text-patriot-red">Army</span>
               </div>
               <div className="font-semibold text-secondary-enhanced group-hover:text-patriot-red uppercase tracking-wider transition-colors duration-300">
-                Students Trained
+                Veteran Experience
               </div>
               <div className="bg-patriot-red mx-auto mt-3 rounded-xs w-12 h-1 scale-0 group-hover:scale-100 transition-transform duration-300 transform"></div>
             </div>
@@ -472,81 +472,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enhanced Courses Section with LR Theme */}
+      {/* Personal Consultation Services Section */}
       <section className="bg-surface-elevated section-padding-enhanced">
         <div className="container-enhanced">
           <div className="section-header-enhanced">
             <div className="mb-8 professional-badge">
               <div className="icon icon-md icon-primary icon-target icon-animated"></div>
-              <span className="font-semibold text-highlight-red tracking-wide">Training Programs</span>
+              <span className="font-semibold text-highlight-red tracking-wide">Personal Consultation Services</span>
             </div>
             
             <h2 className="mb-6 section-title-enhanced">
-              Master Every Shooting Discipline
+              Expert One-on-One Firearms Guidance
             </h2>
             <p className="section-subtitle-enhanced">
-              From precision long-range shooting to professional pistol training, our comprehensive 
-              courses are designed to elevate your skills under expert veteran instruction.
+              Work directly with Zach Gaudette for personalized firearms consultation, training assessment, 
+              and expert guidance tailored to your specific goals and experience level.
             </p>
           </div>
           
           <div className="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {/* Liberty Ridge Course Card - Precision Long Range */}
-            <div className="group relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl hover:shadow-yellow-500/20 p-8 border border-slate-700/50 hover:border-yellow-500/50 rounded-2xl transition-all hover:-translate-y-2 duration-500">
-              {/* Card Header with Badge */}
-              <div className="flex justify-between items-center mb-6">
-                <div className="bg-gradient-to-br from-red-600 to-red-700 shadow-lg p-3 rounded-xl">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
-                  </svg>
-                </div>
-                <div className="bg-gradient-to-r from-yellow-400/20 to-yellow-500/20 backdrop-blur-sm px-3 py-1 border border-yellow-400/30 rounded-full">
-                  <span className="font-bold text-yellow-400 text-xs uppercase tracking-wider">Signature</span>
-                </div>
-              </div>
-              
-              {/* Card Content */}
-              <h3 className="mb-4 font-black text-white group-hover:text-yellow-400 text-2xl transition-colors duration-300">
-                Precision Long Range
-              </h3>
-              <p className="mb-6 text-secondary-enhanced leading-relaxed">
-                Master the fundamentals of long-range shooting with professional precision techniques and expert instruction.
-              </p>
-              
-              {/* Price and Duration */}
-              <div className="flex justify-between items-center mb-6">
-                <span className="font-bold text-white text-3xl">$299</span>
-                <span className="font-medium text-text-muted">8 hours intensive</span>
-              </div>
-              
-              {/* Features List */}
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center text-secondary-enhanced">
-                  <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mr-3 rounded-full w-2 h-2"></div>
-                  Ballistics & wind reading mastery
-                </li>
-                <li className="flex items-center text-secondary-enhanced">
-                  <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mr-3 rounded-full w-2 h-2"></div>
-                  Precision rifle setup & tuning
-                </li>
-                <li className="flex items-center text-secondary-enhanced">
-                  <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mr-3 rounded-full w-2 h-2"></div>
-                  Advanced marksmanship techniques
-                </li>
-                <li className="flex items-center text-secondary-enhanced">
-                  <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mr-3 rounded-full w-2 h-2"></div>
-                  Competition-level training
-                </li>
-              </ul>
-              
-              {/* CTA Button */}
-              <button className="group/btn relative bg-gradient-to-r from-red-600 hover:from-red-500 to-red-700 hover:to-red-600 shadow-lg px-6 py-4 rounded-xl w-full overflow-hidden font-bold text-white hover:scale-105 transition-all duration-300 transform">
-                <span className="z-10 relative">Book Training</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-500 transition-transform translate-y-full group-hover/btn:translate-y-0 duration-300"></div>
-              </button>
-            </div>
-
-            {/* Liberty Ridge Course Card - Fundamental Pistol */}
+            {/* Initial Assessment Consultation */}
             <div className="group relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl hover:shadow-blue-500/20 p-8 border border-slate-700/50 hover:border-blue-500/50 rounded-2xl transition-all hover:-translate-y-2 duration-500">
               {/* Card Header with Badge */}
               <div className="flex justify-between items-center mb-6">
@@ -556,52 +501,107 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="bg-gradient-to-r from-blue-400/20 to-blue-500/20 backdrop-blur-sm px-3 py-1 border border-blue-400/30 rounded-full">
-                  <span className="font-bold text-blue-400 text-xs uppercase tracking-wider">Popular</span>
+                  <span className="font-bold text-blue-400 text-xs uppercase tracking-wider">Essential</span>
                 </div>
               </div>
               
               {/* Card Content */}
               <h3 className="mb-4 font-black text-white group-hover:text-blue-400 text-2xl transition-colors duration-300">
-                Professional Pistol
+                Skills Assessment
               </h3>
               <p className="mb-6 text-secondary-enhanced leading-relaxed">
-                Develop confident pistol skills with real-world applications and progressive training techniques.
+                Comprehensive evaluation of your current skills, goals, and personalized training recommendations.
               </p>
               
               {/* Price and Duration */}
               <div className="flex justify-between items-center mb-6">
-                <span className="font-bold text-white text-3xl">$199</span>
-                <span className="font-medium text-text-muted">6 hours intensive</span>
+                <span className="font-bold text-white text-3xl">$150</span>
+                <span className="font-medium text-text-muted">90 minutes</span>
               </div>
               
               {/* Features List */}
               <ul className="space-y-3 mb-8">
-                <li className="flex items-center text-text-secondary">
+                <li className="flex items-center text-secondary-enhanced">
                   <div className="bg-gradient-to-r from-blue-400 to-blue-500 mr-3 rounded-full w-2 h-2"></div>
-                  Draw & presentation mastery
+                  Personal skill evaluation
                 </li>
-                <li className="flex items-center text-text-secondary">
+                <li className="flex items-center text-secondary-enhanced">
                   <div className="bg-gradient-to-r from-blue-400 to-blue-500 mr-3 rounded-full w-2 h-2"></div>
-                  Advanced reload techniques
+                  Goal setting & planning
                 </li>
-                <li className="flex items-center text-text-secondary">
+                <li className="flex items-center text-secondary-enhanced">
                   <div className="bg-gradient-to-r from-blue-400 to-blue-500 mr-3 rounded-full w-2 h-2"></div>
-                  Movement & positioning skills
+                  Equipment recommendations
                 </li>
-                <li className="flex items-center text-text-secondary">
+                <li className="flex items-center text-secondary-enhanced">
                   <div className="bg-gradient-to-r from-blue-400 to-blue-500 mr-3 rounded-full w-2 h-2"></div>
-                  Confidence building training
+                  Customized training roadmap
                 </li>
               </ul>
               
               {/* CTA Button */}
               <button className="group/btn relative bg-gradient-to-r from-blue-600 hover:from-blue-500 to-blue-700 hover:to-blue-600 shadow-lg px-6 py-4 rounded-xl w-full overflow-hidden font-bold text-white hover:scale-105 transition-all duration-300 transform">
-                <span className="z-10 relative">Book Training</span>
+                <span className="z-10 relative">Book Assessment</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 transition-transform translate-y-full group-hover/btn:translate-y-0 duration-300"></div>
               </button>
             </div>
 
-            {/* Liberty Ridge Course Card - Fundamentals */}
+            {/* Advanced Consultation */}
+            <div className="group relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl hover:shadow-yellow-500/20 p-8 border border-slate-700/50 hover:border-yellow-500/50 rounded-2xl transition-all hover:-translate-y-2 duration-500">
+              {/* Card Header with Badge */}
+              <div className="flex justify-between items-center mb-6">
+                <div className="bg-gradient-to-br from-red-600 to-red-700 shadow-lg p-3 rounded-xl">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+                  </svg>
+                </div>
+                <div className="bg-gradient-to-r from-yellow-400/20 to-yellow-500/20 backdrop-blur-sm px-3 py-1 border border-yellow-400/30 rounded-full">
+                  <span className="font-bold text-yellow-400 text-xs uppercase tracking-wider">Premium</span>
+                </div>
+              </div>
+              
+              {/* Card Content */}
+              <h3 className="mb-4 font-black text-white group-hover:text-yellow-400 text-2xl transition-colors duration-300">
+                Advanced Consultation
+              </h3>
+              <p className="mb-6 text-secondary-enhanced leading-relaxed">
+                In-depth technical consultation for experienced shooters seeking competitive-level expertise.
+              </p>
+              
+              {/* Price and Duration */}
+              <div className="flex justify-between items-center mb-6">
+                <span className="font-bold text-white text-3xl">$250</span>
+                <span className="font-medium text-text-muted">2 hours intensive</span>
+              </div>
+              
+              {/* Features List */}
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center text-secondary-enhanced">
+                  <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mr-3 rounded-full w-2 h-2"></div>
+                  Competition technique analysis
+                </li>
+                <li className="flex items-center text-secondary-enhanced">
+                  <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mr-3 rounded-full w-2 h-2"></div>
+                  Precision shooting optimization
+                </li>
+                <li className="flex items-center text-secondary-enhanced">
+                  <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mr-3 rounded-full w-2 h-2"></div>
+                  Advanced ballistics consultation
+                </li>
+                <li className="flex items-center text-secondary-enhanced">
+                  <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 mr-3 rounded-full w-2 h-2"></div>
+                  Equipment tuning guidance
+                </li>
+              </ul>
+              
+              {/* CTA Button */}
+              <button className="group/btn relative bg-gradient-to-r from-red-600 hover:from-red-500 to-red-700 hover:to-red-600 shadow-lg px-6 py-4 rounded-xl w-full overflow-hidden font-bold text-white hover:scale-105 transition-all duration-300 transform">
+                <span className="z-10 relative">Book Consultation</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-red-400 to-red-500 transition-transform translate-y-full group-hover/btn:translate-y-0 duration-300"></div>
+              </button>
+            </div>
+
+            {/* Follow-up Session */}
             <div className="group relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 shadow-2xl hover:shadow-green-500/20 p-8 border border-slate-700/50 hover:border-green-500/50 rounded-2xl transition-all hover:-translate-y-2 duration-500">
               {/* Card Header with Badge */}
               <div className="flex justify-between items-center mb-6">
@@ -611,76 +611,76 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="bg-gradient-to-r from-green-400/20 to-green-500/20 backdrop-blur-sm px-3 py-1 border border-green-400/30 rounded-full">
-                  <span className="font-bold text-green-400 text-xs uppercase tracking-wider">Beginner</span>
+                  <span className="font-bold text-green-400 text-xs uppercase tracking-wider">Follow-up</span>
                 </div>
               </div>
               
               {/* Card Content */}
               <h3 className="mb-4 font-black text-white group-hover:text-green-400 text-2xl transition-colors duration-300">
-                Firearms Fundamentals
+                Progress Review
               </h3>
               <p className="mb-6 text-text-secondary leading-relaxed">
-                Build a solid foundation with comprehensive safety protocols and essential marksmanship training.
+                Follow-up consultation to review progress, address challenges, and refine your training approach.
               </p>
               
               {/* Price and Duration */}
               <div className="flex justify-between items-center mb-6">
-                <span className="font-bold text-white text-3xl">$149</span>
-                <span className="font-medium text-text-muted">4 hours essential</span>
+                <span className="font-bold text-white text-3xl">$100</span>
+                <span className="font-medium text-text-muted">60 minutes</span>
               </div>
               
               {/* Features List */}
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-green-400 to-green-500 mr-3 rounded-full w-2 h-2"></div>
-                  Comprehensive safety protocols
+                  Progress evaluation
                 </li>
                 <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-green-400 to-green-500 mr-3 rounded-full w-2 h-2"></div>
-                  Basic marksmanship principles
+                  Problem-solving session
                 </li>
                 <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-green-400 to-green-500 mr-3 rounded-full w-2 h-2"></div>
-                  Proper stance & grip technique
+                  Technique refinement
                 </li>
                 <li className="flex items-center text-text-secondary">
                   <div className="bg-gradient-to-r from-green-400 to-green-500 mr-3 rounded-full w-2 h-2"></div>
-                  Equipment basics & selection
+                  Next steps planning
                 </li>
               </ul>
               
               {/* CTA Button */}
               <button className="group/btn relative bg-gradient-to-r from-green-600 hover:from-green-500 to-green-700 hover:to-green-600 shadow-lg px-6 py-4 rounded-xl w-full overflow-hidden font-bold text-white hover:scale-105 transition-all duration-300 transform">
-                <span className="z-10 relative">Book Training</span>
+                <span className="z-10 relative">Schedule Review</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-500 transition-transform translate-y-full group-hover/btn:translate-y-0 duration-300"></div>
               </button>
             </div>
           </div>
           
-          {/* Enhanced Course Features Grid */}
+          {/* Consultation Process Overview */}
           <div className="mt-12">
             <div className="gap-6 grid grid-cols-1 md:grid-cols-3">
               <div className="group bg-surface p-6 border border-border rounded-lg text-center hover:scale-105 transition-all duration-300">
-                <div className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform duration-300 icon icon-3xl icon-clock"></div>
-                <h4 className="mb-3 heading-card">Flexible Scheduling</h4>
+                <div className="mx-auto mb-4 text-primary group-hover:scale-110 transition-transform duration-300 icon icon-3xl icon-calendar"></div>
+                <h4 className="mb-3 heading-card">Easy Scheduling</h4>
                 <p className="text-body">
-                  Weekend and evening classes available to fit your busy schedule.
+                  Book your consultation online with flexible scheduling to fit your availability.
                 </p>
               </div>
               
               <div className="group bg-surface p-6 border border-border rounded-lg text-center hover:scale-105 transition-all duration-300">
-                <div className="mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 text-accent-gold icon icon-3xl icon-award"></div>
-                <h4 className="mb-3 heading-card">Certification Included</h4>
+                <div className="mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 text-accent-gold icon icon-3xl icon-user"></div>
+                <h4 className="mb-3 heading-card">Personal Attention</h4>
                 <p className="text-body">
-                  Receive official completion certificates for all training programs.
+                  One-on-one consultation focused entirely on your individual goals and challenges.
                 </p>
               </div>
               
               <div className="group bg-surface p-6 border border-border rounded-lg text-center hover:scale-105 transition-all duration-300">
-                <div className="mx-auto mb-4 text-community-green group-hover:scale-110 transition-transform duration-300 icon icon-3xl icon-users"></div>
-                <h4 className="mb-3 heading-card">Small Class Sizes</h4>
+                <div className="mx-auto mb-4 text-community-green group-hover:scale-110 transition-transform duration-300 icon icon-3xl icon-target"></div>
+                <h4 className="mb-3 heading-card">Expert Guidance</h4>
                 <p className="text-body">
-                  Maximum 8 students per class for personalized attention and safety.
+                  Benefit from Army veteran experience and Regional #12 competitive ranking expertise.
                 </p>
               </div>
             </div>
@@ -843,7 +843,7 @@ export default function Home() {
                 <div className="bg-surface-professional p-6 border-border-professional flip-card-back">
                   <h4 className="mb-3 font-bold text-text-inverse text-lg">Your Schedule</h4>
                   <p className="mb-3 text-text-inverse/90 text-sm leading-relaxed">
-                    We understand that life is busy. That's why we offer multiple scheduling options 
+                    We understand that life is busy. That&apos;s why we offer multiple scheduling options 
                     to fit training into your work and family commitments.
                   </p>
                   <ul className="space-y-1 text-text-inverse/80 text-sm">
@@ -942,15 +942,15 @@ export default function Home() {
                     <div className="icon icon-sm icon-star"></div>
                   </div>
                   <p className="text-body text-sm italic">
-                    "Zach's patient instruction and military experience made all the difference..."
+                    &quot;Zach&apos;s patient instruction and military experience made all the difference...&quot;
                   </p>
                 </div>
                 <div className="bg-surface-professional p-6 border-border-professional flip-card-back">
                   <h4 className="mb-3 font-bold text-text-inverse text-lg">Exceptional Training</h4>
                   <p className="mb-3 text-text-inverse/90 text-sm leading-relaxed">
-                    "As a complete beginner, I was nervous about firearms training. Zach's patient instruction 
+                    &quot;As a complete beginner, I was nervous about firearms training. Zach&apos;s patient instruction 
                     and military experience made all the difference. The safety protocols were thorough, 
-                    and I felt confident by the end of my first session."
+                    and I felt confident by the end of my first session.&quot;
                   </p>
                   <p className="flex items-center font-semibold text-text-inverse/80 text-xs">
                     <div className="mr-2 text-accent-gold icon icon-xs icon-star"></div>
@@ -981,15 +981,15 @@ export default function Home() {
                     <div className="icon icon-sm icon-star"></div>
                   </div>
                   <p className="text-body text-sm italic">
-                    "The professional pistol course elevated my skills to competition level..."
+                    &quot;The professional pistol course elevated my skills to competition level...&quot;
                   </p>
                 </div>
                 <div className="bg-surface-professional p-6 border-border-professional flip-card-back">
                   <h4 className="mb-3 font-bold text-text-inverse text-lg">Professional Excellence</h4>
                   <p className="mb-3 text-text-inverse/90 text-sm leading-relaxed">
-                    "Even with law enforcement experience, the professional pistol course elevated my skills 
-                    to competition level. Zach's attention to detail and advanced techniques are 
-                    exactly what serious shooters need."
+                    &quot;Even with law enforcement experience, the professional pistol course elevated my skills 
+                    to competition level. Zach&apos;s attention to detail and advanced techniques are 
+                    exactly what serious shooters need.&quot;
                   </p>
                   <p className="flex items-center font-semibold text-text-inverse/80 text-xs">
                     <div className="mr-2 text-accent-gold icon icon-xs icon-star"></div>
@@ -1020,15 +1020,15 @@ export default function Home() {
                     <div className="icon icon-sm icon-star"></div>
                   </div>
                   <p className="text-body text-sm italic">
-                    "The precision long-range course transformed my understanding of ballistics..."
+                    &quot;The precision long-range course transformed my understanding of ballistics...&quot;
                   </p>
                 </div>
                 <div className="bg-surface-professional p-6 border-border-professional flip-card-back">
                   <h4 className="mb-3 font-bold text-text-inverse text-lg">Championship Training</h4>
                   <p className="mb-3 text-text-inverse/90 text-sm leading-relaxed">
-                    "The precision long-range course transformed my understanding of ballistics and 
-                    wind reading. Zach's military background shows in every aspect of his instruction. 
-                    My competition scores improved dramatically."
+                    &quot;The precision long-range course transformed my understanding of ballistics and 
+                    wind reading. Zach&apos;s military background shows in every aspect of his instruction. 
+                    My competition scores improved dramatically.&quot;
                   </p>
                   <p className="flex items-center font-semibold text-text-inverse/80 text-xs">
                     <div className="mr-2 text-accent-gold icon icon-xs icon-star"></div>

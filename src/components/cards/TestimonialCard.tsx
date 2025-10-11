@@ -1,4 +1,6 @@
-import React from 'react';
+
+import { memo } from 'react';
+
 import { Testimonial } from '@/data/testimonials';
 
 interface TestimonialCardProps {
@@ -7,7 +9,7 @@ interface TestimonialCardProps {
   className?: string;
 }
 
-export default function TestimonialCard({ testimonial, variant = 'default', className = '' }: TestimonialCardProps) {
+const TestimonialCard = memo<TestimonialCardProps>(({ testimonial, variant = 'default', className = '' }) => {
   const baseClasses = "testimonial-card group relative transition-all duration-300";
   
   const variantClasses = {
@@ -26,14 +28,14 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
           {/* Front of card */}
           <div className="flip-card-front">
             {/* Quote Icon */}
-            <div className="absolute top-4 left-4 text-patriot-blue/20 text-4xl leading-none">
+            <div className="top-4 left-4 absolute text-patriot-blue/20 text-4xl leading-none">
               "
             </div>
             
-            <div className="relative z-10 pt-8">
+            <div className="z-10 relative pt-8">
               {/* Rating Stars */}
               {testimonial.rating && (
-                <div className="flex items-center justify-center mb-4">
+                <div className="flex justify-center items-center mb-4">
                   {[...Array(5)].map((_, i) => (
                     <span 
                       key={i} 
@@ -48,7 +50,7 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
               )}
               
               {/* Testimonial Text - Truncated */}
-              <blockquote className="text-sm text-tactical-dark leading-relaxed mb-6 italic text-center">
+              <blockquote className="mb-6 text-tactical-dark text-sm text-center italic leading-relaxed">
                 {testimonial.testimonial.length > 100 
                   ? `${testimonial.testimonial.substring(0, 100)}...` 
                   : testimonial.testimonial}
@@ -59,7 +61,7 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
                 <div className="font-semibold text-tactical-dark">
                   {testimonial.name}
                 </div>
-                <div className="text-xs text-tactical-gray mt-1">
+                <div className="mt-1 text-tactical-gray text-xs">
                   Hover for details
                 </div>
               </div>
@@ -68,33 +70,33 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
           
           {/* Back of card */}
           <div className="flip-card-back">
-            <div className="h-full flex flex-col justify-center">
+            <div className="flex flex-col justify-center h-full">
               {/* Full testimonial */}
-              <blockquote className="text-sm text-tactical-dark leading-relaxed mb-4 italic text-center">
+              <blockquote className="mb-4 text-tactical-dark text-sm text-center italic leading-relaxed">
                 {testimonial.testimonial}
               </blockquote>
               
-              {/* Course/Context */}
-              {testimonial.courseCompleted && (
+              {/* Service/Context */}
+              {testimonial.serviceReceived && (
                 <div className="mb-4 text-center">
-                  <span className="inline-block px-2 py-1 text-xs bg-patriot-blue/10 text-patriot-blue rounded-full">
-                    {testimonial.courseCompleted}
+                  <span className="inline-block bg-patriot-blue/10 px-2 py-1 rounded-full text-patriot-blue text-xs">
+                    {testimonial.serviceReceived}
                   </span>
                 </div>
               )}
               
               {/* Author Information */}
               <div className="text-center">
-                <div className="font-semibold text-tactical-dark mb-1">
+                <div className="mb-1 font-semibold text-tactical-dark">
                   {testimonial.name}
                 </div>
                 {testimonial.location && (
-                  <div className="text-xs text-tactical-gray mb-1">
+                  <div className="mb-1 text-tactical-gray text-xs">
                     {testimonial.location}
                   </div>
                 )}
                 {testimonial.role && (
-                  <div className="text-xs text-tactical-gray mb-2">
+                  <div className="mb-2 text-tactical-gray text-xs">
                     {testimonial.role}
                   </div>
                 )}
@@ -102,7 +104,7 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
                 {/* Verification Badge */}
                 {testimonial.verified && (
                   <div>
-                    <span className="inline-flex items-center px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">
+                    <span className="inline-flex items-center bg-green-100 px-2 py-1 rounded-full text-green-800 text-xs">
                       <span className="mr-1">✓</span>
                       Verified
                     </span>
@@ -119,11 +121,11 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
   return (
     <div className={`${baseClasses} ${variantClasses[variant]} ${className}`}>
       {/* Quote Icon */}
-      <div className="absolute top-4 left-4 text-patriot-blue/20 text-6xl leading-none">
+      <div className="top-4 left-4 absolute text-patriot-blue/20 text-6xl leading-none">
         "
       </div>
       
-      <div className="relative z-10 pt-8">
+      <div className="z-10 relative pt-8">
         {/* Rating Stars */}
         {testimonial.rating && (
           <div className="flex items-center mb-4">
@@ -137,7 +139,7 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
                 ⭐
               </span>
             ))}
-            <span className="ml-2 text-sm text-tactical-gray">
+            <span className="ml-2 text-tactical-gray text-sm">
               ({testimonial.rating}/5)
             </span>
           </div>
@@ -151,10 +153,10 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
         </blockquote>
         
         {/* Course/Context */}
-        {testimonial.courseCompleted && (
-          <div className="mb-4">
-            <span className="inline-block px-3 py-1 text-sm bg-patriot-blue/10 text-patriot-blue rounded-full">
-              {testimonial.courseCompleted}
+        {testimonial.serviceReceived && (
+          <div className="mb-4 text-center">
+            <span className="inline-block bg-patriot-blue/10 px-3 py-1 rounded-full font-medium text-patriot-blue text-xs">
+              {testimonial.serviceReceived}
             </span>
           </div>
         )}
@@ -162,7 +164,7 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
         {/* Author Information */}
         <div className="flex items-center">
           {/* Avatar or Initial */}
-          <div className="w-12 h-12 bg-gradient-to-br from-patriot-blue to-patriot-red rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+          <div className="flex justify-center items-center bg-gradient-to-br from-patriot-blue to-patriot-red mr-4 rounded-full w-12 h-12 font-bold text-white text-lg">
             {testimonial.name.charAt(0)}
           </div>
           
@@ -171,12 +173,12 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
               {testimonial.name}
             </div>
             {testimonial.location && (
-              <div className="text-sm text-tactical-gray">
+              <div className="text-tactical-gray text-sm">
                 {testimonial.location}
               </div>
             )}
             {testimonial.role && (
-              <div className="text-sm text-tactical-gray">
+              <div className="text-tactical-gray text-sm">
                 {testimonial.role}
               </div>
             )}
@@ -185,7 +187,7 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
           {/* Verification Badge */}
           {testimonial.verified && (
             <div className="ml-4">
-              <span className="inline-flex items-center px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">
+              <span className="inline-flex items-center bg-green-100 px-2 py-1 rounded-full text-green-800 text-xs">
                 <span className="mr-1">✓</span>
                 Verified
               </span>
@@ -195,7 +197,19 @@ export default function TestimonialCard({ testimonial, variant = 'default', clas
       </div>
       
       {/* Hover Effect Border */}
-      <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-patriot-blue/20 transition-colors duration-300"></div>
+      <div className="absolute inset-0 border-2 group-hover:border-patriot-blue/20 border-transparent rounded-xl transition-colors duration-300"></div>
     </div>
   );
-}
+}, (prevProps, nextProps) => {
+  // Custom comparison function for memo optimization
+  return (
+    prevProps.testimonial.id === nextProps.testimonial.id &&
+    prevProps.variant === nextProps.variant &&
+    prevProps.className === nextProps.className
+  );
+});
+
+// Add display name for debugging
+TestimonialCard.displayName = 'TestimonialCard';
+
+export default TestimonialCard;
