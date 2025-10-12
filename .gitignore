@@ -70,3 +70,8 @@ Thumbs.db
 
 # Local development
 .local/
+
+# Lighthouse reports
+lighthouse-report.html
+lighthouse-report.json
+server.log

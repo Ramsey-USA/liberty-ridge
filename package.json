@@ -13,6 +13,9 @@
     "test": "echo 'Tests will be added in future phases'",
     "lint": "eslint src/js/**/*.js",
     "format": "prettier --write src/**/*.{html,css,js}",
+    "lighthouse:json": "lighthouse http://localhost:3000 --output=json --output-path=./lighthouse-report.json --chrome-flags=\"--headless --no-sandbox --disable-gpu\" --quiet",
+    "lighthouse:html": "lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html --chrome-flags=\"--headless --no-sandbox --disable-gpu\" --quiet",
+    "audit": "echo 'Starting server...' && npm run dev & sleep 8 && echo 'Running Lighthouse audit...' && npm run lighthouse:json && npm run lighthouse:html && echo 'Stopping server...' && pkill -f 'firebase serve' && echo 'Audit complete! Check lighthouse-report.html and lighthouse-report.json'",
     "start": "npm run dev"
   },
   "keywords": [
