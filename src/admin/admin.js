@@ -4,7 +4,7 @@
  */
 
 class AdminDashboard {
-  constructor () {
+  constructor() {
     this.currentUser = null;
     this.currentTab = 'dashboard';
     this.isAuthenticated = false;
@@ -13,7 +13,7 @@ class AdminDashboard {
   /**
    * Initialize the admin dashboard
    */
-  init () {
+  init() {
     this.checkAuthState();
     this.attachEventListeners();
     this.initTheme();
@@ -22,7 +22,7 @@ class AdminDashboard {
   /**
    * Check authentication state on page load
    */
-  checkAuthState () {
+  checkAuthState() {
     // Check for demo login state in localStorage
     const demoLogin = localStorage.getItem('admin-demo-login');
 
@@ -36,7 +36,7 @@ class AdminDashboard {
   /**
    * Attach event listeners
    */
-  attachEventListeners () {
+  attachEventListeners() {
     // Login form
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
@@ -78,7 +78,7 @@ class AdminDashboard {
   /**
    * Handle login form submission
    */
-  async handleLogin (e) {
+  async handleLogin(e) {
     e.preventDefault();
 
     const email = document.getElementById('adminEmail').value;
@@ -108,7 +108,7 @@ class AdminDashboard {
   /**
    * Handle logout
    */
-  handleLogout () {
+  handleLogout() {
     localStorage.removeItem('admin-demo-login');
     this.showAuthScreen();
     this.showNotification('Logged out successfully', 'info');
@@ -117,7 +117,7 @@ class AdminDashboard {
   /**
    * Show authentication screen
    */
-  showAuthScreen () {
+  showAuthScreen() {
     document.getElementById('authScreen').style.display = 'flex';
     document.getElementById('adminDashboard').style.display = 'none';
     this.isAuthenticated = false;
@@ -126,7 +126,7 @@ class AdminDashboard {
   /**
    * Show dashboard
    */
-  showDashboard () {
+  showDashboard() {
     document.getElementById('authScreen').style.display = 'none';
     document.getElementById('adminDashboard').style.display = 'flex';
     this.isAuthenticated = true;
@@ -136,7 +136,7 @@ class AdminDashboard {
   /**
    * Switch between dashboard tabs
    */
-  switchTab (tabName) {
+  switchTab(tabName) {
     this.currentTab = tabName;
 
     // Update navigation active state
@@ -164,7 +164,7 @@ class AdminDashboard {
   /**
    * Load dashboard data
    */
-  loadDashboardData () {
+  loadDashboardData() {
     // Mock data for demonstration
     document.getElementById('totalAppointments').textContent = '24';
     document.getElementById('pendingAppointments').textContent = '6';
@@ -178,7 +178,7 @@ class AdminDashboard {
   /**
    * Load recent activity
    */
-  loadRecentActivity () {
+  loadRecentActivity() {
     const activities = [
       { type: 'appointment', message: 'New consultation booked for Oct 15, 2024', time: '2 hours ago' },
       { type: 'gallery', message: 'New training photo uploaded', time: '4 hours ago' },
@@ -203,7 +203,7 @@ class AdminDashboard {
   /**
    * Load tab-specific data
    */
-  loadTabData (tabName) {
+  loadTabData(tabName) {
     switch (tabName) {
       case 'appointments':
         this.loadAppointments();
@@ -225,7 +225,7 @@ class AdminDashboard {
   /**
    * Load appointments (mock data)
    */
-  loadAppointments () {
+  loadAppointments() {
     const appointments = [
       {
         id: 1,
@@ -272,7 +272,7 @@ class AdminDashboard {
   /**
    * Load gallery items (mock data)
    */
-  loadGalleryItems () {
+  loadGalleryItems() {
     const galleryGrid = document.getElementById('adminGalleryGrid');
     if (galleryGrid) {
       galleryGrid.innerHTML = `
@@ -297,7 +297,7 @@ class AdminDashboard {
   /**
    * Load FAQ items (mock data)
    */
-  loadFAQItems () {
+  loadFAQItems() {
     const faqList = document.getElementById('faqList');
     if (faqList) {
       faqList.innerHTML = `
@@ -316,7 +316,7 @@ class AdminDashboard {
   /**
    * Load contact forms (mock data)
    */
-  loadContactForms () {
+  loadContactForms() {
     const tableBody = document.getElementById('contactTableBody');
     if (tableBody) {
       tableBody.innerHTML = `
@@ -338,7 +338,7 @@ class AdminDashboard {
   /**
    * Attach mock action listeners
    */
-  attachMockActionListeners () {
+  attachMockActionListeners() {
     // Upload media button
     const uploadBtn = document.getElementById('uploadMediaBtn');
     if (uploadBtn) {
@@ -367,18 +367,18 @@ class AdminDashboard {
   /**
    * Mock methods for demo
    */
-  editAppointment (id) {
+  editAppointment(id) {
     this.showNotification(`Edit appointment ${id} functionality would be implemented here`, 'info');
   }
 
-  deleteAppointment (id) {
+  deleteAppointment(id) {
     this.showNotification(`Delete appointment ${id} functionality would be implemented here`, 'warning');
   }
 
   /**
    * Initialize theme
    */
-  initTheme () {
+  initTheme() {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
   }
@@ -386,7 +386,7 @@ class AdminDashboard {
   /**
    * Toggle theme
    */
-  toggleTheme () {
+  toggleTheme() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', newTheme);
@@ -396,7 +396,7 @@ class AdminDashboard {
   /**
    * Show loading state
    */
-  showLoading (show) {
+  showLoading(show) {
     const overlay = document.getElementById('loadingOverlay');
     if (overlay) {
       overlay.style.display = show ? 'flex' : 'none';
@@ -406,7 +406,7 @@ class AdminDashboard {
   /**
    * Show authentication error
    */
-  showAuthError (message) {
+  showAuthError(message) {
     const errorElement = document.getElementById('authError');
     const errorMessageElement = document.getElementById('authErrorMessage');
 
@@ -423,7 +423,7 @@ class AdminDashboard {
   /**
    * Show notification
    */
-  showNotification (message, type = 'info') {
+  showNotification(message, type = 'info') {
     // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
@@ -465,7 +465,7 @@ class AdminDashboard {
   /**
    * Helper methods
    */
-  getActivityIcon (type) {
+  getActivityIcon(type) {
     const icons = {
       appointment: 'event',
       gallery: 'photo_library',
@@ -475,7 +475,7 @@ class AdminDashboard {
     return icons[type] || icons.default;
   }
 
-  getNotificationIcon (type) {
+  getNotificationIcon(type) {
     const icons = {
       success: 'check_circle',
       error: 'error',
@@ -485,7 +485,7 @@ class AdminDashboard {
     return icons[type] || icons.info;
   }
 
-  getNotificationColor (type) {
+  getNotificationColor(type) {
     const colors = {
       success: '#4caf50',
       error: '#f44336',
@@ -498,7 +498,7 @@ class AdminDashboard {
   /**
    * Show upload modal for media files
    */
-  showUploadModal () {
+  showUploadModal() {
     const modal = document.createElement('div');
     modal.className = 'upload-modal';
     modal.innerHTML = `
@@ -570,7 +570,7 @@ class AdminDashboard {
   /**
    * Initialize upload modal functionality
    */
-  initUploadModal (modal) {
+  initUploadModal(modal) {
     const uploadZone = modal.querySelector('#uploadZone');
     const fileInput = modal.querySelector('#fileInput');
     const uploadPreview = modal.querySelector('#uploadPreview');
@@ -617,7 +617,7 @@ class AdminDashboard {
   /**
    * Handle file selection for upload
    */
-  handleFileSelection (files, selectedFiles, previewContainer, submitButton) {
+  handleFileSelection(files, selectedFiles, previewContainer, submitButton) {
     const validFiles = Array.from(files).filter(file => {
       const isImage = file.type.startsWith('image/');
       const isVideo = file.type.startsWith('video/');
@@ -634,7 +634,7 @@ class AdminDashboard {
   /**
    * Update upload preview
    */
-  updateUploadPreview (files, container) {
+  updateUploadPreview(files, container) {
     container.innerHTML = files.map((file, index) => `
       <div class="upload-file-preview" data-index="${index}">
         <div class="file-preview-content">
@@ -657,7 +657,7 @@ class AdminDashboard {
   /**
    * Process file upload
    */
-  async processUpload (files, modal) {
+  async processUpload(files, modal) {
     const progressContainer = modal.querySelector('#uploadProgress');
     const progressFill = modal.querySelector('#progressFill');
     const progressText = modal.querySelector('#progressText');
@@ -689,7 +689,7 @@ class AdminDashboard {
   /**
    * Upload single file to storage
    */
-  async uploadFile (file, category, description) {
+  async uploadFile(file, category, description) {
     // Check if Firebase is available
     if (typeof firebase === 'undefined' || !firebase.storage) {
       throw new Error('Firebase Storage not available');
@@ -778,7 +778,7 @@ class AdminDashboard {
   /**
    * Mock upload for development/testing
    */
-  async mockUpload (file, category, description) {
+  async mockUpload(file, category, description) {
     return new Promise((resolve) => {
       setTimeout(() => {
         const mockResult = {
@@ -807,7 +807,7 @@ class AdminDashboard {
   /**
    * Format file size for display
    */
-  formatFileSize (bytes) {
+  formatFileSize(bytes) {
     if (bytes === 0) return '0 Bytes';
     const k = 1024;
     const sizes = ['Bytes', 'KB', 'MB', 'GB'];
