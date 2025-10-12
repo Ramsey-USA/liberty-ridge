@@ -38,7 +38,7 @@ function initApp () {
   initGallery();
   initScrollEffects();
 
-  console.log('Liberty Ridge Training Grounds - Application initialized');
+  // Application successfully initialized
 }
 
 /**
@@ -298,7 +298,7 @@ async function handleConsultationSubmit (e) {
     // Reset form
     e.target.reset();
   } catch (error) {
-    console.error('Form submission error:', error);
+    // Handle form submission error
     showNotification('There was an error scheduling your consultation. Please try again.', 'error');
   } finally {
     // Restore button state

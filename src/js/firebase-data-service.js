@@ -9,7 +9,7 @@ let db, storage;
 window.addEventListener('firebaseReady', (event) => {
   db = event.detail.db;
   storage = event.detail.storage;
-  console.log('🔥 Firebase Data Service initialized');
+  // console.log('🔥 Firebase Data Service initialized');
 });
 
 // Helper function to ensure Firebase is ready
@@ -52,7 +52,7 @@ export const appointmentService = {
 
       return { id: docRef.id, ...appointment };
     } catch (error) {
-      console.error('Error creating appointment:', error);
+      // console.error('Error creating appointment:', error);
       throw error;
     }
   },
@@ -81,7 +81,7 @@ export const appointmentService = {
         ...doc.data()
       }));
     } catch (error) {
-      console.error('Error getting appointments by date:', error);
+      // console.error('Error getting appointments by date:', error);
       throw error;
     }
   },
@@ -102,7 +102,7 @@ export const appointmentService = {
         ...doc.data()
       }));
     } catch (error) {
-      console.error('Error getting all appointments:', error);
+      // console.error('Error getting all appointments:', error);
       throw error;
     }
   },
@@ -119,7 +119,7 @@ export const appointmentService = {
         updatedAt: firebase.firestore.FieldValue.serverTimestamp()
       });
     } catch (error) {
-      console.error('Error updating appointment status:', error);
+      // console.error('Error updating appointment status:', error);
       throw error;
     }
   },
@@ -156,9 +156,9 @@ export const appointmentService = {
         throw new Error(`HighLevel webhook failed: ${response.statusText}`);
       }
 
-      console.log('Successfully sent to HighLevel CRM');
+      // console.log('Successfully sent to HighLevel CRM');
     } catch (error) {
-      console.error('Error sending to HighLevel:', error);
+      // console.error('Error sending to HighLevel:', error);
       // Don't throw error here - appointment should still be saved
     }
   }
@@ -184,7 +184,7 @@ export const galleryService = {
         ...doc.data()
       }));
     } catch (error) {
-      console.error('Error getting gallery items:', error);
+      // console.error('Error getting gallery items:', error);
       throw error;
     }
   },
@@ -206,7 +206,7 @@ export const galleryService = {
         ...doc.data()
       }));
     } catch (error) {
-      console.error('Error getting gallery items by type:', error);
+      // console.error('Error getting gallery items by type:', error);
       throw error;
     }
   },
@@ -252,7 +252,7 @@ export const galleryService = {
 
       return { id: docRef.id, ...galleryItem };
     } catch (error) {
-      console.error('Error uploading media:', error);
+      // console.error('Error uploading media:', error);
       throw error;
     }
   },
@@ -279,7 +279,7 @@ export const galleryService = {
       // Delete from Firestore
       await deleteDoc(doc(db, 'gallery', itemId));
     } catch (error) {
-      console.error('Error deleting gallery item:', error);
+      // console.error('Error deleting gallery item:', error);
       throw error;
     }
   }
@@ -305,7 +305,7 @@ export const faqService = {
         ...doc.data()
       }));
     } catch (error) {
-      console.error('Error getting FAQ items:', error);
+      // console.error('Error getting FAQ items:', error);
       throw error;
     }
   },
@@ -327,7 +327,7 @@ export const faqService = {
         ...doc.data()
       }));
     } catch (error) {
-      console.error('Error getting FAQ by category:', error);
+      // console.error('Error getting FAQ by category:', error);
       throw error;
     }
   },
@@ -346,7 +346,7 @@ export const faqService = {
       const docRef = await addDoc(collection(db, 'faq'), faq);
       return { id: docRef.id, ...faq };
     } catch (error) {
-      console.error('Error creating FAQ:', error);
+      // console.error('Error creating FAQ:', error);
       throw error;
     }
   },
@@ -362,7 +362,7 @@ export const faqService = {
         updatedAt: serverTimestamp()
       });
     } catch (error) {
-      console.error('Error updating FAQ:', error);
+      // console.error('Error updating FAQ:', error);
       throw error;
     }
   },
@@ -374,7 +374,7 @@ export const faqService = {
     try {
       await deleteDoc(doc(db, 'faq', faqId));
     } catch (error) {
-      console.error('Error deleting FAQ:', error);
+      // console.error('Error deleting FAQ:', error);
       throw error;
     }
   }
@@ -403,7 +403,7 @@ export const availableSlotsService = {
         ...doc.data()
       }));
     } catch (error) {
-      console.error('Error getting available slots:', error);
+      // console.error('Error getting available slots:', error);
       throw error;
     }
   },
@@ -425,7 +425,7 @@ export const availableSlotsService = {
 
       await Promise.all(promises);
     } catch (error) {
-      console.error('Error creating available slots:', error);
+      // console.error('Error creating available slots:', error);
       throw error;
     }
   },
@@ -451,7 +451,7 @@ export const availableSlotsService = {
         });
       }
     } catch (error) {
-      console.error('Error marking slot as booked:', error);
+      // console.error('Error marking slot as booked:', error);
       throw error;
     }
   }
@@ -479,7 +479,7 @@ export const contactService = {
 
       return { id: docRef.id, ...contact };
     } catch (error) {
-      console.error('Error submitting contact form:', error);
+      // console.error('Error submitting contact form:', error);
       throw error;
     }
   },
@@ -490,9 +490,9 @@ export const contactService = {
   async sendNotificationEmail (contactData) {
     try {
       // This would integrate with a service like SendGrid, EmailJS, etc.
-      console.log('Contact form submission notification:', contactData);
+      // console.log('Contact form submission notification:', contactData);
     } catch (error) {
-      console.error('Error sending notification email:', error);
+      // console.error('Error sending notification email:', error);
     }
   }
 };
@@ -514,7 +514,7 @@ export const analyticsService = {
 
       await addDoc(collection(db, 'chatbot_logs'), log);
     } catch (error) {
-      console.error('Error logging chatbot interaction:', error);
+      // console.error('Error logging chatbot interaction:', error);
     }
   },
 

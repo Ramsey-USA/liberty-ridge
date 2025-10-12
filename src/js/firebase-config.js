@@ -24,62 +24,95 @@ const isLocalhost = window.location.hostname === 'localhost' ||
 // Initialize Firebase (using global variables from CDN)
 let app, auth, db, storage, analytics;
 
+// Helper function to wait for Firebase to load
+function waitForFirebase(maxAttempts = 50, interval = 100) {
+  return new Promise((resolve) => {
+    let attempts = 0;
+    const checkFirebase = () => {
+      attempts++;
+      if (typeof firebase !== 'undefined' && firebase.initializeApp) {
+        resolve(true);
+      } else if (attempts < maxAttempts) {
+        setTimeout(checkFirebase, interval);
+      } else {
+        console.warn('Firebase not loaded after maximum attempts');
+        resolve(false);
+      }
+    };
+    checkFirebase();
+  });
+}
+
 // Initialize Firebase when the page loads
 document.addEventListener('DOMContentLoaded', async () => {
-  if (typeof firebase !== 'undefined') {
-    // Initialize Firebase
-    app = firebase.initializeApp(firebaseConfig);
-    auth = firebase.auth();
-    db = firebase.firestore();
-    storage = firebase.storage();
+  try {
+    // Wait for Firebase to be available (handle async script loading)
+    const firebaseLoaded = await waitForFirebase();
+    
+    if (firebaseLoaded && typeof firebase !== 'undefined' && firebase.initializeApp) {
+      // Initialize Firebase
+      app = firebase.initializeApp(firebaseConfig);
+      auth = firebase.auth();
+      db = firebase.firestore();
+      storage = firebase.storage();
 
-    // Initialize Analytics (only in production)
-    if (!isLocalhost && firebase.analytics) {
-      try {
-        analytics = firebase.analytics();
-      } catch (error) {
-        console.warn('Analytics initialization failed:', error);
+      // Initialize Analytics (only in production)
+      if (!isLocalhost && firebase.analytics) {
+        try {
+          analytics = firebase.analytics();
+        } catch (error) {
+          console.warn('Analytics initialization failed:', error.message);
+        }
       }
-    }
 
-    // Connect to emulators in development
-    if (isLocalhost) {
-      console.log('🔧 Development mode: Connecting to Firebase emulators');
+      // Connect to emulators in development
+      if (isLocalhost) {
+        console.log('🔧 Development mode: Connecting to Firebase emulators');
 
-      try {
-        // Connect to Auth emulator
-        auth.useEmulator('http://localhost:9099');
+        try {
+          // Connect to Auth emulator
+          auth.useEmulator('http://localhost:9099');
 
-        // Connect to Firestore emulator
-        db.useEmulator('localhost', 8080);
+          // Connect to Firestore emulator
+          db.useEmulator('localhost', 8080);
 
-        // Connect to Storage emulator
-        storage.useEmulator('localhost', 9199);
+          // Connect to Storage emulator
+          storage.useEmulator('localhost', 9199);
 
-        console.log('✅ Connected to Firebase emulators');
-      } catch (error) {
-        console.warn('⚠️ Emulator connection failed (this is normal if emulators are not running):', error.message);
+          console.log('✅ Connected to Firebase emulators');
+        } catch (error) {
+          console.warn('⚠️ Emulator connection failed (this is normal if emulators are not running):', error.message);
+        }
       }
+
+      console.log('🔥 Firebase initialized successfully');
+
+      // Trigger custom event that Firebase is ready
+      window.dispatchEvent(new CustomEvent('firebaseReady', {
+        detail: { app, auth, db, storage, analytics }
+      }));
+    } else {
+      console.warn('Firebase SDK not available. Running in offline mode.');
+      // Trigger event for offline mode
+      window.dispatchEvent(new CustomEvent('firebaseOffline'));
     }
-
-    console.log('🔥 Firebase initialized successfully');
-
-    // Trigger custom event that Firebase is ready
-    window.dispatchEvent(new CustomEvent('firebaseReady', {
-      detail: { app, auth, db, storage, analytics }
+  } catch (error) {
+    console.error('Firebase initialization failed:', error.message);
+    // Trigger event that Firebase failed to initialize
+    window.dispatchEvent(new CustomEvent('firebaseError', {
+      detail: { error: error.message }
     }));
-  } else {
-    console.error('Firebase SDK not loaded. Make sure to include Firebase CDN scripts.');
   }
 });
 
-// Firebase service functions
+// Firebase service functions with fallbacks
 export const firebaseServices = {
-  get app () { return app; },
-  get auth () { return auth; },
-  get db () { return db; },
-  get storage () { return storage; },
-  get analytics () { return analytics; }
+  get app () { return app || null; },
+  get auth () { return auth || null; },
+  get db () { return db || null; },
+  get storage () { return storage || null; },
+  get analytics () { return analytics || null; },
+  get isInitialized () { return !!app; }
 };
 
 // Authentication helpers
@@ -100,7 +133,7 @@ export const authHelpers = {
       const idTokenResult = await auth.currentUser.getIdTokenResult();
       return idTokenResult.claims.admin === true;
     } catch (error) {
-      console.error('Error checking admin status:', error);
+      // console.error('Error checking admin status:', error);
       return false;
     }
   },
@@ -285,7 +318,7 @@ if (isLocalhost) {
     config
   };
 
-  console.log('🔥 Firebase services available in window.firebase for debugging');
+  // console.log('🔥 Firebase services available in window.firebase for debugging');
 }
 
 // Export default configuration

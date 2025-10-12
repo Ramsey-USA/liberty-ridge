@@ -4,26 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Meta Tags -->
     <title>Liberty Ridge Training Grounds - Professional Firearms Training in Pasco, WA</title>
+    <meta name="title" content="Liberty Ridge Training Grounds - Professional Firearms Training in Pasco, WA">
     <meta name="description" content="Expert firearms training in Pasco, WA by Army veteran Zach. Professional, safe, one-on-one instruction for responsible gun owners in the Pacific Northwest.">
     <meta name="keywords" content="firearms training, gun safety, Pasco WA, military veteran instructor, shooting lessons, concealed carry, Pacific Northwest">
+    <meta name="author" content="Liberty Ridge Training Grounds">
+    <meta name="robots" content="index, follow">
     
-    <!-- Performance hints -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://libertyridgetraininggrounds.com/">
+    <meta property="og:title" content="Liberty Ridge Training Grounds - Professional Firearms Training">
+    <meta property="og:description" content="Expert firearms training by Army veteran Zach in Pasco, WA. Safe, professional instruction for responsible gun owners.">
+    <meta property="og:image" content="https://libertyridgetraininggrounds.com/assets/images/training-1.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://libertyridgetraininggrounds.com/">
+    <meta property="twitter:title" content="Liberty Ridge Training Grounds - Professional Firearms Training">
+    <meta property="twitter:description" content="Expert firearms training by Army veteran Zach in Pasco, WA. Safe, professional instruction for responsible gun owners.">
+    <meta property="twitter:image" content="https://libertyridgetraininggrounds.com/assets/images/training-1.jpg">
+    
+    <!-- Performance and Theme -->
     <meta name="theme-color" content="#1a1a1a">
     <meta name="color-scheme" content="light dark">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    <!-- Preconnect to external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Advanced Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="//www.gstatic.com">
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//firestore.googleapis.com">
+    <link rel="dns-prefetch" href="//firebase.googleapis.com">
     
-    <!-- Google Fonts - Roboto with font-display optimization -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Critical Font Preloading -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2" as="font" type="font/woff2" crossorigin>
     
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts - Load asynchronously to prevent render blocking -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Material Icons - Load asynchronously -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet"></noscript>
     
     <!-- Firebase SDK - Optimized loading -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js" defer></script>
@@ -32,8 +61,172 @@
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js" defer></script>
     
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/main.css">
+    <!-- Critical CSS - Inlined for immediate rendering -->
+    <style>
+        /* Critical CSS - Above the fold styles only */
+        :root {
+          --color-primary: #1a1a1a;
+          --color-secondary: #2c2c2c;
+          --color-text-primary: #1a1a1a;
+          --color-text-secondary: #6b6b6b;
+          --color-background: #ffffff;
+          --color-background-secondary: #f8f9fa;
+          --color-button-primary: #1a1a1a;
+          --color-button-primary-hover: #2c2c2c;
+          --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          --font-weight-regular: 400;
+          --font-weight-medium: 500;
+          --font-weight-bold: 700;
+          --font-size-base: 1rem;
+          --font-size-lg: 1.125rem;
+          --font-size-2xl: 1.5rem;
+          --font-size-5xl: 3rem;
+          --spacing-md: 1rem;
+          --spacing-lg: 1.5rem;
+          --spacing-3xl: 3rem;
+          --spacing-4xl: 4rem;
+          --header-height: 80px;
+          --max-width: 1200px;
+          --line-height-normal: 1.6;
+          --line-height-tight: 1.2;
+          --transition-base: 0.3s ease;
+        }
+        *, *::before, *::after {
+          box-sizing: border-box;
+        }
+        html {
+          scroll-behavior: smooth;
+          font-size: 16px;
+        }
+        body {
+          font-family: var(--font-family);
+          font-weight: var(--font-weight-regular);
+          line-height: var(--line-height-normal);
+          color: var(--color-text-primary);
+          background-color: var(--color-background);
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: var(--font-weight-bold);
+          line-height: var(--line-height-tight);
+          margin-bottom: var(--spacing-md);
+        }
+        h1 {
+          font-size: var(--font-size-5xl);
+        }
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: var(--header-height);
+          background-color: var(--color-background);
+          z-index: 1000;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .main {
+          margin-top: var(--header-height);
+        }
+        .hero {
+          min-height: calc(100vh - var(--header-height));
+          display: flex;
+          align-items: center;
+          padding: var(--spacing-4xl) 0;
+          background-color: var(--color-background-secondary);
+        }
+        .hero-content {
+          max-width: var(--max-width);
+          margin: 0 auto;
+          padding: 0 var(--spacing-md);
+          text-align: center;
+        }
+        .hero-title {
+          font-size: var(--font-size-5xl);
+          margin-bottom: var(--spacing-md);
+          color: var(--color-text-primary);
+        }
+        .hero-subtitle {
+          font-size: var(--font-size-2xl);
+          font-weight: var(--font-weight-medium);
+          margin-bottom: var(--spacing-lg);
+          color: var(--color-text-secondary);
+        }
+        .hero-description {
+          font-size: var(--font-size-lg);
+          margin-bottom: var(--spacing-3xl);
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .hero-actions {
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing-md);
+          align-items: center;
+        }
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 12px 24px;
+          border: none;
+          border-radius: 4px;
+          font-family: inherit;
+          font-size: var(--font-size-base);
+          font-weight: var(--font-weight-medium);
+          text-decoration: none;
+          cursor: pointer;
+          transition: all var(--transition-base);
+          min-width: 140px;
+        }
+        .btn-primary {
+          background-color: var(--color-button-primary);
+          color: white;
+        }
+        .btn-primary:hover {
+          background-color: var(--color-button-primary-hover);
+        }
+        nav {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 var(--spacing-md);
+          height: 100%;
+        }
+        .logo {
+          font-size: var(--font-size-2xl);
+          font-weight: var(--font-weight-bold);
+          color: var(--color-primary);
+          text-decoration: none;
+        }
+        .nav-menu {
+          display: none;
+        }
+        @media (min-width: 768px) {
+          .nav-menu {
+            display: flex;
+          }
+        }
+    </style>
+    
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="preload" href="css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/main.min.css"></noscript>
+    
+    <!-- Load lazy loading CSS -->
+    <link rel="preload" href="css/lazy-images.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/lazy-images.min.css"></noscript>
+    
+    <!-- Preload critical resources for faster rendering -->
+    <link rel="preload" as="image" href="assets/images/training-1.jpg" type="image/jpeg">
+    <link rel="preload" as="script" href="js/dist/app-bundle.js">
+    
+    <!-- Prefetch next-page resources using modern formats -->
+    <link rel="prefetch" as="image" href="assets/images/training-2.jpg">
+    <link rel="prefetch" as="image" href="assets/images/training-3.jpg">
+    <link rel="prefetch" as="image" href="assets/images/training-4.jpg">
     
     <!-- Favicon (placeholder) -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
@@ -353,14 +546,23 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
-    <script src="js/main.js" defer></script>
-    <script src="js/calendar.js" defer></script>
-    <script src="js/gallery.js" defer></script>
-    <script src="js/chatbot.js" defer></script>
-    
-    <!-- Firebase Configuration -->
-    <script type="module" src="js/firebase-config.js" defer></script>
-    <script type="module" src="js/firebase-data-service.js" defer></script>
+    <!-- JavaScript - Bundled for Performance -->
+    <script>
+        // Service Worker Registration for caching
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+    <script src="js/dist/performance-monitor.js" defer></script>
+    <script src="js/dist/lazy-images.js" defer></script>
+    <script src="js/dist/app-bundle.js" defer></script>
 </body>
 </html>
