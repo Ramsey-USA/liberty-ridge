@@ -3,32 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Liberty Ridge Training Grounds - Professional Firearms Training in Pasco, WA</title>
     <meta name="description" content="Expert firearms training in Pasco, WA by Army veteran Zach. Professional, safe, one-on-one instruction for responsible gun owners in the Pacific Northwest.">
     <meta name="keywords" content="firearms training, gun safety, Pasco WA, military veteran instructor, shooting lessons, concealed carry, Pacific Northwest">
     
+    <!-- Performance hints -->
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="color-scheme" content="light dark">
+    
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//www.gstatic.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     
-    <!-- Google Fonts - Roboto -->
+    <!-- Google Fonts - Roboto with font-display optimization -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
+    <!-- Firebase SDK - Optimized loading -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js" defer></script>
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/main.css">
     
     <!-- Favicon (placeholder) -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Liberty Ridge Training Grounds",
+      "description": "Professional firearms training by Army veteran Zach in Pasco, WA",
+      "url": "https://www.libertyridgetraininggrounds.com",
+      "telephone": "(555) 123-4567",
+      "email": "info@libertyridgetraininggrounds.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pasco",
+        "addressRegion": "WA",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "46.2396",
+        "longitude": "-119.1006"
+      },
+      "openingHours": "Mo-Sa 09:00-18:00",
+      "serviceType": "Firearms Training",
+      "priceRange": "$$"
+    }
+    </script>
 </head>
 <body>
     <!-- Persistent Header -->
@@ -319,13 +354,13 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
-    <script src="js/calendar.js"></script>
-    <script src="js/gallery.js"></script>
-    <script src="js/chatbot.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/calendar.js" defer></script>
+    <script src="js/gallery.js" defer></script>
+    <script src="js/chatbot.js" defer></script>
     
     <!-- Firebase Configuration -->
-    <script type="module" src="js/firebase-config.js"></script>
-    <script type="module" src="js/firebase-data-service.js"></script>
+    <script type="module" src="js/firebase-config.js" defer></script>
+    <script type="module" src="js/firebase-data-service.js" defer></script>
 </body>
 </html>
