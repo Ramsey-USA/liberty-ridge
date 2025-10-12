@@ -1,0 +1,6 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#e0e0e0"/>
+  <circle cx="200" cy="150" r="30" fill="#666"/>
+  <polygon points="190,135 210,135 200,165" fill="white"/>
+  <text x="50%" y="80%" text-anchor="middle" dy=".3em" font-family="Arial, sans-serif" font-size="14" fill="#666">Training Video</text>
+</svg>

@@ -1,0 +1,73 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public read access for FAQ data
+    match /faq/{document} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+    
+    // Gallery images and videos - public read, admin write
+    match /gallery/{document} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+    
+    // Consultation appointments - restricted access
+    match /appointments/{document} {
+      allow read: if request.auth != null && 
+        (request.auth.uid == resource.data.userId || request.auth.token.admin == true);
+      allow create: if request.auth != null || 
+        (resource == null && validateAppointmentData(request.resource.data));
+      allow update: if request.auth != null && request.auth.token.admin == true;
+      allow delete: if request.auth != null && request.auth.token.admin == true;
+    }
+    
+    // Admin settings and configuration
+    match /admin/{document} {
+      allow read, write: if request.auth != null && request.auth.token.admin == true;
+    }
+    
+    // Contact form submissions
+    match /contact/{document} {
+      allow create: if validateContactData(request.resource.data);
+      allow read, update, delete: if request.auth != null && request.auth.token.admin == true;
+    }
+    
+    // User profiles (for registered users)
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read: if request.auth != null && request.auth.token.admin == true;
+    }
+    
+    // Chatbot conversation logs (optional analytics)
+    match /chatbot_logs/{document} {
+      allow create: if true; // Allow anonymous logging
+      allow read: if request.auth != null && request.auth.token.admin == true;
+    }
+    
+    // Available time slots for booking
+    match /available_slots/{document} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+  }
+}
+
+// Validation functions
+function validateAppointmentData(data) {
+  return data.keys().hasAll(['name', 'email', 'phone', 'date', 'time', 'experience']) &&
+         data.name is string && data.name.size() > 0 &&
+         data.email is string && data.email.matches('.*@.*\\..*') &&
+         data.phone is string && data.phone.size() > 0 &&
+         data.date is timestamp &&
+         data.time is string &&
+         data.experience in ['beginner', 'basic', 'intermediate', 'advanced'];
+}
+
+function validateContactData(data) {
+  return data.keys().hasAll(['name', 'email', 'message']) &&
+         data.name is string && data.name.size() > 0 &&
+         data.email is string && data.email.matches('.*@.*\\..*') &&
+         data.message is string && data.message.size() > 0;
+}

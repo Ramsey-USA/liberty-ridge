@@ -6,7 +6,7 @@ The core mission of this platform is to promote safe, professional, and comprehe
 
 ## Project Description
 
-This repository contains the source code for the official website of Liberty Ridge Training Grounds. The platform is designed for instructor Zach, an Army veteran, to connect with individuals seeking expert firearms training. The website&apos;s primary goal is to convert visitors into scheduled consultations and seamlessly manage those leads through an integrated CRM system. The official domain for this project is [www.libertyridgetraininggrounds.com](https://www.libertyridgetraininggrounds.com).
+This repository contains the source code for the official website of Liberty Ridge Training Grounds. The platform is designed for instructor Zach, an Army veteran, to connect with individuals seeking expert firearms training. The website's primary goal is to convert visitors into scheduled consultations and seamlessly manage those leads through an integrated CRM system. The official domain for this project is [www.libertyridgetraininggrounds.com](https://www.libertyridgetraininggrounds.com).
 
 ## Core Features
 
@@ -77,7 +77,7 @@ The domain `libertyridgetraininggrounds.com` is registered. DNS records must be 
 
 ### Firebase Setup
 
-Initialize a Firebase project and enable Authentication, Firestore, and Cloud Storage. Add the Firebase config keys to the project&apos;s environment variables.
+Initialize a Firebase project and enable Authentication, Firestore, and Cloud Storage. Add the Firebase config keys to the project's environment variables.
 
 ### HighLevel Integration
 

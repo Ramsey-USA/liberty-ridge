@@ -1,0 +1,106 @@
+{
+  "name": "liberty-ridge-training-grounds",
+  "version": "1.0.0",
+  "description": "Professional firearms training platform for Liberty Ridge Training Grounds in Pasco, WA",
+  "main": "src/index.html",
+  "scripts": {
+    "dev": "firebase serve --port 3000",
+    "build": "npm run copy-assets && npm run optimize",
+    "copy-assets": "cp -r src/assets public/ 2>/dev/null || true",
+    "optimize": "echo 'Optimization step - can be expanded with build tools'",
+    "deploy": "firebase deploy",
+    "emulator": "firebase emulators:start",
+    "test": "echo 'Tests will be added in future phases'",
+    "lint": "eslint src/js/**/*.js",
+    "format": "prettier --write src/**/*.{html,css,js}",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "firearms-training",
+    "gun-safety",
+    "military-veteran",
+    "pasco-wa",
+    "pacific-northwest",
+    "shooting-instruction",
+    "concealed-carry",
+    "marksmanship"
+  ],
+  "author": "Liberty Ridge Training Grounds",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ramsey-USA/liberty-ridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ramsey-USA/liberty-ridge/issues"
+  },
+  "homepage": "https://www.libertyridgetraininggrounds.com",
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "eslint": "^8.57.1",
+    "eslint-config-standard": "^17.0.0",
+    "firebase-tools": "^12.0.0",
+    "globals": "^16.4.0",
+    "prettier": "^3.0.0"
+  },
+  "dependencies": {
+    "firebase": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "standard"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "globals": {
+      "firebase": "readonly",
+      "doc": "readonly",
+      "collection": "readonly",
+      "addDoc": "readonly",
+      "updateDoc": "readonly",
+      "deleteDoc": "readonly",
+      "getDocs": "readonly",
+      "getDoc": "readonly",
+      "query": "readonly",
+      "where": "readonly",
+      "orderBy": "readonly",
+      "limit": "readonly",
+      "serverTimestamp": "readonly",
+      "Timestamp": "readonly",
+      "ref": "readonly",
+      "deleteObject": "readonly"
+    },
+    "rules": {
+      "no-console": "warn",
+      "no-unused-vars": "error",
+      "prefer-const": "error",
+      "semi": [
+        "error",
+        "always"
+      ]
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "printWidth": 100
+  }
+}
