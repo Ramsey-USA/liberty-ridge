@@ -1,6 +1,7 @@
 # Firebase Storage Integration Guide
 
 ## Overview
+
 This guide shows how to integrate Firebase Storage for production media uploads on the Liberty Ridge website.
 
 ---
@@ -12,6 +13,7 @@ This guide shows how to integrate Firebase Storage for production media uploads 
 Update `src/js/firebase-config.js` to include Storage:
 
 ```javascript
+
 // Import Firebase Storage
 import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 
@@ -20,6 +22,7 @@ const storage = getStorage(app);
 
 // Export storage for use in other files
 export { storage, ref, uploadBytes, getDownloadURL, deleteObject };
+
 ```
 
 ### **2. Upload Service Implementation**
@@ -27,6 +30,7 @@ export { storage, ref, uploadBytes, getDownloadURL, deleteObject };
 Create `src/js/firebase-upload-service.js`:
 
 ```javascript
+
 import { storage, ref, uploadBytes, getDownloadURL } from './firebase-config.js';
 import { db, collection, addDoc, serverTimestamp } from './firebase-config.js';
 
@@ -37,7 +41,9 @@ class FirebaseUploadService {
   }
 
   /**
+
    * Upload file to Firebase Storage
+
    */
   async uploadFile(file, category, description) {
     try {
@@ -78,7 +84,9 @@ class FirebaseUploadService {
   }
 
   /**
+
    * Get all media files
+
    */
   async getMediaFiles(category = null) {
     try {
@@ -101,7 +109,9 @@ class FirebaseUploadService {
   }
 
   /**
+
    * Delete file from storage and database
+
    */
   async deleteFile(fileId, filePath) {
     try {
@@ -121,6 +131,7 @@ class FirebaseUploadService {
 }
 
 export default new FirebaseUploadService();
+
 ```
 
 ### **3. Update Admin Upload Function**
@@ -128,8 +139,11 @@ export default new FirebaseUploadService();
 Update `src/admin/admin.js` uploadFile method:
 
 ```javascript
+
 /**
+
  * Upload single file to Firebase Storage
+
  */
 async uploadFile(file, category, description) {
   try {
@@ -146,6 +160,7 @@ async uploadFile(file, category, description) {
     throw error;
   }
 }
+
 ```
 
 ---
@@ -157,6 +172,7 @@ async uploadFile(file, category, description) {
 Update `storage.rules`:
 
 ```javascript
+
 rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
@@ -191,6 +207,7 @@ service firebase.storage {
     }
   }
 }
+
 ```
 
 ### **Firestore Rules**
@@ -198,6 +215,7 @@ service firebase.storage {
 Update `firestore.rules`:
 
 ```javascript
+
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -210,6 +228,7 @@ service cloud.firestore {
     // Existing rules...
   }
 }
+
 ```
 
 ---
@@ -221,8 +240,11 @@ service cloud.firestore {
 Modify `src/js/gallery.js` to use Firebase:
 
 ```javascript
+
 /**
+
  * Load photos from Firebase
+
  */
 async loadPhotos() {
   try {
@@ -247,7 +269,9 @@ async loadPhotos() {
 }
 
 /**
+
  * Load videos from Firebase
+
  */
 async loadVideos() {
   try {
@@ -267,6 +291,7 @@ async loadVideos() {
     this.updateLoadingState();
   }
 }
+
 ```
 
 ---
@@ -276,27 +301,37 @@ async loadVideos() {
 ### **1. Firebase Project Setup**
 
 ```bash
+
 # Install Firebase CLI
+
 npm install -g firebase-tools
 
 # Login to Firebase
+
 firebase login
 
 # Initialize Firebase in project
+
 firebase init
 
 # Select Storage and Firestore
+
 # Configure rules and indexes
+
 ```
 
 ### **2. Deploy Storage Rules**
 
 ```bash
+
 # Deploy storage rules
+
 firebase deploy --only storage
 
 # Deploy Firestore rules
+
 firebase deploy --only firestore:rules
+
 ```
 
 ### **3. Environment Variables**
@@ -304,20 +339,25 @@ firebase deploy --only firestore:rules
 Create `.env.production`:
 
 ```env
+
 VITE_FIREBASE_API_KEY=your_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
 VITE_FIREBASE_PROJECT_ID=your_project_id
 VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
 VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
+
 ```
 
 ### **4. Full Deployment**
 
 ```bash
+
 # Build and deploy everything
+
 npm run build
 firebase deploy
+
 ```
 
 ---

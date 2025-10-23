@@ -57,10 +57,12 @@ class AdminDashboard {
 
     // Tab navigation
     const adminNavLinks = document.querySelectorAll('.admin-nav-link');
-    adminNavLinks.forEach(link => {
+    adminNavLinks.forEach((link) => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        const tab = e.target.getAttribute('data-tab') || e.target.closest('.admin-nav-link').getAttribute('data-tab');
+        const tab =
+          e.target.getAttribute('data-tab') ||
+          e.target.closest('.admin-nav-link').getAttribute('data-tab');
         this.switchTab(tab);
       });
     });
@@ -88,7 +90,7 @@ class AdminDashboard {
 
     try {
       // Simulate authentication delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
       // Demo login - accept any email/password for now
       if (email && password) {
@@ -140,7 +142,7 @@ class AdminDashboard {
     this.currentTab = tabName;
 
     // Update navigation active state
-    document.querySelectorAll('.admin-nav-link').forEach(link => {
+    document.querySelectorAll('.admin-nav-link').forEach((link) => {
       link.classList.remove('active');
       if (link.getAttribute('data-tab') === tabName) {
         link.classList.add('active');
@@ -148,7 +150,7 @@ class AdminDashboard {
     });
 
     // Show/hide tab content
-    document.querySelectorAll('.admin-tab').forEach(tab => {
+    document.querySelectorAll('.admin-tab').forEach((tab) => {
       tab.classList.remove('active');
     });
 
@@ -180,14 +182,20 @@ class AdminDashboard {
    */
   loadRecentActivity() {
     const activities = [
-      { type: 'appointment', message: 'New consultation booked for Oct 15, 2024', time: '2 hours ago' },
+      {
+        type: 'appointment',
+        message: 'New consultation booked for Oct 15, 2024',
+        time: '2 hours ago'
+      },
       { type: 'gallery', message: 'New training photo uploaded', time: '4 hours ago' },
       { type: 'contact', message: 'Contact form submitted by Sarah Johnson', time: '6 hours ago' },
       { type: 'appointment', message: 'Appointment confirmed for Oct 14, 2024', time: '1 day ago' }
     ];
 
     const activityContainer = document.getElementById('recentActivity');
-    activityContainer.innerHTML = activities.map(activity => `
+    activityContainer.innerHTML = activities
+      .map(
+        (activity) => `
       <div class="activity-item">
         <div class="activity-icon">
           <span class="material-icons">${this.getActivityIcon(activity.type)}</span>
@@ -197,7 +205,9 @@ class AdminDashboard {
           <span class="activity-time">${activity.time}</span>
         </div>
       </div>
-    `).join('');
+    `
+      )
+      .join('');
   }
 
   /**
@@ -251,7 +261,9 @@ class AdminDashboard {
 
     const tableBody = document.getElementById('appointmentsTableBody');
     if (tableBody) {
-      tableBody.innerHTML = appointments.map(appointment => `
+      tableBody.innerHTML = appointments
+        .map(
+          (appointment) => `
         <tr>
           <td>${appointment.date}</td>
           <td>${appointment.time}</td>
@@ -265,7 +277,9 @@ class AdminDashboard {
             <button class="btn btn-sm btn-danger" onclick="adminDashboard.deleteAppointment(${appointment.id})">Delete</button>
           </td>
         </tr>
-      `).join('');
+      `
+        )
+        .join('');
     }
   }
 
@@ -372,7 +386,10 @@ class AdminDashboard {
   }
 
   deleteAppointment(id) {
-    this.showNotification(`Delete appointment ${id} functionality would be implemented here`, 'warning');
+    this.showNotification(
+      `Delete appointment ${id} functionality would be implemented here`,
+      'warning'
+    );
   }
 
   /**
@@ -583,7 +600,9 @@ class AdminDashboard {
 
     // File selection handlers
     uploadZone.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', (e) => this.handleFileSelection(e.target.files, selectedFiles, uploadPreview, uploadSubmit));
+    fileInput.addEventListener('change', (e) =>
+      this.handleFileSelection(e.target.files, selectedFiles, uploadPreview, uploadSubmit)
+    );
 
     // Drag and drop handlers
     uploadZone.addEventListener('dragover', (e) => {
@@ -607,7 +626,7 @@ class AdminDashboard {
     });
 
     // Close handlers
-    [closeBtn, cancelBtn, backdrop].forEach(element => {
+    [closeBtn, cancelBtn, backdrop].forEach((element) => {
       element.addEventListener('click', () => {
         document.body.removeChild(modal);
       });
@@ -618,10 +637,11 @@ class AdminDashboard {
    * Handle file selection for upload
    */
   handleFileSelection(files, selectedFiles, previewContainer, submitButton) {
-    const validFiles = Array.from(files).filter(file => {
+    const validFiles = Array.from(files).filter((file) => {
       const isImage = file.type.startsWith('image/');
       const isVideo = file.type.startsWith('video/');
-      const isValidSize = (isImage && file.size <= 10 * 1024 * 1024) || (isVideo && file.size <= 100 * 1024 * 1024);
+      const isValidSize =
+        (isImage && file.size <= 10 * 1024 * 1024) || (isVideo && file.size <= 100 * 1024 * 1024);
 
       return (isImage || isVideo) && isValidSize;
     });
@@ -635,12 +655,15 @@ class AdminDashboard {
    * Update upload preview
    */
   updateUploadPreview(files, container) {
-    container.innerHTML = files.map((file, index) => `
+    container.innerHTML = files
+      .map(
+        (file, index) => `
       <div class="upload-file-preview" data-index="${index}">
         <div class="file-preview-content">
-          ${file.type.startsWith('image/')
-            ? `<img src="${URL.createObjectURL(file)}" alt="${file.name}" class="preview-image">`
-            : '<div class="preview-video"><span class="material-icons">videocam</span></div>'
+          ${
+            file.type.startsWith('image/')
+              ? `<img src="${URL.createObjectURL(file)}" alt="${file.name}" class="preview-image">`
+              : '<div class="preview-video"><span class="material-icons">videocam</span></div>'
           }
         </div>
         <div class="file-preview-info">
@@ -651,7 +674,9 @@ class AdminDashboard {
           <span class="material-icons">close</span>
         </button>
       </div>
-    `).join('');
+    `
+      )
+      .join('');
   }
 
   /**
@@ -723,7 +748,8 @@ class AdminDashboard {
 
       // Return a promise that resolves when upload completes
       return new Promise((resolve, reject) => {
-        uploadTask.on('state_changed',
+        uploadTask.on(
+          'state_changed',
           // Progress function
           () => {
             // Progress tracking for upload - no action needed in demo
@@ -780,27 +806,30 @@ class AdminDashboard {
    */
   async mockUpload(file, category, description) {
     return new Promise((resolve) => {
-      setTimeout(() => {
-        const mockResult = {
-          success: true,
-          url: URL.createObjectURL(file),
-          fileInfo: {
-            name: file.name,
-            size: file.size,
-            type: file.type,
-            category,
-            description,
-            uploadDate: new Date().toISOString()
+      setTimeout(
+        () => {
+          const mockResult = {
+            success: true,
+            url: URL.createObjectURL(file),
+            fileInfo: {
+              name: file.name,
+              size: file.size,
+              type: file.type,
+              category,
+              description,
+              uploadDate: new Date().toISOString()
+            }
+          };
+
+          // In development, log the upload details
+          if (window.location.hostname === 'localhost') {
+            // console.log('Mock upload completed:', mockResult);
           }
-        };
 
-        // In development, log the upload details
-        if (window.location.hostname === 'localhost') {
-          // console.log('Mock upload completed:', mockResult);
-        }
-
-        resolve(mockResult);
-      }, 1000 + Math.random() * 2000); // Simulate 1-3 second upload
+          resolve(mockResult);
+        },
+        1000 + Math.random() * 2000
+      ); // Simulate 1-3 second upload
     });
   }
 

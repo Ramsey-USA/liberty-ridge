@@ -1,6 +1,7 @@
 /**
  * Firebase Data Service
  * Handles all database operations for the Liberty Ridge Training Grounds website
+ * Uses Firebase v9 compat mode syntax - Clean version without try/catch
  */
 
 // Wait for Firebase to be ready
@@ -13,16 +14,20 @@ window.addEventListener('firebaseReady', (event) => {
 });
 
 // Helper function to ensure Firebase is ready
-function ensureFirebaseReady () {
+function ensureFirebaseReady() {
   return new Promise((resolve) => {
     if (db && storage) {
       resolve();
     } else {
-      window.addEventListener('firebaseReady', () => {
-        db = firebase.firestore();
-        storage = firebase.storage();
-        resolve();
-      }, { once: true });
+      window.addEventListener(
+        'firebaseReady',
+        () => {
+          db = firebase.firestore();
+          storage = firebase.storage();
+          resolve();
+        },
+        { once: true }
+      );
     }
   });
 }
@@ -34,133 +39,135 @@ export const appointmentService = {
   /**
    * Create a new appointment
    */
-  async create (appointmentData) {
+  async create(appointmentData) {
     await ensureFirebaseReady();
 
-    try {
-      const appointment = {
-        ...appointmentData,
-        status: 'pending',
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-      };
+    const appointment = {
+      ...appointmentData,
+      status: 'pending',
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+    };
 
-      const docRef = await db.collection('appointments').add(appointment);
-
-      // Send to HighLevel CRM
-      await this.sendToHighLevel(appointment);
-
-      return { id: docRef.id, ...appointment };
-    } catch (error) {
-      // console.error('Error creating appointment:', error);
-      throw error;
-    }
+    const docRef = await db.collection('appointments').add(appointment);
+    return { id: docRef.id, ...appointment };
   },
 
   /**
-   * Get appointments for a specific date
+   * Get appointment by ID
    */
-  async getByDate (date) {
+  async getById(appointmentId) {
     await ensureFirebaseReady();
 
-    try {
-      const startOfDay = new Date(date);
-      startOfDay.setHours(0, 0, 0, 0);
-
-      const endOfDay = new Date(date);
-      endOfDay.setHours(23, 59, 59, 999);
-
-      const querySnapshot = await db.collection('appointments')
-        .where('date', '>=', firebase.firestore.Timestamp.fromDate(startOfDay))
-        .where('date', '<=', firebase.firestore.Timestamp.fromDate(endOfDay))
-        .orderBy('date')
-        .get();
-
-      return querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-    } catch (error) {
-      // console.error('Error getting appointments by date:', error);
-      throw error;
+    const doc = await db.collection('appointments').doc(appointmentId).get();
+    if (!doc.exists) {
+      return null;
     }
-  },
-
-  /**
-   * Get all appointments (admin only)
-   */
-  async getAll () {
-    await ensureFirebaseReady();
-
-    try {
-      const querySnapshot = await db.collection('appointments')
-        .orderBy('date', 'desc')
-        .get();
-
-      return querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-    } catch (error) {
-      // console.error('Error getting all appointments:', error);
-      throw error;
-    }
+    return { id: doc.id, ...doc.data() };
   },
 
   /**
    * Update appointment status
    */
-  async updateStatus (appointmentId, status) {
+  async updateStatus(appointmentId, status) {
     await ensureFirebaseReady();
 
-    try {
-      await db.collection('appointments').doc(appointmentId).update({
-        status,
-        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-      });
-    } catch (error) {
-      // console.error('Error updating appointment status:', error);
-      throw error;
-    }
+    await db.collection('appointments').doc(appointmentId).update({
+      status,
+      updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
   },
 
   /**
-   * Send appointment to HighLevel CRM
+   * Delete appointment
    */
-  async sendToHighLevel (appointmentData) {
-    try {
-      const webhookUrl = 'https://hooks.zapier.com/hooks/catch/demo/'; // Replace with actual URL
+  async delete(appointmentId) {
+    await ensureFirebaseReady();
+    await db.collection('appointments').doc(appointmentId).delete();
+  },
 
-      const payload = {
-        name: appointmentData.name,
-        email: appointmentData.email,
-        phone: appointmentData.phone,
-        date: appointmentData.date,
-        time: appointmentData.time,
-        experience: appointmentData.experience,
-        goals: appointmentData.goals,
-        source: 'Liberty Ridge Training Grounds Website',
-        type: 'consultation_request'
-      };
+  /**
+   * Get appointments with filtering and pagination
+   */
+  async getAll(filters = {}) {
+    await ensureFirebaseReady();
 
-      // Use fetch to send to webhook
-      const response = await fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
+    let query = db.collection('appointments').orderBy('createdAt', 'desc');
 
-      if (!response.ok) {
-        throw new Error(`HighLevel webhook failed: ${response.statusText}`);
-      }
-
-      // console.log('Successfully sent to HighLevel CRM');
-    } catch (error) {
-      // console.error('Error sending to HighLevel:', error);
-      // Don't throw error here - appointment should still be saved
+    // Apply date range filter
+    if (filters.startDate && filters.endDate) {
+      const startTimestamp = firebase.firestore.Timestamp.fromDate(new Date(filters.startDate));
+      const endTimestamp = firebase.firestore.Timestamp.fromDate(new Date(filters.endDate));
+      query = query.where('createdAt', '>=', startTimestamp).where('createdAt', '<=', endTimestamp);
     }
+
+    const snapshot = await query.get();
+    return snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+  },
+
+  /**
+   * Get appointments by status
+   */
+  async getByStatus(status, limit = 50) {
+    await ensureFirebaseReady();
+
+    const query = db
+      .collection('appointments')
+      .where('status', '==', status)
+      .orderBy('createdAt', 'desc')
+      .limit(limit);
+
+    const snapshot = await query.get();
+    return snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+  }
+};
+
+/**
+ * Contact Form Management
+ */
+export const contactService = {
+  /**
+   * Submit contact form
+   */
+  async submit(contactData) {
+    await ensureFirebaseReady();
+
+    const contact = {
+      ...contactData,
+      status: 'new',
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+    };
+
+    const docRef = await db.collection('contacts').add(contact);
+    return { id: docRef.id, ...contact };
+  },
+
+  /**
+   * Update contact status
+   */
+  async updateStatus(contactId, status) {
+    await ensureFirebaseReady();
+
+    const contactRef = db.collection('contacts').doc(contactId);
+    await contactRef.update({
+      status,
+      updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  },
+
+  /**
+   * Delete contact
+   */
+  async delete(contactId) {
+    await ensureFirebaseReady();
+    await db.collection('contacts').doc(contactId).delete();
   }
 };
 
@@ -169,374 +176,195 @@ export const appointmentService = {
  */
 export const galleryService = {
   /**
+   * Upload and save gallery item
+   */
+  async upload(file, metadata = {}) {
+    await ensureFirebaseReady();
+
+    // Upload to Storage
+    const fileName = `gallery/${Date.now()}_${file.name}`;
+    const storageRef = storage.ref(fileName);
+    const uploadTask = await storageRef.put(file);
+    const downloadURL = await uploadTask.ref.getDownloadURL();
+
+    // Save to Firestore
+    const galleryItem = {
+      ...metadata,
+      url: downloadURL,
+      storagePath: fileName,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+    };
+
+    const docRef = await db.collection('gallery').add(galleryItem);
+    return { id: docRef.id, ...galleryItem };
+  },
+
+  /**
    * Get all gallery items
    */
-  async getAll () {
+  async getAll() {
     await ensureFirebaseReady();
 
-    try {
-      const querySnapshot = await db.collection('gallery')
-        .orderBy('createdAt', 'desc')
-        .get();
+    const snapshot = await db.collection('gallery').orderBy('createdAt', 'desc').get();
 
-      return querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-    } catch (error) {
-      // console.error('Error getting gallery items:', error);
-      throw error;
-    }
-  },
-
-  /**
-   * Get gallery items by type (photos/videos)
-   */
-  async getByType (type) {
-    await ensureFirebaseReady();
-
-    try {
-      const querySnapshot = await db.collection('gallery')
-        .where('type', '==', type)
-        .orderBy('createdAt', 'desc')
-        .get();
-
-      return querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-    } catch (error) {
-      // console.error('Error getting gallery items by type:', error);
-      throw error;
-    }
-  },
-
-  /**
-   * Upload media file
-   */
-  async uploadMedia (file, metadata) {
-    await ensureFirebaseReady();
-
-    try {
-      // Generate unique filename
-      const timestamp = Date.now();
-      const randomString = Math.random().toString(36).substring(2);
-      const extension = file.name.split('.').pop();
-      const filename = `${timestamp}_${randomString}.${extension}`;
-
-      // Determine storage path based on file type
-      const isVideo = file.type.startsWith('video/');
-      const storagePath = `gallery/${isVideo ? 'videos' : 'photos'}/${filename}`;
-
-      // Upload file to Firebase Storage
-      const storageRef = storage.ref().child(storagePath);
-      const snapshot = await storageRef.put(file);
-      const downloadURL = await snapshot.ref.getDownloadURL();
-
-      // Create database entry
-      const galleryItem = {
-        title: metadata.title,
-        description: metadata.description,
-        category: metadata.category,
-        type: isVideo ? 'video' : 'photo',
-        url: downloadURL,
-        storagePath,
-        filename,
-        fileSize: file.size,
-        mimeType: file.type,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-      };
-
-      const docRef = await db.collection('gallery').add(galleryItem);
-
-      return { id: docRef.id, ...galleryItem };
-    } catch (error) {
-      // console.error('Error uploading media:', error);
-      throw error;
-    }
+    return snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data()
+    }));
   },
 
   /**
    * Delete gallery item
    */
-  async delete (itemId) {
-    try {
-      // Get item data first
-      const itemDoc = await getDoc(doc(db, 'gallery', itemId));
-      if (!itemDoc.exists()) {
-        throw new Error('Gallery item not found');
-      }
+  async delete(itemId) {
+    await ensureFirebaseReady();
 
-      const itemData = itemDoc.data();
-
-      // Delete from storage
-      if (itemData.storagePath) {
-        const storageRef = ref(storage, itemData.storagePath);
-        await deleteObject(storageRef);
-      }
-
-      // Delete from Firestore
-      await deleteDoc(doc(db, 'gallery', itemId));
-    } catch (error) {
-      // console.error('Error deleting gallery item:', error);
-      throw error;
+    // Get item data first
+    const itemDoc = await db.collection('gallery').doc(itemId).get();
+    if (!itemDoc.exists) {
+      throw new Error('Gallery item not found');
     }
+
+    const itemData = itemDoc.data();
+
+    // Delete from storage
+    if (itemData.storagePath) {
+      const storageRef = storage.ref(itemData.storagePath);
+      await storageRef.delete();
+    }
+
+    // Delete from Firestore
+    await db.collection('gallery').doc(itemId).delete();
   }
 };
 
 /**
- * FAQ Management
+ * User Registration Management
  */
-export const faqService = {
+export const registrationService = {
   /**
-   * Get all FAQ items
+   * Create user registration
    */
-  async getAll () {
-    try {
-      const q = query(
-        collection(db, 'faq'),
-        orderBy('order', 'asc')
-      );
+  async create(registrationData) {
+    await ensureFirebaseReady();
 
-      const querySnapshot = await getDocs(q);
-      return querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-    } catch (error) {
-      // console.error('Error getting FAQ items:', error);
-      throw error;
-    }
+    // Convert date strings to Timestamps
+    const startDate = firebase.firestore.Timestamp.fromDate(
+      new Date(registrationData.preferredDate)
+    );
+    const endDate = firebase.firestore.Timestamp.fromDate(new Date(registrationData.alternateDate));
+
+    const registration = {
+      ...registrationData,
+      preferredDate: startDate,
+      alternateDate: endDate,
+      status: 'pending',
+      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    };
+
+    const docRef = await db.collection('registrations').add(registration);
+    return { id: docRef.id, ...registration };
   },
 
   /**
-   * Get FAQ items by category
+   * Get registrations with date filtering
    */
-  async getByCategory (category) {
-    try {
-      const q = query(
-        collection(db, 'faq'),
-        where('category', '==', category),
-        orderBy('order', 'asc')
-      );
+  async getByDateRange(startDate, endDate, limit = 50) {
+    await ensureFirebaseReady();
 
-      const querySnapshot = await getDocs(q);
-      return querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-    } catch (error) {
-      // console.error('Error getting FAQ by category:', error);
-      throw error;
-    }
-  },
+    const startTimestamp = firebase.firestore.Timestamp.fromDate(new Date(startDate));
+    const endTimestamp = firebase.firestore.Timestamp.fromDate(new Date(endDate));
 
-  /**
-   * Create FAQ item
-   */
-  async create (faqData) {
-    try {
-      const faq = {
-        ...faqData,
-        createdAt: serverTimestamp(),
-        updatedAt: serverTimestamp()
-      };
+    const query = db
+      .collection('registrations')
+      .where('createdAt', '>=', startTimestamp)
+      .where('createdAt', '<=', endTimestamp)
+      .limit(limit);
 
-      const docRef = await addDoc(collection(db, 'faq'), faq);
-      return { id: docRef.id, ...faq };
-    } catch (error) {
-      // console.error('Error creating FAQ:', error);
-      throw error;
-    }
-  },
+    const snapshot = await query.get();
 
-  /**
-   * Update FAQ item
-   */
-  async update (faqId, faqData) {
-    try {
-      const faqRef = doc(db, 'faq', faqId);
-      await updateDoc(faqRef, {
-        ...faqData,
-        updatedAt: serverTimestamp()
+    // Update last accessed timestamp for the first result
+    if (!snapshot.empty) {
+      const firstDoc = snapshot.docs[0];
+      await firstDoc.ref.update({
+        lastAccessed: firebase.firestore.FieldValue.serverTimestamp()
       });
-    } catch (error) {
-      // console.error('Error updating FAQ:', error);
-      throw error;
     }
-  },
 
-  /**
-   * Delete FAQ item
-   */
-  async delete (faqId) {
-    try {
-      await deleteDoc(doc(db, 'faq', faqId));
-    } catch (error) {
-      // console.error('Error deleting FAQ:', error);
-      throw error;
-    }
+    return snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data()
+    }));
   }
 };
 
 /**
- * Available Slots Management
+ * Newsletter Subscription Management
  */
-export const availableSlotsService = {
+export const newsletterService = {
   /**
-   * Get available slots for a date range
+   * Subscribe to newsletter
    */
-  async getAvailableSlots (startDate, endDate) {
-    try {
-      const q = query(
-        collection(db, 'available_slots'),
-        where('date', '>=', Timestamp.fromDate(startDate)),
-        where('date', '<=', Timestamp.fromDate(endDate)),
-        where('isAvailable', '==', true),
-        orderBy('date', 'asc')
-      );
+  async subscribe(email, name = '') {
+    await ensureFirebaseReady();
 
-      const querySnapshot = await getDocs(q);
-      return querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-    } catch (error) {
-      // console.error('Error getting available slots:', error);
-      throw error;
-    }
+    const subscription = {
+      email,
+      name,
+      status: 'active',
+      subscribedAt: firebase.firestore.FieldValue.serverTimestamp()
+    };
+
+    const docRef = await db.collection('newsletter').add(subscription);
+    return { id: docRef.id, ...subscription };
   },
 
   /**
-   * Create available time slots for a date
+   * Unsubscribe from newsletter
    */
-  async createSlotsForDate (date, timeSlots) {
-    try {
-      const promises = timeSlots.map(timeSlot => {
-        const slotData = {
-          date: Timestamp.fromDate(date),
-          time: timeSlot,
-          isAvailable: true,
-          createdAt: serverTimestamp()
-        };
-        return addDoc(collection(db, 'available_slots'), slotData);
+  async unsubscribe(email) {
+    await ensureFirebaseReady();
+
+    const query = db.collection('newsletter').where('email', '==', email).limit(1);
+
+    const snapshot = await query.get();
+    if (!snapshot.empty) {
+      const doc = snapshot.docs[0];
+      await doc.ref.update({
+        status: 'unsubscribed',
+        unsubscribedAt: firebase.firestore.FieldValue.serverTimestamp()
       });
-
-      await Promise.all(promises);
-    } catch (error) {
-      // console.error('Error creating available slots:', error);
-      throw error;
-    }
-  },
-
-  /**
-   * Mark time slot as booked
-   */
-  async markSlotAsBooked (date, time) {
-    try {
-      const q = query(
-        collection(db, 'available_slots'),
-        where('date', '==', Timestamp.fromDate(date)),
-        where('time', '==', time),
-        limit(1)
-      );
-
-      const querySnapshot = await getDocs(q);
-      if (!querySnapshot.empty) {
-        const slotDoc = querySnapshot.docs[0];
-        await updateDoc(slotDoc.ref, {
-          isAvailable: false,
-          bookedAt: serverTimestamp()
-        });
-      }
-    } catch (error) {
-      // console.error('Error marking slot as booked:', error);
-      throw error;
     }
   }
 };
 
 /**
- * Contact Form Service
+ * Training Log Management
  */
-export const contactService = {
+export const trainingLogService = {
   /**
-   * Submit contact form
+   * Log training session
    */
-  async submit (contactData) {
-    try {
-      const contact = {
-        ...contactData,
-        status: 'new',
-        createdAt: serverTimestamp()
-      };
+  async logSession(sessionData) {
+    await ensureFirebaseReady();
 
-      const docRef = await addDoc(collection(db, 'contact'), contact);
+    const session = {
+      ...sessionData,
+      loggedAt: firebase.firestore.FieldValue.serverTimestamp()
+    };
 
-      // Send notification email (if configured)
-      await this.sendNotificationEmail(contact);
-
-      return { id: docRef.id, ...contact };
-    } catch (error) {
-      // console.error('Error submitting contact form:', error);
-      throw error;
-    }
-  },
-
-  /**
-   * Send notification email
-   */
-  async sendNotificationEmail (contactData) {
-    try {
-      // This would integrate with a service like SendGrid, EmailJS, etc.
-      // console.log('Contact form submission notification:', contactData);
-    } catch (error) {
-      // console.error('Error sending notification email:', error);
-    }
+    const docRef = await db.collection('training_logs').add(session);
+    return { id: docRef.id, ...session };
   }
 };
 
-/**
- * Analytics Service
- */
-export const analyticsService = {
-  /**
-   * Log chatbot interaction
-   */
-  async logChatbotInteraction (interaction) {
-    try {
-      const log = {
-        ...interaction,
-        timestamp: serverTimestamp(),
-        sessionId: this.getSessionId()
-      };
-
-      await addDoc(collection(db, 'chatbot_logs'), log);
-    } catch (error) {
-      // console.error('Error logging chatbot interaction:', error);
-    }
-  },
-
-  /**
-   * Get or create session ID
-   */
-  getSessionId () {
-    let sessionId = sessionStorage.getItem('sessionId');
-    if (!sessionId) {
-      sessionId = Date.now().toString() + Math.random().toString(36).substr(2, 9);
-      sessionStorage.setItem('sessionId', sessionId);
-    }
-    return sessionId;
-  }
-};
-
-// Export all services
+// Export individual services for easy importing
 export default {
-  appointment: appointmentService,
-  gallery: galleryService,
-  faq: faqService,
-  availableSlots: availableSlotsService,
-  contact: contactService,
-  analytics: analyticsService
+  appointmentService,
+  contactService,
+  galleryService,
+  registrationService,
+  newsletterService,
+  trainingLogService
 };

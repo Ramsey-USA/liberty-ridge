@@ -1,365 +1,372 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard - Liberty Ridge Training Grounds</title>
-    
+
     <!-- Google Fonts - Roboto -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="admin.css">
-    
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="admin.css" />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+  </head>
+  <body>
     <!-- Admin Header -->
     <header class="admin-header">
-        <div class="admin-header-content">
-            <div class="admin-logo">
-                <span class="material-icons">admin_panel_settings</span>
-                <h1>Liberty Ridge Admin</h1>
-            </div>
-            
-            <div class="admin-header-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-                    <span class="material-icons">brightness_6</span>
-                </button>
-                
-                <div class="admin-user">
-                    <span id="adminUserName">Admin</span>
-                    <button class="btn-logout" id="logoutBtn">
-                        <span class="material-icons">logout</span>
-                        Logout
-                    </button>
-                </div>
-            </div>
+      <div class="admin-header-content">
+        <div class="admin-logo">
+          <span class="material-icons">admin_panel_settings</span>
+          <h1>Liberty Ridge Admin</h1>
         </div>
+
+        <div class="admin-header-actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+            <span class="material-icons">brightness_6</span>
+          </button>
+
+          <div class="admin-user">
+            <span id="adminUserName">Admin</span>
+            <button class="btn-logout" id="logoutBtn">
+              <span class="material-icons">logout</span>
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- Auth Screen (shown when not logged in) -->
     <div class="auth-screen" id="authScreen">
-        <div class="auth-container">
-            <div class="auth-card">
-                <div class="auth-header">
-                    <span class="material-icons">security</span>
-                    <h2>Admin Login</h2>
-                    <p>Access the Liberty Ridge Training Grounds admin dashboard</p>
-                </div>
-                
-                <form class="auth-form" id="loginForm">
-                    <div class="form-group">
-                        <label for="adminEmail">Email Address</label>
-                        <input type="email" id="adminEmail" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="adminPassword">Password</label>
-                        <input type="password" id="adminPassword" required>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">
-                        <span class="material-icons">login</span>
-                        Sign In
-                    </button>
-                </form>
-                
-                <div class="auth-error" id="authError" style="display: none;">
-                    <span class="material-icons">error</span>
-                    <span id="authErrorMessage"></span>
-                </div>
+      <div class="auth-container">
+        <div class="auth-card">
+          <div class="auth-header">
+            <span class="material-icons">security</span>
+            <h2>Admin Login</h2>
+            <p>Access the Liberty Ridge Training Grounds admin dashboard</p>
+          </div>
+
+          <form class="auth-form" id="loginForm">
+            <div class="form-group">
+              <label for="adminEmail">Email Address</label>
+              <input type="email" id="adminEmail" required />
             </div>
+
+            <div class="form-group">
+              <label for="adminPassword">Password</label>
+              <input type="password" id="adminPassword" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <span class="material-icons">login</span>
+              Sign In
+            </button>
+          </form>
+
+          <div class="auth-error" id="authError" style="display: none">
+            <span class="material-icons">error</span>
+            <span id="authErrorMessage"></span>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Admin Dashboard (shown when logged in) -->
-    <div class="admin-dashboard" id="adminDashboard" style="display: none;">
-        <!-- Sidebar Navigation -->
-        <nav class="admin-sidebar">
-            <ul class="admin-nav">
-                <li>
-                    <a href="#dashboard" class="admin-nav-link active" data-tab="dashboard">
-                        <span class="material-icons">dashboard</span>
-                        Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="#appointments" class="admin-nav-link" data-tab="appointments">
-                        <span class="material-icons">event</span>
-                        Appointments
-                    </a>
-                </li>
-                <li>
-                    <a href="#gallery" class="admin-nav-link" data-tab="gallery">
-                        <span class="material-icons">photo_library</span>
-                        Gallery
-                    </a>
-                </li>
-                <li>
-                    <a href="#faq" class="admin-nav-link" data-tab="faq">
-                        <span class="material-icons">help</span>
-                        FAQ Management
-                    </a>
-                </li>
-                <li>
-                    <a href="#contact" class="admin-nav-link" data-tab="contact">
-                        <span class="material-icons">contact_mail</span>
-                        Contact Forms
-                    </a>
-                </li>
-                <li>
-                    <a href="#settings" class="admin-nav-link" data-tab="settings">
-                        <span class="material-icons">settings</span>
-                        Settings
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <div class="admin-dashboard" id="adminDashboard" style="display: none">
+      <!-- Sidebar Navigation -->
+      <nav class="admin-sidebar">
+        <ul class="admin-nav">
+          <li>
+            <a href="#dashboard" class="admin-nav-link active" data-tab="dashboard">
+              <span class="material-icons">dashboard</span>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#appointments" class="admin-nav-link" data-tab="appointments">
+              <span class="material-icons">event</span>
+              Appointments
+            </a>
+          </li>
+          <li>
+            <a href="#gallery" class="admin-nav-link" data-tab="gallery">
+              <span class="material-icons">photo_library</span>
+              Gallery
+            </a>
+          </li>
+          <li>
+            <a href="#faq" class="admin-nav-link" data-tab="faq">
+              <span class="material-icons">help</span>
+              FAQ Management
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="admin-nav-link" data-tab="contact">
+              <span class="material-icons">contact_mail</span>
+              Contact Forms
+            </a>
+          </li>
+          <li>
+            <a href="#settings" class="admin-nav-link" data-tab="settings">
+              <span class="material-icons">settings</span>
+              Settings
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-        <!-- Main Content Area -->
-        <main class="admin-main">
-            <!-- Dashboard Tab -->
-            <div class="admin-tab active" id="dashboard-tab">
-                <div class="admin-header-section">
-                    <h2>Dashboard Overview</h2>
-                    <p>Welcome to the Liberty Ridge Training Grounds admin panel</p>
-                </div>
-                
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <span class="material-icons">event</span>
-                        </div>
-                        <div class="stat-content">
-                            <h3 id="totalAppointments">-</h3>
-                            <p>Total Appointments</p>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <span class="material-icons">event_available</span>
-                        </div>
-                        <div class="stat-content">
-                            <h3 id="pendingAppointments">-</h3>
-                            <p>Pending Appointments</p>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <span class="material-icons">photo_library</span>
-                        </div>
-                        <div class="stat-content">
-                            <h3 id="totalGalleryItems">-</h3>
-                            <p>Gallery Items</p>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <span class="material-icons">contact_mail</span>
-                        </div>
-                        <div class="stat-content">
-                            <h3 id="totalContactForms">-</h3>
-                            <p>Contact Forms</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="recent-activity">
-                    <h3>Recent Activity</h3>
-                    <div class="activity-list" id="recentActivity">
-                        <!-- Activity items will be loaded here -->
-                    </div>
-                </div>
+      <!-- Main Content Area -->
+      <main class="admin-main">
+        <!-- Dashboard Tab -->
+        <div class="admin-tab active" id="dashboard-tab">
+          <div class="admin-header-section">
+            <h2>Dashboard Overview</h2>
+            <p>Welcome to the Liberty Ridge Training Grounds admin panel</p>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <span class="material-icons">event</span>
+              </div>
+              <div class="stat-content">
+                <h3 id="totalAppointments">-</h3>
+                <p>Total Appointments</p>
+              </div>
             </div>
 
-            <!-- Appointments Tab -->
-            <div class="admin-tab" id="appointments-tab">
-                <div class="admin-header-section">
-                    <h2>Appointment Management</h2>
-                    <button class="btn btn-primary" id="createSlotBtn">
-                        <span class="material-icons">add</span>
-                        Create Available Slots
-                    </button>
-                </div>
-                
-                <div class="appointments-content">
-                    <div class="appointments-filters">
-                        <input type="date" id="appointmentDateFilter" class="form-control">
-                        <select id="appointmentStatusFilter" class="form-control">
-                            <option value="">All Statuses</option>
-                            <option value="pending">Pending</option>
-                            <option value="confirmed">Confirmed</option>
-                            <option value="completed">Completed</option>
-                            <option value="cancelled">Cancelled</option>
-                        </select>
-                    </div>
-                    
-                    <div class="appointments-table">
-                        <table id="appointmentsTable">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Time</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Experience</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="appointmentsTableBody">
-                                <!-- Appointments will be loaded here -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <span class="material-icons">event_available</span>
+              </div>
+              <div class="stat-content">
+                <h3 id="pendingAppointments">-</h3>
+                <p>Pending Appointments</p>
+              </div>
             </div>
 
-            <!-- Gallery Tab -->
-            <div class="admin-tab" id="gallery-tab">
-                <div class="admin-header-section">
-                    <h2>Gallery Management</h2>
-                    <button class="btn btn-primary" id="uploadMediaBtn">
-                        <span class="material-icons">cloud_upload</span>
-                        Upload Media
-                    </button>
-                </div>
-                
-                <div class="gallery-content">
-                    <div class="gallery-filters">
-                        <select id="galleryTypeFilter" class="form-control">
-                            <option value="">All Media</option>
-                            <option value="photo">Photos</option>
-                            <option value="video">Videos</option>
-                        </select>
-                        
-                        <select id="galleryCategoryFilter" class="form-control">
-                            <option value="">All Categories</option>
-                            <option value="safety">Safety</option>
-                            <option value="marksmanship">Marksmanship</option>
-                            <option value="tactical">Tactical</option>
-                            <option value="concealed-carry">Concealed Carry</option>
-                            <option value="group">Group Training</option>
-                            <option value="maintenance">Maintenance</option>
-                        </select>
-                    </div>
-                    
-                    <div class="gallery-grid" id="adminGalleryGrid">
-                        <!-- Gallery items will be loaded here -->
-                    </div>
-                </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <span class="material-icons">photo_library</span>
+              </div>
+              <div class="stat-content">
+                <h3 id="totalGalleryItems">-</h3>
+                <p>Gallery Items</p>
+              </div>
             </div>
 
-            <!-- FAQ Tab -->
-            <div class="admin-tab" id="faq-tab">
-                <div class="admin-header-section">
-                    <h2>FAQ Management</h2>
-                    <button class="btn btn-primary" id="addFaqBtn">
-                        <span class="material-icons">add</span>
-                        Add FAQ
-                    </button>
-                </div>
-                
-                <div class="faq-content">
-                    <div class="faq-list" id="faqList">
-                        <!-- FAQ items will be loaded here -->
-                    </div>
-                </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <span class="material-icons">contact_mail</span>
+              </div>
+              <div class="stat-content">
+                <h3 id="totalContactForms">-</h3>
+                <p>Contact Forms</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="recent-activity">
+            <h3>Recent Activity</h3>
+            <div class="activity-list" id="recentActivity">
+              <!-- Activity items will be loaded here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Appointments Tab -->
+        <div class="admin-tab" id="appointments-tab">
+          <div class="admin-header-section">
+            <h2>Appointment Management</h2>
+            <button class="btn btn-primary" id="createSlotBtn">
+              <span class="material-icons">add</span>
+              Create Available Slots
+            </button>
+          </div>
+
+          <div class="appointments-content">
+            <div class="appointments-filters">
+              <input type="date" id="appointmentDateFilter" class="form-control" />
+              <select id="appointmentStatusFilter" class="form-control">
+                <option value="">All Statuses</option>
+                <option value="pending">Pending</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option>
+              </select>
             </div>
 
-            <!-- Contact Forms Tab -->
-            <div class="admin-tab" id="contact-tab">
-                <div class="admin-header-section">
-                    <h2>Contact Form Submissions</h2>
-                </div>
-                
-                <div class="contact-content">
-                    <div class="contact-table">
-                        <table id="contactTable">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Subject</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="contactTableBody">
-                                <!-- Contact forms will be loaded here -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div class="appointments-table">
+              <table id="appointmentsTable">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Experience</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="appointmentsTableBody">
+                  <!-- Appointments will be loaded here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Tab -->
+        <div class="admin-tab" id="gallery-tab">
+          <div class="admin-header-section">
+            <h2>Gallery Management</h2>
+            <button class="btn btn-primary" id="uploadMediaBtn">
+              <span class="material-icons">cloud_upload</span>
+              Upload Media
+            </button>
+          </div>
+
+          <div class="gallery-content">
+            <div class="gallery-filters">
+              <select id="galleryTypeFilter" class="form-control">
+                <option value="">All Media</option>
+                <option value="photo">Photos</option>
+                <option value="video">Videos</option>
+              </select>
+
+              <select id="galleryCategoryFilter" class="form-control">
+                <option value="">All Categories</option>
+                <option value="safety">Safety</option>
+                <option value="marksmanship">Marksmanship</option>
+                <option value="tactical">Tactical</option>
+                <option value="concealed-carry">Concealed Carry</option>
+                <option value="group">Group Training</option>
+                <option value="maintenance">Maintenance</option>
+              </select>
             </div>
 
-            <!-- Settings Tab -->
-            <div class="admin-tab" id="settings-tab">
-                <div class="admin-header-section">
-                    <h2>Settings</h2>
-                    <p>Configure website settings and preferences</p>
-                </div>
-                
-                <div class="settings-content">
-                    <div class="settings-section">
-                        <h3>Business Information</h3>
-                        <form id="businessInfoForm">
-                            <div class="form-group">
-                                <label for="businessName">Business Name</label>
-                                <input type="text" id="businessName" value="Liberty Ridge Training Grounds">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="businessPhone">Phone Number</label>
-                                <input type="tel" id="businessPhone" value="(555) 123-4567">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="businessEmail">Email Address</label>
-                                <input type="email" id="businessEmail" value="info@libertyridgetraininggrounds.com">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="businessAddress">Address</label>
-                                <input type="text" id="businessAddress" value="Pasco, WA">
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary">Save Changes</button>
-                        </form>
-                    </div>
-                </div>
+            <div class="gallery-grid" id="adminGalleryGrid">
+              <!-- Gallery items will be loaded here -->
             </div>
-        </main>
+          </div>
+        </div>
+
+        <!-- FAQ Tab -->
+        <div class="admin-tab" id="faq-tab">
+          <div class="admin-header-section">
+            <h2>FAQ Management</h2>
+            <button class="btn btn-primary" id="addFaqBtn">
+              <span class="material-icons">add</span>
+              Add FAQ
+            </button>
+          </div>
+
+          <div class="faq-content">
+            <div class="faq-list" id="faqList">
+              <!-- FAQ items will be loaded here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Forms Tab -->
+        <div class="admin-tab" id="contact-tab">
+          <div class="admin-header-section">
+            <h2>Contact Form Submissions</h2>
+          </div>
+
+          <div class="contact-content">
+            <div class="contact-table">
+              <table id="contactTable">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="contactTableBody">
+                  <!-- Contact forms will be loaded here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div class="admin-tab" id="settings-tab">
+          <div class="admin-header-section">
+            <h2>Settings</h2>
+            <p>Configure website settings and preferences</p>
+          </div>
+
+          <div class="settings-content">
+            <div class="settings-section">
+              <h3>Business Information</h3>
+              <form id="businessInfoForm">
+                <div class="form-group">
+                  <label for="businessName">Business Name</label>
+                  <input type="text" id="businessName" value="Liberty Ridge Training Grounds" />
+                </div>
+
+                <div class="form-group">
+                  <label for="businessPhone">Phone Number</label>
+                  <input type="tel" id="businessPhone" value="(555) 123-4567" />
+                </div>
+
+                <div class="form-group">
+                  <label for="businessEmail">Email Address</label>
+                  <input
+                    type="email"
+                    id="businessEmail"
+                    value="info@libertyridgetraininggrounds.com"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="businessAddress">Address</label>
+                  <input type="text" id="businessAddress" value="Pasco, WA" />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
 
     <!-- Modals will be inserted here by JavaScript -->
     <div id="modalContainer"></div>
 
     <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
-        <div class="loading-spinner">
-            <span class="material-icons">autorenew</span>
-            <p>Loading...</p>
-        </div>
+    <div class="loading-overlay" id="loadingOverlay" style="display: none">
+      <div class="loading-spinner">
+        <span class="material-icons">autorenew</span>
+        <p>Loading...</p>
+      </div>
     </div>
 
     <!-- JavaScript -->
     <script src="../js/main.js"></script>
     <script src="admin.js"></script>
-    
+
     <!-- Firebase SDK -->
     <script type="module" src="../js/firebase-config.js"></script>
     <script type="module" src="../js/firebase-data-service.js"></script>
-</body>
+  </body>
 </html>

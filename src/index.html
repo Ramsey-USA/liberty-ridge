@@ -1,568 +1,683 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <!-- Primary Meta Tags -->
     <title>Liberty Ridge Training Grounds - Professional Firearms Training in Pasco, WA</title>
-    <meta name="title" content="Liberty Ridge Training Grounds - Professional Firearms Training in Pasco, WA">
-    <meta name="description" content="Expert firearms training in Pasco, WA by Army veteran Zach. Professional, safe, one-on-one instruction for responsible gun owners in the Pacific Northwest.">
-    <meta name="keywords" content="firearms training, gun safety, Pasco WA, military veteran instructor, shooting lessons, concealed carry, Pacific Northwest">
-    <meta name="author" content="Liberty Ridge Training Grounds">
-    <meta name="robots" content="index, follow">
-    
+    <meta
+      name="title"
+      content="Liberty Ridge Training Grounds - Professional Firearms Training in Pasco, WA"
+    />
+    <meta
+      name="description"
+      content="Expert firearms training in Pasco, WA by Army veteran Zach. Professional, safe, one-on-one instruction for responsible gun owners in the Pacific Northwest."
+    />
+    <meta
+      name="keywords"
+      content="firearms training, gun safety, Pasco WA, military veteran instructor, shooting lessons, concealed carry, Pacific Northwest"
+    />
+    <meta name="author" content="Liberty Ridge Training Grounds" />
+    <meta name="robots" content="index, follow" />
+
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://libertyridgetraininggrounds.com/">
-    <meta property="og:title" content="Liberty Ridge Training Grounds - Professional Firearms Training">
-    <meta property="og:description" content="Expert firearms training by Army veteran Zach in Pasco, WA. Safe, professional instruction for responsible gun owners.">
-    <meta property="og:image" content="https://libertyridgetraininggrounds.com/assets/images/training-1.jpg">
-    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://libertyridgetraininggrounds.com/" />
+    <meta
+      property="og:title"
+      content="Liberty Ridge Training Grounds - Professional Firearms Training"
+    />
+    <meta
+      property="og:description"
+      content="Expert firearms training by Army veteran Zach in Pasco, WA. Safe, professional instruction for responsible gun owners."
+    />
+    <meta
+      property="og:image"
+      content="https://libertyridgetraininggrounds.com/assets/images/training-1.jpg"
+    />
+
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://libertyridgetraininggrounds.com/">
-    <meta property="twitter:title" content="Liberty Ridge Training Grounds - Professional Firearms Training">
-    <meta property="twitter:description" content="Expert firearms training by Army veteran Zach in Pasco, WA. Safe, professional instruction for responsible gun owners.">
-    <meta property="twitter:image" content="https://libertyridgetraininggrounds.com/assets/images/training-1.jpg">
-    
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://libertyridgetraininggrounds.com/" />
+    <meta
+      property="twitter:title"
+      content="Liberty Ridge Training Grounds - Professional Firearms Training"
+    />
+    <meta
+      property="twitter:description"
+      content="Expert firearms training by Army veteran Zach in Pasco, WA. Safe, professional instruction for responsible gun owners."
+    />
+    <meta
+      property="twitter:image"
+      content="https://libertyridgetraininggrounds.com/assets/images/training-1.jpg"
+    />
+
     <!-- Performance and Theme -->
-    <meta name="theme-color" content="#1a1a1a">
-    <meta name="color-scheme" content="light dark">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
+    <meta name="theme-color" content="#1a1a1a" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
     <!-- Advanced Resource Hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="//firestore.googleapis.com">
-    <link rel="dns-prefetch" href="//firebase.googleapis.com">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//firestore.googleapis.com" />
+    <link rel="dns-prefetch" href="//firebase.googleapis.com" />
+
     <!-- Critical Font Preloading -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2" as="font" type="font/woff2" crossorigin>
-    
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <!-- Google Fonts - Load asynchronously to prevent render blocking -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
-    
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet"
+    /></noscript>
+
     <!-- Material Icons - Load asynchronously -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet"></noscript>
-    
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
+        rel="stylesheet"
+    /></noscript>
+
     <!-- Firebase SDK - Optimized loading -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js" defer></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js" defer></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js" defer></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js" defer></script>
-    
+    <script
+      src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"
+      defer
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"
+      defer
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"
+      defer
+    ></script>
+
     <!-- Critical CSS - Inlined for immediate rendering -->
     <style>
-        /* Critical CSS - Above the fold styles only */
-        :root {
-          --color-primary: #1a1a1a;
-          --color-secondary: #2c2c2c;
-          --color-text-primary: #1a1a1a;
-          --color-text-secondary: #6b6b6b;
-          --color-background: #ffffff;
-          --color-background-secondary: #f8f9fa;
-          --color-button-primary: #1a1a1a;
-          --color-button-primary-hover: #2c2c2c;
-          --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-          --font-weight-regular: 400;
-          --font-weight-medium: 500;
-          --font-weight-bold: 700;
-          --font-size-base: 1rem;
-          --font-size-lg: 1.125rem;
-          --font-size-2xl: 1.5rem;
-          --font-size-5xl: 3rem;
-          --spacing-md: 1rem;
-          --spacing-lg: 1.5rem;
-          --spacing-3xl: 3rem;
-          --spacing-4xl: 4rem;
-          --header-height: 80px;
-          --max-width: 1200px;
-          --line-height-normal: 1.6;
-          --line-height-tight: 1.2;
-          --transition-base: 0.3s ease;
-        }
-        *, *::before, *::after {
-          box-sizing: border-box;
-        }
-        html {
-          scroll-behavior: smooth;
-          font-size: 16px;
-        }
-        body {
-          font-family: var(--font-family);
-          font-weight: var(--font-weight-regular);
-          line-height: var(--line-height-normal);
-          color: var(--color-text-primary);
-          background-color: var(--color-background);
-          margin: 0;
-          padding: 0;
-          overflow-x: hidden;
-        }
-        h1, h2, h3, h4, h5, h6 {
-          font-weight: var(--font-weight-bold);
-          line-height: var(--line-height-tight);
-          margin-bottom: var(--spacing-md);
-        }
-        h1 {
-          font-size: var(--font-size-5xl);
-        }
-        header {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: var(--header-height);
-          background-color: var(--color-background);
-          z-index: 1000;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .main {
-          margin-top: var(--header-height);
-        }
-        .hero {
-          min-height: calc(100vh - var(--header-height));
-          display: flex;
-          align-items: center;
-          padding: var(--spacing-4xl) 0;
-          background-color: var(--color-background-secondary);
-        }
-        .hero-content {
-          max-width: var(--max-width);
-          margin: 0 auto;
-          padding: 0 var(--spacing-md);
-          text-align: center;
-        }
-        .hero-title {
-          font-size: var(--font-size-5xl);
-          margin-bottom: var(--spacing-md);
-          color: var(--color-text-primary);
-        }
-        .hero-subtitle {
-          font-size: var(--font-size-2xl);
-          font-weight: var(--font-weight-medium);
-          margin-bottom: var(--spacing-lg);
-          color: var(--color-text-secondary);
-        }
-        .hero-description {
-          font-size: var(--font-size-lg);
-          margin-bottom: var(--spacing-3xl);
-          max-width: 600px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .hero-actions {
-          display: flex;
-          flex-direction: column;
-          gap: var(--spacing-md);
-          align-items: center;
-        }
-        .btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          padding: 12px 24px;
-          border: none;
-          border-radius: 4px;
-          font-family: inherit;
-          font-size: var(--font-size-base);
-          font-weight: var(--font-weight-medium);
-          text-decoration: none;
-          cursor: pointer;
-          transition: all var(--transition-base);
-          min-width: 140px;
-        }
-        .btn-primary {
-          background-color: var(--color-button-primary);
-          color: white;
-        }
-        .btn-primary:hover {
-          background-color: var(--color-button-primary-hover);
-        }
-        nav {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 var(--spacing-md);
-          height: 100%;
-        }
-        .logo {
-          font-size: var(--font-size-2xl);
-          font-weight: var(--font-weight-bold);
-          color: var(--color-primary);
-          text-decoration: none;
-        }
+      /* Critical CSS - Above the fold styles only */
+      :root {
+        --color-primary: #1a1a1a;
+        --color-secondary: #2c2c2c;
+        --color-text-primary: #1a1a1a;
+        --color-text-secondary: #6b6b6b;
+        --color-background: #ffffff;
+        --color-background-secondary: #f8f9fa;
+        --color-button-primary: #1a1a1a;
+        --color-button-primary-hover: #2c2c2c;
+        --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --font-weight-regular: 400;
+        --font-weight-medium: 500;
+        --font-weight-bold: 700;
+        --font-size-base: 1rem;
+        --font-size-lg: 1.125rem;
+        --font-size-2xl: 1.5rem;
+        --font-size-5xl: 3rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+        --spacing-3xl: 3rem;
+        --spacing-4xl: 4rem;
+        --header-height: 80px;
+        --max-width: 1200px;
+        --line-height-normal: 1.6;
+        --line-height-tight: 1.2;
+        --transition-base: 0.3s ease;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+      body {
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-regular);
+        line-height: var(--line-height-normal);
+        color: var(--color-text-primary);
+        background-color: var(--color-background);
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-tight);
+        margin-bottom: var(--spacing-md);
+      }
+      h1 {
+        font-size: var(--font-size-5xl);
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--header-height);
+        background-color: var(--color-background);
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .main {
+        margin-top: var(--header-height);
+      }
+      .hero {
+        min-height: calc(100vh - var(--header-height));
+        display: flex;
+        align-items: center;
+        padding: var(--spacing-4xl) 0;
+        background-color: var(--color-background-secondary);
+      }
+      .hero-content {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 var(--spacing-md);
+        text-align: center;
+      }
+      .hero-title {
+        font-size: var(--font-size-5xl);
+        margin-bottom: var(--spacing-md);
+        color: var(--color-text-primary);
+      }
+      .hero-subtitle {
+        font-size: var(--font-size-2xl);
+        font-weight: var(--font-weight-medium);
+        margin-bottom: var(--spacing-lg);
+        color: var(--color-text-secondary);
+      }
+      .hero-description {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-3xl);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-medium);
+        text-decoration: none;
+        cursor: pointer;
+        transition: all var(--transition-base);
+        min-width: 140px;
+      }
+      .btn-primary {
+        background-color: var(--color-button-primary);
+        color: white;
+      }
+      .btn-primary:hover {
+        background-color: var(--color-button-primary-hover);
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 var(--spacing-md);
+        height: 100%;
+      }
+      .logo {
+        font-size: var(--font-size-2xl);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-primary);
+        text-decoration: none;
+      }
+      .nav-menu {
+        display: none;
+      }
+      @media (min-width: 768px) {
         .nav-menu {
-          display: none;
+          display: flex;
         }
-        @media (min-width: 768px) {
-          .nav-menu {
-            display: flex;
-          }
-        }
+      }
     </style>
-    
+
     <!-- Load non-critical CSS asynchronously -->
-    <link rel="preload" href="css/main.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/main.min.css"></noscript>
-    
+    <link
+      rel="preload"
+      href="css/main.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/main.min.css" /></noscript>
+
     <!-- Load lazy loading CSS -->
-    <link rel="preload" href="css/lazy-images.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/lazy-images.min.css"></noscript>
-    
+    <link
+      rel="preload"
+      href="css/lazy-images.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/lazy-images.min.css" /></noscript>
+
     <!-- Preload critical resources for faster rendering -->
-    <link rel="preload" as="image" href="assets/images/training-1.jpg" type="image/jpeg">
-    <link rel="preload" as="script" href="js/dist/app-bundle.js">
-    
+    <link rel="preload" as="image" href="assets/images/training-1.jpg" type="image/jpeg" />
+    <link rel="preload" as="script" href="js/dist/app-bundle.js" />
+
     <!-- Prefetch next-page resources using modern formats -->
-    <link rel="prefetch" as="image" href="assets/images/training-2.jpg">
-    <link rel="prefetch" as="image" href="assets/images/training-3.jpg">
-    <link rel="prefetch" as="image" href="assets/images/training-4.jpg">
-    
+    <link rel="prefetch" as="image" href="assets/images/training-2.jpg" />
+    <link rel="prefetch" as="image" href="assets/images/training-3.jpg" />
+    <link rel="prefetch" as="image" href="assets/images/training-4.jpg" />
+
     <!-- Favicon (placeholder) -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Liberty Ridge Training Grounds",
-      "description": "Professional firearms training by Army veteran Zach in Pasco, WA",
-      "url": "https://www.libertyridgetraininggrounds.com",
-      "telephone": "(555) 123-4567",
-      "email": "info@libertyridgetraininggrounds.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Pasco",
-        "addressRegion": "WA",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "46.2396",
-        "longitude": "-119.1006"
-      },
-      "openingHours": "Mo-Sa 09:00-18:00",
-      "serviceType": "Firearms Training",
-      "priceRange": "$$"
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Liberty Ridge Training Grounds",
+        "description": "Professional firearms training by Army veteran Zach in Pasco, WA",
+        "url": "https://www.libertyridgetraininggrounds.com",
+        "telephone": "(555) 123-4567",
+        "email": "info@libertyridgetraininggrounds.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pasco",
+          "addressRegion": "WA",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "46.2396",
+          "longitude": "-119.1006"
+        },
+        "openingHours": "Mo-Sa 09:00-18:00",
+        "serviceType": "Firearms Training",
+        "priceRange": "$$"
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Persistent Header -->
     <header class="header" id="header">
-        <div class="header-container">
-            <div class="logo">
-                <span class="logo-text">Liberty Ridge Training Grounds</span>
-            </div>
-            
-            <nav class="nav-desktop">
-                <ul class="nav-list">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                    <li><a href="#consultation" class="nav-link">Book Consultation</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            
-            <div class="header-controls">
-                <!-- Dark/Light Mode Toggle -->
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-                    <span class="material-icons">brightness_6</span>
-                </button>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+      <div class="header-container">
+        <div class="logo">
+          <span class="logo-text">Liberty Ridge Training Grounds</span>
         </div>
-        
-        <!-- Mobile Navigation -->
-        <nav class="nav-mobile" id="navMobile">
-            <ul class="nav-mobile-list">
-                <li><a href="#home" class="nav-mobile-link">Home</a></li>
-                <li><a href="#about" class="nav-mobile-link">About</a></li>
-                <li><a href="#services" class="nav-mobile-link">Services</a></li>
-                <li><a href="#gallery" class="nav-mobile-link">Gallery</a></li>
-                <li><a href="#consultation" class="nav-mobile-link">Book Consultation</a></li>
-                <li><a href="#contact" class="nav-mobile-link">Contact</a></li>
-            </ul>
+
+        <nav class="nav-desktop">
+          <ul class="nav-list">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#consultation" class="nav-link">Book Consultation</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
         </nav>
+
+        <div class="header-controls">
+          <!-- Dark/Light Mode Toggle -->
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+            <span class="material-icons">brightness_6</span>
+          </button>
+
+          <!-- Mobile Menu Toggle -->
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <nav class="nav-mobile" id="navMobile">
+        <ul class="nav-mobile-list">
+          <li><a href="#home" class="nav-mobile-link">Home</a></li>
+          <li><a href="#about" class="nav-mobile-link">About</a></li>
+          <li><a href="#services" class="nav-mobile-link">Services</a></li>
+          <li><a href="#gallery" class="nav-mobile-link">Gallery</a></li>
+          <li><a href="#consultation" class="nav-mobile-link">Book Consultation</a></li>
+          <li><a href="#contact" class="nav-mobile-link">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Main Content -->
     <main class="main">
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <h1 class="hero-title">Professional Firearms Training</h1>
-                <p class="hero-subtitle">Expert instruction from an Army veteran in Pasco, WA</p>
-                <p class="hero-description">
-                    Build confidence, enhance safety, and master responsible firearm handling through 
-                    personalized one-on-one training tailored to your experience level.
-                </p>
-                <div class="hero-actions">
-                    <a href="#consultation" class="btn btn-primary">Schedule Consultation</a>
-                    <a href="#about" class="btn btn-secondary">Learn More</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <!-- Hero image will be added here -->
-            </div>
-        </section>
+      <!-- Hero Section -->
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <h1 class="hero-title">Professional Firearms Training</h1>
+          <p class="hero-subtitle">Expert instruction from an Army veteran in Pasco, WA</p>
+          <p class="hero-description">
+            Build confidence, enhance safety, and master responsible firearm handling through
+            personalized one-on-one training tailored to your experience level.
+          </p>
+          <div class="hero-actions">
+            <a href="#consultation" class="btn btn-primary">Schedule Consultation</a>
+            <a href="#about" class="btn btn-secondary">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- Hero image will be added here -->
+        </div>
+      </section>
 
-        <!-- About Section -->
-        <section class="about" id="about">
-            <div class="container">
-                <h2 class="section-title">About Your Instructor</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>Meet Zach - Your Firearms Training Expert</h3>
-                        <p>
-                            As an Army veteran with extensive military experience, I bring real-world expertise 
-                            to every training session. My mission is to promote safe, professional, and 
-                            comprehensive firearms education to responsible gun owners throughout the Pacific Northwest.
-                        </p>
-                        <p>
-                            Whether you're a complete beginner or looking to refine advanced skills, 
-                            I provide personalized instruction that emphasizes safety, accuracy, and confidence.
-                        </p>
-                    </div>
-                    <div class="about-image">
-                        <!-- Instructor photo will be added here -->
-                    </div>
-                </div>
+      <!-- About Section -->
+      <section class="about" id="about">
+        <div class="container">
+          <h2 class="section-title">About Your Instructor</h2>
+          <div class="about-content">
+            <div class="about-text">
+              <h3>Meet Zach - Your Firearms Training Expert</h3>
+              <p>
+                As an Army veteran with extensive military experience, I bring real-world expertise
+                to every training session. My mission is to promote safe, professional, and
+                comprehensive firearms education to responsible gun owners throughout the Pacific
+                Northwest.
+              </p>
+              <p>
+                Whether you're a complete beginner or looking to refine advanced skills, I provide
+                personalized instruction that emphasizes safety, accuracy, and confidence.
+              </p>
             </div>
-        </section>
+            <div class="about-image">
+              <!-- Instructor photo will be added here -->
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Services Section -->
-        <section class="services" id="services">
-            <div class="container">
-                <h2 class="section-title">Training Services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <span class="material-icons service-icon">security</span>
-                        <h3>Basic Firearms Safety</h3>
-                        <p>Fundamental safety principles, proper handling, and basic marksmanship for beginners.</p>
-                    </div>
-                    <div class="service-card">
-                        <span class="material-icons service-icon">visibility</span>
-                        <h3>Advanced Marksmanship</h3>
-                        <p>Precision shooting techniques, breathing control, and advanced targeting for experienced shooters.</p>
-                    </div>
-                    <div class="service-card">
-                        <span class="material-icons service-icon">shield</span>
-                        <h3>Concealed Carry Training</h3>
-                        <p>Practical self-defense scenarios, legal considerations, and situational awareness training.</p>
-                    </div>
-                    <div class="service-card">
-                        <span class="material-icons service-icon">psychology</span>
-                        <h3>Tactical Mindset</h3>
-                        <p>Mental preparation, decision-making under pressure, and tactical awareness development.</p>
-                    </div>
-                </div>
+      <!-- Services Section -->
+      <section class="services" id="services">
+        <div class="container">
+          <h2 class="section-title">Training Services</h2>
+          <div class="services-grid">
+            <div class="service-card">
+              <span class="material-icons service-icon">security</span>
+              <h3>Basic Firearms Safety</h3>
+              <p>
+                Fundamental safety principles, proper handling, and basic marksmanship for
+                beginners.
+              </p>
             </div>
-        </section>
+            <div class="service-card">
+              <span class="material-icons service-icon">visibility</span>
+              <h3>Advanced Marksmanship</h3>
+              <p>
+                Precision shooting techniques, breathing control, and advanced targeting for
+                experienced shooters.
+              </p>
+            </div>
+            <div class="service-card">
+              <span class="material-icons service-icon">shield</span>
+              <h3>Concealed Carry Training</h3>
+              <p>
+                Practical self-defense scenarios, legal considerations, and situational awareness
+                training.
+              </p>
+            </div>
+            <div class="service-card">
+              <span class="material-icons service-icon">psychology</span>
+              <h3>Tactical Mindset</h3>
+              <p>
+                Mental preparation, decision-making under pressure, and tactical awareness
+                development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Gallery Section -->
-        <section class="gallery" id="gallery">
-            <div class="container">
-                <h2 class="section-title">Training Gallery</h2>
-                <div class="gallery-tabs">
-                    <button class="gallery-tab active" data-tab="photos">Photos</button>
-                    <button class="gallery-tab" data-tab="videos">Videos</button>
-                </div>
-                <div class="gallery-content">
-                    <div class="gallery-grid" id="photoGallery">
-                        <!-- Photos will be dynamically loaded here -->
-                    </div>
-                    <div class="gallery-grid" id="videoGallery" style="display: none;">
-                        <!-- Videos will be dynamically loaded here -->
-                    </div>
-                </div>
+      <!-- Gallery Section -->
+      <section class="gallery" id="gallery">
+        <div class="container">
+          <h2 class="section-title">Training Gallery</h2>
+          <div class="gallery-tabs">
+            <button class="gallery-tab active" data-tab="photos">Photos</button>
+            <button class="gallery-tab" data-tab="videos">Videos</button>
+          </div>
+          <div class="gallery-content">
+            <div class="gallery-grid" id="photoGallery">
+              <!-- Photos will be dynamically loaded here -->
             </div>
-        </section>
+            <div class="gallery-grid" id="videoGallery" style="display: none">
+              <!-- Videos will be dynamically loaded here -->
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Consultation Booking Section -->
-        <section class="consultation" id="consultation">
-            <div class="container">
-                <h2 class="section-title">Schedule Your Consultation</h2>
-                <p class="consultation-description">
-                    Ready to begin your firearms training journey? Book a free consultation to discuss 
-                    your goals and create a personalized training plan.
-                </p>
-                <div class="consultation-content">
-                    <div class="consultation-form">
-                        <form id="consultationForm">
-                            <div class="form-group">
-                                <label for="fullName">Full Name *</label>
-                                <input type="text" id="fullName" name="fullName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="experience">Experience Level</label>
-                                <select id="experience" name="experience">
-                                    <option value="beginner">Complete Beginner</option>
-                                    <option value="basic">Some Experience</option>
-                                    <option value="intermediate">Intermediate</option>
-                                    <option value="advanced">Advanced</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="goals">Training Goals</label>
-                                <textarea id="goals" name="goals" rows="4" placeholder="Tell us about your training objectives..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Schedule Consultation</button>
-                        </form>
-                    </div>
-                    <div class="consultation-calendar">
-                        <div id="calendar">
-                            <!-- Calendar widget will be loaded here -->
-                        </div>
-                    </div>
+      <!-- Consultation Booking Section -->
+      <section class="consultation" id="consultation">
+        <div class="container">
+          <h2 class="section-title">Schedule Your Consultation</h2>
+          <p class="consultation-description">
+            Ready to begin your firearms training journey? Book a free consultation to discuss your
+            goals and create a personalized training plan.
+          </p>
+          <div class="consultation-content">
+            <div class="consultation-form">
+              <form id="consultationForm">
+                <div class="form-group">
+                  <label for="fullName">Full Name *</label>
+                  <input type="text" id="fullName" name="fullName" required />
                 </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" required />
+                </div>
+                <div class="form-group">
+                  <label for="experience">Experience Level</label>
+                  <select id="experience" name="experience">
+                    <option value="beginner">Complete Beginner</option>
+                    <option value="basic">Some Experience</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="goals">Training Goals</label>
+                  <textarea
+                    id="goals"
+                    name="goals"
+                    rows="4"
+                    placeholder="Tell us about your training objectives..."
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Schedule Consultation</button>
+              </form>
             </div>
-        </section>
+            <div class="consultation-calendar">
+              <div id="calendar">
+                <!-- Calendar widget will be loaded here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Contact Section -->
-        <section class="contact" id="contact">
-            <div class="container">
-                <h2 class="section-title">Contact Information</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <span class="material-icons">location_on</span>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Pasco, WA & Surrounding Areas</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="material-icons">phone</span>
-                            <div>
-                                <h4>Phone</h4>
-                                <p><a href="tel:+1234567890">(123) 456-7890</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="material-icons">email</span>
-                            <div>
-                                <h4>Email</h4>
-                                <p><a href="mailto:info@libertyridgetraininggrounds.com">info@libertyridgetraininggrounds.com</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-map">
-                        <!-- Map placeholder -->
-                        <div class="map-placeholder">
-                            <span class="material-icons">map</span>
-                            <p>Service Area Map</p>
-                        </div>
-                    </div>
+      <!-- Contact Section -->
+      <section class="contact" id="contact">
+        <div class="container">
+          <h2 class="section-title">Contact Information</h2>
+          <div class="contact-grid">
+            <div class="contact-info">
+              <div class="contact-item">
+                <span class="material-icons">location_on</span>
+                <div>
+                  <h4>Location</h4>
+                  <p>Pasco, WA & Surrounding Areas</p>
                 </div>
+              </div>
+              <div class="contact-item">
+                <span class="material-icons">phone</span>
+                <div>
+                  <h4>Phone</h4>
+                  <p><a href="tel:+1234567890">(123) 456-7890</a></p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="material-icons">email</span>
+                <div>
+                  <h4>Email</h4>
+                  <p>
+                    <a href="mailto:info@libertyridgetraininggrounds.com"
+                      >info@libertyridgetraininggrounds.com</a
+                    >
+                  </p>
+                </div>
+              </div>
             </div>
-        </section>
+            <div class="contact-map">
+              <!-- Map placeholder -->
+              <div class="map-placeholder">
+                <span class="material-icons">map</span>
+                <p>Service Area Map</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Liberty Ridge Training Grounds</h3>
-                    <p>Professional firearms training for responsible gun owners.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#consultation">Book Consultation</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p>Pasco, WA</p>
-                    <p>(123) 456-7890</p>
-                    <p>info@libertyridgetraininggrounds.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Liberty Ridge Training Grounds. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <h3>Liberty Ridge Training Grounds</h3>
+            <p>Professional firearms training for responsible gun owners.</p>
+          </div>
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#consultation">Book Consultation</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>Pasco, WA</p>
+            <p>(123) 456-7890</p>
+            <p>info@libertyridgetraininggrounds.com</p>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Liberty Ridge Training Grounds. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Chatbot -->
     <div class="chatbot" id="chatbot">
-        <div class="chatbot-toggle" id="chatbotToggle">
-            <span class="material-icons">chat</span>
+      <div class="chatbot-toggle" id="chatbotToggle">
+        <span class="material-icons">chat</span>
+      </div>
+      <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+          <h4>How can I help you?</h4>
+          <button class="chatbot-close" id="chatbotClose">
+            <span class="material-icons">close</span>
+          </button>
         </div>
-        <div class="chatbot-window" id="chatbotWindow">
-            <div class="chatbot-header">
-                <h4>How can I help you?</h4>
-                <button class="chatbot-close" id="chatbotClose">
-                    <span class="material-icons">close</span>
-                </button>
-            </div>
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="chatbot-message bot">
-                    <p>Hi! I'm here to answer common questions about our firearms training services. How can I help you today?</p>
-                </div>
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="chatbotInput" placeholder="Type your question...">
-                <button id="chatbotSend">
-                    <span class="material-icons">send</span>
-                </button>
-            </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+          <div class="chatbot-message bot">
+            <p>
+              Hi! I'm here to answer common questions about our firearms training services. How can
+              I help you today?
+            </p>
+          </div>
         </div>
+        <div class="chatbot-input">
+          <input type="text" id="chatbotInput" placeholder="Type your question..." />
+          <button id="chatbotSend">
+            <span class="material-icons">send</span>
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- JavaScript - Bundled for Performance -->
     <script>
-        // Service Worker Registration for caching
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js')
-                    .then(registration => {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch(registrationError => {
-                        console.log('SW registration failed: ', registrationError);
-                    });
+      // Service Worker Registration for caching
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('service-worker.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
             });
-        }
+        });
+      }
     </script>
     <script src="js/dist/performance-monitor.js" defer></script>
     <script src="js/dist/lazy-images.js" defer></script>
     <script src="js/dist/app-bundle.js" defer></script>
-</body>
+  </body>
 </html>

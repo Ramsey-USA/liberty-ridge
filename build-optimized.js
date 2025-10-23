@@ -13,7 +13,7 @@ async function processCSS(inputFile, outputFile) {
     }
 
     const css = fs.readFileSync(inputFile, 'utf8');
-    
+
     // Simple CSS minification
     const minified = css
       .replace(/\/\*[\s\S]*?\*\//g, '') // Remove comments
@@ -24,13 +24,13 @@ async function processCSS(inputFile, outputFile) {
       .replace(/,\s*/g, ',') // Clean commas
       .replace(/:\s*/g, ':') // Clean colons
       .trim();
-    
+
     // Ensure output directory exists
     const outputDir = path.dirname(outputFile);
     if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir, { recursive: true });
     }
-    
+
     fs.writeFileSync(outputFile, minified);
     return minified;
   } catch (error) {
@@ -58,7 +58,8 @@ const buildOptions = {
   allowOverwrite: true,
   // Advanced performance optimizations
   define: {
-    'process.env.NODE_ENV': process.env.NODE_ENV === 'production' ? '"production"' : '"development"'
+    'process.env.NODE_ENV':
+      process.env.NODE_ENV === 'production' ? '"production"' : '"development"'
   },
   // Drop console.log in production
   drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : [],
@@ -95,7 +96,7 @@ async function buildOptimized() {
 
     // Process CSS files
     process.stdout.write('🎨 Processing CSS files...\n');
-    
+
     const cssFiles = [
       { input: 'src/css/critical.css', output: 'src/css/critical.min.css' },
       { input: 'src/css/main.css', output: 'src/css/main.min.css' },
@@ -108,8 +109,10 @@ async function buildOptimized() {
       if (processed) {
         const originalSize = fs.statSync(input).size;
         const minifiedSize = processed.length;
-        const savings = ((originalSize - minifiedSize) / originalSize * 100).toFixed(1);
-        process.stdout.write(`  ✓ ${path.basename(input)} → ${path.basename(output)} (${savings}% smaller)\n`);
+        const savings = (((originalSize - minifiedSize) / originalSize) * 100).toFixed(1);
+        process.stdout.write(
+          `  ✓ ${path.basename(input)} → ${path.basename(output)} (${savings}% smaller)\n`
+        );
         cssProcessed++;
       }
     }
@@ -120,7 +123,7 @@ async function buildOptimized() {
     if (result.metafile) {
       const outputs = Object.keys(result.metafile.outputs);
       process.stdout.write('\n📊 Bundle Sizes:\n');
-      outputs.forEach(output => {
+      outputs.forEach((output) => {
         const info = result.metafile.outputs[output];
         const sizeKB = (info.bytes / 1024).toFixed(1);
         process.stdout.write(`  • ${path.basename(output)}: ${sizeKB} KB\n`);
@@ -138,17 +141,16 @@ async function buildOptimized() {
     process.stdout.write('  1. Update HTML to use minified CSS files\n');
     process.stdout.write('  2. Implement service worker for caching\n');
     process.stdout.write('  3. Run Lighthouse audit to measure improvements\n');
-    
   } catch (error) {
     console.error('❌ Build failed:', error);
-    
+
     // Provide helpful error messages
     if (error.message.includes('Could not resolve')) {
       process.stdout.write('\n💡 Tip: Make sure all JavaScript entry points exist:\n');
       process.stdout.write('  • src/js/main.js (or app-bundle.js)\n');
       process.stdout.write('  • src/js/lazy-images.js\n');
     }
-    
+
     process.exit(1);
   }
 }

@@ -75,3 +75,10 @@ Thumbs.db
 lighthouse-report.html
 lighthouse-report.json
 server.log
+# Lint reports
+lint-report.json
+
+# Minified files
+src/js/dist/
+*.min.js
+*.bundle.js

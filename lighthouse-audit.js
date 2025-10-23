@@ -13,7 +13,7 @@ async function runLighthouseAudit() {
   const url = 'http://localhost:8080';
   const outputDir = './lighthouse-reports';
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  
+
   // Ensure output directory exists
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
@@ -35,16 +35,17 @@ async function runLighthouseAudit() {
     // Run Lighthouse audit
     const htmlReport = path.join(outputDir, `lighthouse-${timestamp}.html`);
     const jsonReport = path.join(outputDir, `lighthouse-${timestamp}.json`);
-    
+
     console.log('🚀 Running performance audit...');
-    
-    const command = `lighthouse ${url} ` +
-      `--output=html,json ` +
+
+    const command =
+      `lighthouse ${url} ` +
+      '--output=html,json ' +
       `--output-path=${htmlReport.replace('.html', '')} ` +
-      `--chrome-flags="--headless --no-sandbox" ` +
-      `--only-categories=performance,accessibility,best-practices,seo ` +
-      `--throttling-method=devtools ` +
-      `--view`;
+      '--chrome-flags="--headless --no-sandbox" ' +
+      '--only-categories=performance,accessibility,best-practices,seo ' +
+      '--throttling-method=devtools ' +
+      '--view';
 
     execSync(command, { stdio: 'inherit' });
 
@@ -57,10 +58,9 @@ async function runLighthouseAudit() {
       const results = JSON.parse(fs.readFileSync(jsonReport, 'utf8'));
       generateSummary(results);
     }
-
   } catch (error) {
     console.error('❌ Lighthouse audit failed:', error.message);
-    
+
     // Provide manual audit instructions
     console.log('\n📋 Manual audit instructions:');
     console.log('1. Install Lighthouse: npm install -g lighthouse');
@@ -71,10 +71,10 @@ async function runLighthouseAudit() {
 
 function generateSummary(results) {
   console.log('\n🎯 Performance Summary:');
-  console.log('=' .repeat(50));
-  
+  console.log('='.repeat(50));
+
   const categories = results.lhr.categories;
-  
+
   Object.entries(categories).forEach(([key, category]) => {
     const score = Math.round(category.score * 100);
     const emoji = getScoreEmoji(score);
@@ -85,17 +85,17 @@ function generateSummary(results) {
   const audits = results.lhr.audits;
   console.log('\n📊 Core Web Vitals:');
   console.log('-'.repeat(30));
-  
+
   if (audits['largest-contentful-paint']) {
     const lcp = audits['largest-contentful-paint'].displayValue;
     console.log(`🎨 Largest Contentful Paint: ${lcp}`);
   }
-  
+
   if (audits['first-input-delay']) {
     const fid = audits['first-input-delay'].displayValue;
     console.log(`⚡ First Input Delay: ${fid}`);
   }
-  
+
   if (audits['cumulative-layout-shift']) {
     const cls = audits['cumulative-layout-shift'].displayValue;
     console.log(`📏 Cumulative Layout Shift: ${cls}`);
@@ -104,16 +104,18 @@ function generateSummary(results) {
   // Opportunities
   console.log('\n🔧 Optimization Opportunities:');
   console.log('-'.repeat(40));
-  
+
   const opportunities = Object.values(audits)
-    .filter(audit => audit.scoreDisplayMode === 'numeric' && audit.score !== null && audit.score < 0.9)
+    .filter(
+      (audit) => audit.scoreDisplayMode === 'numeric' && audit.score !== null && audit.score < 0.9
+    )
     .sort((a, b) => a.score - b.score)
     .slice(0, 5);
 
   if (opportunities.length === 0) {
     console.log('🎉 No major optimization opportunities found!');
   } else {
-    opportunities.forEach(audit => {
+    opportunities.forEach((audit) => {
       const score = Math.round(audit.score * 100);
       console.log(`• ${audit.title}: ${score}/100`);
     });
@@ -123,7 +125,7 @@ function generateSummary(results) {
   const performanceScore = Math.round(categories.performance.score * 100);
   const grade = getPerformanceGrade(performanceScore);
   console.log(`\n🏆 Overall Performance Grade: ${grade}`);
-  
+
   // Check if we met our target
   if (performanceScore >= 95) {
     console.log('🎯 TARGET ACHIEVED! Performance score 95+ reached!');

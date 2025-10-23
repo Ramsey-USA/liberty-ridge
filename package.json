@@ -12,8 +12,21 @@
     "deploy": "firebase deploy",
     "emulator": "firebase emulators:start",
     "test": "echo 'Tests will be added in future phases'",
-    "lint": "eslint src/js/**/*.js",
-    "format": "prettier --write src/**/*.{html,css,js}",
+    "lint": "npx eslint \"src/js/**/*.js\" \"src/admin/**/*.js\" \"src/service-worker.js\" \"scripts/**/*.js\" \"*.js\" --ignore-pattern \"src/js/dist/**\" --ignore-pattern \"node_modules/**\" --max-warnings=30",
+    "lint:fix": "npx eslint \"src/js/**/*.js\" \"src/admin/**/*.js\" \"src/service-worker.js\" \"scripts/**/*.js\" \"*.js\" --ignore-pattern \"src/js/dist/**\" --ignore-pattern \"node_modules/**\" --fix",
+    "lint:check": "node scripts/lint.js check",
+    "lint:staged": "node scripts/lint.js staged",
+    "lint:report": "node scripts/lint.js report",
+    "lint:strict": "npx eslint \"src/js/**/*.js\" \"src/admin/**/*.js\" \"src/service-worker.js\" \"scripts/**/*.js\" \"*.js\" --ignore-pattern \"src/js/dist/**\" --ignore-pattern \"node_modules/**\" --max-warnings=0",
+    "format": "node scripts/lint.js format",
+    "format:check": "prettier --check src/**/*.{html,css,js} scripts/**/*.js *.{js,json,md}",
+    "fix:markdown": "node scripts/fix-markdown.js",
+    "lint:markdown": "markdownlint docs/**/*.md || echo 'Note: Install markdownlint-cli globally: npm install -g markdownlint-cli'",
+    "lint:all": "npm run lint:strict && echo '✅ JavaScript linting passed' && echo '📝 Running markdown fixes...' && npm run fix:markdown && echo '✅ All linting complete!'",
+    "build:optimized": "node build-optimized.js",
+    "optimize:images": "node optimize-images.js",
+    "audit:lighthouse": "node lighthouse-audit.js",
+    "precommit": "npm run lint:staged",
     "lighthouse:json": "lighthouse http://localhost:3000 --output=json --output-path=./lighthouse-report.json --chrome-flags=\"--headless --no-sandbox --disable-gpu\" --quiet",
     "lighthouse:html": "lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html --chrome-flags=\"--headless --no-sandbox --disable-gpu\" --quiet",
     "audit": "echo 'Starting server...' && npm run dev & sleep 8 && echo 'Running Lighthouse audit...' && npm run lighthouse:json && npm run lighthouse:html && echo 'Stopping server...' && pkill -f 'firebase serve' && echo 'Audit complete! Check lighthouse-report.html and lighthouse-report.json'",
@@ -44,12 +57,18 @@
     "esbuild": "^0.19.0",
     "eslint": "^8.57.1",
     "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.6.0",
     "firebase-tools": "^12.0.0",
     "globals": "^16.4.0",
+    "husky": "^8.0.3",
     "imagemin": "^9.0.1",
     "imagemin-avif": "^0.1.6",
     "imagemin-webp": "^8.0.0",
     "lighthouse": "^13.0.0",
+    "lint-staged": "^15.5.2",
     "prettier": "^3.0.0",
     "sharp": "^0.34.4"
   },
@@ -69,7 +88,8 @@
   "eslintConfig": {
     "env": {
       "browser": true,
-      "es2021": true
+      "es2021": true,
+      "node": true
     },
     "extends": [
       "standard"
@@ -94,17 +114,82 @@
       "serverTimestamp": "readonly",
       "Timestamp": "readonly",
       "ref": "readonly",
-      "deleteObject": "readonly"
+      "deleteObject": "readonly",
+      "gtag": "readonly",
+      "process": "readonly"
     },
     "rules": {
-      "no-console": "warn",
+      "no-console": [
+        "warn",
+        {
+          "allow": [
+            "warn",
+            "error"
+          ]
+        }
+      ],
       "no-unused-vars": "error",
       "prefer-const": "error",
       "semi": [
         "error",
         "always"
-      ]
-    }
+      ],
+      "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ],
+      "no-useless-catch": "off",
+      "no-floating-decimal": "error",
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "array-callback-return": "warn"
+    },
+    "ignorePatterns": [
+      "src/js/dist/**",
+      "src/css/*.min.css",
+      "node_modules/",
+      "lighthouse-reports/",
+      "*.min.js",
+      "*.bundle.js",
+      "build/",
+      "dist/",
+      "public/",
+      "lint-report.json"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "scripts/**/*.js",
+          "build*.js",
+          "lighthouse*.js",
+          "optimize*.js"
+        ],
+        "rules": {
+          "no-console": "off"
+        }
+      },
+      {
+        "files": [
+          "src/js/performance-monitor.js"
+        ],
+        "rules": {
+          "no-console": "off"
+        }
+      }
+    ]
   },
   "prettier": {
     "semi": true,
@@ -112,5 +197,19 @@
     "tabWidth": 2,
     "trailingComma": "es5",
     "printWidth": 100
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{html,css,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
