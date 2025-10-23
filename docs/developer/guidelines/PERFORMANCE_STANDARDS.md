@@ -8,39 +8,33 @@ Liberty Ridge maintains **military-grade performance standards** to ensure optim
 
 ### Lighthouse Score Requirements
 
-```
-
+```text
 🏆 MINIMUM REQUIREMENTS
 ├── Performance: 95+/100
 ├── Accessibility: 100/100
 ├── Best Practices: 100/100
 └── SEO: 95+/100
-
 ```
 
 ### Core Web Vitals Targets
 
-```
-
+```text
 🚀 CORE WEB VITALS
 ├── LCP (Largest Contentful Paint): < 2.5s
 ├── FID (First Input Delay): < 100ms
 ├── CLS (Cumulative Layout Shift): < 0.1
 └── TTFB (Time to First Byte): < 800ms
-
 ```
 
 ### Bundle Size Limits
 
-```
-
+```text
 📦 BUNDLE SIZE TARGETS
 ├── JavaScript Total: < 20KB compressed
 ├── CSS Total: < 10KB compressed
 ├── Images: WebP/AVIF optimized
 ├── Fonts: Subset and preloaded
 └── Total Page Weight: < 500KB
-
 ```
 
 ## 🔧 Optimization Strategies

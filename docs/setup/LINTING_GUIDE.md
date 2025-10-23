@@ -356,8 +356,7 @@ For large codebases:
 
 ## File Structure
 
-```
-
+```text
 liberty-ridge/
 ├── scripts/
 │   └── lint.js              # Custom lint script

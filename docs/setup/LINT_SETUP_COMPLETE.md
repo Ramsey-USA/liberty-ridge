@@ -71,7 +71,7 @@ The warnings about `console.log()` can be fixed by:
 
 The `/src/js/dist/` folder contains generated/bundled files. You have two options:
 
-**Option A: Exclude from linting (Recommended)**
+#### Option A: Exclude from linting (Recommended)
 
 ```bash
 
@@ -198,7 +198,7 @@ You'll know the system is working when:
 3. Use `npm run lint:quick-fix` for common fixes
 4. The lint script provides helpful error messages and suggestions
 
-## 🎉 You're All Set!
+## 🎉 You're All Set
 
 Your linting system is now professional-grade and will help maintain consistent, high-quality code across your Liberty Ridge Training Grounds project. The consistent issues you were experiencing should be largely resolved with regular use of `npm run lint:fix`.
 

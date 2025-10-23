@@ -14,10 +14,8 @@
 
 ### Current Status
 
-```
-
+```text
 ✖ 8 problems (0 errors, 8 warnings)
-
 ```
 
 ### Remaining Warnings Breakdown
@@ -67,8 +65,7 @@ npm run lint:report       # Detailed report generation
 
 ## 📁 Clean File Structure
 
-```
-
+```text
 liberty-ridge/
 ├── .eslintrc.json          # Main ESLint config
 ├── scripts/lint.js         # Comprehensive lint script
