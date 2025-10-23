@@ -1,6 +1,6 @@
 # Liberty Ridge Training Grounds 🎯
 
-**Professional Firearms Training Platform - Pasco, WA**
+## Professional Firearms Training Platform - Pasco, WA
 
 [![Performance](https://img.shields.io/badge/Lighthouse-95%2B-brightgreen.svg)](docs/optimization/)
 [![Bundle Size](https://img.shields.io/badge/Bundle-9.9KB-blue.svg)](docs/optimization/)
