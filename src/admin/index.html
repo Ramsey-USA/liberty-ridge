@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard - Liberty Ridge Training Grounds</title>
+    <meta name="robots" content="noindex, nofollow" />
 
     <!-- Google Fonts - Roboto -->
     <link
@@ -14,112 +15,70 @@
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js" defer></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"
+      defer
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"
+      defer
+    ></script>
+
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="admin.css" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
   </head>
   <body>
-    <!-- Admin Header -->
-    <header class="admin-header">
-      <div class="admin-header-content">
-        <div class="admin-logo">
-          <span class="material-icons">admin_panel_settings</span>
-          <h1>Liberty Ridge Admin</h1>
-        </div>
-
-        <div class="admin-header-actions">
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-            <span class="material-icons">brightness_6</span>
-          </button>
-
-          <div class="admin-user">
-            <span id="adminUserName">Admin</span>
-            <button class="btn-logout" id="logoutBtn">
-              <span class="material-icons">logout</span>
-              Logout
-            </button>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Auth Screen (shown when not logged in) -->
-    <div class="auth-screen" id="authScreen">
-      <div class="auth-container">
-        <div class="auth-card">
-          <div class="auth-header">
-            <span class="material-icons">security</span>
-            <h2>Admin Login</h2>
-            <p>Access the Liberty Ridge Training Grounds admin dashboard</p>
-          </div>
-
-          <form class="auth-form" id="loginForm">
-            <div class="form-group">
-              <label for="adminEmail">Email Address</label>
-              <input type="email" id="adminEmail" required />
-            </div>
-
-            <div class="form-group">
-              <label for="adminPassword">Password</label>
-              <input type="password" id="adminPassword" required />
-            </div>
-
-            <button type="submit" class="btn btn-primary">
-              <span class="material-icons">login</span>
-              Sign In
-            </button>
-          </form>
-
-          <div class="auth-error" id="authError" style="display: none">
-            <span class="material-icons">error</span>
-            <span id="authErrorMessage"></span>
-          </div>
-        </div>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-content">
+        <span class="material-icons loading-icon">admin_panel_settings</span>
+        <h2>Liberty Ridge Admin</h2>
+        <div class="loading-spinner"></div>
+        <p>Checking authentication...</p>
       </div>
     </div>
 
-    <!-- Admin Dashboard (shown when logged in) -->
-    <div class="admin-dashboard" id="adminDashboard" style="display: none">
+    <!-- Admin Dashboard -->
+    <div class="admin-container" id="adminContainer" style="display: none">
+      <!-- Admin Header -->
+      <header class="admin-header">
+        <div class="admin-header-content">
+          <div class="admin-logo">
+            <span class="material-icons">admin_panel_settings</span>
+            <h1>Liberty Ridge Admin</h1>
+          </div>
+
+          <div class="admin-header-actions">
+            <div class="admin-user">
+              <span id="adminUserName">Admin</span>
+              <button class="btn-logout" id="logoutBtn">
+                <span class="material-icons">logout</span>
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
       <!-- Sidebar Navigation -->
       <nav class="admin-sidebar">
         <ul class="admin-nav">
           <li>
-            <a href="#dashboard" class="admin-nav-link active" data-tab="dashboard">
-              <span class="material-icons">dashboard</span>
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="#appointments" class="admin-nav-link" data-tab="appointments">
-              <span class="material-icons">event</span>
-              Appointments
-            </a>
-          </li>
-          <li>
-            <a href="#gallery" class="admin-nav-link" data-tab="gallery">
+            <a href="#" class="admin-nav-link active" data-tab="gallery">
               <span class="material-icons">photo_library</span>
-              Gallery
+              Media Gallery
             </a>
           </li>
           <li>
-            <a href="#faq" class="admin-nav-link" data-tab="faq">
-              <span class="material-icons">help</span>
-              FAQ Management
-            </a>
-          </li>
-          <li>
-            <a href="#contact" class="admin-nav-link" data-tab="contact">
-              <span class="material-icons">contact_mail</span>
-              Contact Forms
-            </a>
-          </li>
-          <li>
-            <a href="#settings" class="admin-nav-link" data-tab="settings">
-              <span class="material-icons">settings</span>
-              Settings
+            <a href="#" class="admin-nav-link" data-tab="upload">
+              <span class="material-icons">cloud_upload</span>
+              Upload Media
             </a>
           </li>
         </ul>
@@ -127,246 +86,496 @@
 
       <!-- Main Content Area -->
       <main class="admin-main">
-        <!-- Dashboard Tab -->
-        <div class="admin-tab active" id="dashboard-tab">
+        <!-- Gallery Management Tab -->
+        <div class="admin-tab active" id="gallery-tab">
           <div class="admin-header-section">
-            <h2>Dashboard Overview</h2>
-            <p>Welcome to the Liberty Ridge Training Grounds admin panel</p>
-          </div>
-
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-icon">
-                <span class="material-icons">event</span>
-              </div>
-              <div class="stat-content">
-                <h3 id="totalAppointments">-</h3>
-                <p>Total Appointments</p>
-              </div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon">
-                <span class="material-icons">event_available</span>
-              </div>
-              <div class="stat-content">
-                <h3 id="pendingAppointments">-</h3>
-                <p>Pending Appointments</p>
-              </div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon">
-                <span class="material-icons">photo_library</span>
-              </div>
-              <div class="stat-content">
-                <h3 id="totalGalleryItems">-</h3>
-                <p>Gallery Items</p>
-              </div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon">
-                <span class="material-icons">contact_mail</span>
-              </div>
-              <div class="stat-content">
-                <h3 id="totalContactForms">-</h3>
-                <p>Contact Forms</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="recent-activity">
-            <h3>Recent Activity</h3>
-            <div class="activity-list" id="recentActivity">
-              <!-- Activity items will be loaded here -->
-            </div>
-          </div>
-        </div>
-
-        <!-- Appointments Tab -->
-        <div class="admin-tab" id="appointments-tab">
-          <div class="admin-header-section">
-            <h2>Appointment Management</h2>
-            <button class="btn btn-primary" id="createSlotBtn">
-              <span class="material-icons">add</span>
-              Create Available Slots
-            </button>
-          </div>
-
-          <div class="appointments-content">
-            <div class="appointments-filters">
-              <input type="date" id="appointmentDateFilter" class="form-control" />
-              <select id="appointmentStatusFilter" class="form-control">
-                <option value="">All Statuses</option>
-                <option value="pending">Pending</option>
-                <option value="confirmed">Confirmed</option>
-                <option value="completed">Completed</option>
-                <option value="cancelled">Cancelled</option>
-              </select>
-            </div>
-
-            <div class="appointments-table">
-              <table id="appointmentsTable">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Experience</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="appointmentsTableBody">
-                  <!-- Appointments will be loaded here -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- Gallery Tab -->
-        <div class="admin-tab" id="gallery-tab">
-          <div class="admin-header-section">
-            <h2>Gallery Management</h2>
-            <button class="btn btn-primary" id="uploadMediaBtn">
-              <span class="material-icons">cloud_upload</span>
-              Upload Media
-            </button>
+            <h2>Media Gallery</h2>
+            <p>Manage uploaded photos and videos</p>
           </div>
 
           <div class="gallery-content">
             <div class="gallery-filters">
               <select id="galleryTypeFilter" class="form-control">
                 <option value="">All Media</option>
-                <option value="photo">Photos</option>
+                <option value="image">Photos</option>
                 <option value="video">Videos</option>
               </select>
-
-              <select id="galleryCategoryFilter" class="form-control">
-                <option value="">All Categories</option>
-                <option value="safety">Safety</option>
-                <option value="marksmanship">Marksmanship</option>
-                <option value="tactical">Tactical</option>
-                <option value="concealed-carry">Concealed Carry</option>
-                <option value="group">Group Training</option>
-                <option value="maintenance">Maintenance</option>
-              </select>
+              <button class="btn btn-secondary" id="refreshGallery">
+                <span class="material-icons">refresh</span>
+                Refresh
+              </button>
             </div>
 
             <div class="gallery-grid" id="adminGalleryGrid">
               <!-- Gallery items will be loaded here -->
             </div>
-          </div>
-        </div>
 
-        <!-- FAQ Tab -->
-        <div class="admin-tab" id="faq-tab">
-          <div class="admin-header-section">
-            <h2>FAQ Management</h2>
-            <button class="btn btn-primary" id="addFaqBtn">
-              <span class="material-icons">add</span>
-              Add FAQ
-            </button>
-          </div>
-
-          <div class="faq-content">
-            <div class="faq-list" id="faqList">
-              <!-- FAQ items will be loaded here -->
+            <div class="gallery-empty" id="galleryEmpty" style="display: none">
+              <span class="material-icons">photo_library</span>
+              <p>No media files uploaded yet</p>
+              <button class="btn btn-primary" onclick="showTab('upload')">
+                <span class="material-icons">cloud_upload</span>
+                Upload Your First Media
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Contact Forms Tab -->
-        <div class="admin-tab" id="contact-tab">
+        <!-- Upload Media Tab -->
+        <div class="admin-tab" id="upload-tab">
           <div class="admin-header-section">
-            <h2>Contact Form Submissions</h2>
+            <h2>Upload Media</h2>
+            <p>Upload photos and videos to the gallery</p>
           </div>
 
-          <div class="contact-content">
-            <div class="contact-table">
-              <table id="contactTable">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Subject</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="contactTableBody">
-                  <!-- Contact forms will be loaded here -->
-                </tbody>
-              </table>
+          <div class="upload-content">
+            <div class="upload-area" id="uploadArea">
+              <div class="upload-dropzone" id="uploadDropzone">
+                <span class="material-icons upload-icon">cloud_upload</span>
+                <h3>Drag & drop files here</h3>
+                <p>or <button class="btn-link" id="browseFiles">browse files</button></p>
+                <small>Supported: JPG, PNG, WebP, MP4, MOV (max 50MB each)</small>
+                <input
+                  type="file"
+                  id="fileInput"
+                  multiple
+                  accept="image/*,video/*"
+                  style="display: none"
+                />
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Settings Tab -->
-        <div class="admin-tab" id="settings-tab">
-          <div class="admin-header-section">
-            <h2>Settings</h2>
-            <p>Configure website settings and preferences</p>
-          </div>
-
-          <div class="settings-content">
-            <div class="settings-section">
-              <h3>Business Information</h3>
-              <form id="businessInfoForm">
-                <div class="form-group">
-                  <label for="businessName">Business Name</label>
-                  <input type="text" id="businessName" value="Liberty Ridge Training Grounds" />
-                </div>
-
-                <div class="form-group">
-                  <label for="businessPhone">Phone Number</label>
-                  <input type="tel" id="businessPhone" value="(555) 123-4567" />
-                </div>
-
-                <div class="form-group">
-                  <label for="businessEmail">Email Address</label>
-                  <input
-                    type="email"
-                    id="businessEmail"
-                    value="info@libertyridgetraininggrounds.com"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label for="businessAddress">Address</label>
-                  <input type="text" id="businessAddress" value="Pasco, WA" />
-                </div>
-
-                <button type="submit" class="btn btn-primary">Save Changes</button>
-              </form>
+            <div class="upload-queue" id="uploadQueue" style="display: none">
+              <h3>Upload Queue</h3>
+              <div class="upload-items" id="uploadItems">
+                <!-- Upload items will be added here -->
+              </div>
+              <div class="upload-actions">
+                <button class="btn btn-primary" id="startUpload">
+                  <span class="material-icons">cloud_upload</span>
+                  Start Upload
+                </button>
+                <button class="btn btn-secondary" id="clearQueue">
+                  <span class="material-icons">clear</span>
+                  Clear Queue
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </main>
     </div>
 
-    <!-- Modals will be inserted here by JavaScript -->
-    <div id="modalContainer"></div>
-
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay" style="display: none">
-      <div class="loading-spinner">
-        <span class="material-icons">autorenew</span>
-        <p>Loading...</p>
+    <!-- Upload Progress Modal -->
+    <div class="modal" id="uploadModal" style="display: none">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Uploading Media</h3>
+        </div>
+        <div class="modal-body">
+          <div class="upload-progress">
+            <div class="upload-progress-bar">
+              <div class="upload-progress-fill" id="uploadProgressFill"></div>
+            </div>
+            <div class="upload-progress-text">
+              <span id="uploadProgressText">Preparing upload...</span>
+              <span id="uploadProgressPercent">0%</span>
+            </div>
+          </div>
+          <div class="upload-current-file" id="uploadCurrentFile">
+            <!-- Current file being uploaded -->
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- JavaScript -->
-    <script src="../js/main.js"></script>
-    <script src="admin.js"></script>
+    <!-- Firebase config and auth service -->
+    <script src="../js/firebase-config.js" defer></script>
 
-    <!-- Firebase SDK -->
-    <script type="module" src="../js/firebase-config.js"></script>
-    <script type="module" src="../js/firebase-data-service.js"></script>
+    <script>
+      // Admin Authentication and Dashboard
+      class AdminDashboard {
+        constructor() {
+          this.currentTab = 'gallery';
+          this.uploadQueue = [];
+          this.isUploading = false;
+
+          this.init();
+        }
+
+        init() {
+          // Wait for Firebase to be ready
+          window.addEventListener('firebaseReady', () => {
+            this.checkAuth();
+            this.setupEventListeners();
+          });
+
+          // Setup basic event listeners
+          this.setupEventListeners();
+        }
+
+        async checkAuth() {
+          const user = firebase.auth().currentUser;
+
+          if (!user) {
+            // Not authenticated, redirect to login
+            window.location.href = './login.html';
+            return;
+          }
+
+          // Check if user is admin
+          const adminEmails = [
+            'admin@libertyridgetraininggrounds.com',
+            'zach@libertyridgetraininggrounds.com'
+          ];
+
+          if (!adminEmails.includes(user.email)) {
+            await firebase.auth().signOut();
+            window.location.href = './login.html';
+            return;
+          }
+
+          // User is authenticated admin
+          this.showDashboard(user);
+        }
+
+        showDashboard(user) {
+          document.getElementById('loadingScreen').style.display = 'none';
+          document.getElementById('adminContainer').style.display = 'block';
+          document.getElementById('adminUserName').textContent = user.email;
+
+          // Load initial data
+          this.loadGallery();
+        }
+
+        setupEventListeners() {
+          // Logout button
+          const logoutBtn = document.getElementById('logoutBtn');
+          if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => this.handleLogout());
+          }
+
+          // Tab navigation
+          const navLinks = document.querySelectorAll('.admin-nav-link');
+          navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault();
+              const tab = link.dataset.tab;
+              this.showTab(tab);
+            });
+          });
+
+          // Upload functionality
+          this.setupUploadHandlers();
+
+          // Gallery actions
+          const refreshBtn = document.getElementById('refreshGallery');
+          if (refreshBtn) {
+            refreshBtn.addEventListener('click', () => this.loadGallery());
+          }
+        }
+
+        setupUploadHandlers() {
+          const uploadDropzone = document.getElementById('uploadDropzone');
+          const fileInput = document.getElementById('fileInput');
+          const browseBtn = document.getElementById('browseFiles');
+          const startUploadBtn = document.getElementById('startUpload');
+          const clearQueueBtn = document.getElementById('clearQueue');
+
+          if (browseBtn && fileInput) {
+            browseBtn.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', (e) => this.handleFileSelect(e.target.files));
+          }
+
+          if (uploadDropzone) {
+            uploadDropzone.addEventListener('dragover', (e) => {
+              e.preventDefault();
+              uploadDropzone.classList.add('dragover');
+            });
+
+            uploadDropzone.addEventListener('dragleave', () => {
+              uploadDropzone.classList.remove('dragover');
+            });
+
+            uploadDropzone.addEventListener('drop', (e) => {
+              e.preventDefault();
+              uploadDropzone.classList.remove('dragover');
+              this.handleFileSelect(e.dataTransfer.files);
+            });
+          }
+
+          if (startUploadBtn) {
+            startUploadBtn.addEventListener('click', () => this.startUpload());
+          }
+
+          if (clearQueueBtn) {
+            clearQueueBtn.addEventListener('click', () => this.clearUploadQueue());
+          }
+        }
+
+        async handleLogout() {
+          try {
+            await firebase.auth().signOut();
+            window.location.href = './login.html';
+          } catch (error) {
+            console.error('Logout failed:', error);
+          }
+        }
+
+        showTab(tabName) {
+          // Update navigation
+          document.querySelectorAll('.admin-nav-link').forEach(link => {
+            link.classList.remove('active');
+          });
+          document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+
+          // Update content
+          document.querySelectorAll('.admin-tab').forEach(tab => {
+            tab.classList.remove('active');
+          });
+          document.getElementById(`${tabName}-tab`).classList.add('active');
+
+          this.currentTab = tabName;
+
+          // Load tab-specific data
+          if (tabName === 'gallery') {
+            this.loadGallery();
+          }
+        }
+
+        async loadGallery() {
+          const galleryGrid = document.getElementById('adminGalleryGrid');
+          const galleryEmpty = document.getElementById('galleryEmpty');
+
+          try {
+            // Get gallery items from Firebase Storage
+            const storageRef = firebase.storage().ref('gallery');
+            const listResult = await storageRef.listAll();
+
+            if (listResult.items.length === 0) {
+              galleryGrid.innerHTML = '';
+              galleryEmpty.style.display = 'block';
+              return;
+            }
+
+            galleryEmpty.style.display = 'none';
+            galleryGrid.innerHTML = '';
+
+            // Load each item
+            for (const itemRef of listResult.items) {
+              const url = await itemRef.getDownloadURL();
+              const metadata = await itemRef.getMetadata();
+
+              const galleryItem = this.createGalleryItem(itemRef.name, url, metadata);
+              galleryGrid.appendChild(galleryItem);
+            }
+
+          } catch (error) {
+            console.error('Failed to load gallery:', error);
+            galleryGrid.innerHTML = '<p>Failed to load gallery. Please try again.</p>';
+          }
+        }
+
+        createGalleryItem(filename, url, metadata) {
+          const item = document.createElement('div');
+          item.className = 'gallery-item';
+
+          const isVideo = metadata.contentType && metadata.contentType.startsWith('video/');
+          const fileSize = this.formatFileSize(metadata.size);
+          const uploadDate = new Date(metadata.timeCreated).toLocaleDateString();
+
+          item.innerHTML = `
+            <div class="gallery-item-preview">
+              ${isVideo ?
+                `<video src="${url}" controls></video>` :
+                `<img src="${url}" alt="${filename}" loading="lazy" />`
+              }
+            </div>
+            <div class="gallery-item-info">
+              <h4>${filename}</h4>
+              <p>${fileSize} • ${uploadDate}</p>
+              <div class="gallery-item-actions">
+                <button class="btn btn-small btn-secondary" onclick="window.open('${url}')">
+                  <span class="material-icons">open_in_new</span>
+                  View
+                </button>
+                <button class="btn btn-small btn-danger" onclick="adminDashboard.deleteMedia('${filename}')">
+                  <span class="material-icons">delete</span>
+                  Delete
+                </button>
+              </div>
+            </div>
+          `;
+
+          return item;
+        }
+
+        formatFileSize(bytes) {
+          if (bytes === 0) return '0 Bytes';
+          const k = 1024;
+          const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+          const i = Math.floor(Math.log(bytes) / Math.log(k));
+          return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        async deleteMedia(filename) {
+          if (!confirm(`Are you sure you want to delete "${filename}"?`)) {
+            return;
+          }
+
+          try {
+            const storageRef = firebase.storage().ref(`gallery/${filename}`);
+            await storageRef.delete();
+            this.loadGallery(); // Reload gallery
+          } catch (error) {
+            console.error('Failed to delete media:', error);
+            alert('Failed to delete media. Please try again.');
+          }
+        }
+
+        handleFileSelect(files) {
+          const validFiles = Array.from(files).filter(file => {
+            const isValidType = file.type.startsWith('image/') || file.type.startsWith('video/');
+            const isValidSize = file.size <= 50 * 1024 * 1024; // 50MB limit
+
+            if (!isValidType) {
+              alert(`"${file.name}" is not a supported file type.`);
+              return false;
+            }
+
+            if (!isValidSize) {
+              alert(`"${file.name}" is too large. Maximum file size is 50MB.`);
+              return false;
+            }
+
+            return true;
+          });
+
+          if (validFiles.length > 0) {
+            this.addToUploadQueue(validFiles);
+          }
+        }
+
+        addToUploadQueue(files) {
+          files.forEach(file => {
+            this.uploadQueue.push(file);
+          });
+
+          this.updateUploadQueueDisplay();
+        }
+
+        updateUploadQueueDisplay() {
+          const uploadQueue = document.getElementById('uploadQueue');
+          const uploadItems = document.getElementById('uploadItems');
+
+          if (this.uploadQueue.length === 0) {
+            uploadQueue.style.display = 'none';
+            return;
+          }
+
+          uploadQueue.style.display = 'block';
+          uploadItems.innerHTML = '';
+
+          this.uploadQueue.forEach((file, index) => {
+            const item = document.createElement('div');
+            item.className = 'upload-item';
+            item.innerHTML = `
+              <div class="upload-item-info">
+                <span class="material-icons">${file.type.startsWith('video/') ? 'videocam' : 'image'}</span>
+                <span class="upload-item-name">${file.name}</span>
+                <span class="upload-item-size">${this.formatFileSize(file.size)}</span>
+              </div>
+              <button class="btn btn-small btn-danger" onclick="adminDashboard.removeFromQueue(${index})">
+                <span class="material-icons">close</span>
+              </button>
+            `;
+            uploadItems.appendChild(item);
+          });
+        }
+
+        removeFromQueue(index) {
+          this.uploadQueue.splice(index, 1);
+          this.updateUploadQueueDisplay();
+        }
+
+        clearUploadQueue() {
+          this.uploadQueue = [];
+          this.updateUploadQueueDisplay();
+        }
+
+        async startUpload() {
+          if (this.uploadQueue.length === 0 || this.isUploading) {
+            return;
+          }
+
+          this.isUploading = true;
+          const modal = document.getElementById('uploadModal');
+          const progressFill = document.getElementById('uploadProgressFill');
+          const progressText = document.getElementById('uploadProgressText');
+          const progressPercent = document.getElementById('uploadProgressPercent');
+          const currentFile = document.getElementById('uploadCurrentFile');
+
+          modal.style.display = 'flex';
+
+          try {
+            for (let i = 0; i < this.uploadQueue.length; i++) {
+              const file = this.uploadQueue[i];
+              const progress = ((i + 1) / this.uploadQueue.length) * 100;
+
+              progressText.textContent = `Uploading ${file.name}...`;
+              currentFile.textContent = `File ${i + 1} of ${this.uploadQueue.length}`;
+
+              // Upload to Firebase Storage
+              const timestamp = Date.now();
+              const filename = `${timestamp}_${file.name}`;
+              const storageRef = firebase.storage().ref(`gallery/${filename}`);
+
+              await storageRef.put(file);
+
+              progressFill.style.width = `${progress}%`;
+              progressPercent.textContent = `${Math.round(progress)}%`;
+            }
+
+            // Upload complete
+            progressText.textContent = 'Upload complete!';
+            setTimeout(() => {
+              modal.style.display = 'none';
+              this.clearUploadQueue();
+              this.loadGallery();
+              this.showTab('gallery');
+            }, 1500);
+
+          } catch (error) {
+            console.error('Upload failed:', error);
+            alert('Upload failed. Please try again.');
+            modal.style.display = 'none';
+          } finally {
+            this.isUploading = false;
+          }
+        }
+      }
+
+      // Global instance
+      let adminDashboard;
+
+      // Initialize when DOM is loaded
+      document.addEventListener('DOMContentLoaded', () => {
+        adminDashboard = new AdminDashboard();
+      });
+
+      // Global function for tab switching
+      function showTab(tabName) {
+        if (adminDashboard) {
+          adminDashboard.showTab(tabName);
+        }
+      }
+
+      // Listen for auth state changes
+      firebase.auth && firebase.auth().onAuthStateChanged((user) => {
+        if (!user && window.location.pathname.includes('admin/index.html')) {
+          window.location.href = './login.html';
+        }
+      });
+    </script>
   </body>
 </html>

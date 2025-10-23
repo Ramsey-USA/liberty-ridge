@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Admin Login - Liberty Ridge Training Grounds</title>
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js" defer></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"
+      defer
+    ></script>
+
+    <style>
+      :root {
+        --color-primary: #1a1a1a;
+        --color-secondary: #2c2c2c;
+        --color-text-primary: #1a1a1a;
+        --color-text-secondary: #6b6b6b;
+        --color-background: #ffffff;
+        --color-background-secondary: #f8f9fa;
+        --color-button-primary: #1a1a1a;
+        --color-button-primary-hover: #2c2c2c;
+        --color-error: #dc3545;
+        --color-success: #28a745;
+        --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --border-radius: 8px;
+        --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-family);
+        margin: 0;
+        padding: 0;
+        background-color: var(--color-background-secondary);
+        color: var(--color-text-primary);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .login-container {
+        background: var(--color-background);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .subtitle {
+        color: var(--color-text-secondary);
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+        text-align: left;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--color-text-primary);
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e1e5e9;
+        border-radius: var(--border-radius);
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: var(--color-primary);
+      }
+
+      .form-group input.error {
+        border-color: var(--color-error);
+      }
+
+      .btn {
+        background: var(--color-button-primary);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: var(--border-radius);
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .btn:hover {
+        background: var(--color-button-primary-hover);
+      }
+
+      .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .error-message {
+        color: var(--color-error);
+        margin-top: 1rem;
+        padding: 12px;
+        background: rgba(220, 53, 69, 0.1);
+        border: 1px solid rgba(220, 53, 69, 0.2);
+        border-radius: var(--border-radius);
+        font-size: 0.9rem;
+      }
+
+      .success-message {
+        color: var(--color-success);
+        margin-top: 1rem;
+        padding: 12px;
+        background: rgba(40, 167, 69, 0.1);
+        border: 1px solid rgba(40, 167, 69, 0.2);
+        border-radius: var(--border-radius);
+        font-size: 0.9rem;
+      }
+
+      .forgot-password {
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      .forgot-password a {
+        color: var(--color-text-secondary);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .forgot-password a:hover {
+        text-decoration: underline;
+      }
+
+      .loading-spinner {
+        width: 20px;
+        height: 20px;
+        border: 2px solid transparent;
+        border-top: 2px solid currentColor;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo">Liberty Ridge Training Grounds</div>
+      <div class="subtitle">Admin Access</div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            autocomplete="current-password"
+          />
+        </div>
+
+        <button type="submit" class="btn" id="loginButton">
+          <span id="loginButtonText">Sign In</span>
+          <div class="loading-spinner hidden" id="loginSpinner"></div>
+        </button>
+
+        <div id="errorMessage" class="error-message hidden"></div>
+        <div id="successMessage" class="success-message hidden"></div>
+      </form>
+
+      <div class="forgot-password">
+        <a href="#" id="forgotPasswordLink">Forgot your password?</a>
+      </div>
+    </div>
+
+    <!-- Firebase config -->
+    <script src="../js/firebase-config.js" defer></script>
+
+    <script>
+      // Login form handling
+      class AdminLogin {
+        constructor() {
+          this.form = document.getElementById('loginForm');
+          this.emailInput = document.getElementById('email');
+          this.passwordInput = document.getElementById('password');
+          this.loginButton = document.getElementById('loginButton');
+          this.loginButtonText = document.getElementById('loginButtonText');
+          this.loginSpinner = document.getElementById('loginSpinner');
+          this.errorMessage = document.getElementById('errorMessage');
+          this.successMessage = document.getElementById('successMessage');
+          this.forgotPasswordLink = document.getElementById('forgotPasswordLink');
+
+          this.init();
+        }
+
+        init() {
+          // Wait for Firebase to be ready
+          window.addEventListener('firebaseReady', () => {
+            this.setupEventListeners();
+            this.checkExistingAuth();
+          });
+
+          // Setup event listeners immediately
+          this.setupEventListeners();
+        }
+
+        setupEventListeners() {
+          this.form.addEventListener('submit', (e) => this.handleLogin(e));
+          this.forgotPasswordLink.addEventListener('click', (e) => this.handleForgotPassword(e));
+        }
+
+        async checkExistingAuth() {
+          if (!firebase || !firebase.auth) return;
+
+          const user = firebase.auth().currentUser;
+          if (user) {
+            // User is already signed in, redirect to admin
+            this.showSuccess('Already signed in. Redirecting...');
+            setTimeout(() => {
+              window.location.href = './index.html';
+            }, 1000);
+          }
+        }
+
+        async handleLogin(e) {
+          e.preventDefault();
+
+          const email = this.emailInput.value.trim();
+          const password = this.passwordInput.value;
+
+          if (!email || !password) {
+            this.showError('Please enter both email and password.');
+            return;
+          }
+
+          this.setLoading(true);
+          this.hideMessages();
+
+          try {
+            if (!firebase || !firebase.auth) {
+              throw new Error('Firebase not initialized. Please refresh and try again.');
+            }
+
+            // Sign in with Firebase Auth
+            const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+            const user = userCredential.user;
+
+            // Check if user is admin (basic check - could be enhanced)
+            const adminEmails = [
+              'admin@libertyridgetraininggrounds.com',
+              'zach@libertyridgetraininggrounds.com'
+            ];
+
+            if (!adminEmails.includes(user.email)) {
+              await firebase.auth().signOut();
+              throw new Error('Access denied. Admin privileges required.');
+            }
+
+            // Success
+            this.showSuccess('Login successful! Redirecting to admin dashboard...');
+
+            // Redirect to admin dashboard
+            setTimeout(() => {
+              window.location.href = './index.html';
+            }, 1500);
+          } catch (error) {
+            this.handleAuthError(error);
+          } finally {
+            this.setLoading(false);
+          }
+        }
+
+        async handleForgotPassword(e) {
+          e.preventDefault();
+
+          const email = this.emailInput.value.trim();
+          if (!email) {
+            this.showError('Please enter your email address first.');
+            return;
+          }
+
+          try {
+            if (!firebase || !firebase.auth) {
+              throw new Error('Firebase not initialized. Please refresh and try again.');
+            }
+
+            await firebase.auth().sendPasswordResetEmail(email);
+            this.showSuccess('Password reset email sent! Check your inbox.');
+          } catch (error) {
+            this.handleAuthError(error);
+          }
+        }
+
+        handleAuthError(error) {
+          let message = 'An error occurred. Please try again.';
+
+          switch (error.code) {
+            case 'auth/user-not-found':
+              message = 'No account found with this email address.';
+              break;
+            case 'auth/wrong-password':
+              message = 'Incorrect password. Please try again.';
+              break;
+            case 'auth/invalid-email':
+              message = 'Invalid email address format.';
+              break;
+            case 'auth/too-many-requests':
+              message = 'Too many failed attempts. Please try again later.';
+              break;
+            case 'auth/network-request-failed':
+              message = 'Network error. Please check your connection.';
+              break;
+            default:
+              message = error.message || message;
+              break;
+          }
+
+          this.showError(message);
+        }
+
+        setLoading(loading) {
+          this.loginButton.disabled = loading;
+          if (loading) {
+            this.loginButtonText.textContent = 'Signing In...';
+            this.loginSpinner.classList.remove('hidden');
+          } else {
+            this.loginButtonText.textContent = 'Sign In';
+            this.loginSpinner.classList.add('hidden');
+          }
+        }
+
+        showError(message) {
+          this.errorMessage.textContent = message;
+          this.errorMessage.classList.remove('hidden');
+          this.successMessage.classList.add('hidden');
+        }
+
+        showSuccess(message) {
+          this.successMessage.textContent = message;
+          this.successMessage.classList.remove('hidden');
+          this.errorMessage.classList.add('hidden');
+        }
+
+        hideMessages() {
+          this.errorMessage.classList.add('hidden');
+          this.successMessage.classList.add('hidden');
+        }
+      }
+
+      // Initialize when DOM is loaded
+      document.addEventListener('DOMContentLoaded', () => {
+        new AdminLogin();
+      });
+    </script>
+  </body>
+</html>

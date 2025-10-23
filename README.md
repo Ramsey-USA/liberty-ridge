@@ -28,6 +28,15 @@ node build-optimized.js
 node optimize-images.js
 ```
 
+Note: Some cloud builders expect a `build.js` entrypoint. This repo now includes a small compatibility shim `build.js` that forwards to `build-optimized.js` so `npm run build` works in those environments.
+
+If you need to skip running package.json scripts during a Google Cloud build, set the following environment variable in your build config:
+
+```bash
+# Disable running package.json scripts during Google Cloud builds
+GOOGLE_NODE_RUN_SCRIPTS=
+```
+
 **Live Site**: [www.libertyridgetraininggrounds.com](https://www.libertyridgetraininggrounds.com)
 **Development**: [http://localhost:8080](http://localhost:8080)
 
